@@ -4,12 +4,13 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { PANDALS, PLACES, ROUTES, byId } from "@/lib/data";
 import type { Pandal, Point } from "@/lib/types";
-import { fmtDist, km, meters, pathLen, plan, walkMins, walkRoute, type WalkRoute } from "@/lib/geo";
+import { bearing, bestOrder, fmtDist, km, meters, pathLen, plan, walkMins, walkRoute, walkRouteVia, type ViaRoute, type WalkRoute } from "@/lib/geo";
 import { tx } from "@/lib/i18n";
 import { useLang } from "@/lib/lang";
 import { toggleIn, useSaved, useSeen } from "@/lib/store";
 import Bi from "./Bi";
 import PandalCard from "./PandalCard";
+import PandalPicker from "./PandalPicker";
 
 const Map = dynamic(() => import("./Map"), { ssr: false });
 type Cur = Point & { id?: string; label: string };
@@ -22,13 +23,20 @@ export default function Hop() {
   const [planned, setPlanned] = useState<Pandal[] | null>(null);
   const [route, setRoute] = useState<string | null>(null);
   const [msg, setMsg] = useState("");
-  const [me, setMe] = useState<(Point & { acc: number }) | null>(null); // live GPS position
+  const [me, setMe] = useState<(Point & { acc: number; heading: number | null }) | null>(null); // live GPS position
   const [tracking, setTracking] = useState(false);
-  const [target, setTarget] = useState<Pandal | null>(null);              // pandal I'm walking to
+  const [target, setTarget] = useState<Pandal | null>(null);              // single pandal I'm walking to
   const [nav, setNav] = useState<(WalkRoute & { tid: string }) | null>(null);
+  const [locked, setLocked] = useState<string[] | null>(null);            // Trail Go: the visiting order, fixed at the start
+  const [trailRt, setTrailRt] = useState<(ViaRoute & { key: string }) | null>(null);
+  const [stamp, setStamp] = useState("");                                 // changes on each Go, so the map zooms once
   const [notice, setNotice] = useState("");
   const lastFetch = useRef<{ tid: string; o: Point } | null>(null);
-  const reqId = useRef(0);
+  const lastTrail = useRef<{ key: string; o: Point | null } | null>(null);
+  const reqId = useRef(0), trailReq = useRef(0);
+  const prevMe = useRef<Point | null>(null), lastHead = useRef<number | null>(null);
+  const mapBox = useRef<HTMLDivElement>(null);
+  const autoTrail = useRef(false);
   const name = (p: Pandal) => (lang === "bn" && p.name_bn) || p.name;
 
   const here = useCallback((id: string) => {
@@ -39,41 +47,76 @@ export default function Hop() {
   const unseen = PANDALS.filter((p) => !seen.includes(p.id) && p.id !== cur?.id);
   const nearest = useMemo(() => (cur ? unseen.map((p) => ({ p, d: km(cur, p) })).sort((a, b) => a.d - b.d) : []), [cur, seen]); // eslint-disable-line
   const food = cur ? PLACES.filter((f) => f.type === "food").map((f) => ({ f, d: km(cur, f) })).sort((a, b) => a.d - b.d).slice(0, 3) : [];
-  const trailPandals = saved.map((i) => byId[i]).filter(Boolean) as Pandal[];
   const visited = seen.map((i) => byId[i]).filter(Boolean) as Pandal[];
   const origin: Point | null = me ?? cur;
-  const line: Point[] = target && nav?.tid === target.id ? nav.coords
-    : planned && cur ? [cur, ...planned]
-    : route === "trail" ? trailPandals
-    : route ? (ROUTES.find((r) => r.id === route)?.ids.map((i) => byId[i]) ?? []) : [];
 
-  // GO: show the walking route to this pandal and start following my position. Does NOT mark it seen.
-  const go = (p: Pandal) => {
-    if (target?.id === p.id) { stopGo(); return; }
-    lastFetch.current = null; setNav(null); setNotice(""); setTarget(p); setTracking(true);
-  };
-  const stopGo = () => { setTarget(null); setNav(null); lastFetch.current = null; };
+  // ---- Trail: unseen stops, in the best order, with a walking route through them ----
+  const trailAll = saved.map((i) => byId[i]).filter(Boolean) as Pandal[];
+  const trailStops = trailAll.filter((p) => !seen.includes(p.id));
+  const trailSeen = trailAll.filter((p) => seen.includes(p.id));
+  const trailKey = trailStops.map((p) => p.id).join(",");
+  const startKey = origin ? `${origin.lat.toFixed(3)},${origin.lng.toFixed(3)}` : "";
+  const previewOrder = useMemo(() => bestOrder(origin, trailStops), [trailKey, startKey]); // eslint-disable-line
+  const trailOn = locked !== null;
+  const trailOrder: Pandal[] = locked
+    ? [...locked.filter((id) => trailStops.some((p) => p.id === id)).map((id) => byId[id]), ...trailStops.filter((p) => !locked.includes(p.id))]
+    : previewOrder;
+  const rtKey = trailOrder.map((p) => p.id).join(",") + (origin ? "@o" : "");
+  const rtOk = !!trailRt && trailRt.key === rtKey;
+  const rtHasOrigin = rtKey.endsWith("@o");
+  const legFor = (i: number): number | null => { if (!rtOk) return null; const j = rtHasOrigin ? i : i - 1; return j >= 0 ? trailRt!.legs[j] ?? null : null; };
+
+  const goStamp = () => String(Date.now());
+  const showMap = () => requestAnimationFrame(() => mapBox.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   const markSeen = (id: string) => { if (!seen.includes(id)) setSeen([...seen, id]); };
   const unmarkSeen = (id: string) => setSeen(seen.filter((x) => x !== id));
-  // Manual "I'm here" (also what the auto-arrival does).
+  const stopGo = () => { setTarget(null); setNav(null); lastFetch.current = null; };
+  const stopTrail = () => setLocked(null);
+
+  // GO (single pandal): show the walking route and follow my position. Does NOT mark it seen.
+  const go = (p: Pandal) => {
+    if (target?.id === p.id) { stopGo(); return; }
+    stopTrail(); lastFetch.current = null; setNav(null); setNotice(""); setTarget(p); setTracking(true); setStamp(goStamp()); showMap();
+  };
+  // TRAIL GO: walk the whole trail in the best order.
+  const trailGo = () => {
+    if (trailOn) { stopTrail(); return; }
+    if (!previewOrder.length) return;
+    stopGo(); setNotice(""); setLocked(previewOrder.map((p) => p.id)); setTracking(true); setStamp(goStamp()); showMap();
+  };
+  // Reached a pandal (automatically, or by tapping "I'm here").
   const arrive = (p: Pandal, auto = false) => {
-    markSeen(p.id); stopGo(); here(p.id);
-    setNotice(`${auto ? "📍 " : "✓ "}${name(p)} ${lang === "bn" ? "দেখা হয়েছে" : "marked as seen"}`);
+    markSeen(p.id);
+    if (target?.id === p.id) stopGo();
+    const left = trailOn ? trailOrder.filter((x) => x.id !== p.id).length : 1;
+    if (trailOn && left === 0) { stopTrail(); setNotice(`${name(p)} ✓ · ${tx(lang, "trailDone")}`); }
+    else setNotice(`${auto ? "📍 " : "✓ "}${name(p)} ${lang === "bn" ? "দেখা হয়েছে" : "marked as seen"}`);
+    here(p.id);
     if (auto) try { navigator.vibrate?.(200); } catch {}
   };
+  // Open from the Saved page with "Trail Go".
+  useEffect(() => {
+    if (autoTrail.current || !previewOrder.length) return;
+    if (new URLSearchParams(window.location.search).get("trail") === "go") { autoTrail.current = true; trailGo(); }
+  }, [previewOrder]); // eslint-disable-line
 
   // Keep following my position while hopping.
   useEffect(() => {
     if (!tracking || !navigator.geolocation) return;
     const id = navigator.geolocation.watchPosition((pos) => {
-      const pt = { lat: pos.coords.latitude, lng: pos.coords.longitude, acc: pos.coords.accuracy };
-      setMe(pt);
-      setCur((c) => (c && c.id ? c : { lat: pt.lat, lng: pt.lng, label: "" })); // GPS start follows me; a picked pandal stays put
+      const pt = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      let h: number | null = typeof pos.coords.heading === "number" && Number.isFinite(pos.coords.heading) ? pos.coords.heading : null;
+      const prev = prevMe.current;
+      if (h === null && prev && meters(prev, pt) > 6) h = bearing(prev, pt);
+      if (!prev || meters(prev, pt) > 6) prevMe.current = pt;
+      if (h === null) h = lastHead.current; else lastHead.current = h;
+      setMe({ ...pt, acc: pos.coords.accuracy, heading: h });
+      setCur((c) => (c && c.id ? c : { ...pt, label: "" })); // GPS start follows me; a picked pandal stays put
     }, () => { setMsg(tx(lang, "blocked")); setTracking(false); }, { enableHighAccuracy: true, maximumAge: 5000, timeout: 15000 });
     return () => navigator.geolocation.clearWatch(id);
   }, [tracking]); // eslint-disable-line
 
-  // Fetch the walking route to the target (re-fetch only if I've moved ~40 m).
+  // Walking route to the single target (re-fetch only if I've moved ~40 m).
   useEffect(() => {
     if (!target || !origin) return;
     const last = lastFetch.current;
@@ -83,22 +126,51 @@ export default function Hop() {
     walkRoute(origin, target).then((r) => { if (id === reqId.current) setNav({ ...r, tid: target.id }); });
   }, [target, origin?.lat, origin?.lng]); // eslint-disable-line
 
-  // Auto mark seen when I reach the target.
+  // Walking route through all trail stops.
   useEffect(() => {
-    if (target && me && me.acc <= 100 && meters(me, target) <= 50) arrive(target, true);
-  }, [me, target]); // eslint-disable-line
+    const pts: Point[] = origin ? [origin, ...trailOrder] : trailOrder;
+    if (pts.length < 2) { setTrailRt(null); lastTrail.current = null; return; }
+    const last = lastTrail.current;
+    if (last && last.key === rtKey && (!origin || !last.o || meters(last.o, origin) < 40)) return;
+    lastTrail.current = { key: rtKey, o: origin ? { lat: origin.lat, lng: origin.lng } : null };
+    const id = ++trailReq.current;
+    walkRouteVia(pts).then((r) => { if (id === trailReq.current) setTrailRt({ ...r, key: rtKey }); });
+  }, [rtKey, origin?.lat, origin?.lng]); // eslint-disable-line
+
+  // Auto mark seen when I reach the target, or any stop on my trail.
+  useEffect(() => {
+    if (!me || me.acc > 100) return;
+    if (target && meters(me, target) <= 50) { arrive(target, true); return; }
+    if (trailOn) { const hit = trailOrder.find((p) => meters(me, p) <= 50); if (hit) arrive(hit, true); }
+  }, [me]); // eslint-disable-line
 
   function gps() {
     setMsg("…");
     if (!navigator.geolocation) return setMsg(tx(lang, "blocked"));
     navigator.geolocation.getCurrentPosition((pos) => {
-      const me = { lat: pos.coords.latitude, lng: pos.coords.longitude };
-      if (Math.min(...PANDALS.map((p) => km(me, p))) > 40) return setMsg(tx(lang, "far"));
-      setCur({ ...me, label: "" }); setMe({ ...me, acc: pos.coords.accuracy }); setTracking(true); setPlanned(null); setMsg("");
+      const pt = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+      if (Math.min(...PANDALS.map((p) => km(pt, p))) > 40) return setMsg(tx(lang, "far"));
+      setCur({ ...pt, label: "" }); setMe({ ...pt, acc: pos.coords.accuracy, heading: null }); setTracking(true); setPlanned(null); setMsg("");
     }, () => setMsg(tx(lang, "blocked")), { timeout: 8000 });
   }
   const listLen = planned && cur ? pathLen(cur, unseen) : 0;
   const saving = planned && cur ? listLen - pathLen(cur, planned) : 0;
+
+  // ---- What the map shows ----
+  const goReady = !!target && nav?.tid === target.id;
+  const preset = route ? (ROUTES.find((r) => r.id === route)?.ids.map((i) => byId[i]) ?? []) : [];
+  let line: Point[] = [], lineColor = "#c1121f", solid = false;
+  if (goReady) { line = nav!.coords; lineColor = "#0077b6"; solid = true; }
+  else if (trailOn && rtOk) { line = trailRt!.coords; lineColor = "#6d28d9"; solid = true; }
+  else if (planned && cur) { line = [cur, ...planned]; }
+  else if (preset.length) { line = preset; }
+  else if (rtOk) { line = trailRt!.coords; lineColor = "#6d28d9"; }
+  const nextStop = trailOn ? trailOrder[0] : undefined;
+  const aim = target ?? nextStop ?? null;
+  const youPt = me ?? cur;
+  const heading = me?.heading ?? (origin && aim ? bearing(origin, aim) : 0);
+  const fitKey = goReady ? stamp : trailOn && rtOk ? stamp : null;
+  const navigating = !!target || trailOn;
 
   return (
     <div className="page">
@@ -106,8 +178,15 @@ export default function Hop() {
       <h1 className="h1" style={{ fontSize: "clamp(26px,5vw,38px)", marginBottom: 14 }}>{lang === "bn" ? "আপনার হপ রুট" : "Your hop route"}</h1>
       {PANDALS.some((p) => !p.verified) && <p className="muted small">Some locations are unverified sample data.</p>}
 
-      <div className="mapbox">
-        <Map pandals={PANDALS} places={PLACES} seen={seen} cur={me ?? cur} line={line} showPlaces={!!cur} onPick={here} target={target?.id ?? null} trail={saved} fitKey={target?.id ?? null} />
+      <div className="mapbox" ref={mapBox}>
+        <Map pandals={PANDALS} places={PLACES} seen={seen} you={youPt} heading={heading} line={line} lineColor={lineColor} solid={solid}
+          showPlaces={!!cur} onPick={here} target={aim?.id ?? null} trail={target ? [] : trailOrder.map((p) => p.id)} dim={navigating} fitKey={fitKey} />
+      </div>
+      <div className="legend" aria-label="Map colours">
+        <span><i style={{ background: "#c1121f" }} />{tx(lang, "notSeen")}</span>
+        <span><i style={{ background: "#2f9e5b" }} />{tx(lang, "seen")}</span>
+        <span><i style={{ background: "#6d28d9" }} />{tx(lang, "trailStop")}</span>
+        <span><i style={{ background: "#f2a900" }} />{tx(lang, "goingTo")}</span>
       </div>
 
       {notice && <div className="card paar" style={{ marginTop: 12, borderLeftColor: "var(--shiuli)" }}><b>{notice}</b></div>}
@@ -128,22 +207,85 @@ export default function Hop() {
           </div>
         </div>;
       })()}
+      {trailOn && nextStop && (() => {
+        const straight = origin ? meters(origin, nextStop) : null;
+        const leg = legFor(0);
+        return <div className="card paar" style={{ marginTop: 12, borderLeftColor: "#6d28d9" }}>
+          <p className="zonetag" style={{ margin: 0, color: "#6d28d9" }}>▶ {tx(lang, "trailGo")} · {trailOrder.length} {lang === "bn" ? "টি স্টপ বাকি" : trailOrder.length === 1 ? "stop left" : "stops left"}</p>
+          <h3 style={{ fontSize: 22 }}>{tx(lang, "nextStop")}: {name(nextStop)}</h3>
+          <p className="muted small" style={{ margin: "2px 0 0" }}>
+            {!origin ? tx(lang, "locating") : `${leg !== null ? `${fmtDist(leg)} · ~${Math.max(1, Math.round(leg * 12))} min` : "…"}${straight !== null ? ` · ${straight < 1000 ? Math.round(straight) + " m" : (straight / 1000).toFixed(1) + " km"} ${tx(lang, "away")}` : ""}`}
+          </p>
+          <p className="muted small" style={{ margin: "4px 0 0" }}>{lang === "bn" ? "প্রতিটি স্টপের ৫০ মিটারের মধ্যে পৌঁছলে নিজে থেকেই দেখা চিহ্নিত হবে।" : "Each stop is marked seen automatically when you're within 50 m."}</p>
+          <div className="row" style={{ marginTop: 10 }}>
+            <button className="btn primary" onClick={() => arrive(nextStop)}>✓ {tx(lang, "imHere")}</button>
+            <button className="btn outline" onClick={stopTrail}>{tx(lang, "stopTrail")}</button>
+          </div>
+        </div>;
+      })()}
 
       <div className="card sec" style={{ marginTop: 16 }}>
-        <label className="muted small" htmlFor="start" style={{ fontWeight: 600 }}><Bi k="where" /></label>
+        <label className="muted small" style={{ fontWeight: 600 }}><Bi k="where" /></label>
         <div className="locrow" style={{ marginTop: 6 }}>
-          <select id="start" className="search" value={cur?.id ?? ""} onChange={(e) => e.target.value && here(e.target.value)}>
-            <option value="">{tx(lang, "where")}</option>
-            {PANDALS.map((p) => <option key={p.id} value={p.id}>{name(p)}</option>)}
-          </select>
+          <PandalPicker onPick={here} />
           <button className="btn outline" onClick={gps}>📍 <Bi k="gps" caption={false} /></button>
         </div>
+        {cur && <p className="muted small" style={{ margin: "8px 0 0" }}>📍 <b>{cur.id ? cur.label : tx(lang, "gps")}</b></p>}
         {msg && <p className="msg">{msg}</p>}
         <div className="segbar" role="progressbar" aria-valuenow={seen.length} aria-valuemax={PANDALS.length} aria-label="Pandals seen">
           {PANDALS.map((p) => <i key={p.id} className={seen.includes(p.id) ? "on" : ""} />)}
         </div>
         <p className="muted small" style={{ margin: 0 }}>{seen.length} / {PANDALS.length} {lang === "bn" ? "টি দেখা হয়েছে" : "pandals seen"} · {PANDALS.length - seen.length} {lang === "bn" ? "বাকি" : "remaining"}</p>
       </div>
+
+      <section className="sec" id="trail">
+        <div className="row" style={{ justifyContent: "space-between" }}>
+          <h2 className="h2">★ {tx(lang, "myTrail")} ({trailAll.length})</h2>
+          <Link className="btn sm outline" href="/saved">{tx(lang, "openTrail")} →</Link>
+        </div>
+        {trailAll.length === 0 ? <div className="empty" style={{ marginTop: 12 }}>{tx(lang, "trailEmpty")}</div> : <>
+          {trailStops.length > 0 && <div className="card paar" style={{ marginTop: 12, borderLeftColor: "#6d28d9" }}>
+            <p className="muted small" style={{ margin: 0 }}>
+              {tx(lang, "bestOrder")} · {trailStops.length} {lang === "bn" ? "টি স্টপ" : trailStops.length === 1 ? "stop" : "stops"}
+              {rtOk && trailRt!.km > 0 ? ` · ${fmtDist(trailRt!.km)} · ~${trailRt!.mins} min${trailRt!.approx ? (lang === "bn" ? " (সরলরেখা)" : " (straight line)") : ""}` : ""}
+            </p>
+            <div className="row" style={{ marginTop: 10 }}>
+              <button className={`btn big ${trailOn ? "gold" : "primary"}`} onClick={trailGo}>{trailOn ? "■ " + tx(lang, "stopTrail") : "▶ " + tx(lang, "trailGo")}</button>
+            </div>
+          </div>}
+          <div className="card" style={{ marginTop: 12 }}>
+            {trailOrder.map((p, i) => {
+              const leg = legFor(i);
+              const from = i === 0 ? (rtHasOrigin ? (lang === "bn" ? "আপনার থেকে" : "from you") : (lang === "bn" ? "শুরু" : "start here")) : (lang === "bn" ? `স্টপ ${i} থেকে` : `from stop ${i}`);
+              return (
+                <div className="item" key={p.id}>
+                  <div className="row" style={{ gap: 12, flexWrap: "nowrap", minWidth: 0 }}>
+                    <span className="tnum">{i + 1}</span>
+                    <div><h3>{name(p)}</h3><p>{leg !== null ? `${fmtDist(leg)} · ~${Math.max(1, Math.round(leg * 12))} min ${from}` : from}</p></div>
+                  </div>
+                  <div className="row">
+                    <button className={`btn sm ${target?.id === p.id ? "gold" : "outline"}`} onClick={() => go(p)}>➤ {target?.id === p.id ? tx(lang, "stop") : tx(lang, "go")}</button>
+                    <button className="btn sm outline" aria-label={tx(lang, "markSeen")} onClick={() => arrive(p)}>✓</button>
+                    <button className="btn sm" aria-label="Remove from my trail" onClick={() => setSaved(saved.filter((x) => x !== p.id))}>✕</button>
+                  </div>
+                </div>
+              );
+            })}
+            {trailSeen.map((p) => (
+              <div className="item" key={p.id} style={{ opacity: 0.8 }}>
+                <div className="row" style={{ gap: 12, flexWrap: "nowrap", minWidth: 0 }}>
+                  <span className="tnum done">✓</span>
+                  <div><h3>{name(p)}</h3><p>{tx(lang, "seen")}</p></div>
+                </div>
+                <div className="row">
+                  <button className="btn sm outline" onClick={() => unmarkSeen(p.id)}>✕ {tx(lang, "unmark")}</button>
+                  <button className="btn sm" aria-label="Remove from my trail" onClick={() => setSaved(saved.filter((x) => x !== p.id))}>★</button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>}
+      </section>
 
       <section className="sec">
         {!cur ? <div className="empty"><Bi k="empty" caption={false} /></div>
@@ -185,29 +327,6 @@ export default function Hop() {
           <Link className="btn outline" href="/food" style={{ marginTop: 10 }}>{tx(lang, "food")} →</Link>
         </div>
       </section>}
-
-      <section className="sec">
-        <div className="row" style={{ justifyContent: "space-between" }}>
-          <h2 className="h2">★ {tx(lang, "myTrail")} ({trailPandals.length})</h2>
-          <div className="row">
-            {trailPandals.length > 0 && <button className={`btn sm ${route === "trail" ? "primary" : "outline"}`} onClick={() => { setPlanned(null); setRoute(route === "trail" ? null : "trail"); }}>{route === "trail" ? tx(lang, "showing") : tx(lang, "showTrail")}</button>}
-            <Link className="btn sm outline" href="/saved">{tx(lang, "openTrail")} →</Link>
-          </div>
-        </div>
-        {trailPandals.length === 0 ? <div className="empty" style={{ marginTop: 12 }}>{tx(lang, "trailEmpty")}</div> : (
-          <div className="card" style={{ marginTop: 12 }}>
-            {trailPandals.map((p, i) => (
-              <div className="item" key={p.id}>
-                <div><h3>{i + 1}. {name(p)}{seen.includes(p.id) && <span className="tag">✓ {tx(lang, "seen")}</span>}</h3>{cur && <p>{fmtDist(km(cur, p))} · ~{walkMins(km(cur, p))} min</p>}</div>
-                <div className="row">
-                  <button className={`btn sm ${target?.id === p.id ? "gold" : "primary"}`} onClick={() => go(p)}>➤ {target?.id === p.id ? tx(lang, "stop") : tx(lang, "go")}</button>
-                  <button className="btn sm" aria-label="Remove from my trail" onClick={() => setSaved(saved.filter((x) => x !== p.id))}>✕</button>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
 
       <section className="sec">
         <h2 className="h2">✓ {tx(lang, "visited")} ({visited.length})</h2>

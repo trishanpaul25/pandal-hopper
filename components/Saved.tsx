@@ -51,7 +51,7 @@ export default function Saved() {
             <div className="row">
               <button className={`btn sm ${ordered ? "primary" : "outline"}`} aria-pressed={ordered} onClick={() => setOrdered(!ordered)}>{lang === "bn" ? "কম হাঁটার ক্রমে সাজান" : "Shortest walk order"}</button>
               <button className="btn sm outline" onClick={share}>{tx(lang, "share")}</button>
-              {firstUnseen && <Link className="btn sm primary" href={`/hop?from=${firstUnseen.id}`}>{tx(lang, "start")}</Link>}
+              {firstUnseen && <Link className="btn sm primary" href="/hop?trail=go">▶ {tx(lang, "trailGo")}</Link>}
             </div>
           </div>
           {note && <p className="msg">{note}</p>}

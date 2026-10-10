@@ -5,11 +5,11 @@ import Bi from "@/components/Bi";
 import { Arch } from "@/components/Art";
 import { DAYS, PANDALS, PLACES, ZONES } from "@/lib/data";
 import { useLang } from "@/lib/lang";
-import { useStored } from "@/lib/useStored";
+import { useTheme } from "@/lib/theme";
 
 export default function Home() {
   const { lang } = useLang();
-  const [, setTheme] = useStored<"light" | "dark">("ph-theme", "light");
+  const { theme, toggle } = useTheme();
   return (
     <div className="page">
       <section className="hero">
@@ -82,7 +82,7 @@ export default function Home() {
             <p>{lang === "bn" ? "রাতের মোড চালু করুন: গাঢ় রঙ, কম আলো, চোখে আরাম।" : "Switch on Night mode: darker colours that are easier on the eyes and the battery."}</p>
           </div>
           <div className="row">
-            <button className="btn primary big" onClick={() => setTheme("dark")}>🌙 <Bi k="night" caption={false} /></button>
+            <button className="btn primary big" onClick={toggle}>{theme === "dark" ? "☀️" : "🌙"} <Bi k={theme === "dark" ? "day" : "night"} caption={false} /></button>
             <Link className="btn big" href="/guide" style={{ background: "var(--alta)", color: "#2a0a0e", borderColor: "var(--alta)" }}><Bi k="sos" caption={false} /></Link>
           </div>
         </div>

@@ -26,6 +26,38 @@ export async function walkRoute(a: Point, b: Point): Promise<WalkRoute> {
     const d = km(a, b); return { coords: [a, b], km: d, mins: walkMins(d), approx: true };
   } finally { clearTimeout(t); }
 }
+/** Compass bearing in degrees (0 = north) from a to b. */
+export function bearing(a: Point, b: Point): number {
+  const y = Math.sin((b.lng - a.lng) * R) * Math.cos(b.lat * R);
+  const x = Math.cos(a.lat * R) * Math.sin(b.lat * R) - Math.sin(a.lat * R) * Math.cos(b.lat * R) * Math.cos((b.lng - a.lng) * R);
+  return (Math.atan2(y, x) / R + 360) % 360;
+}
+export type ViaRoute = { coords: Point[]; legs: number[]; km: number; mins: number; approx: boolean };
+/** One walking route through several points in order. legs[i] is the km from point i to point i+1. Falls back to straight lines. */
+export async function walkRouteVia(pts: Point[]): Promise<ViaRoute> {
+  const straight = (): ViaRoute => {
+    const legs = pts.slice(1).map((q, i) => km(pts[i], q)); const total = legs.reduce((a, b) => a + b, 0);
+    return { coords: pts, legs, km: total, mins: walkMins(total), approx: true };
+  };
+  if (pts.length < 2) return { coords: pts, legs: [], km: 0, mins: 0, approx: false };
+  try {
+    const coords: Point[] = []; const legs: number[] = [];
+    for (let i = 0; i < pts.length - 1; i += 24) {           // the public router takes ~25 points per request
+      const chunk = pts.slice(i, i + 25); if (chunk.length < 2) break;
+      const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 8000);
+      try {
+        const url = `https://routing.openstreetmap.de/routed-foot/route/v1/foot/${chunk.map((q) => `${q.lng},${q.lat}`).join(";")}?overview=full&geometries=geojson`;
+        const j = await (await fetch(url, { signal: ctrl.signal })).json();
+        const r = j.routes?.[0]; if (!r) throw new Error("no route");
+        const c: Point[] = r.geometry.coordinates.map(([lng, lat]: number[]) => ({ lat, lng }));
+        coords.push(...(coords.length ? c.slice(1) : c));
+        r.legs.forEach((l: { distance: number }) => legs.push(l.distance / 1000));
+      } finally { clearTimeout(t); }
+    }
+    const total = legs.reduce((a, b) => a + b, 0);
+    return { coords, legs, km: total, mins: Math.max(1, Math.round((total * 1000) / 83)), approx: false };
+  } catch { return straight(); }
+}
 export const walkMins = (d: number) => Math.max(1, Math.round(d * 12)); // ~5 km/h
 export const fmtDist = (d: number) => (d < 1 ? `${Math.round(d * 1000)} m` : `${d.toFixed(1)} km`);
 
@@ -52,4 +84,18 @@ export function plan<T extends Point>(start: Point, pts: T[]): T[] {
     }
   }
   return path;
+}
+
+/** Best visiting order for a set of stops. With a start point it is fixed; without one, the best first stop is chosen too. */
+export function bestOrder<T extends Point>(start: Point | null, pts: T[]): T[] {
+  if (pts.length <= 1) return [...pts];
+  if (start) return plan(start, pts);
+  let cands = pts;
+  if (pts.length > 30) cands = [pts.reduce((a, b) => (b.lng < a.lng ? b : a)), pts.reduce((a, b) => (b.lng > a.lng ? b : a)), pts.reduce((a, b) => (b.lat > a.lat ? b : a)), pts.reduce((a, b) => (b.lat < a.lat ? b : a))];
+  let best: T[] = [], bl = Infinity;
+  for (const f of cands) {
+    const path = [f, ...plan(f, pts.filter((q) => q !== f))]; const l = pathLen(path[0], path.slice(1));
+    if (l < bl) { bl = l; best = path; }
+  }
+  return best;
 }

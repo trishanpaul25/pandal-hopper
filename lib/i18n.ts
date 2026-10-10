@@ -25,6 +25,11 @@ export const D = {
   openTrail: { en: "Open full trail", bn: "পুরো ট্রেইল দেখুন" }, showTrail: { en: "Show trail on map", bn: "ট্রেইল মানচিত্রে দেখান" },
   trailEmpty: { en: "Nothing in your trail yet. Tap ☆ Add to my trail on any pandal and it will appear here.", bn: "ট্রেইল এখনও খালি। যেকোনো প্যান্ডেলে ☆ ট্রেইলে যোগ চাপুন, এখানে দেখা যাবে।" },
   visitedEmpty: { en: "No pandals marked as visited yet.", bn: "এখনও কোনো প্যান্ডেল দেখা হয়নি।" },
+  signIn: { en: "Sign in", bn: "সাইন ইন" },
+  trailGo: { en: "Trail Go", bn: "ট্রেইলে যান" }, stopTrail: { en: "Stop trail", bn: "ট্রেইল থামান" },
+  nextStop: { en: "Next stop", bn: "পরের স্টপ" }, trailStop: { en: "Trail stop", bn: "ট্রেইল স্টপ" }, goingTo: { en: "Going to", bn: "যাচ্ছি" },
+  pickStart: { en: "Type a pandal name to start from", bn: "যে প্যান্ডেল থেকে শুরু, তার নাম লিখুন" }, more: { en: "Show more", bn: "আরও দেখান" },
+  bestOrder: { en: "Best order to visit", bn: "ঘোরার সেরা ক্রম" }, trailDone: { en: "Trail complete! 🎉", bn: "ট্রেইল শেষ! 🎉" }, noMatch: { en: "No match", bn: "মেলেনি" },
   sos: { en: "Emergency SOS", bn: "জরুরি সহায়তা" }, share: { en: "Share trail", bn: "ট্রেইল শেয়ার" },
 } as const;
 export type K = keyof typeof D;

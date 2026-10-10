@@ -1,11 +1,11 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react";
 import { useLang } from "@/lib/lang";
-import { useStored } from "@/lib/useStored";
+import { useTheme } from "@/lib/theme";
 import { D, tx, K } from "@/lib/i18n";
 import { Logo } from "./Art";
+import AuthButton from "./AuthButton";
 
 const DESK: { href: string; k: K }[] = [
   { href: "/", k: "home" }, { href: "/hop", k: "hop" }, { href: "/pandals", k: "pandals" }, { href: "/days", k: "days" },
@@ -19,8 +19,7 @@ const MOB: { href: string; k: K; icon: string }[] = [
 export default function Shell({ children }: { children: React.ReactNode }) {
   const path = usePathname() || "/";
   const { lang, setLang } = useLang();
-  const [theme, setTheme] = useStored<"light" | "dark">("ph-theme", "light");
-  useEffect(() => { document.documentElement.dataset.theme = theme; }, [theme]);
+  const { theme, toggle } = useTheme();
   const on = (h: string) => (h === "/" ? path === "/" : path.startsWith(h));
   return (
     <>
@@ -35,9 +34,10 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             <button aria-pressed={lang === "en"} onClick={() => setLang("en")}>EN</button>
             <button aria-pressed={lang === "bn"} onClick={() => setLang("bn")}>বাং</button>
           </div>
-          <button className="iconbtn" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} aria-pressed={theme === "dark"}>
+          <button className="iconbtn" onClick={toggle} aria-pressed={theme === "dark"}>
             {theme === "dark" ? "☀️" : "🌙"}<span className="hide-s">{theme === "dark" ? tx(lang, "day") : tx(lang, "night")}</span>
           </button>
+          <AuthButton />
           <Link href="/saved" className="iconbtn solid" aria-label={tx(lang, "saved")}>★</Link>
         </div>
       </header>

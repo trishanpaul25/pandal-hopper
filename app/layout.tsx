@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { LangProvider } from "@/lib/lang";
+import { AuthProvider } from "@/lib/auth";
+import { ThemeProvider } from "@/lib/theme";
 import Shell from "@/components/Shell";
 
 export const metadata: Metadata = {
@@ -12,12 +14,13 @@ export const viewport: Viewport = { themeColor: "#c1121f", width: "device-width"
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        <script dangerouslySetInnerHTML={{ __html: "(function(){try{var s=localStorage.getItem('ph-theme');var t=s?JSON.parse(s):(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.dataset.theme=t;document.documentElement.style.colorScheme=t}catch(e){}})()" }} />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=Tiro+Bangla&display=swap" />
       </head>
       <body>
-        <LangProvider><Shell>{children}</Shell></LangProvider>
+        <ThemeProvider><LangProvider><AuthProvider><Shell>{children}</Shell></AuthProvider></LangProvider></ThemeProvider>
         <script dangerouslySetInnerHTML={{ __html: "if('serviceWorker' in navigator){addEventListener('load',()=>navigator.serviceWorker.register('/sw.js'))}" }} />
       </body>
     </html>
