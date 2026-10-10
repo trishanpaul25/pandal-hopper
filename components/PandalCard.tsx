@@ -10,10 +10,10 @@ import { Arch } from "./Art";
 type Props = {
   p: Pandal; seen: boolean; saved: boolean;
   onSeen?: () => void; onSave?: () => void; dist?: string; rank?: number;
-  hopLink?: boolean; goLabel?: boolean; children?: ReactNode;
+  hopLink?: boolean; onGo?: () => void; going?: boolean; children?: ReactNode;
 };
 
-export default function PandalCard({ p, seen, saved, onSeen, onSave, dist, rank, hopLink, goLabel, children }: Props) {
+export default function PandalCard({ p, seen, saved, onSeen, onSave, dist, rank, hopLink, onGo, going, children }: Props) {
   const { lang } = useLang();
   const primary = (lang === "bn" && p.name_bn) || p.name;
   const caption = lang === "bn" ? (p.name_bn ? p.name : "") : (p.name_bn ?? "");
@@ -33,7 +33,8 @@ export default function PandalCard({ p, seen, saved, onSeen, onSave, dist, rank,
         {p.theme && <p className="muted small">{p.theme}</p>}
         <div className="pactions">
           {hopLink && <Link className="btn outline" href={`/hop?from=${p.id}`}>{tx(lang, "hopFrom")}</Link>}
-          {onSeen && <button className={`btn ${seen ? "gold" : "primary"}`} onClick={onSeen}>{seen ? "✓ " + tx(lang, "seen") : goLabel ? tx(lang, "go") : tx(lang, "markSeen")}</button>}
+          {onGo && <button className={`btn ${going ? "gold" : "primary"}`} onClick={onGo}>{going ? "➤ " + tx(lang, "stop") : "➤ " + tx(lang, "go")}</button>}
+          {onSeen && <button className={`btn ${seen ? "gold" : "outline"}`} onClick={onSeen}>{seen ? "✕ " + tx(lang, "unmark") : "✓ " + tx(lang, "markSeen")}</button>}
         </div>
         {children}
       </div>

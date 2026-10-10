@@ -6,7 +6,6 @@ import { fmtDist, pathLen, plan, walkMins } from "@/lib/geo";
 import { tx } from "@/lib/i18n";
 import { useLang } from "@/lib/lang";
 import { toggleIn, useSaved, useSavedPlaces, useSeen } from "@/lib/store";
-import Bi from "./Bi";
 
 export default function Saved() {
   const { lang } = useLang();
@@ -65,7 +64,7 @@ export default function Saved() {
                   <p className="muted small" style={{ margin: 0 }}>{p.area}</p>
                 </div>
                 <div className="row">
-                  <button className={`btn sm ${seen.includes(p.id) ? "gold" : "outline"}`} onClick={() => setSeen(toggleIn(seen, p.id))}>{seen.includes(p.id) ? "✓ " + tx(lang, "seen") : tx(lang, "markSeen")}</button>
+                  <button className={`btn sm ${seen.includes(p.id) ? "gold" : "outline"}`} onClick={() => setSeen(toggleIn(seen, p.id))}>{seen.includes(p.id) ? "✕ " + tx(lang, "unmark") : "✓ " + tx(lang, "markSeen")}</button>
                   <Link className="btn sm outline" href={`/hop?from=${p.id}`}>{tx(lang, "hopFrom")}</Link>
                   <button className="btn sm" aria-label="Remove from trail" onClick={() => setSaved(saved.filter((x) => x !== p.id))}>✕</button>
                 </div>
@@ -82,7 +81,7 @@ export default function Saved() {
             <button className="btn sm" aria-label="Remove" onClick={() => setSp(sp.filter((x) => x !== f.id))}>✕</button></div>)}
         </div>
       </section>}
-      <p className="muted small" style={{ marginTop: 18 }}><Bi k="saved" caption={false} />: {PANDALS.length} pandals in this demo list.</p>
+      <p className="muted small" style={{ marginTop: 18 }}>{PANDALS.length} pandals in this list.</p>
     </div>
   );
 }

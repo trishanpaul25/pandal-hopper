@@ -2,10 +2,10 @@ export type Lang = "en" | "bn";
 // One entry per label. Primary language follows the toggle; the other shows as a small caption.
 export const D = {
   home: { en: "Home", bn: "উৎসব" }, hop: { en: "Hop", bn: "রুট" }, pandals: { en: "Pandals", bn: "প্যান্ডেল" },
-  days: { en: "Days", bn: "দিনপঞ্জি" }, guide: { en: "Guide", bn: "সহায়িকা" }, saved: { en: "Saved", bn: "সংরক্ষিত" },
+  days: { en: "Days", bn: "দিনপঞ্জি" }, guide: { en: "Guide", bn: "সহায়িকা" }, saved: { en: "My Trail", bn: "আমার ট্রেইল" },
   food: { en: "Food & Sights", bn: "খাওয়া-দাওয়া" }, night: { en: "Night Puja", bn: "রাতের পুজো" }, day: { en: "Day mode", bn: "দিনের মোড" },
   where: { en: "Where are you now?", bn: "আপনি এখন কোথায়?" }, gps: { en: "Use my location", bn: "আমার লোকেশন" },
-  nearest: { en: "Nearest from", bn: "সবচেয়ে কাছে" }, go: { en: "Go & mark seen", bn: "যান ও দেখা চিহ্নিত করুন" },
+  nearest: { en: "Nearest from", bn: "সবচেয়ে কাছে" }, go: { en: "Go", bn: "যান" },
   addRoute: { en: "Add to my trail", bn: "আমার ট্রেইলে যোগ" }, inTrail: { en: "In my trail", bn: "ট্রেইলে আছে" },
   plan: { en: "Plan all my remaining stops", bn: "বাকি সব স্টপের ক্রম সাজান" }, clear: { en: "Clear plan", bn: "মুছুন" },
   markSeen: { en: "Mark seen", bn: "দেখা হয়েছে" }, seen: { en: "Seen", bn: "দেখা" }, notSeen: { en: "Not seen", bn: "দেখা বাকি" },
@@ -18,6 +18,13 @@ export const D = {
   empty: { en: "Choose the pandal you're at, or tap one on the map.", bn: "আপনি যে প্যান্ডেলে আছেন সেটি বাছুন, অথবা মানচিত্রে ট্যাপ করুন।" },
   far: { en: "You seem far from these pandals. Pick a starting pandal instead.", bn: "আপনি এই প্যান্ডেলগুলি থেকে অনেক দূরে। একটি প্যান্ডেল বাছুন।" },
   blocked: { en: "Location is blocked. Pick a pandal from the list instead.", bn: "লোকেশন বন্ধ আছে। তালিকা থেকে একটি প্যান্ডেল বাছুন।" },
+  unmark: { en: "Remove from visited", bn: "দেখা তালিকা থেকে সরান" }, stop: { en: "Stop", bn: "থামুন" },
+  heading: { en: "Heading to", bn: "যাচ্ছেন" }, imHere: { en: "I'm here · mark seen", bn: "পৌঁছে গেছি · দেখা চিহ্নিত" },
+  locating: { en: "Finding your location…", bn: "আপনার লোকেশন খোঁজা হচ্ছে…" }, away: { en: "away", bn: "দূরে" },
+  visited: { en: "Visited pandals", bn: "দেখা প্যান্ডেল" }, myTrail: { en: "My trail", bn: "আমার ট্রেইল" },
+  openTrail: { en: "Open full trail", bn: "পুরো ট্রেইল দেখুন" }, showTrail: { en: "Show trail on map", bn: "ট্রেইল মানচিত্রে দেখান" },
+  trailEmpty: { en: "Nothing in your trail yet. Tap ☆ Add to my trail on any pandal and it will appear here.", bn: "ট্রেইল এখনও খালি। যেকোনো প্যান্ডেলে ☆ ট্রেইলে যোগ চাপুন, এখানে দেখা যাবে।" },
+  visitedEmpty: { en: "No pandals marked as visited yet.", bn: "এখনও কোনো প্যান্ডেল দেখা হয়নি।" },
   sos: { en: "Emergency SOS", bn: "জরুরি সহায়তা" }, share: { en: "Share trail", bn: "ট্রেইল শেয়ার" },
 } as const;
 export type K = keyof typeof D;
