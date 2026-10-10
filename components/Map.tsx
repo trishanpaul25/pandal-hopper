@@ -41,7 +41,7 @@ export default function Map({ pandals, places, seen, you, heading, line, lineCol
     const m = new maplibregl.Map({ container: box.current, style: STYLE, center: [88.3600, 22.5400], zoom: 11 });
     m.addControl(new maplibregl.NavigationControl({ showCompass: false }), "top-right");
     m.on("load", () => {
-      const empty = { type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: [] } } as const;
+      const empty: GeoJSON.Feature<GeoJSON.LineString> = { type: "Feature", properties: {}, geometry: { type: "LineString", coordinates: [] } };
       m.addSource("line", { type: "geojson", data: empty });
       m.addLayer({ id: "line-casing", type: "line", source: "line", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#fff", "line-width": 9, "line-opacity": 0.85 } });
       m.addLayer({ id: "line", type: "line", source: "line", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#c1121f", "line-width": 5 } });

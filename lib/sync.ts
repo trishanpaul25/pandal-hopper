@@ -22,7 +22,7 @@ export async function onSignIn(user: User) {
   try {
     const ref = doc(db, "users", user.uid);
     const snap = await getDoc(ref);
-    const remote = snap.exists() ? snap.data() : {};
+    const remote: Record<string, unknown> = snap.exists() ? snap.data() : {};
     const merged: Record<string, unknown> = {
       name: user.displayName ?? "", email: user.email ?? "", photo: user.photoURL ?? "", lastLogin: serverTimestamp(),
     };
