@@ -1,0 +1,6986 @@
+[
+ {
+  "id": "14-pally-udayan-sangha",
+  "name": "14 Pally Udayan Sangha",
+  "zone": "south",
+  "lat": 22.486402,
+  "lng": 88.369607,
+  "verified": false,
+  "area": "14 PALLY UDAYAN SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "17-pally-sadharan-durgotsab-samity",
+  "name": "17 Pally Sadharan Durgotsab Samity",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "17 PALLY SADHARAN DURGOTSAB SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "22-no-pally-basi-bindo-durga-puja-pandal",
+  "name": "22 No. Pally Basi Bindo Durga Puja Pandal",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "LIG Housing, Dutta Bagan, Paikpara, Kolkata 700037"
+ },
+ {
+  "id": "22-palli-sarodotsab",
+  "name": "22 Palli Sarodotsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "25-pally-club",
+  "name": "25 Pally Club",
+  "zone": "south",
+  "lat": 22.539184,
+  "lng": 88.326445,
+  "verified": false,
+  "area": "Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "29-pally-durga-puja-pandal",
+  "name": "29 Pally Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.506987,
+  "lng": 88.322693,
+  "verified": false,
+  "area": "Chamrapatti, Behala, Kolkata 700038"
+ },
+ {
+  "id": "37-palli-durga-puja-pandal",
+  "name": "37 Palli Durga Puja Pandal",
+  "zone": "east",
+  "lat": 22.574686,
+  "lng": 88.369399,
+  "verified": false,
+  "area": "10 Dr Kartik Bose St, College Row, Baithakkhana, Kolkata 700009"
+ },
+ {
+  "id": "41-pally-durga-puja-haridevpur",
+  "name": "41 Pally Durga Puja, Haridevpur",
+  "zone": "south",
+  "lat": 22.482858,
+  "lng": 88.338425,
+  "verified": false,
+  "area": "3/53 Haridevpur, Paschim Putiary, Kolkata 700082"
+ },
+ {
+  "id": "47-pally-jubak-brinda",
+  "name": "47 Pally Jubak Brinda",
+  "zone": "central",
+  "lat": 22.57147,
+  "lng": 88.35873,
+  "verified": false,
+  "area": "25/8A, Kanai Dhar Ln, Newland, College Square, Kolkata, West Bengal 700012"
+ },
+ {
+  "id": "48-north-basudebpur-natun-pally-belghoria",
+  "name": "48 North Basudebpur Natun Pally Belghoria",
+  "zone": "others",
+  "lat": 22.676772,
+  "lng": 88.390187,
+  "verified": false,
+  "area": "48, N Basudev Rd, Natun Pally, Belghoria, Panihati 700056"
+ },
+ {
+  "id": "50-no-ward-durgapuja-committee",
+  "name": "50 No Ward Durgapuja Committee",
+  "zone": "east",
+  "lat": 22.5627,
+  "lng": 88.364,
+  "verified": false,
+  "area": "50 NO WARD DURGAPUJA COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "62-pally",
+  "name": "62 Pally",
+  "zone": "south",
+  "lat": 22.490604,
+  "lng": 88.370623,
+  "verified": false,
+  "area": "62 PALLY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "64-pally-durgotsav-committee",
+  "name": "64 Pally Durgotsav Committee",
+  "zone": "south",
+  "lat": 22.520558,
+  "lng": 88.34758,
+  "verified": false,
+  "area": "28C Satish Mukherjee Rd, Manoharpukur, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "66-pally-durgapuja-pandal",
+  "name": "66 Pally Durgapuja Pandal",
+  "zone": "south",
+  "lat": 22.518061,
+  "lng": 88.342753,
+  "verified": false,
+  "area": "9/5A/1 Nepal Bhattacharya St, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "66palli",
+  "name": "66-Palli",
+  "zone": "south",
+  "lat": 22.517989,
+  "lng": 88.342773,
+  "verified": false,
+  "area": "14A Nepal Bhattacharjee St, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "68-palli-durga-puja-pandal",
+  "name": "68 Palli Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.528781,
+  "lng": 88.346359,
+  "verified": false,
+  "area": "1A, Broad St, Ballygunge Park, Ballygunge, Kolkata 700019"
+ },
+ {
+  "id": "68-pally-durga-puja",
+  "name": "68 Pally Durga Puja",
+  "zone": "south",
+  "lat": 22.528767,
+  "lng": 88.346341,
+  "verified": false,
+  "area": "9 Indra Roy Rd, Bakul Bagan, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "7-tanks-durga-puja-pandal",
+  "name": "7 Tanks Durga Puja Pandal",
+  "zone": "north",
+  "lat": 22.623598,
+  "lng": 88.389004,
+  "verified": false,
+  "area": "Seven Tanks Ln, Sinthee, Kolkata 700030"
+ },
+ {
+  "id": "71-palli-baishakhi-sarbojanin-durgotsab-samity",
+  "name": "71 Palli Baishakhi Sarbojanin Durgotsab Samity",
+  "zone": "south",
+  "lat": 22.519058,
+  "lng": 88.368603,
+  "verified": false,
+  "area": "7, Moni Mukherjee Rd, Ballygunge Gardens, Kolkata 700019"
+ },
+ {
+  "id": "74-palli-sarbojanin-durgotsab-kidderpore",
+  "name": "74 Palli Sarbojanin Durgotsab Kidderpore",
+  "zone": "south",
+  "lat": 22.538942,
+  "lng": 88.324929,
+  "verified": false,
+  "area": "Mansatala Row, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "75-pally-sarbojanin-durgotsav",
+  "name": "75 Pally Sarbojanin Durgotsav",
+  "zone": "south",
+  "lat": 22.54027,
+  "lng": 88.320524,
+  "verified": false,
+  "area": "11C, Khidderpore, Ramanath Pal Rd, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "95-pally-sarbojanin-durgotsab-committee",
+  "name": "95 Pally Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.508235,
+  "lng": 88.36276,
+  "verified": false,
+  "area": "70A Rahim Ostagar Rd, Jodhpur Park, Kolkata 700068"
+ },
+ {
+  "id": "9erpalli-sarbojanin-durgotsab",
+  "name": "9 Palli Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.597039,
+  "lng": 88.364911,
+  "verified": false,
+  "area": "9-ER-PALLI SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "a-2-durga-puja-kalyani",
+  "name": "A-2 Durga Puja Kalyani",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "Block A2, Kalyani, Nadia 741235"
+ },
+ {
+  "id": "a-b-block-abasik-sangha",
+  "name": "A B Block Abasik Sangha",
+  "zone": "east",
+  "lat": 22.59396,
+  "lng": 88.401962,
+  "verified": false,
+  "area": "AB Block, Sector 1, Bidhannagar, Kolkata 700064"
+ },
+ {
+  "id": "a-e-part-1-block-committee",
+  "name": "A E Part 1 Block Committee",
+  "zone": "east",
+  "lat": 22.598654,
+  "lng": 88.409371,
+  "verified": false,
+  "area": "AE 231, AE Block Sector 1, Bidhannagar, Kolkata 700064"
+ },
+ {
+  "id": "aa-1d-sarbojanin-durga-puja",
+  "name": "Aa 1d Sarbojanin Durga Puja",
+  "zone": "east",
+  "lat": 22.57409,
+  "lng": 88.472452,
+  "verified": false,
+  "area": "DC Block(Newtown), Action Area I, Newtown 700156"
+ },
+ {
+  "id": "abasar-sarbojanin-durgotsab-committee",
+  "name": "Abasar Sarbojanin Durgotsab Committee",
+  "zone": "howrah",
+  "lat": 22.591315,
+  "lng": 88.313483,
+  "verified": false,
+  "area": "Kadamtala, Bantra, Ichapur, Howrah 711101"
+ },
+ {
+  "id": "ac-block-puja-pandal",
+  "name": "Ac Block Puja Pandal",
+  "zone": "east",
+  "lat": 22.585852,
+  "lng": 88.450213,
+  "verified": false,
+  "area": "AC Block(Newtown), Action Area I, Newtown 700163"
+ },
+ {
+  "id": "acharya-prafulla-pally-adi-sarbajonin-durgotsav-est-1950",
+  "name": "Acharya Prafulla Pally Adi Sarbajonin Durgotsav (est. 1950)",
+  "zone": "others",
+  "lat": 22.67911,
+  "lng": 88.399853,
+  "verified": false,
+  "area": "Patna Rd, Nandan Nagar, Agarpara, Panihati 700083"
+ },
+ {
+  "id": "ad-block-sarbojonin",
+  "name": "Ad Block Sarbojonin",
+  "zone": "east",
+  "lat": 22.596665,
+  "lng": 88.406875,
+  "verified": false,
+  "area": "Bidhannagr CC Block SO"
+ },
+ {
+  "id": "adarsha-pally-sarbojanin-durgotsab-committee",
+  "name": "Adarsha Pally Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.499846,
+  "lng": 88.327716,
+  "verified": false,
+  "area": "165, Roy Bahadur Rd, Buroshibtalla, Behala, Kolkata 700038"
+ },
+ {
+  "id": "adhibasibrinda-kanaidhar-lane",
+  "name": "Adhibasibrinda Kanaidhar Lane",
+  "zone": "central",
+  "lat": 22.572337,
+  "lng": 88.365265,
+  "verified": false,
+  "area": "25/8A, Kanai Dhar Ln, Newland, College Square, Kolkata, West Bengal 700012"
+ },
+ {
+  "id": "adi-dakshin-kolkata-barowari-samity",
+  "name": "Adi Dakshin Kolkata Barowari Samity",
+  "zone": "south",
+  "lat": 22.469753,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "ADI DAKSHIN KOLKATA BAROWARI SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "adi-lake-pally",
+  "name": "Adi Lake Pally",
+  "zone": "south",
+  "lat": 22.515067,
+  "lng": 88.34972,
+  "verified": false,
+  "area": "Lake Place Rd, Lake Market, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "adi-naktala-sarbojanin-durgotsav-committee",
+  "name": "Adi Naktala Sarbojanin Durgotsav Committee",
+  "zone": "south",
+  "lat": 22.47241,
+  "lng": 88.366161,
+  "verified": false,
+  "area": "Naktala Rd, Naktala, Garia, Kolkata 700047"
+ },
+ {
+  "id": "ae-part-2-durga-puja",
+  "name": "Ae (part-2) Durga Puja",
+  "zone": "east",
+  "lat": 22.60107,
+  "lng": 88.413456,
+  "verified": false,
+  "area": "AE Block, Sector 1, Bidhannagar, Kolkata 700064"
+ },
+ {
+  "id": "ag-block-durga-puja-committee",
+  "name": "Ag Block Durga Puja Committee",
+  "zone": "east",
+  "lat": 22.599672,
+  "lng": 88.422593,
+  "verified": false,
+  "area": "AG Block, Sector 2, Bidhannagar, Kolkata 700064"
+ },
+ {
+  "id": "agradoot-club-durga-puja-makhla",
+  "name": "Agradoot Club Durga Puja, Makhla",
+  "zone": "others",
+  "lat": 22.672556,
+  "lng": 88.338701,
+  "verified": false,
+  "area": "145 Makhla Govt Colony No 2, Olabibitala, Uttarpara 712245"
+ },
+ {
+  "id": "agradoot-durotsab-samity",
+  "name": "Agradoot Durotsab Samity",
+  "zone": "south",
+  "lat": 22.522414,
+  "lng": 88.368985,
+  "verified": false,
+  "area": "6/1, Cornfield Rd, Ekdalia, Ballygunge, Kolkata 700019"
+ },
+ {
+  "id": "ahiritola-jubak-brinda-sarbojanin-sarodotsab",
+  "name": "Ahiritola Jubak Brinda Sarbojanin Sarodotsab",
+  "zone": "north",
+  "lat": 22.594679,
+  "lng": 88.360212,
+  "verified": false,
+  "area": "83, Ahiritola St, Ahiritola, Beniatola, Kolkata, West Bengal 700005"
+ },
+ {
+  "id": "ahiritola-jubakbrinda-sarbojanin-sarodotsab",
+  "name": "Ahiritola Jubakbrinda Sarbojanin Sarodotsab",
+  "zone": "north",
+  "lat": 22.594581,
+  "lng": 88.360592,
+  "verified": false,
+  "area": "Haro Dhol Lane, 22, Ahiritola, Beniatola, Kolkata, West Bengal 700005"
+ },
+ {
+  "id": "ahirtola-sarbojanin-durgotsab-samity",
+  "name": "Ahirtola Sarbojanin Durgotsab Samity",
+  "zone": "north",
+  "lat": 22.594838,
+  "lng": 88.35717,
+  "verified": false,
+  "area": "Ahiritola, Beniatola, Kolkata 700005"
+ },
+ {
+  "id": "aikyatan",
+  "name": "Aikyatan",
+  "zone": "east",
+  "lat": 22.523406,
+  "lng": 88.379375,
+  "verified": false,
+  "area": "1, New Ballygunge Rd, Kushum Kumari Basti, Kasba, Kolkata 700039"
+ },
+ {
+  "id": "aj-block-puja-pandal",
+  "name": "Aj Block Puja Pandal",
+  "zone": "east",
+  "lat": 22.59213,
+  "lng": 88.428349,
+  "verified": false,
+  "area": "Salt Lake, AJ Block, Sector 2, Bidhannagar, Kolkata 700091"
+ },
+ {
+  "id": "ajeyo-sanhati",
+  "name": "Ajeyo Sanhati",
+  "zone": "south",
+  "lat": 22.48086,
+  "lng": 88.337705,
+  "verified": false,
+  "area": "47, Mahatma Gandhi Rd, Haridevpur, Kolkata 700082"
+ },
+ {
+  "id": "ajoyadhanagar-club-durga-puja-mandap",
+  "name": "Ajoyadhanagar Club Durga Puja Mandap",
+  "zone": "others",
+  "lat": 22.664858,
+  "lng": 88.434103,
+  "verified": false,
+  "area": "Mahajati Nagar, Birati, North Dumdum 700051"
+ },
+ {
+  "id": "ajoynagar-sarbojanin-durgotsab-society",
+  "name": "Ajoynagar Sarbojanin Durgotsab Society",
+  "zone": "south",
+  "lat": 22.488779,
+  "lng": 88.39636,
+  "verified": false,
+  "area": "AJOYNAGAR SARBOJANIN DURGOTSAB SOCIETY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "ak-block-association-salt-lake",
+  "name": "Ak Block Association Salt Lake",
+  "zone": "east",
+  "lat": 22.588597,
+  "lng": 88.431209,
+  "verified": false,
+  "area": "AK-199, AK Block, Sector 2, Bidhannagar, Kolkata 700091"
+ },
+ {
+  "id": "alipore-78-pally-sarbojonin-durgotsav-committee",
+  "name": "Alipore 78 Pally Sarbojonin Durgotsav Committee",
+  "zone": "south",
+  "lat": 22.523046,
+  "lng": 88.336932,
+  "verified": false,
+  "area": "4/4 Aftab Mosque Ln, Alipore, Kolkata 700027"
+ },
+ {
+  "id": "alipore-sarbojanin-durgotsab-committee",
+  "name": "Alipore Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.51917,
+  "lng": 88.333443,
+  "verified": false,
+  "area": "16, Alipore Rd, near Lal Batti, Chetla, Kolkata, West Bengal 700027"
+ },
+ {
+  "id": "alipore-tarundal-durgotsab-committee",
+  "name": "Tarun Sangha Durga Puja",
+  "zone": "south",
+  "lat": 22.512196,
+  "lng": 88.346873,
+  "verified": false,
+  "area": "SR Das Rd, Lake Range, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "alpha-atheletic-association",
+  "name": "Alpha Atheletic Association",
+  "zone": "east",
+  "lat": 22.584413,
+  "lng": 88.372752,
+  "verified": false,
+  "area": "106, Amherst Row, Manicktala, Simla, Machuabazar, Kolkata, West Bengal 700009"
+ },
+ {
+  "id": "amardip-sangha",
+  "name": "Amardip Sangha",
+  "zone": "south",
+  "lat": 22.484447,
+  "lng": 88.330526,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "ambagan-durga-puja-committee",
+  "name": "Ambagan Durga Puja Committee",
+  "zone": "howrah",
+  "lat": 22.590075,
+  "lng": 88.240864,
+  "verified": false,
+  "area": "H6RR+27Q,Mohiari, near Laxmi Kamal Hospital, Andul, Mahiari, West Bengal 711302"
+ },
+ {
+  "id": "amra-kajan-sporting-club",
+  "name": "Amra Kajan Sporting Club",
+  "zone": "south",
+  "lat": 22.498266,
+  "lng": 88.322538,
+  "verified": false,
+  "area": "29, Kali Prasanna Chatterjee Ln, Indrajit Pally, Behala, Kolkata 700034"
+ },
+ {
+  "id": "andul-rajbari",
+  "name": "Andul Rajbari",
+  "zone": "howrah",
+  "lat": 22.583069,
+  "lng": 88.235556,
+  "verified": false,
+  "area": "Andul Mauri, Andul, Howrah 711302"
+ },
+ {
+  "id": "anjangarh-durgapuja-mor",
+  "name": "Anjangarh Durgapuja Mor",
+  "zone": "others",
+  "lat": 22.666538,
+  "lng": 88.43504,
+  "verified": false,
+  "area": "Anjangarh Rd, Anjangarh, Birati, North Dumdum 700134"
+ },
+ {
+  "id": "annapurna-club-durga-puja-pandal",
+  "name": "Annapurna Club Durga Puja Pandal",
+  "zone": "howrah",
+  "lat": 22.585808,
+  "lng": 88.325838,
+  "verified": false,
+  "area": "15/1, Kali Kundu Ln, Kadam Tala, Howrah 711101"
+ },
+ {
+  "id": "ariadaha-jubak-sangha",
+  "name": "Ariadaha Jubak Sangha",
+  "zone": "others",
+  "lat": 22.671401,
+  "lng": 88.363426,
+  "verified": false,
+  "area": "1, Mahadeb Ghosal Rd, South Nowda Para, Ariadaha, Kolkata, West Bengal 700057"
+ },
+ {
+  "id": "ariadaha-pragati-sangha",
+  "name": "Ariadaha Pragati Sangha",
+  "zone": "others",
+  "lat": 22.662511,
+  "lng": 88.363419,
+  "verified": false,
+  "area": "ARIADAHA PRAGATI SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "aryanagar-kishore-sangha",
+  "name": "Aryanagar Kishore Sangha",
+  "zone": "others",
+  "lat": 22.666576,
+  "lng": 88.377079,
+  "verified": false,
+  "area": "Anupama Rd, Manasbag, Belghoria, Kolkata 700056"
+ },
+ {
+  "id": "ashok-nagar-sarbojanin-durgotsab-committee",
+  "name": "Ashok Nagar Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.490023,
+  "lng": 88.348751,
+  "verified": false,
+  "area": "Ashok Nagar Colony, Tollygunge, Kolkata 700040"
+ },
+ {
+  "id": "aswininagar-bandhu-mahal-club",
+  "name": "Aswininagar Bandhu Mahal Club",
+  "zone": "east",
+  "lat": 22.610016,
+  "lng": 88.432928,
+  "verified": false,
+  "area": "Ashwini Nagar, Baguiati, Kolkata 700159"
+ },
+ {
+  "id": "aurobindo-setu-sarbojanin-durgapuja",
+  "name": "Aurobindo Setu Sarbojanin Durgapuja",
+  "zone": "north",
+  "lat": 22.594483,
+  "lng": 88.380551,
+  "verified": false,
+  "area": "9/1/5 Canal E Rd, Daspara, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "avijit-club",
+  "name": "Avijit Club",
+  "zone": "east",
+  "lat": 22.564957,
+  "lng": 88.389943,
+  "verified": false,
+  "area": "16/28, Subhas Sarobar Park, Phoolbagan, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "ba-block-durga-puja-ground",
+  "name": "Ba Block Durga Puja Ground",
+  "zone": "east",
+  "lat": 22.585114,
+  "lng": 88.459626,
+  "verified": false,
+  "area": "BA Block(Newtown), Action Area I, Newtown 700163"
+ },
+ {
+  "id": "babathakurtala-puja-committee",
+  "name": "Babathakurtala Puja Committee",
+  "zone": "south",
+  "lat": 22.475093,
+  "lng": 88.303252,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "babubagan-sarbojanin-durgotsava",
+  "name": "Babubagan Sarbojanin Durgotsava",
+  "zone": "south",
+  "lat": 22.507987,
+  "lng": 88.368574,
+  "verified": false,
+  "area": "Dhakuria, Babu Bagan, Selimpur, Kolkata 700031"
+ },
+ {
+  "id": "badamtala-ashar-sangha",
+  "name": "Badamtala Ashar Sangha",
+  "zone": "south",
+  "lat": 22.517967,
+  "lng": 88.343724,
+  "verified": false,
+  "area": "18-17 Nepal Bhattacharya St, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "badan-chand-roy-rajbari",
+  "name": "Badan Chand Roy Rajbari",
+  "zone": "central",
+  "lat": 22.574866,
+  "lng": 88.358104,
+  "verified": false,
+  "area": "Tiretta Bazaar"
+ },
+ {
+  "id": "bagbazar-pally-puja-o-prodorshoni",
+  "name": "Bagbazar Pally Puja O Prodorshoni",
+  "zone": "north",
+  "lat": 22.601208,
+  "lng": 88.366823,
+  "verified": false,
+  "area": "Girish Ave, Sovabazar, Baghbazar, Kolkata 700003"
+ },
+ {
+  "id": "bagbazar-sarbojanin-durga-puja-mandap",
+  "name": "Bagbazar Sarbojanin Durga Puja Mandap",
+  "zone": "north",
+  "lat": 22.60478,
+  "lng": 88.366177,
+  "verified": false,
+  "area": "213, Baghbazar, Kolkata 700003"
+ },
+ {
+  "id": "bagbazar-sarbojanin-durgotsav-exhibition",
+  "name": "Bagbazar Sarbojanin Durgotsav &amp; Exhibition",
+  "zone": "north",
+  "lat": 22.60449,
+  "lng": 88.365615,
+  "verified": false,
+  "area": "78, Bagbazar St, Baghbazar, Kolkata 700003"
+ },
+ {
+  "id": "bagbazar-street-jagaddhatri-puja",
+  "name": "Bagbazar Street Jagaddhatri Puja",
+  "zone": "north",
+  "lat": 22.603782,
+  "lng": 88.369505,
+  "verified": false,
+  "area": "Bagbazar St, Bag Bazar Colony, Baghbazar, Kolkata 700003"
+ },
+ {
+  "id": "bagha-jatin-tarun-sangha",
+  "name": "Bagha Jatin Tarun Sangha",
+  "zone": "south",
+  "lat": 22.484395,
+  "lng": 88.378609,
+  "verified": false,
+  "area": "Baghajatin D Block Rd, Baghajatin Colony, Kolkata 700032"
+ },
+ {
+  "id": "baghajatin-b-c-durga-puja-art",
+  "name": "Baghajatin B &amp; C Durga Puja Art",
+  "zone": "south",
+  "lat": 22.484073,
+  "lng": 88.37608,
+  "verified": false,
+  "area": "Baghajatin C Block, Chittaranjan Colony 6, Kolkata 700092"
+ },
+ {
+  "id": "baghajatin-b-cblock-durgotsav-committee",
+  "name": "Baghajatin B &amp; Cblock Durgotsav Committee",
+  "zone": "south",
+  "lat": 22.484073,
+  "lng": 88.37608,
+  "verified": false,
+  "area": "Baghajatin C Block, Chittaranjan Colony, Kolkata 700092"
+ },
+ {
+  "id": "baghajatin-e-block-sarbojanin-durgotsab-committee",
+  "name": "Baghajatin E Block Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BAGHAJATIN E BLOCK SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "baghajatin-vivekananda-milan-sangha",
+  "name": "Baghajatin Vivekananda Milan Sangha",
+  "zone": "south",
+  "lat": 22.483185,
+  "lng": 88.376925,
+  "verified": false,
+  "area": "Baghajatin Station Rd, Ajanta Park, Baghajatin Colony, Kolkata 700086"
+ },
+ {
+  "id": "baghbazar-haldar-bari-puja",
+  "name": "Baghbazar Haldar Bari Puja",
+  "zone": "north",
+  "lat": 22.603458,
+  "lng": 88.367038,
+  "verified": false,
+  "area": "17/1, Kaliprasad Chakraborty St, Baghbazar, Kolkata 700003"
+ },
+ {
+  "id": "baghmari-club-durga-puja-pandal",
+  "name": "Baghmari Club Durga Puja Pandal",
+  "zone": "east",
+  "lat": 22.584171,
+  "lng": 88.383994,
+  "verified": false,
+  "area": "248, Bagmari Rd, Bagmari, Kolkata 700054"
+ },
+ {
+  "id": "bagmari-anchalik-yubak-brinda",
+  "name": "Bagmari Anchalik Yubak Brinda",
+  "zone": "east",
+  "lat": 22.583513,
+  "lng": 88.383317,
+  "verified": false,
+  "area": "10, Bagmari Rd, Kankurgachi, Kolkata, West Bengal 700054"
+ },
+ {
+  "id": "bagmari-bazar-sarbojonin-durga-utsav-committee",
+  "name": "Bagmari Bazar Sarbojonin Durga Utsav Committee",
+  "zone": "east",
+  "lat": 22.583996,
+  "lng": 88.38196,
+  "verified": false,
+  "area": "43/B, Bagmari, Kolkata 700054"
+ },
+ {
+  "id": "bagmari-nabarun-sangha",
+  "name": "Bagmari Nabarun Sangha",
+  "zone": "east",
+  "lat": 22.588975,
+  "lng": 88.394447,
+  "verified": false,
+  "area": "5, 1/53A, Bagmari Rd, Ghose Bagan, Kolkata 700054"
+ },
+ {
+  "id": "bagnan-naba-jagaran-durga-puja-club",
+  "name": "Bagnan Naba Jagaran Durga Puja Club",
+  "zone": "howrah",
+  "lat": 22.468175,
+  "lng": 87.969641,
+  "verified": false,
+  "area": "OT Rd, Bagnan, Howrah 711303"
+ },
+ {
+  "id": "baguiati-subhas-sangha",
+  "name": "Baguiati Subhas Sangha",
+  "zone": "east",
+  "lat": 22.613294,
+  "lng": 88.42351,
+  "verified": false,
+  "area": "Subhash Sangha, AA/8/3, Desh Bandhu Nagar, Baguiati, Kolkata 700059"
+ },
+ {
+  "id": "baguiati-udayan-sangha",
+  "name": "Baguiati Udayan Sangha",
+  "zone": "east",
+  "lat": 22.610991,
+  "lng": 88.423368,
+  "verified": false,
+  "area": "FA 24/3, Narayantala W Ln, Desh Bandhu Nagar, Baguiati, Kolkata 700059"
+ },
+ {
+  "id": "baishnab-das-mallick-bari-malapara",
+  "name": "Baishnab Das Mallick Bari (malapara)",
+  "zone": "north",
+  "lat": 22.587432,
+  "lng": 88.354235,
+  "verified": false,
+  "area": "32, Darpanarayan Tagore St, Jorabagan, Kolkata 700007"
+ },
+ {
+  "id": "baishnabghata-yatra-shuru-sangha",
+  "name": "Baishnabghata Yatra Shuru Sangha",
+  "zone": "south",
+  "lat": 22.4707,
+  "lng": 88.37784,
+  "verified": false,
+  "area": "101-100 Raja SC Mallick Rd, Garia, Kolkata 700084"
+ },
+ {
+  "id": "baishnabghatapatuli-upanagari-sporting-club",
+  "name": "Baishnabghatapatuli Upanagari Sporting Club",
+  "zone": "south",
+  "lat": 22.473109,
+  "lng": 88.385399,
+  "verified": false,
+  "area": "Dipak Kumar Mandal Rd, Block K, Baishnabghata Patuli Twp, Kolkata 700094"
+ },
+ {
+  "id": "baje-shibpur-sadharan-durgotsab-new-hz",
+  "name": "Baje Shibpur Sadharan Durgotsab - New Hz",
+  "zone": "howrah",
+  "lat": 22.573394,
+  "lng": 88.320519,
+  "verified": false,
+  "area": "23, Baje Shibpur 2nd Bye Ln, Naora, Shibpur, Howrah 711102"
+ },
+ {
+  "id": "bakulbagan-sarbojanin-durgotsab",
+  "name": "Bakulbagan Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.526762,
+  "lng": 88.34826,
+  "verified": false,
+  "area": "1A Rajshekhar Bose Sarani, Bakul Bagan, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "balia-baishakhi-sangha",
+  "name": "Balia Baishakhi Sangha",
+  "zone": "south",
+  "lat": 22.465709,
+  "lng": 88.396263,
+  "verified": false,
+  "area": "Boro battola, 67, Garia Station Rd, Central Balia, Garia 700084"
+ },
+ {
+  "id": "bally-juba-sangha-kali-mandir",
+  "name": "Bally Juba Sangha Kali Mandir",
+  "zone": "howrah",
+  "lat": 22.638479,
+  "lng": 88.342486,
+  "verified": false,
+  "area": "22 Mohanlal Bahalwalla Rd, Belur, Bally, Howrah 711201"
+ },
+ {
+  "id": "ballygunge-21-pally",
+  "name": "Ballygunge 21 Pally",
+  "zone": "south",
+  "lat": 22.529175,
+  "lng": 88.368816,
+  "verified": false,
+  "area": "17 Bondel Rd, Ballygunge Park, Kolkata 700019"
+ },
+ {
+  "id": "ballygunge-cultural-association",
+  "name": "Ballygunge Cultural Association",
+  "zone": "south",
+  "lat": 22.516212,
+  "lng": 88.355806,
+  "verified": false,
+  "area": "20 Lake View Rd, Lake Terrace, Kolkata 700029"
+ },
+ {
+  "id": "ballygunge-pratisthan-durgabari",
+  "name": "Ballygunge Pratisthan Durgabari",
+  "zone": "south",
+  "lat": 22.52542,
+  "lng": 88.369655,
+  "verified": false,
+  "area": "82/4A Ballygunge Place, Ballygunge, Kolkata 700019"
+ },
+ {
+  "id": "ballygunge-sporting-association",
+  "name": "Ballygunge Sporting Association",
+  "zone": "south",
+  "lat": 22.527613,
+  "lng": 88.360377,
+  "verified": false,
+  "area": "33/1, Circular Rd, Ballygunge, Kolkata 700019"
+ },
+ {
+  "id": "balnabin-sangha-muktarambabu-st",
+  "name": "Balnabin Sangha Muktarambabu St",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BALNABIN SANGHA MUKTARAMBABU ST, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "bamanmura-main-road-durgapuja-committee",
+  "name": "Bamanmura Main Road Durgapuja Committee",
+  "zone": "others",
+  "lat": 22.707155,
+  "lng": 88.512239,
+  "verified": false,
+  "area": "Bamunmura Rd, Madhyamgram, Kolkata 700125"
+ },
+ {
+  "id": "bandhu-milan-sangha-durga-puja-pandal",
+  "name": "Bandhu Milan Sangha Durga Puja Pandal",
+  "zone": "howrah",
+  "lat": 22.594506,
+  "lng": 88.314895,
+  "verified": false,
+  "area": "55/3, Makardah Rd, Bantra, Tikiapara, Howrah 711101"
+ },
+ {
+  "id": "bandhudal-sporting-club",
+  "name": "Bandhudal Sporting Club",
+  "zone": "north",
+  "lat": 22.633134,
+  "lng": 88.377702,
+  "verified": false,
+  "area": "Nainan Para, Baranagar 700036"
+ },
+ {
+  "id": "bandhura",
+  "name": "Bandhura",
+  "zone": "howrah",
+  "lat": 22.574357,
+  "lng": 88.290536,
+  "verified": false,
+  "area": "32 Nabanaritala, 1st Bye Ln, Bagber, Baksara, Howrah 711110"
+ },
+ {
+  "id": "bangaliyana-mela-durga-puja-ground",
+  "name": "Bangaliyana Mela &amp; Durga Puja Ground",
+  "zone": "east",
+  "lat": 22.612034,
+  "lng": 88.429216,
+  "verified": false,
+  "area": "VIP Rd, Desh Bandhu Nagar, Baguiati 700159"
+ },
+ {
+  "id": "bansdroni-pally-unnayan-samity-puja-mondop",
+  "name": "Bansdroni Pally Unnayan Samity Puja Mondop",
+  "zone": "south",
+  "lat": 22.465644,
+  "lng": 88.356434,
+  "verified": false,
+  "area": "33/A, Natun Bazar Sukantosarani, Sart Pally, Kolkata 700070"
+ },
+ {
+  "id": "bansdroni-park-association",
+  "name": "Bansdroni Park Association",
+  "zone": "south",
+  "lat": 22.469538,
+  "lng": 88.355658,
+  "verified": false,
+  "area": "Bansdroni Park, Kolkata 700070"
+ },
+ {
+  "id": "bansdroni-sree-sangha",
+  "name": "Bansdroni Sree Sangha",
+  "zone": "south",
+  "lat": 22.472698,
+  "lng": 88.36001,
+  "verified": false,
+  "area": "Adiganga Cooperative Rd, Naktala, Bansdroni, Kolkata 700070"
+ },
+ {
+  "id": "bantra-mohila-sangha",
+  "name": "Bantra Mohila Sangha",
+  "zone": "howrah",
+  "lat": 22.592749,
+  "lng": 88.324486,
+  "verified": false,
+  "area": "182/5, Aswini Kumar Mondal Rd, Kadam Tala, Howrah 711101"
+ },
+ {
+  "id": "bantra-nabin-sangha",
+  "name": "Bantra Nabin Sangha",
+  "zone": "howrah",
+  "lat": 22.586996,
+  "lng": 88.318703,
+  "verified": false,
+  "area": "5 Joydeb Kundu Ln, Kadamtala, Bantra, Howrah 711101"
+ },
+ {
+  "id": "baranagar-friends-association-durga-puja",
+  "name": "Baranagar Friend&#x27;s Association Durga Puja",
+  "zone": "north",
+  "lat": 22.631931,
+  "lng": 88.376078,
+  "verified": false,
+  "area": "46/2/1 Nainan Para Ln, Baranagar 700036"
+ },
+ {
+  "id": "baranagar-netaji-colony-sarbojanin-durga-puja-highland",
+  "name": "Baranagar Netaji Colony Sarbojanin Durga Puja Highland",
+  "zone": "north",
+  "lat": 22.636647,
+  "lng": 88.379064,
+  "verified": false,
+  "area": "106 Netaji Colony, Joyshree, Baranagar 700090"
+ },
+ {
+  "id": "barisha-club",
+  "name": "Barisha Club",
+  "zone": "south",
+  "lat": 22.481286,
+  "lng": 88.313241,
+  "verified": false,
+  "area": "50, Santosh Roy Rd, Sakher Bazar, Purba Barisha, Kolkata 700008"
+ },
+ {
+  "id": "barisha-players-corner",
+  "name": "Barisha Players Corner",
+  "zone": "south",
+  "lat": 22.485791,
+  "lng": 88.313686,
+  "verified": false,
+  "area": "Raja Rammohan Roy Rd, Behala Chowrasta, Barisha, Kolkata 700008"
+ },
+ {
+  "id": "barisha-sarbojanin-durgotsab",
+  "name": "Barisha Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.4799,
+  "lng": 88.308045,
+  "verified": false,
+  "area": "26 Sabarna Para Rd, Subodh Pally, Barisha, Kolkata 700008"
+ },
+ {
+  "id": "barisha-saterpalli-sammilani",
+  "name": "Barisha Saterpalli Sammilani",
+  "zone": "south",
+  "lat": 22.48582,
+  "lng": 88.389733,
+  "verified": false,
+  "area": "Vinayak Bhawan, 41, Buddha Kanan, Paschim Barisha, Kolkata 700008"
+ },
+ {
+  "id": "barisha-tarun-tirtha",
+  "name": "Barisha Tarun Tirtha",
+  "zone": "south",
+  "lat": 22.484458,
+  "lng": 88.319271,
+  "verified": false,
+  "area": "41/3, Kalipada Mukherjee Rd, Sakher Bazar, Barisha, Kolkata 700008"
+ },
+ {
+  "id": "barisha-youth-club",
+  "name": "Barisha Youth Club",
+  "zone": "south",
+  "lat": 22.479004,
+  "lng": 88.30254,
+  "verified": false,
+  "area": "19, S Behala Rd, Subodh Pally, Paschim Barisha, Kolkata 700061"
+ },
+ {
+  "id": "barisha-yubak-brinda",
+  "name": "Barisha Yubak Brinda",
+  "zone": "south",
+  "lat": 22.486066,
+  "lng": 88.312055,
+  "verified": false,
+  "area": "13, Biren Roy Road W, Behala Chowrasta, Sakher Bazar, Kolkata 700008"
+ },
+ {
+  "id": "barowarikhola-kali-mandir-durga-mandir",
+  "name": "Barowarikhola Kali Mandir Durga Mandir",
+  "zone": "others",
+  "lat": 22.691273,
+  "lng": 88.459849,
+  "verified": false,
+  "area": "Madhyamgram Municipality ward 20, Madhyamgram, Kolkata 700129"
+ },
+ {
+  "id": "baruipur-bhattacharya-para",
+  "name": "Baruipur Bhattacharya Para",
+  "zone": "south",
+  "lat": 22.353843,
+  "lng": 88.435927,
+  "verified": false,
+  "area": "Baruipur HO"
+ },
+ {
+  "id": "baruipur-padmapukur-sarbojanin-durga-puja-mondop",
+  "name": "Baruipur Padmapukur Sarbojanin Durga Puja Mondop",
+  "zone": "south",
+  "lat": 22.37323,
+  "lng": 88.425593,
+  "verified": false,
+  "area": "Padmapukur, Madhya Kalyanpur, Baruipur 700144"
+ },
+ {
+  "id": "baruipur-sarbojonin-puja-o-utsav-sangha-durga-mandir",
+  "name": "Baruipur Sarbojonin Puja O Utsav Sangha Durga Mandir",
+  "zone": "south",
+  "lat": 22.348035,
+  "lng": 88.439375,
+  "verified": false,
+  "area": "Maha Prabhu Tala, Baruipur 700144"
+ },
+ {
+  "id": "basakbagan-sarbojanin-durgotsab",
+  "name": "Basakbagan Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BASAKBAGAN SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "basu-bati-bagbazar",
+  "name": "Basu Bati (bagbazar)",
+  "zone": "north",
+  "lat": 22.6042,
+  "lng": 88.370713,
+  "verified": false,
+  "area": "65/2, Bagbazar St, Baghbazar, Kolkata 700003"
+ },
+ {
+  "id": "basudevpur-puja-committee",
+  "name": "Basudevpur Puja Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BASUDEVPUR PUJA COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "basupara-sarbojanin-durgotsavbarisha-sabuj-sathi",
+  "name": "Basupara Sarbojanin Durgotsav(Barisha Sabuj Sathi)",
+  "zone": "south",
+  "lat": 22.49538,
+  "lng": 88.316069,
+  "verified": false,
+  "area": "12, Siddhinath Chatterjee Rd, Arcadia, Behala, Kolkata 700034"
+ },
+ {
+  "id": "batore-sarbojanin-durgotsav-samity",
+  "name": "Batore Sarbojanin Durgotsav Samity",
+  "zone": "howrah",
+  "lat": 22.577828,
+  "lng": 88.302909,
+  "verified": false,
+  "area": "Belepole, Ichapur, Howrah 711104"
+ },
+ {
+  "id": "bc-block-durga-puja-ground",
+  "name": "Bc Block Durga Puja Ground",
+  "zone": "east",
+  "lat": 22.583695,
+  "lng": 88.467439,
+  "verified": false,
+  "area": "BC Block(Newtown), Newtown 700163"
+ },
+ {
+  "id": "bd-block-durga-puja",
+  "name": "Bd Block Durga Puja",
+  "zone": "east",
+  "lat": 22.583287,
+  "lng": 88.469855,
+  "verified": false,
+  "area": "BD Block(Newtown), Newtown 700163"
+ },
+ {
+  "id": "beadon-row-suchetana-organization",
+  "name": "Beadon Row Suchetana Organization",
+  "zone": "north",
+  "lat": 22.59128,
+  "lng": 88.365882,
+  "verified": false,
+  "area": "BEADON ROW SUCHETANA ORGANIZATION, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "beadon-street-sanket-pallibasi-brinda",
+  "name": "Beadon Street Sanket Pallibasi Brinda",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BEADON STREET SANKET PALLIBASI BRINDA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "beadon-street-sarbojanin-durgotsav",
+  "name": "Beadon Street Sarbojanin Durgotsav",
+  "zone": "north",
+  "lat": 22.589271,
+  "lng": 88.367613,
+  "verified": false,
+  "area": "62/5, Abhedananda Rd, Manicktala, Darjipara, Kolkata 700006"
+ },
+ {
+  "id": "behala-11-pally-sarodatsab-samity",
+  "name": "Behala 11 Pally Sarodatsab Samity",
+  "zone": "south",
+  "lat": 22.498487,
+  "lng": 88.321471,
+  "verified": false,
+  "area": "69, Satyen Roy Rd, Indrajit Pally, Behala, Kolkata 700034"
+ },
+ {
+  "id": "behala-29-palli",
+  "name": "Behala 29 Palli",
+  "zone": "south",
+  "lat": 22.50714,
+  "lng": 88.322845,
+  "verified": false,
+  "area": "19, SN Roy Rd, Sahapur, New Alipore, Kolkata 700038"
+ },
+ {
+  "id": "behala-buroshibtala-janakalyan-sangha",
+  "name": "Behala Buroshibtala Janakalyan Sangha",
+  "zone": "south",
+  "lat": 22.50415,
+  "lng": 88.330462,
+  "verified": false,
+  "area": "31, Buroshibtalla Main Rd, Behala, Kolkata 700038"
+ },
+ {
+  "id": "behala-club-sarbojanin-durgotsav-comm",
+  "name": "Behala Club Sarbojanin Durgotsav Comm.",
+  "zone": "south",
+  "lat": 22.50526,
+  "lng": 88.314081,
+  "verified": false,
+  "area": "57, Banamali Naskar Rd, Panchanan Tala, Behala, Kolkata 700060"
+ },
+ {
+  "id": "behala-friends",
+  "name": "Behala Friends",
+  "zone": "south",
+  "lat": 22.501353,
+  "lng": 88.319808,
+  "verified": false,
+  "area": "1/9, Behala Tram Depot Exit, Diamond Harbour Rd, Behala, Kolkata 700034"
+ },
+ {
+  "id": "behala-mitra-sangha",
+  "name": "Behala Mitra Sangha",
+  "zone": "south",
+  "lat": 22.500541,
+  "lng": 88.322942,
+  "verified": false,
+  "area": "93, Roy Bahadur Rd, Behala, Kolkata 700034"
+ },
+ {
+  "id": "behala-mukul-sangha",
+  "name": "Behala Mukul Sangha",
+  "zone": "south",
+  "lat": 22.503596,
+  "lng": 88.314207,
+  "verified": false,
+  "area": "28, Gabtala Lane, Behala, Kolkata 700060"
+ },
+ {
+  "id": "behala-natun-dal",
+  "name": "Behala Natun Dal",
+  "zone": "south",
+  "lat": 22.500439,
+  "lng": 88.319934,
+  "verified": false,
+  "area": "12/2 Auddy Bagan, Behala, Kolkata 700034"
+ },
+ {
+  "id": "behala-natun-sangha-puja-committee",
+  "name": "Behala Natun Sangha Puja Committee",
+  "zone": "south",
+  "lat": 22.501659,
+  "lng": 88.31943,
+  "verified": false,
+  "area": "9B, Roy Bahadur Rd, Auddy Bagan Basti, Behala, Kolkata 700034"
+ },
+ {
+  "id": "behala-nutan-dal",
+  "name": "Behala Nutan Dal",
+  "zone": "south",
+  "lat": 22.501988,
+  "lng": 88.319339,
+  "verified": false,
+  "area": "19B Gholeshapur, Behala, Kolkata 700034"
+ },
+ {
+  "id": "behala-players-corner-durga-puja",
+  "name": "Behala Player&#x27;s Corner Durga Puja",
+  "zone": "south",
+  "lat": 22.485848,
+  "lng": 88.313717,
+  "verified": false,
+  "area": "2/6, Biren Roy Rd, Behala Chowrasta, Bata Colony, Barisha, Kolkata 700008"
+ },
+ {
+  "id": "behala-santi-kutir",
+  "name": "Behala Santi Kutir",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "28, Brojen Mukherjee Rd, Chamrapatti, Behala, Kolkata 700034"
+ },
+ {
+  "id": "behala-trishakti-sangha",
+  "name": "Behala Trishakti Sangha",
+  "zone": "south",
+  "lat": 22.498258,
+  "lng": 88.318927,
+  "verified": false,
+  "area": "47/1/1, Nafar Chandra Das Rd, Auddy Bagan Basti, Behala, Kolkata 700034"
+ },
+ {
+  "id": "behala-young-mens-association",
+  "name": "Behala Young Men&#x27;s Association",
+  "zone": "south",
+  "lat": 22.507329,
+  "lng": 88.324857,
+  "verified": false,
+  "area": "69, JK Paul Rd, Sahapur, New Alipore, Kolkata 700038"
+ },
+ {
+  "id": "beleghata-balakbrinda-club",
+  "name": "Beleghata Balakbrinda Club",
+  "zone": "east",
+  "lat": 22.563351,
+  "lng": 88.395156,
+  "verified": false,
+  "area": "CIT more, Beleghata Main Rd, Phoolbagan, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "beleghata-gandhimath-friends-circle",
+  "name": "Beleghata Gandhimath Friends Circle",
+  "zone": "east",
+  "lat": 22.563772,
+  "lng": 88.388969,
+  "verified": false,
+  "area": "Kulia, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "beleghata-lake-side-south-club",
+  "name": "Beleghata Lake Side (south) Club",
+  "zone": "east",
+  "lat": 22.564856,
+  "lng": 88.401174,
+  "verified": false,
+  "area": "64/11J, Suren Sarkar Rd, Phoolbagan, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "beleghata-sandhani",
+  "name": "Beleghata Sandhani",
+  "zone": "east",
+  "lat": 22.56499,
+  "lng": 88.396497,
+  "verified": false,
+  "area": "P-68, CIT Rd, Phoolbagan, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "beleghata-sarbojanin-durga-puja-committee",
+  "name": "Beleghata Sarbojanin Durga Puja Committee",
+  "zone": "east",
+  "lat": 22.565087,
+  "lng": 88.395634,
+  "verified": false,
+  "area": "5 Dr Asutosh Sastri Rd, Phoolbagan, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "beleghata-sarkar-bazar-vivekananda-sangha",
+  "name": "Beleghata Sarkar Bazar Vivekananda Sangha",
+  "zone": "east",
+  "lat": 22.566201,
+  "lng": 88.38605,
+  "verified": false,
+  "area": "Sarkar Bazar, 97, KG Bose Sarani, Kundu Bagan, Beleghata, Kolkata 700085"
+ },
+ {
+  "id": "belgachia-sadharan-durgotsab",
+  "name": "Belgachia Sadharan Durgotsab",
+  "zone": "north",
+  "lat": 22.60339,
+  "lng": 88.39037,
+  "verified": false,
+  "area": "Belgachia, Kolkata 700037"
+ },
+ {
+  "id": "belgachiayuba-sammilani",
+  "name": "Belgachiayuba Sammilani",
+  "zone": "north",
+  "lat": 22.603211,
+  "lng": 88.378987,
+  "verified": false,
+  "area": "Bhairab Mukherjee Ln, Belgachia, Kolkata, West Bengal 700037"
+ },
+ {
+  "id": "belgharia-bani-mandir-durga-puja",
+  "name": "Belgharia Bani Mandir Durga Puja",
+  "zone": "others",
+  "lat": 22.665885,
+  "lng": 88.380983,
+  "verified": false,
+  "area": "1/1A Adarsha Pally, Belghoria, Kolkata 700056"
+ },
+ {
+  "id": "beliaghata-33-no-palli-bashi-brinda",
+  "name": "Beliaghata 33 No Palli Bashi Brinda",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "P-225/1, CIT Rd, Phoolbagan, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "beliaghata-33-pally",
+  "name": "Beliaghata 33 Pally",
+  "zone": "east",
+  "lat": 22.568569,
+  "lng": 88.391128,
+  "verified": false,
+  "area": "P-225/1 CIT Rd, Phoolbagan, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "beliaghata-nabamilan",
+  "name": "Beliaghata Nabamilan",
+  "zone": "east",
+  "lat": 22.565087,
+  "lng": 88.395634,
+  "verified": false,
+  "area": "10 Dr Kartik Bose St, College Row, Baithakkhana, Kolkata 700009"
+ },
+ {
+  "id": "beltala-shakti-sangha",
+  "name": "Beltala Shakti Sangha",
+  "zone": "south",
+  "lat": 22.525576,
+  "lng": 88.351328,
+  "verified": false,
+  "area": "Beltala Rd, Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "bengal-united-club",
+  "name": "Bengal United Club",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BENGAL UNITED CLUB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "beniatola-sarbojanin",
+  "name": "Beniatola Sarbojanin",
+  "zone": "north",
+  "lat": 22.595845,
+  "lng": 88.361113,
+  "verified": false,
+  "area": "Beniatola St, Sovabazar, Shobhabazar, Kolkata 700005"
+ },
+ {
+  "id": "bh-block-durga-puja",
+  "name": "Bh Block Durga Puja",
+  "zone": "east",
+  "lat": 22.593888,
+  "lng": 88.424065,
+  "verified": false,
+  "area": "BH Block, Sector 2, Bidhannagar, Kolkata 700091"
+ },
+ {
+  "id": "bharatmata-puja-sangha",
+  "name": "Bharatmata Puja Sangha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BHARATMATA PUJA SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "bharder-thakur-bari",
+  "name": "Bhar&#x27;der Thakur Bari",
+  "zone": "north",
+  "lat": 22.592937,
+  "lng": 88.367601,
+  "verified": false,
+  "area": "56, Durga Charan Mitra St, Manicktala, Darjipara, Shobhabazar, Kolkata 700006"
+ },
+ {
+  "id": "bhartiya-yuva-parishad-puja-pandal-metiabruz",
+  "name": "Bhartiya Yuva Parishad Puja Pandal, Metiabruz",
+  "zone": "south",
+  "lat": 22.551599,
+  "lng": 88.273408,
+  "verified": false,
+  "area": "Rajabagan, Metiabruz, Kolkata 700044"
+ },
+ {
+  "id": "bhattacharya-para-sarbajanin-durga-puja",
+  "name": "Bhattacharya Para Sarbajanin Durga Puja",
+  "zone": "howrah",
+  "lat": 22.582108,
+  "lng": 88.302148,
+  "verified": false,
+  "area": "62/2 Sastri Narendranath Ganguly Rd, Ramrajatala, Howrah 711104"
+ },
+ {
+  "id": "bhawanipore-mitra-bari",
+  "name": "Bhawanipore Mitra Bari",
+  "zone": "south",
+  "lat": 22.532532,
+  "lng": 88.349601,
+  "verified": false,
+  "area": "14/1, Paddapukur Rd, Paddapukur, Bhowanipore, Kolkata 700020"
+ },
+ {
+  "id": "bhowanipore-75-palli",
+  "name": "Bhowanipore 75 Palli",
+  "zone": "south",
+  "lat": 22.533319,
+  "lng": 88.345709,
+  "verified": false,
+  "area": "1/1C, Debendra Ghosh Rd, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "bhowanipore-kansaripara-sarbojanin-durgotsab-samity",
+  "name": "Bhowanipore Kansaripara Sarbojanin Durgotsab Samity",
+  "zone": "south",
+  "lat": 22.537783,
+  "lng": 88.344129,
+  "verified": false,
+  "area": "Kalighat SO"
+ },
+ {
+  "id": "bhowanipore-muktadal",
+  "name": "Bhowanipore Muktadal",
+  "zone": "south",
+  "lat": 22.529086,
+  "lng": 88.344727,
+  "verified": false,
+  "area": "37, Kalighat Rd, Jatin Das Park, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "bhowanipore-rupchand",
+  "name": "Bhowanipore Rupchand",
+  "zone": "south",
+  "lat": 22.527406,
+  "lng": 88.345396,
+  "verified": false,
+  "area": "Bhawanipore SO"
+ },
+ {
+  "id": "bhowanipore-sanatan-dharmautsahini-sobha",
+  "name": "Bhowanipore Sanatan Dharmautsahini Sobha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BHOWANIPORE SANATAN DHARMAUTSAHINI SOBHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "bhowanipore-sarbojanin-durgotsab",
+  "name": "Bhowanipore Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.534992,
+  "lng": 88.343838,
+  "verified": false,
+  "area": "Chandra Nath Chatterjee St, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "bhowanipore-swadhin-sangha",
+  "name": "Bhowanipore Swadhin Sangha",
+  "zone": "south",
+  "lat": 22.531932,
+  "lng": 88.346402,
+  "verified": false,
+  "area": "4A, Mahesh Chowdhury Ln, Paddapukur, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "bhowanipur-75-palli",
+  "name": "Bhowanipur 75 Palli",
+  "zone": "south",
+  "lat": 22.533319,
+  "lng": 88.345709,
+  "verified": false,
+  "area": "1/1C Debendra Ghosh Rd, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "bhowanipur-sarbojanin-durgotsav",
+  "name": "Bhowanipur Sarbojanin Durgotsav",
+  "zone": "south",
+  "lat": 22.534992,
+  "lng": 88.343838,
+  "verified": false,
+  "area": "Chandra Nath Chatterjee St, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "bhowanipur-swadhin-sangha-durga-puja",
+  "name": "Bhowanipur Swadhin Sangha Durga Puja",
+  "zone": "south",
+  "lat": 22.531932,
+  "lng": 88.346402,
+  "verified": false,
+  "area": "4A Mahesh Chowdhury Ln, Paddapukur, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "bhukailash-rajbari",
+  "name": "Bhukailash Rajbari",
+  "zone": "south",
+  "lat": 22.534666,
+  "lng": 88.317477,
+  "verified": false,
+  "area": "Kanchan Colony, Babu Bazar, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "bhukailash-road-sarbojanin-durgotsab-samity",
+  "name": "Bhukailash Road Sarbojanin Durgotsab Samity",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BHUKAILASH ROAD SARBOJANIN DURGOTSAB SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "bhuripukur-durga-puja-pandal",
+  "name": "Bhuripukur Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.428212,
+  "lng": 88.412539,
+  "verified": false,
+  "area": "Narendrapur, Rajpur Sonarpur 700149"
+ },
+ {
+  "id": "bidhan-sarani-atlas-club",
+  "name": "Bidhan Sarani Atlas Club",
+  "zone": "north",
+  "lat": 22.599686,
+  "lng": 88.372918,
+  "verified": false,
+  "area": "101, Bidhan Sarani Rd, Fariapukur, Shyam Bazar, Kolkata, West Bengal 700004"
+ },
+ {
+  "id": "bidhannagar-saltlake-bb-block-residents-association",
+  "name": "Bidhannagar (saltlake) Bb Block Residents Association",
+  "zone": "east",
+  "lat": 22.574686,
+  "lng": 88.369399,
+  "verified": false,
+  "area": "BIDHANNAGAR (SALTLAKE) BB BLOCK RESIDENTS ASSOCIATION, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "bijoypur-sarbojanin-durgapuja-committee",
+  "name": "Bijoypur Sarbojanin Durgapuja Committee",
+  "zone": "others",
+  "lat": 22.694378,
+  "lng": 88.391597,
+  "verified": false,
+  "area": "Road No. 2, H B Town, Sodepur, Khardaha 700110"
+ },
+ {
+  "id": "bondhudol-durga-puja",
+  "name": "Bondhudol Durga Puja",
+  "zone": "north",
+  "lat": 22.631975,
+  "lng": 88.378314,
+  "verified": false,
+  "area": "41 BT Rd, Sinthi More, Baranagar 700036"
+ },
+ {
+  "id": "boral-sukanta-sangha",
+  "name": "Boral Sukanta Sangha",
+  "zone": "south",
+  "lat": 22.447964,
+  "lng": 88.378901,
+  "verified": false,
+  "area": "Sukanta Pally, Lakepally Rd, Green Park, Boral, Rajpur Sonarpur 700154"
+ },
+ {
+  "id": "bosepukur-parijat-club",
+  "name": "Bosepukur Parijat Club",
+  "zone": "east",
+  "lat": 22.523311,
+  "lng": 88.382342,
+  "verified": false,
+  "area": "162, Bose Pukur Rd, Bosepukur, Kasba, Kolkata 700039"
+ },
+ {
+  "id": "bosepukur-sitala-mandir",
+  "name": "Bosepukur Sitala Mandir",
+  "zone": "south",
+  "lat": 22.519218,
+  "lng": 88.384858,
+  "verified": false,
+  "area": "1/27 Bose Pukur Rd, Kasba, Kolkata 700042"
+ },
+ {
+  "id": "bosepukur-talbagan",
+  "name": "Bosepukur Talbagan",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "1/27, Bose Pukur Rd, Tal Bagan, Bosepukur, Kasba, Kolkata 700042"
+ },
+ {
+  "id": "bowbazar-47-palli-milansree-welfare-society",
+  "name": "Bowbazar 47 Palli Milansree Welfare Society",
+  "zone": "central",
+  "lat": 22.572337,
+  "lng": 88.365265,
+  "verified": false,
+  "area": "BOWBAZAR 47 PALLI MILANSREE WELFARE SOCIETY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "brahmpur-harisava-sarbojanin-durgotsab-committee",
+  "name": "Brahmpur Harisava Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "BRAHMPUR HARISAVA SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "brihattara-bagmari-sarbajanin-durgotsab-committee",
+  "name": "Brihattara Bagmari Sarbajanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "43/B, Bagmari, Kolkata 700054"
+ },
+ {
+  "id": "brindaban-matrimandir",
+  "name": "Brindaban Matrimandir",
+  "zone": "east",
+  "lat": 22.582053,
+  "lng": 88.373034,
+  "verified": false,
+  "area": "16, Brindaban Mullick 1st Ln, Machuabazar, Kolkata 700009"
+ },
+ {
+  "id": "brindabon-matri-mandir",
+  "name": "Brindabon Matri Mandir",
+  "zone": "east",
+  "lat": 22.582053,
+  "lng": 88.373034,
+  "verified": false,
+  "area": "10 Dr Kartik Bose St, College Row, Baithakkhana, Kolkata 700009"
+ },
+ {
+  "id": "bs-club-bongaon",
+  "name": "B.s Club (bongaon)",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "Amlapara Rd, Dharmapukuria, Bangaon 743235"
+ },
+ {
+  "id": "campbagan-sadharan-durgotsab-committee",
+  "name": "Campbagan Sadharan Durgotsab Committee",
+  "zone": "north",
+  "lat": 22.613302,
+  "lng": 88.388101,
+  "verified": false,
+  "area": "Campbagan Rd, Sahid Colony, Paikpara, Kolkata, West Bengal 700037"
+ },
+ {
+  "id": "cd-block-durga-puja",
+  "name": "Cd Block Durga Puja",
+  "zone": "south",
+  "lat": 22.574593,
+  "lng": 88.464944,
+  "verified": false,
+  "area": "CD Block(Newtown), Action Area I, Newtown 700107"
+ },
+ {
+  "id": "central-calcutta-youth-association",
+  "name": "Central Calcutta Youth Association",
+  "zone": "central",
+  "lat": 22.563699,
+  "lng": 88.362286,
+  "verified": false,
+  "area": "40b, Gokul Baral St, Bowbazar, Kolkata 700012"
+ },
+ {
+  "id": "central-park-youth-association",
+  "name": "Central Park Youth Association",
+  "zone": "south",
+  "lat": 22.487744,
+  "lng": 88.374768,
+  "verified": false,
+  "area": "11b, Central Park E, Ramkrishna Upanibesh, Jadavpur, Kolkata 700032"
+ },
+ {
+  "id": "cf-block-residents-association-durga-puja-pandal",
+  "name": "Cf Block Residents&#x27; Association Durga Puja Pandal",
+  "zone": "east",
+  "lat": 22.594082,
+  "lng": 88.418097,
+  "verified": false,
+  "area": "CF Block, Sector 1, Bidhannagar, Kolkata 700064"
+ },
+ {
+  "id": "chakraberia-sarbojanin-durgotsab",
+  "name": "Chakraberia Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.533607,
+  "lng": 88.351921,
+  "verified": false,
+  "area": "21-61 Chakraberia Road N, Paddapukur, Bhowanipore, Kolkata 700020"
+ },
+ {
+  "id": "chakraborty-barir-durga-pujo",
+  "name": "Chakraborty Barir Durga Pujo",
+  "zone": "north",
+  "lat": 22.632224,
+  "lng": 88.384521,
+  "verified": false,
+  "area": "55 Dr PC Lahiri Sarani, Sadhan Pally, Baranagar 700050"
+ },
+ {
+  "id": "chaltabagan-sarbojanin-durgotsab-committee",
+  "name": "Chaltabagan Sarbojanin Durgotsab Committee",
+  "zone": "east",
+  "lat": 22.584891,
+  "lng": 88.372151,
+  "verified": false,
+  "area": "159D Vivekananda Rd, Machuabazar, Kolkata 700009"
+ },
+ {
+  "id": "chandranath-chatterjee-street-sarbojanin",
+  "name": "Chandranath Chatterjee Street Sarbojanin",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Chandra Nath Chatterjee St, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "charer-palli-sarbojanin-durgotsab-committee",
+  "name": "Charer Palli Sarbojanin Durgotsab Committee",
+  "zone": "north",
+  "lat": 22.61707,
+  "lng": 88.387862,
+  "verified": false,
+  "area": "26/5-B, Northern Ave, Paikpara, Kolkata, West Bengal 700030"
+ },
+ {
+  "id": "chatterjee-para-sunday-club-gobardanga",
+  "name": "Chatterjee Para Sunday Club (gobardanga)",
+  "zone": "north",
+  "lat": 22.597911,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "Paul Para Rd, Babupara, Gobardanga 743252"
+ },
+ {
+  "id": "chatterjeehat-shree-shree-durgapuja-sangam",
+  "name": "Chatterjeehat Shree Shree Durgapuja Sangam",
+  "zone": "howrah",
+  "lat": 22.573096,
+  "lng": 88.306167,
+  "verified": false,
+  "area": "73, 3, Chatterjihat, Shibpur, Howrah 711104"
+ },
+ {
+  "id": "chetla-agrani-durga-puja-pandal",
+  "name": "Chetla Agrani Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.516388,
+  "lng": 88.337111,
+  "verified": false,
+  "area": "27/B Jainuddin Mistry Ln, Chetla, Kolkata 700027"
+ },
+ {
+  "id": "chetla-agroni-club",
+  "name": "Chetla Agroni Club",
+  "zone": "south",
+  "lat": 22.5164,
+  "lng": 88.336837,
+  "verified": false,
+  "area": "14, Peary Mohan Roy Rd, Chetla, Kolkata 700027"
+ },
+ {
+  "id": "chetla-sarbasadharaner-durgotsab",
+  "name": "Chetla Sarbasadharaner Durgotsab",
+  "zone": "south",
+  "lat": 22.517113,
+  "lng": 88.334151,
+  "verified": false,
+  "area": "Chetla, Kolkata 700027"
+ },
+ {
+  "id": "chhatu-babu-latu-babu-thakur-bari-ramdulal-nibas",
+  "name": "Chhatu Babu Latu Babu Thakur Bari (ramdulal Nibas)",
+  "zone": "north",
+  "lat": 22.590184,
+  "lng": 88.364415,
+  "verified": false,
+  "area": "67 Abhedananda Rd, Girish Park, Kolkata 700006"
+ },
+ {
+  "id": "chinar-park-adhibasibrinda",
+  "name": "Chinar Park Adhibasibrinda",
+  "zone": "north",
+  "lat": 22.623907,
+  "lng": 88.439779,
+  "verified": false,
+  "area": "Chinar Park, Tegharia, Rajarhat, Kolkata 700052"
+ },
+ {
+  "id": "chorbagan-chatterjee-bari",
+  "name": "Chorbagan Chatterjee Bari",
+  "zone": "north",
+  "lat": 22.582203,
+  "lng": 88.363533,
+  "verified": false,
+  "area": "120 Muktaram Babu St, College Street, Kolkata 700007"
+ },
+ {
+  "id": "chorbagan-mitra-bari",
+  "name": "Chorbagan Mitra Bari",
+  "zone": "north",
+  "lat": 22.582407,
+  "lng": 88.362429,
+  "verified": false,
+  "area": "84, Muktaram Babu St, College Street, Kolkata 700007"
+ },
+ {
+  "id": "chorebagan-sarbojanin-durgotsab-samity",
+  "name": "Chorebagan Sarbojanin Durgotsab Samity",
+  "zone": "north",
+  "lat": 22.583428,
+  "lng": 88.363596,
+  "verified": false,
+  "area": "0/1 Radha Madhab Saha Ln, Machuabazar, Kolkata 700007"
+ },
+ {
+  "id": "chotushkone-park-saradia-sammilani",
+  "name": "Chotushkone Park Saradia Sammilani",
+  "zone": "south",
+  "lat": 22.48582,
+  "lng": 88.389733,
+  "verified": false,
+  "area": "Pratapaditya Rd, Sahanagar, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "cit-light-welfare-association",
+  "name": "Cit Light Welfare Association",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "CIT LIGHT WELFARE ASSOCIATION, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "college-square-sarbojanin-durgotsab-committee",
+  "name": "College Square Sarbojanin Durgotsab Committee",
+  "zone": "central",
+  "lat": 22.57488,
+  "lng": 88.363437,
+  "verified": false,
+  "area": "Calcutta Medical College, College Square, Kolkata 700073"
+ },
+ {
+  "id": "connectivity-test",
+  "name": "Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "cossipore-tarundal-durga-puja",
+  "name": "Cossipore Tarundal Durga Puja",
+  "zone": "north",
+  "lat": 22.612604,
+  "lng": 88.372073,
+  "verified": false,
+  "area": "7A, Dilarjung Rd, Indira Nagar, Chitpur, Kolkata 700002"
+ },
+ {
+  "id": "dakshin-dari-youths",
+  "name": "Dakshin Dari Youths",
+  "zone": "east",
+  "lat": 22.5953,
+  "lng": 88.39385,
+  "verified": false,
+  "area": "17 No Playground, Dakshindari Rd, Ward 35, South Dumdum, Kolkata 700048"
+ },
+ {
+  "id": "dakshin-entally-sarbajanin-durga-puja-committee",
+  "name": "Dakshin Entally Sarbajanin Durga Puja Committee",
+  "zone": "east",
+  "lat": 22.555941,
+  "lng": 88.367194,
+  "verified": false,
+  "area": "20-24, Ismail St, Entally, Kolkata 700014"
+ },
+ {
+  "id": "dakshin-kolkata-sarbojonin-durgotsob",
+  "name": "Dakshin Kolkata Sarbojonin Durgotsob",
+  "zone": "south",
+  "lat": 22.534318,
+  "lng": 88.350678,
+  "verified": false,
+  "area": "Allenby Rd, Sreepally, Bhowanipore, Kolkata 700020"
+ },
+ {
+  "id": "dakshin-kolkata-tarun-samity",
+  "name": "Dakshin Kolkata Tarun Samity",
+  "zone": "south",
+  "lat": 22.515832,
+  "lng": 88.341632,
+  "verified": false,
+  "area": "23/7/3B, Tollygunge Rd, Sahanagar, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "dakshin-palli-sarbojanin-durgotsab-committee",
+  "name": "Dakshin Palli Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "DAKSHIN PALLI SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "dakshin-pally-sarbojanin-durgotsav-committtee",
+  "name": "Dakshin Pally Sarbojanin Durgotsav Committtee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "P55, Jadu Colony, Sarada Pally, Kolkata 700034"
+ },
+ {
+  "id": "dakshin-purbachal-sarbojanin-durgotsav-comm-udayan-sangha",
+  "name": "Dakshin Purbachal Sarbojanin Durgotsav Comm Udayan Sangha",
+  "zone": "south",
+  "lat": 22.486402,
+  "lng": 88.369607,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "dakshin-rabindrapally-sarbojanin-durgapuja-committee",
+  "name": "Dakshin Rabindrapally Sarbojanin Durgapuja Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Rabindrapally, Baghajatin Colony, Kolkata 700086"
+ },
+ {
+  "id": "dakshinayan-residents-welfare-soceity",
+  "name": "Dakshinayan Resident&#x27;s Welfare Soceity",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "DAKSHINAYAN RESIDENT'S WELFARE SOCEITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "dakshinpara-durgotsab-committee",
+  "name": "Dakshinpara Durgotsab Committee",
+  "zone": "north",
+  "lat": 22.613358,
+  "lng": 88.42136,
+  "verified": false,
+  "area": "Dakshinpara Rd, Satgachi, Baguiati, South Dumdum 700028"
+ },
+ {
+  "id": "darjeepara-sarbojonin-durgotsab-samity",
+  "name": "Darjeepara Sarbojonin Durgotsab Samity",
+  "zone": "north",
+  "lat": 22.592537,
+  "lng": 88.368003,
+  "verified": false,
+  "area": "Chidam Mudi Ramananda Ln, Sovabazar, Kolkata 700006"
+ },
+ {
+  "id": "darjipara-mitra-bari",
+  "name": "Darjipara Mitra Bari",
+  "zone": "north",
+  "lat": 22.592537,
+  "lng": 88.368003,
+  "verified": false,
+  "area": "Chidam Mudi Ramananda Ln, Sovabazar, Darjipara, Kolkata 700006"
+ },
+ {
+  "id": "darjipara-mitra-house",
+  "name": "Darjipara Mitra House",
+  "zone": "north",
+  "lat": 22.591093,
+  "lng": 88.364903,
+  "verified": false,
+  "area": "19/1, Nilmoni Mitra Street, Shyambazar, Darjipara, Kolkata 700006"
+ },
+ {
+  "id": "darpanarayan-tagore-stpally-samity",
+  "name": "Darpanarayan Tagore St.pally Samity",
+  "zone": "north",
+  "lat": 22.58726,
+  "lng": 88.354465,
+  "verified": false,
+  "area": "42\\u002644 Kali Krishna Tagore Street, Kolkata 700007"
+ },
+ {
+  "id": "dashadrone-youth-karna-shyam-durga-puja-pandal",
+  "name": "Dashadrone Youth Karna Shyam Durga Puja Pandal",
+  "zone": "others",
+  "lat": 22.631398,
+  "lng": 88.446493,
+  "verified": false,
+  "area": "Dashadrone, Manick Tala, Kaikhali, Kolkata 700136"
+ },
+ {
+  "id": "db-block-durga-puja-ground",
+  "name": "Db Block Durga Puja Ground",
+  "zone": "south",
+  "lat": 22.571222,
+  "lng": 88.467807,
+  "verified": false,
+  "area": "DB Block(Newtown), Action Area I, Newtown 700107"
+ },
+ {
+  "id": "debdaru-fatak-sarbojanin-durgotsab",
+  "name": "Debdaru Fatak Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.502587,
+  "lng": 88.317546,
+  "verified": false,
+  "area": "4, Panchanan Tala, Behala, Kolkata 700034"
+ },
+ {
+  "id": "deshapriya-park-sarbojanin-durgotsab",
+  "name": "Deshapriya Park Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.518582,
+  "lng": 88.353461,
+  "verified": false,
+  "area": "Motilal Nehru Rd, Manoharpukur, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "deshapriyanagar-sadharan-durgotsab-sinthi-more",
+  "name": "Deshapriyanagar Sadharan Durgotsab Sinthi More",
+  "zone": "north",
+  "lat": 22.63118,
+  "lng": 88.380019,
+  "verified": false,
+  "area": "LIG Housing, Dutta Bagan, Paikpara, Kolkata 700037"
+ },
+ {
+  "id": "deshapriyanagar-sadharon-durgotsab",
+  "name": "Deshapriyanagar Sadharon Durgotsab",
+  "zone": "north",
+  "lat": 22.63118,
+  "lng": 88.380019,
+  "verified": false,
+  "area": "1, KC Ghosh Rd, Deshapriya Nagar Colony, Sinthee, Kolkata 700050"
+ },
+ {
+  "id": "dewanpara-sarbojanin-durgapuja-samity",
+  "name": "Dewanpara Sarbojanin Durgapuja Samity",
+  "zone": "others",
+  "lat": 22.663622,
+  "lng": 88.382016,
+  "verified": false,
+  "area": "2 Nawab Abdul Latif St, Belghoria, Kolkata 700056"
+ },
+ {
+  "id": "dhakuria-pragati-sangha",
+  "name": "Dhakuria Pragati Sangha",
+  "zone": "south",
+  "lat": 22.508609,
+  "lng": 88.371801,
+  "verified": false,
+  "area": "30C, Dhakuria, Tanu Pukur, Kolkata 700031"
+ },
+ {
+  "id": "dhakuria-sarbojanin-durgotsab",
+  "name": "Dhakuria Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.511244,
+  "lng": 88.374089,
+  "verified": false,
+  "area": "33 Sarat Ghosh Garden Rd, Dhakuria, Kolkata 700031"
+ },
+ {
+  "id": "dhaniapara-puja-mandap",
+  "name": "Dhaniapara Puja Mandap",
+  "zone": "others",
+  "lat": 22.76217,
+  "lng": 88.372173,
+  "verified": false,
+  "area": "Dhaniapara Rd, Anandapuri, Barrackpore 700122"
+ },
+ {
+  "id": "dharar-math-bhatri-sangha-durgapuja-pandal",
+  "name": "Dharar Math Bhatri Sangha Durgapuja Pandal",
+  "zone": "howrah",
+  "lat": 22.583247,
+  "lng": 88.323258,
+  "verified": false,
+  "area": "Joynarayan Babu Ananda Dutta Ln, Bantra, Kadam Tala, Howrah 711101"
+ },
+ {
+  "id": "dharsa-chowdhury-para-durgamondop",
+  "name": "Dharsa Chowdhury Para Durgamondop",
+  "zone": "howrah",
+  "lat": 22.595059,
+  "lng": 88.292793,
+  "verified": false,
+  "area": "58/10 Kona Rd, Ramrajatala, Howrah 711112"
+ },
+ {
+  "id": "dharsa-vratri-sangha-sarbojanin-durgotsav-committee",
+  "name": "Dharsa Vratri Sangha Sarbojanin Durgotsav Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "DHARSA VRATRI SANGHA SARBOJANIN DURGOTSAV COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "dilip-smriti-sangha",
+  "name": "Dilip Smriti Sangha",
+  "zone": "south",
+  "lat": 22.518014,
+  "lng": 88.345085,
+  "verified": false,
+  "area": "60a, Sadananda Rd, Anami Sangha, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "domjur-ghoshbari-puja-mandap",
+  "name": "Domjur Ghoshbari Puja Mandap",
+  "zone": "howrah",
+  "lat": 22.636198,
+  "lng": 88.220966,
+  "verified": false,
+  "area": "Domjur Jagadishpur Rd, Baruipara, Domjur, Howrah 711405"
+ },
+ {
+  "id": "duillya-durga-puja-pandal",
+  "name": "Duillya Durga Puja Pandal",
+  "zone": "howrah",
+  "lat": 22.582641,
+  "lng": 88.242631,
+  "verified": false,
+  "area": "Andul Mauri, Duillya, Howrah 711302"
+ },
+ {
+  "id": "dum-dum-park-bharat-chakra",
+  "name": "Dum Dum Park Bharat Chakra",
+  "zone": "east",
+  "lat": 22.610821,
+  "lng": 88.4146,
+  "verified": false,
+  "area": "Tank No. 2, Dum Dum Park, South Dumdum 700055"
+ },
+ {
+  "id": "dum-dum-park-sarbojanin-durga-puja-samity",
+  "name": "Dum Dum Park Sarbojanin Durga Puja Samity",
+  "zone": "east",
+  "lat": 22.609436,
+  "lng": 88.416405,
+  "verified": false,
+  "area": "225/1 Dum Dum Park, South Dumdum 700055"
+ },
+ {
+  "id": "dum-dum-park-tarun-sangha",
+  "name": "Dum Dum Park Tarun Sangha",
+  "zone": "east",
+  "lat": 22.610051,
+  "lng": 88.411488,
+  "verified": false,
+  "area": "496, Dum Dum Park, Kolkata 700055"
+ },
+ {
+  "id": "dum-dum-park-yubak-brinda",
+  "name": "Dum Dum Park Yubak Brinda",
+  "zone": "east",
+  "lat": 22.605496,
+  "lng": 88.417748,
+  "verified": false,
+  "area": "Dum Dum Park, South Dumdum 700055"
+ },
+ {
+  "id": "dum-dum-tarun-dal",
+  "name": "Dum Dum Tarun Dal",
+  "zone": "south",
+  "lat": 22.484525,
+  "lng": 88.380436,
+  "verified": false,
+  "area": "Shyam Nagar Rd, Satgachi, Baguiati, South Dumdum 700055"
+ },
+ {
+  "id": "durbar-mahila-samanyay-committee",
+  "name": "Durbar Mahila Samanyay Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "12/5, Nilmoni Mitra St, Beniatola, Kolkata 700006"
+ },
+ {
+  "id": "durga-bari-baruipara-domjur",
+  "name": "Durga Bari, Baruipara Domjur",
+  "zone": "howrah",
+  "lat": 22.63175,
+  "lng": 88.225773,
+  "verified": false,
+  "area": "Amta Rd, Fokor Dokan, Baruipara, Domjur, Howrah 711405"
+ },
+ {
+  "id": "durga-bhavan-baranagar-lowland-durga-puja",
+  "name": "Durga Bhavan (baranagar Lowland Durga Puja)",
+  "zone": "north",
+  "lat": 22.635472,
+  "lng": 88.383335,
+  "verified": false,
+  "area": "Sadhan Pally, Baranagar 700090"
+ },
+ {
+  "id": "durga-maath-open-play-ground-tangra-100-yrs",
+  "name": "Durga Maath Open Play Ground (tangra, 100 Yrs)",
+  "zone": "east",
+  "lat": 22.554827,
+  "lng": 88.379427,
+  "verified": false,
+  "area": "20/B, Pottery Rd, Seal Lane, Tangra, Kolkata 700015"
+ },
+ {
+  "id": "durga-museum-maa-phire-elo-rabindra-sarobar",
+  "name": "Durga Museum (maa Phire Elo), Rabindra Sarobar",
+  "zone": "south",
+  "lat": 22.509474,
+  "lng": 88.35895,
+  "verified": false,
+  "area": "Rabindra Sarobar, Kolkata 700045"
+ },
+ {
+  "id": "durga-puja-committee-triangular-park",
+  "name": "Durga Puja Committee (triangular Park)",
+  "zone": "south",
+  "lat": 22.518006,
+  "lng": 88.357048,
+  "verified": false,
+  "area": "172/5, Rash Behari Ave, Triangular Park, Ballygunge, Kolkata 700029"
+ },
+ {
+  "id": "durga-puja-mandap-panihati",
+  "name": "Durga Puja Mandap, Panihati",
+  "zone": "others",
+  "lat": 22.68375,
+  "lng": 88.373274,
+  "verified": false,
+  "area": "14 Kamarhati, Agarpara, Panihati 700058"
+ },
+ {
+  "id": "durga-puja-pandal-andul-alampur-howrah",
+  "name": "Durga Puja Pandal (andul Alampur, Howrah)",
+  "zone": "howrah",
+  "lat": 22.581683,
+  "lng": 88.217316,
+  "verified": false,
+  "area": "Andul, Alampur, Howrah 711302"
+ },
+ {
+  "id": "durga-puja-pandal-andul-howrah",
+  "name": "Durga Puja Pandal (andul, Howrah)",
+  "zone": "howrah",
+  "lat": 22.578445,
+  "lng": 88.204524,
+  "verified": false,
+  "area": "461, Majumder para, Andul, Howrah, Kalara 711302"
+ },
+ {
+  "id": "durga-puja-pandal-barrackpore",
+  "name": "Durga Puja Pandal, Barrackpore",
+  "zone": "others",
+  "lat": 22.761934,
+  "lng": 88.366792,
+  "verified": false,
+  "area": "SN Banerjee Rd, Cantonment, Barrackpore 700120"
+ },
+ {
+  "id": "durga-puja-pandal-howrah-1-hat-ln",
+  "name": "Durga Puja Pandal (howrah-1, Hat Ln)",
+  "zone": "howrah",
+  "lat": 22.579716,
+  "lng": 88.333505,
+  "verified": false,
+  "area": "17/27, Hat Ln, Howrah-1, Shibpur, Howrah 711101"
+ },
+ {
+  "id": "durga-puja-pandal-manohar-pukur-rd",
+  "name": "Durga Puja Pandal (manohar Pukur Rd)",
+  "zone": "south",
+  "lat": 22.520737,
+  "lng": 88.353221,
+  "verified": false,
+  "area": "22D, Manohar Pukur Rd, Dover Terrace, Ballygunge, Kolkata 700029"
+ },
+ {
+  "id": "durga-puja-pandal-serampore-mahesh-colony",
+  "name": "Durga Puja Pandal, Serampore (mahesh Colony)",
+  "zone": "others",
+  "lat": 22.740614,
+  "lng": 88.349535,
+  "verified": false,
+  "area": "1, Mahesh Colony, Serampore, Hooghly 712201"
+ },
+ {
+  "id": "durga-puja-pandal-taratala",
+  "name": "Durga Puja Pandal (taratala)",
+  "zone": "south",
+  "lat": 22.511869,
+  "lng": 88.322116,
+  "verified": false,
+  "area": "1, Diamond Harbour Rd, Sahapur, Taratala, Kolkata 700088"
+ },
+ {
+  "id": "durga-puja-pandal-uttarpara-makhla",
+  "name": "Durga Puja Pandal, Uttarpara (makhla)",
+  "zone": "others",
+  "lat": 22.674885,
+  "lng": 88.337254,
+  "verified": false,
+  "area": "Makhla Road, Makhla Govt Colony No 1, Uttarpara 712233"
+ },
+ {
+  "id": "durga-pujo-fe-block",
+  "name": "Durga Pujo, Fe Block",
+  "zone": "east",
+  "lat": 22.579931,
+  "lng": 88.414859,
+  "verified": false,
+  "area": "FE Block, Sector 3, Bidhannagar, Kolkata 700106"
+ },
+ {
+  "id": "durga-sangha-sitala-temple",
+  "name": "Durga Sangha Sitala Temple",
+  "zone": "north",
+  "lat": 22.596056,
+  "lng": 88.38725,
+  "verified": false,
+  "area": "Gurudas Dutta Garden Ln, Surir Bagan, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "durgapuja-agrani-beleghata",
+  "name": "Durgapuja Agrani Beleghata",
+  "zone": "east",
+  "lat": 22.561675,
+  "lng": 88.39562,
+  "verified": false,
+  "area": "3/1, Gagan Sarkar Rd, Kulia, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "durgotsab-samity-dakkhin-roytala",
+  "name": "Durgotsab Samity, Dakkhin Roytala",
+  "zone": "howrah",
+  "lat": 22.583365,
+  "lng": 88.297004,
+  "verified": false,
+  "area": "92/A Brajanath Lahiri Ln, Dakkhin Roytala, Howrah 711104"
+ },
+ {
+  "id": "duttabagan-durgotsov-committee",
+  "name": "Duttabagan Durgotsov Committee",
+  "zone": "north",
+  "lat": 22.609903,
+  "lng": 88.39082,
+  "verified": false,
+  "area": "LIG Housing, Dutta Bagan, Paikpara, Kolkata 700037"
+ },
+ {
+  "id": "east-end-park-sarbojanin-durgotsab-committee",
+  "name": "East End Park Sarbojanin Durgotsab Committee",
+  "zone": "east",
+  "lat": 22.541041,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "EAST END PARK SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "east-kolkata-township-welfare-association",
+  "name": "East Kolkata Township Welfare Association",
+  "zone": "south",
+  "lat": 22.514893,
+  "lng": 88.395891,
+  "verified": false,
+  "area": "BB-9, Rajdanga Chakraborty Para Rd, Naskarhat, East Kolkata Twp, Kolkata 700107"
+ },
+ {
+  "id": "ee-block-saradotsav-committee",
+  "name": "Ee Block Saradotsav Committee",
+  "zone": "east",
+  "lat": 22.574686,
+  "lng": 88.369399,
+  "verified": false,
+  "area": "118/2, AL Block, Sector 2, Bidhannagar, Kolkata 700091"
+ },
+ {
+  "id": "ekdalia-evergreen-club",
+  "name": "Ekdalia Evergreen Club",
+  "zone": "south",
+  "lat": 22.521219,
+  "lng": 88.366563,
+  "verified": false,
+  "area": "15 Ekdalia Rd, Ballygunge, Kolkata 700019"
+ },
+ {
+  "id": "ekush-pally-sarbojanin-durgotsab-samiti",
+  "name": "Ekush Pally Sarbojanin Durgotsab Samiti",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "EKUSH PALLY SARBOJANIN DURGOTSAB SAMITI, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "entally-kanthal-bagan-sarbojanin-saradiya-utsav-comm",
+  "name": "Entally Kanthal Bagan Sarbojanin Saradiya Utsav Comm",
+  "zone": "east",
+  "lat": 22.560853,
+  "lng": 88.368954,
+  "verified": false,
+  "area": "Convent Rd, Sealdah, Raja Bazar, Kolkata 700014"
+ },
+ {
+  "id": "entally-matribhumi-durga-puja-samity",
+  "name": "Entally Matribhumi Durga Puja Samity",
+  "zone": "east",
+  "lat": 22.558549,
+  "lng": 88.3674,
+  "verified": false,
+  "area": "5, Uria Para Ln, Entally, Kolkata 700014"
+ },
+ {
+  "id": "entally-sarbojanin-sri-sri-durga-puja",
+  "name": "Entally Sarbojanin Sri Sri Durga Puja",
+  "zone": "central",
+  "lat": 22.572337,
+  "lng": 88.365265,
+  "verified": false,
+  "area": "13, Gope Ln, Entally, Kolkata 700014"
+ },
+ {
+  "id": "entally-sen-villa-durga-puja",
+  "name": "Entally Sen Villa Durga Puja",
+  "zone": "east",
+  "lat": 22.56075,
+  "lng": 88.373841,
+  "verified": false,
+  "area": "16, Convent Rd, Sealdah, Entally, Kolkata 700014"
+ },
+ {
+  "id": "fatehpur-bazar-durga-puja-pandal",
+  "name": "Fatehpur Bazar Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.537603,
+  "lng": 88.291161,
+  "verified": false,
+  "area": "TG Rd, Fatehpur Bazar, Garden Reach, Maheshtala, Kolkata 700024"
+ },
+ {
+  "id": "forward-club",
+  "name": "Forward Club",
+  "zone": "south",
+  "lat": 22.522985,
+  "lng": 88.343973,
+  "verified": false,
+  "area": "27/B, Kalidas Patitundi Ln, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "forward-sporting-club",
+  "name": "Forward Sporting Club",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "27/19/7, Forward Colony, Palpara, Baranagar 700090"
+ },
+ {
+  "id": "friends-union-puja-committee",
+  "name": "Friends Union (puja Committee)",
+  "zone": "north",
+  "lat": 22.603071,
+  "lng": 88.374401,
+  "verified": false,
+  "area": "9 Bhabnath Sen St, Bidhan Sarani, Kolkata 700004"
+ },
+ {
+  "id": "fuleswar-south-side-durgapuja",
+  "name": "Fuleswar South Side Durgapuja",
+  "zone": "howrah",
+  "lat": 22.476321,
+  "lng": 88.113898,
+  "verified": false,
+  "area": "Fuleswar, Uluberia, Howrah 711316"
+ },
+ {
+  "id": "fultala-playground-durga-puja-pandal",
+  "name": "Fultala Playground &amp; Durga Puja Pandal",
+  "zone": "howrah",
+  "lat": 22.488579,
+  "lng": 88.11661,
+  "verified": false,
+  "area": "Jagatpur E Rd, Brindabanpur, Uluberia, Howrah 711316"
+ },
+ {
+  "id": "gajon-tola-durga-puja-mondop-nangi",
+  "name": "Gajon Tola Durga Puja Mondop, Nangi",
+  "zone": "south",
+  "lat": 22.509226,
+  "lng": 88.206688,
+  "verified": false,
+  "area": "Nangi, Batanagar, Maheshtala 700140"
+ },
+ {
+  "id": "garden-reach-durga-puja-pandal",
+  "name": "Garden Reach Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.540095,
+  "lng": 88.286518,
+  "verified": false,
+  "area": "Paharpur Rd, Roy Para, Garden Reach, Kolkata 700024"
+ },
+ {
+  "id": "garia-sarbojanin-durgotsab-committee",
+  "name": "Garia Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.462479,
+  "lng": 88.380642,
+  "verified": false,
+  "area": "Garia Place, Garia, Kolkata 700084"
+ },
+ {
+  "id": "gariahat-hindusthan-club",
+  "name": "Gariahat Hindusthan Club",
+  "zone": "south",
+  "lat": 22.520157,
+  "lng": 88.36091,
+  "verified": false,
+  "area": "37/B, Hindustan Rd, Dover Terrace, Ballygunge, Kolkata 700029"
+ },
+ {
+  "id": "gauri-bari-sarbojanin-durga-puja-pandal",
+  "name": "Gauri Bari Sarbojanin Durga Puja Pandal",
+  "zone": "north",
+  "lat": 22.594448,
+  "lng": 88.379086,
+  "verified": false,
+  "area": "4 Gouri Bari Ln, Manicktala, Kolkata 700004"
+ },
+ {
+  "id": "ghose-bari-46-pathuriaghata-st",
+  "name": "Ghose Bari (46 Pathuriaghata St)",
+  "zone": "north",
+  "lat": 22.588928,
+  "lng": 88.356192,
+  "verified": false,
+  "area": "46 Pathuriaghata St, Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "ghose-bari-pathuriaghata-46-pathuriaghata-st",
+  "name": "Ghose Bari (pathuriaghata, 46 Pathuriaghata St)",
+  "zone": "north",
+  "lat": 22.588928,
+  "lng": 88.356192,
+  "verified": false,
+  "area": "46, Pathuriaghata St, Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "goabagan-sarbojanin-durgotsab",
+  "name": "Goabagan Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.589832,
+  "lng": 88.372421,
+  "verified": false,
+  "area": "GOABAGAN SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "goabagan-sarodatsav-sammilani",
+  "name": "Goabagan Sarodatsav Sammilani",
+  "zone": "south",
+  "lat": 22.48582,
+  "lng": 88.389733,
+  "verified": false,
+  "area": "Goabagan St, Manicktala, Kolkata 700006"
+ },
+ {
+  "id": "golaghata-sammelani",
+  "name": "Golaghata Sammelani",
+  "zone": "east",
+  "lat": 22.597339,
+  "lng": 88.399146,
+  "verified": false,
+  "area": "2, Golaghata Rd, Sreebhumi, Lake Town, South Dumdum 700048"
+ },
+ {
+  "id": "golden-arrow-club",
+  "name": "Golden Arrow Club",
+  "zone": "south",
+  "lat": 22.516481,
+  "lng": 88.347677,
+  "verified": false,
+  "area": "Tara Rd, Lake Market, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "golf-green-phase-ii-durga-puja-pandal",
+  "name": "Golf Green Phase Ii Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.494866,
+  "lng": 88.363088,
+  "verified": false,
+  "area": "LIG 1/2 Golf Green, Kolkata 700095"
+ },
+ {
+  "id": "golf-green-sarodotsava-committee-phase-ii",
+  "name": "Golf Green Sarodotsava Committee Phase -ii",
+  "zone": "south",
+  "lat": 22.494866,
+  "lng": 88.363088,
+  "verified": false,
+  "area": "LIG 1/2, Golf Green, Kolkata 700095"
+ },
+ {
+  "id": "gopalnagar-malirbagan-durgapuja",
+  "name": "Gopalnagar Malirbagan Durgapuja",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Malirbagan, Bangaon, Khamarkalla 743262"
+ },
+ {
+  "id": "gouriberia-sarbojanin-durgotsab-o-pradarshani",
+  "name": "Gouriberia Sarbojanin Durgotsab O Pradarshani",
+  "zone": "north",
+  "lat": 22.594545,
+  "lng": 88.379209,
+  "verified": false,
+  "area": "Gouri Bari, CIT Park, Kolkata 700004"
+ },
+ {
+  "id": "gouriberia-sarbojanin-durgotsab-o-pradorshani",
+  "name": "Gouriberia Sarbojanin Durgotsab - O- Pradorshani",
+  "zone": "north",
+  "lat": 22.594545,
+  "lng": 88.379209,
+  "verified": false,
+  "area": "Gouri Bari, CIT Park, Kolkata 700004"
+ },
+ {
+  "id": "gray-street-sarbojanin-durgotsab-committee",
+  "name": "Gray Street Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "GRAY STREET SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "green-avenue-friends-recreation-club",
+  "name": "Green Avenue Friends Recreation Club",
+  "zone": "south",
+  "lat": 22.495108,
+  "lng": 88.380939,
+  "verified": false,
+  "area": "21, Bagan Bari, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "greenpark-sarbojonin-durgotsob",
+  "name": "Greenpark Sarbojonin Durgotsob",
+  "zone": "south",
+  "lat": 22.444523,
+  "lng": 88.398218,
+  "verified": false,
+  "area": "158, Green Park, Narendrapur, Rajpur Sonarpur 700103"
+ },
+ {
+  "id": "grey-street-satadal",
+  "name": "Grey Street Satadal",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "5C, Raja Kali Krishna Ln, Sovabazar, Kolkata 700005"
+ },
+ {
+  "id": "halder-para-kalitala-durga-puja-budge-budge",
+  "name": "Halder Para Kalitala Durga Puja, Budge Budge",
+  "zone": "south",
+  "lat": 22.489981,
+  "lng": 88.192185,
+  "verified": false,
+  "area": "Halderpara, Shyampur, Budge Budge, Maheshtala 700137"
+ },
+ {
+  "id": "halderpara-friends-association",
+  "name": "Halderpara Friends Association",
+  "zone": "howrah",
+  "lat": 22.581464,
+  "lng": 88.319027,
+  "verified": false,
+  "area": "31/10/1/1, Haldar para Ln, Naora, Shibpur, Howrah 711101"
+ },
+ {
+  "id": "halsibagan-sarbojanin-durgotsab",
+  "name": "Halsibagan Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.589876,
+  "lng": 88.377359,
+  "verified": false,
+  "area": "Halsibagan Rd, Manicktala, Khanna, Kolkata, West Bengal 700006"
+ },
+ {
+  "id": "harakutir-ray-banerjee-barir-durga-pujo",
+  "name": "Harakutir Ray-Banerjee Barir Durga Pujo",
+  "zone": "north",
+  "lat": 22.588562,
+  "lng": 88.357586,
+  "verified": false,
+  "area": "53 Pathuriaghata St, Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "hari-ghosh-street-sarbojanin-durgotsab-samity",
+  "name": "Hari Ghosh Street Sarbojanin Durgotsab Samity",
+  "zone": "north",
+  "lat": 22.590426,
+  "lng": 88.368148,
+  "verified": false,
+  "area": "15, Hari Ghosh St, Hedua, Kolkata, West Bengal 700006"
+ },
+ {
+  "id": "hari-ghosh-street-swamiji-sangha",
+  "name": "Hari Ghosh Street Swamiji Sangha",
+  "zone": "north",
+  "lat": 22.592028,
+  "lng": 88.368718,
+  "verified": false,
+  "area": "LIG Housing, Dutta Bagan, Paikpara, Kolkata 700037"
+ },
+ {
+  "id": "hari-nath-de-road-barowari-durgotsab",
+  "name": "Hari Nath De Road Barowari Durgotsab",
+  "zone": "north",
+  "lat": 22.582045,
+  "lng": 88.377017,
+  "verified": false,
+  "area": "Telephone Exchange, 1, Hari Nath Dey Rd, Kolkata 700006"
+ },
+ {
+  "id": "haridas-saha-bazar-abasik-kalyan-samity",
+  "name": "Haridas Saha Bazar Abasik Kalyan Samity",
+  "zone": "south",
+  "lat": 22.501313,
+  "lng": 88.356825,
+  "verified": false,
+  "area": "347, Prince Anwar Shah Rd, Rajendra Prasad Colony, Lake Gardens, Kolkata 700095"
+ },
+ {
+  "id": "haridevpur-41-pally-club",
+  "name": "Haridevpur 41 Pally Club",
+  "zone": "south",
+  "lat": 22.482784,
+  "lng": 88.338715,
+  "verified": false,
+  "area": "276 MG Rd, Haridevpur, Kolkata 700041"
+ },
+ {
+  "id": "haridevpur-adarsha-samity",
+  "name": "Haridevpur Adarsha Samity",
+  "zone": "south",
+  "lat": 22.475908,
+  "lng": 88.334788,
+  "verified": false,
+  "area": "24, Ustad Amir Ali Khan Sarani, Haridevpur, Kolkata 700082"
+ },
+ {
+  "id": "haridevpur-apanjan-club",
+  "name": "Haridevpur Apanjan Club",
+  "zone": "south",
+  "lat": 22.479031,
+  "lng": 88.338176,
+  "verified": false,
+  "area": "Haridevpur, Paschim Putiary, Kolkata 700082"
+ },
+ {
+  "id": "haridevpur-new-sporting-club",
+  "name": "Haridevpur New Sporting Club",
+  "zone": "south",
+  "lat": 22.480068,
+  "lng": 88.335788,
+  "verified": false,
+  "area": "55, Banamali Banerjee Rd, Basuri Bagan, Kolkata 700082"
+ },
+ {
+  "id": "haritaki-bagan-sarbojonin-durgotsab",
+  "name": "Haritaki Bagan Sarbojonin Durgotsab",
+  "zone": "north",
+  "lat": 22.586452,
+  "lng": 88.372191,
+  "verified": false,
+  "area": "36, Haritaki Bagan Ln, Manicktala, Azad Hind Bag, Kolkata, West Bengal 700006"
+ },
+ {
+  "id": "hartaki-bagan-sarbojanin-durgotsab",
+  "name": "Hartaki Bagan Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.586452,
+  "lng": 88.372191,
+  "verified": false,
+  "area": "36, Haritaki Bagan Ln, Manicktala, Kolkata 700006"
+ },
+ {
+  "id": "hathkhola-dutta-bari",
+  "name": "Hathkhola Dutta Bari",
+  "zone": "north",
+  "lat": 22.592846,
+  "lng": 88.354932,
+  "verified": false,
+  "area": "Ram Seth Rd, Nimtalla, Ahiritola, Kolkata 700006"
+ },
+ {
+  "id": "hatibagan-sarbojonin-durgotsab-committee",
+  "name": "Hatibagan Sarbojonin Durgotsab Committee",
+  "zone": "north",
+  "lat": 22.594386,
+  "lng": 88.372,
+  "verified": false,
+  "area": "134 Sri Aurobindo Sarani, Hatibagan, Kolkata 700006"
+ },
+ {
+  "id": "hatkhola-gosaipara-sarbojonin-durgotsab",
+  "name": "Hatkhola Gosaipara Sarbojonin Durgotsab",
+  "zone": "north",
+  "lat": 22.599095,
+  "lng": 88.359304,
+  "verified": false,
+  "area": "Gossain Para Ln, Kumartuli, Kolkata 700005"
+ },
+ {
+  "id": "hatkhola-gossain-para-sarbojanin",
+  "name": "Hatkhola Gossain Para Sarbojanin",
+  "zone": "north",
+  "lat": 22.599095,
+  "lng": 88.359304,
+  "verified": false,
+  "area": "Gossain Para Ln, Sovabazar, Kumartuli, Kolkata 700005"
+ },
+ {
+  "id": "hazra-park-durga-puja",
+  "name": "Hazra Park Durga Puja",
+  "zone": "south",
+  "lat": 22.524434,
+  "lng": 88.346053,
+  "verified": false,
+  "area": "Hazra Rd, Jatin Das Park, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "hb-block-residents-association",
+  "name": "Hb Block Residents Association",
+  "zone": "east",
+  "lat": 22.559642,
+  "lng": 88.495205,
+  "verified": false,
+  "area": "HB BLOCK RESIDENTS ASSOCIATION, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "hedua-park-durga-puja",
+  "name": "Hedua Park Durga Puja",
+  "zone": "north",
+  "lat": 22.58832,
+  "lng": 88.36908,
+  "verified": false,
+  "area": "Hedua, Manicktala, Kolkata 700006"
+ },
+ {
+  "id": "hindusthan-pally-durgapuja-committee",
+  "name": "Hindusthan Pally Durgapuja Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "HINDUSTHAN PALLY DURGAPUJA COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "hindusthan-park-durgotsab-committeepurbachal",
+  "name": "Hindusthan Park Durgotsab Committee(Purbachal)",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Hindusthan Park, Golpark, Gariahat, Kolkata 700029"
+ },
+ {
+  "id": "hindusthan-park-sarbojanin-durgotsab-committee",
+  "name": "Hindusthan Park Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.517933,
+  "lng": 88.362028,
+  "verified": false,
+  "area": "55B opp Basanti Devi College, Golpark, Kolkata 700029"
+ },
+ {
+  "id": "hindusthan-volunteers",
+  "name": "Hindusthan Volunteers",
+  "zone": "others",
+  "lat": 22.642924,
+  "lng": 88.43145,
+  "verified": false,
+  "area": "E/146/2, Jessore Rd, Motilal Colony, Rajbari, Dum Dum, Kolkata 700079"
+ },
+ {
+  "id": "hossenpur-kishore-sangha",
+  "name": "Hossenpur Kishore Sangha",
+  "zone": "south",
+  "lat": 22.508006,
+  "lng": 88.405723,
+  "verified": false,
+  "area": "921, Hussainpur Main Rd, Madurdaha, Hussainpur, Kolkata 700107"
+ },
+ {
+  "id": "howrah-anusilan-samity",
+  "name": "Howrah Anusilan Samity",
+  "zone": "howrah",
+  "lat": 22.576952,
+  "lng": 88.325266,
+  "verified": false,
+  "area": "64/63, Gopal Banerjee Ln, Naora, Shibpur, Howrah 711101"
+ },
+ {
+  "id": "howrah-botanica-majherhat-sarbojanin-durgapuja",
+  "name": "Howrah Botanica Majherhat Sarbojanin Durgapuja",
+  "zone": "howrah",
+  "lat": 22.591315,
+  "lng": 88.313483,
+  "verified": false,
+  "area": "HOWRAH BOTANICA MAJHERHAT SARBOJANIN DURGAPUJA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "howrah-jatiya-sevadal",
+  "name": "Howrah Jatiya Sevadal",
+  "zone": "howrah",
+  "lat": 22.591315,
+  "lng": 88.313483,
+  "verified": false,
+  "area": "HOWRAH JATIYA SEVADAL, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "howrah-saraswati-club",
+  "name": "Howrah Saraswati Club",
+  "zone": "howrah",
+  "lat": 22.584843,
+  "lng": 88.32749,
+  "verified": false,
+  "area": "15, Kailash Banerjee Ln, Kadam Tala, Howrah 711101"
+ },
+ {
+  "id": "howrah-seva-sangha",
+  "name": "Howrah Seva Sangha",
+  "zone": "howrah",
+  "lat": 22.586275,
+  "lng": 88.320596,
+  "verified": false,
+  "area": "123/4, Narasingha Dutta Rd, Kadam Tala, Howrah 711101"
+ },
+ {
+  "id": "hridaypur-friends-circle",
+  "name": "Hridaypur Friend&#x27;s Circle",
+  "zone": "others",
+  "lat": 22.709843,
+  "lng": 88.4747,
+  "verified": false,
+  "area": "Kailas Nagar, Madhyamgram, Kolkata 700127"
+ },
+ {
+  "id": "ib-block-welfare-association",
+  "name": "Ib Block Welfare Association",
+  "zone": "east",
+  "lat": 22.571704,
+  "lng": 88.414319,
+  "verified": false,
+  "area": "Community Hall, IB 202/A, IB Block, Sector 3, Bidhannagar, Kolkata 700106"
+ },
+ {
+  "id": "ichapur-sasthibagan-bani-mondir-sarbojanin-durgotsab",
+  "name": "Ichapur Sasthibagan Bani Mondir Sarbojanin Durgotsab",
+  "zone": "howrah",
+  "lat": 22.594013,
+  "lng": 88.310297,
+  "verified": false,
+  "area": "Ichapur, Howrah 711104"
+ },
+ {
+  "id": "ichapur-shivaji-sangha",
+  "name": "Ichapur Shivaji Sangha",
+  "zone": "howrah",
+  "lat": 22.588293,
+  "lng": 88.30592,
+  "verified": false,
+  "area": "1, Kedar Bhattacharya 4th Bye Ln, Ichapur, Howrah 711104"
+ },
+ {
+  "id": "iti-more-durga-puja-ground-kalyani-luminous-club",
+  "name": "Iti More Durga Puja Ground (kalyani Luminous Club)",
+  "zone": "north",
+  "lat": 22.631929,
+  "lng": 88.37787,
+  "verified": false,
+  "area": "B-9, Block B, Kalyani, Nadia 741235"
+ },
+ {
+  "id": "jadavpur-athletic-club",
+  "name": "Jadavpur Athletic Club",
+  "zone": "south",
+  "lat": 22.488916,
+  "lng": 88.37163,
+  "verified": false,
+  "area": "C-1/3, Regent Estate Rd, Bapuji Nagar, Jadavpur, Kolkata 700092"
+ },
+ {
+  "id": "jagaran-sangha-narendrapur",
+  "name": "Jagaran Sangha (narendrapur)",
+  "zone": "south",
+  "lat": 22.418858,
+  "lng": 88.410307,
+  "verified": false,
+  "area": "Dakshin Jagaddal, Narendrapur, Rajpur Sonarpur 700151"
+ },
+ {
+  "id": "jagari-sangha",
+  "name": "Jagari Sangha",
+  "zone": "south",
+  "lat": 22.50426,
+  "lng": 88.394613,
+  "verified": false,
+  "area": "79A, Purbachal Main Rd, South Purbachal, Haltu, Kolkata 700078"
+ },
+ {
+  "id": "jagat-mukherjee-park",
+  "name": "Jagat Mukherjee Park",
+  "zone": "north",
+  "lat": 22.59949,
+  "lng": 88.366039,
+  "verified": false,
+  "area": "1 Jatindra Mohan Ave, Sovabazar, Kolkata 700005"
+ },
+ {
+  "id": "jagorani-sangha-durga-puja-pandal",
+  "name": "Jagorani Sangha Durga Puja Pandal",
+  "zone": "north",
+  "lat": 22.592987,
+  "lng": 88.384897,
+  "verified": false,
+  "area": "16/1/H/48/1 Murari Pukur, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "jagriti-sangh-durga-puja-pandal-titagarh",
+  "name": "Jagriti Sangh Durga Puja Pandal, Titagarh",
+  "zone": "others",
+  "lat": 22.737302,
+  "lng": 88.368815,
+  "verified": false,
+  "area": "Purani Bazar, Titagarh 700119"
+ },
+ {
+  "id": "jamini-kaviraj-row-kalyan-sangha",
+  "name": "Jamini Kaviraj Row Kalyan Sangha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "JAMINI KAVIRAJ ROW KALYAN SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "janbazar-rajbari",
+  "name": "Janbazar Rajbari",
+  "zone": "central",
+  "lat": 22.562031,
+  "lng": 88.355486,
+  "verified": false,
+  "area": "20 Rafi Ahmed Kidwai Rd, Janbazar, Taltala, Kolkata 700013"
+ },
+ {
+  "id": "jatra-suru-sangha",
+  "name": "Jatra Suru Sangha",
+  "zone": "south",
+  "lat": 22.4707,
+  "lng": 88.37784,
+  "verified": false,
+  "area": "101-100, Raja Subodh Chandra Mallick Rd, Laxmi Narayan Colony, Garia 700084"
+ },
+ {
+  "id": "jawpur-bayam-samiti",
+  "name": "Jawpur Bayam Samiti",
+  "zone": "north",
+  "lat": 22.613596,
+  "lng": 88.402052,
+  "verified": false,
+  "area": "282, Jawpur Rd, Sahapara, Dum Dum, South Dumdum 700074"
+ },
+ {
+  "id": "jhamapukur-sadharan-durgotsab-samity",
+  "name": "Jhamapukur Sadharan Durgotsab Samity",
+  "zone": "east",
+  "lat": 22.580288,
+  "lng": 88.368332,
+  "verified": false,
+  "area": "60, Bechu Chatterjee St, Machuabazar, Kolkata, West Bengal 700009"
+ },
+ {
+  "id": "jhawtala-sarbojanin",
+  "name": "Jhawtala Sarbojanin",
+  "zone": "east",
+  "lat": 22.619504,
+  "lng": 88.44435,
+  "verified": false,
+  "area": "JHAWTALA SARBOJANIN, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "jitendra-smriti-sangha",
+  "name": "Jitendra Smriti Sangha",
+  "zone": "south",
+  "lat": 22.506133,
+  "lng": 88.323909,
+  "verified": false,
+  "area": "17e, SN Roy Rd, Panchabatitala, Chamrapatti, Behala, Kolkata 700038"
+ },
+ {
+  "id": "jodhpur-park-sarbojanin-distinct-from-95-pally",
+  "name": "Jodhpur Park Sarbojanin (distinct From 95 Pally)",
+  "zone": "south",
+  "lat": 22.504822,
+  "lng": 88.365675,
+  "verified": false,
+  "area": "1D Jodhpur Park, Kolkata 700068"
+ },
+ {
+  "id": "jorabagan-chhatra-sanghaati",
+  "name": "Jorabagan Chhatra Sanghaati",
+  "zone": "north",
+  "lat": 22.591662,
+  "lng": 88.355702,
+  "verified": false,
+  "area": "Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "jorabagan-chhatra-sanghati",
+  "name": "Jorabagan Chhatra Sanghati",
+  "zone": "north",
+  "lat": 22.591662,
+  "lng": 88.355702,
+  "verified": false,
+  "area": "Jorabagan, Kolkata, West Bengal 700006"
+ },
+ {
+  "id": "jorasankao-7-er-palli-sarbojanin-durgapuja",
+  "name": "Jorasankao 7 Er Palli Sarbojanin Durgapuja",
+  "zone": "north",
+  "lat": 22.583989,
+  "lng": 88.361331,
+  "verified": false,
+  "area": "5A, Pratap Ghosh Ln, Jorasanko, Kolkata 700007"
+ },
+ {
+  "id": "jorasanko-7-er-palli-sarbojanin-durgapuja",
+  "name": "Jorasanko 7 Er Palli Sarbojanin Durgapuja",
+  "zone": "north",
+  "lat": 22.583989,
+  "lng": 88.361331,
+  "verified": false,
+  "area": "5A Pratap Ghosh Ln, Jorasanko, Kolkata 700007"
+ },
+ {
+  "id": "jorasanko-sadharan-durgotsav-samity",
+  "name": "Jorasanko Sadharan Durgotsav Samity",
+  "zone": "north",
+  "lat": 22.586239,
+  "lng": 88.360557,
+  "verified": false,
+  "area": "34, Vivekananda Rd, Jorasanko, Kolkata 700007"
+ },
+ {
+  "id": "jorasanko-shib-krishna-daw-bari",
+  "name": "Jorasanko Shib Krishna Daw Bari",
+  "zone": "north",
+  "lat": 22.585847,
+  "lng": 88.359567,
+  "verified": false,
+  "area": "12 Shib Krishna Daw Ln, Jorasanko, Kolkata 700007"
+ },
+ {
+  "id": "jorasanko-shib-krishna-daws-bari",
+  "name": "Jorasanko Shib Krishna Daw&#x27;s Bari",
+  "zone": "north",
+  "lat": 22.585847,
+  "lng": 88.359567,
+  "verified": false,
+  "area": "12, Shib Krishna Daw Ln, Singhi Bagan, Jorasanko, Kolkata 700007"
+ },
+ {
+  "id": "joyrampur-sarbojanin-durgpuja-committee",
+  "name": "Joyrampur Sarbojanin Durgpuja Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Becharam Chatterjee Rd, Ramnarayan Govt Colony, Behala, Kolkata 700061"
+ },
+ {
+  "id": "jubamaitry",
+  "name": "Jubamaitry",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "JUBAMAITRY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "jubok-sangho-puja-mandap",
+  "name": "Jubok Sangho Puja Mandap",
+  "zone": "north",
+  "lat": 22.649123,
+  "lng": 88.415289,
+  "verified": false,
+  "area": "Dr Ambedkar Sarani, Vivekanand Pally, Durganagar, North Dumdum 700065"
+ },
+ {
+  "id": "judgebagan-sarbojanin-durgotsav",
+  "name": "Judgebagan Sarbojanin Durgotsav",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "JUDGEBAGAN SARBOJANIN DURGOTSAV, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kabirajbagan-sarbajanin-durgotsav-committee",
+  "name": "Kabirajbagan Sarbajanin Durgotsav Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "KABIRAJBAGAN SARBAJANIN DURGOTSAV COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kadamtala-durga-mandap",
+  "name": "Kadamtala Durga Mandap",
+  "zone": "north",
+  "lat": 22.624581,
+  "lng": 88.396911,
+  "verified": false,
+  "area": "Jheel Bagan, Purba Sinthi, Dum Dum, Kolkata 700030"
+ },
+ {
+  "id": "kailash-bose-street-sarbojanin-durgotsava",
+  "name": "Kailash Bose Street Sarbojanin Durgotsava",
+  "zone": "north",
+  "lat": 22.583193,
+  "lng": 88.369077,
+  "verified": false,
+  "area": "KAILASH BOSE STREET SARBOJANIN DURGOTSAVA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kaiser-street-sarbojanin",
+  "name": "Kaiser Street Sarbojanin",
+  "zone": "east",
+  "lat": 22.570257,
+  "lng": 88.371861,
+  "verified": false,
+  "area": "Sealdah, Raja Bazar, Kolkata 700014"
+ },
+ {
+  "id": "kakurgachi-chalantika-club",
+  "name": "Kakurgachi Chalantika Club",
+  "zone": "east",
+  "lat": 22.58168,
+  "lng": 88.391666,
+  "verified": false,
+  "area": "S3B, Bagmari Lane, Kankurgachi, Kolkata 700054"
+ },
+ {
+  "id": "kalabagan-sarbojanin",
+  "name": "Kalabagan Sarbojanin",
+  "zone": "south",
+  "lat": 22.499649,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "KALABAGAN SARBOJANIN, South Kolkata"
+ },
+ {
+  "id": "kali-puja-pandal-green-park-dum-dum",
+  "name": "Kali Puja Pandal (green Park, Dum Dum)",
+  "zone": "north",
+  "lat": 22.638536,
+  "lng": 88.416946,
+  "verified": false,
+  "area": "23/2, RN Guha Rd, Green Park, Rajbari, Dum Dum, North Dumdum 700028"
+ },
+ {
+  "id": "kalighat-kishore-sangha",
+  "name": "Kalighat Kishore Sangha",
+  "zone": "south",
+  "lat": 22.522972,
+  "lng": 88.341465,
+  "verified": false,
+  "area": "133, Kalighat Rd, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "kalighat-mahashakti-durga-puja",
+  "name": "Kalighat Mahashakti Durga Puja",
+  "zone": "south",
+  "lat": 22.518948,
+  "lng": 88.344556,
+  "verified": false,
+  "area": "15/1 Anami Sangha, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "kalighat-milan-sangha",
+  "name": "Kalighat Milan Sangha",
+  "zone": "south",
+  "lat": 22.524317,
+  "lng": 88.341039,
+  "verified": false,
+  "area": "32, Harish Chatterjee St, Jatin Das Park, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "kalighat-nepal-bhattacharjee-st-club",
+  "name": "Kalighat Nepal Bhattacharjee St Club",
+  "zone": "south",
+  "lat": 22.517947,
+  "lng": 88.341575,
+  "verified": false,
+  "area": "10/9, Nepal Bhattacharya St, Anami Sangha, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "kalighat-sree-sangha",
+  "name": "Kalighat Sree Sangha",
+  "zone": "south",
+  "lat": 22.521114,
+  "lng": 88.343441,
+  "verified": false,
+  "area": "53/A, Gurupada Halder Rd, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "kalitala-r-k-das-road-durgotsav-comm",
+  "name": "Kalitala &amp; R K Das Road Durgotsav Comm",
+  "zone": "south",
+  "lat": 22.506613,
+  "lng": 88.397301,
+  "verified": false,
+  "area": "KALITALA \\u0026 R K DAS ROAD DURGOTSAV COMM, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kalitala-sporting-club",
+  "name": "Kalitala Sporting Club",
+  "zone": "south",
+  "lat": 22.506558,
+  "lng": 88.397225,
+  "verified": false,
+  "area": "126, North Purbachal Kalitala Rd, Kalikapur, Haltu, Kolkata 700078"
+ },
+ {
+  "id": "kalyan-sangha-durga-puja-lake-gardens",
+  "name": "Kalyan Sangha Durga Puja, Lake Gardens",
+  "zone": "south",
+  "lat": 22.501313,
+  "lng": 88.356825,
+  "verified": false,
+  "area": "347 Prince Anwar Shah Rd, Lake Gardens, Kolkata 700095"
+ },
+ {
+  "id": "kamal-park-sarbojanin-durga-puja-committee",
+  "name": "Kamal Park Sarbojanin Durga Puja Committee",
+  "zone": "east",
+  "lat": 22.603613,
+  "lng": 88.42621,
+  "verified": false,
+  "area": "BC 88, Rabindrapally, Kestopur, Kolkata 700101"
+ },
+ {
+  "id": "kamardanga-sitalatala-puja-committee",
+  "name": "Kamardanga Sitalatala Puja Committee",
+  "zone": "howrah",
+  "lat": 22.596045,
+  "lng": 88.30366,
+  "verified": false,
+  "area": "Sitala Mandir, Kamardanga, Ichapur, Howrah 711104"
+ },
+ {
+  "id": "kamdahari-jagrata-sangha",
+  "name": "Kamdahari Jagrata Sangha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Usha Pally Rd, Bidhanpally, Kamdahari, Kolkata 700084"
+ },
+ {
+  "id": "kanjial-para-puja-samity",
+  "name": "Kanjial Para Puja Samity",
+  "zone": "others",
+  "lat": 22.635074,
+  "lng": 88.483049,
+  "verified": false,
+  "area": "KANJIAL PARA PUJA SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kankurgachi-chalantika-durgotsav-ground",
+  "name": "Kankurgachi Chalantika Durgotsav Ground",
+  "zone": "east",
+  "lat": 22.581681,
+  "lng": 88.392059,
+  "verified": false,
+  "area": "16, Bagmari Lane, BRS 10, Kankurgachi, Kolkata 700054"
+ },
+ {
+  "id": "kankurgachi-jubak-brinda",
+  "name": "Kankurgachi Jubak Brinda",
+  "zone": "east",
+  "lat": 22.579357,
+  "lng": 88.388107,
+  "verified": false,
+  "area": "Phoolbagan, Kankurgachi, Kolkata 700054"
+ },
+ {
+  "id": "kankurgachi-milan-mela-samity",
+  "name": "Kankurgachi Milan Mela Samity",
+  "zone": "east",
+  "lat": 22.580081,
+  "lng": 88.39696,
+  "verified": false,
+  "area": "156, Maniktala Main Rd, Kankurgachi, Kolkata 700054"
+ },
+ {
+  "id": "kankurgachi-mitali-sangha-durga-puja-pandal",
+  "name": "Kankurgachi Mitali Sangha Durga Puja Pandal",
+  "zone": "east",
+  "lat": 22.579987,
+  "lng": 88.394212,
+  "verified": false,
+  "area": "179A/1A Maniktala Main Rd, Kadapara, Kankurgachi, Kolkata 700054"
+ },
+ {
+  "id": "kanungo-park-recreation-club-liabrary",
+  "name": "Kanungo Park Recreation Club &amp; Liabrary",
+  "zone": "south",
+  "lat": 22.467914,
+  "lng": 88.378657,
+  "verified": false,
+  "area": "Milan Park, Kanungo Park, Garia, Kolkata 700084"
+ },
+ {
+  "id": "karbagan-sarbojanin-durgotsab-committee",
+  "name": "Karbagan Sarbojanin Durgotsab Committee",
+  "zone": "north",
+  "lat": 22.595241,
+  "lng": 88.384277,
+  "verified": false,
+  "area": "17/1/H Ultadanga Main Rd, Daspara, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "kasba-r-k-chatterjee-road-adhibasi-brinda",
+  "name": "Kasba R. K. Chatterjee Road Adhibasi Brinda",
+  "zone": "south",
+  "lat": 22.518135,
+  "lng": 88.37842,
+  "verified": false,
+  "area": "Bosepukur, Kasba, Kolkata 700042"
+ },
+ {
+  "id": "kasba-rathtala-club",
+  "name": "Kasba Rathtala Club",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Banku Bihari Chatterjee Rd, Rattala More, Bosepukur, Kasba, Kolkata 700042"
+ },
+ {
+  "id": "kasba-shakti-sangha",
+  "name": "Kasba Shakti Sangha",
+  "zone": "south",
+  "lat": 22.51649,
+  "lng": 88.381498,
+  "verified": false,
+  "area": "14/1 Jahura Bazar Ln, Bosepukur, Kasba, Kolkata 700042"
+ },
+ {
+  "id": "kasba-uttarpara-arabinda-sporting-club",
+  "name": "Kasba Uttarpara Arabinda Sporting Club",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "KASBA UTTARPARA ARABINDA SPORTING CLUB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kashi-bose-lane-durga-puja-samity",
+  "name": "Kashi Bose Lane Durga Puja Samity",
+  "zone": "north",
+  "lat": 22.590898,
+  "lng": 88.368917,
+  "verified": false,
+  "area": "5/1 Kashi Bose Ln, Darjipara, Kolkata 700006"
+ },
+ {
+  "id": "kashipur-durga-puja-pandal-dasnagar",
+  "name": "Kashipur Durga Puja Pandal, Dasnagar",
+  "zone": "howrah",
+  "lat": 22.606711,
+  "lng": 88.310168,
+  "verified": false,
+  "area": "Natun Pally, Kunjapara, Netajigarh, Dasnagar, Howrah 711105"
+ },
+ {
+  "id": "kashipur-saner-ghat-durga-puja",
+  "name": "Kashipur Saner Ghat Durga Puja",
+  "zone": "howrah",
+  "lat": 22.603855,
+  "lng": 88.309245,
+  "verified": false,
+  "area": "Natun Pally, Kunjapara, Netajigarh, Dasnagar, Howrah 711105"
+ },
+ {
+  "id": "katjunagar-sarbojanin-durgotsab-committee",
+  "name": "Katjunagar Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "KATJUNAGAR SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kendua-shanti-sangha",
+  "name": "Kendua Shanti Sangha",
+  "zone": "south",
+  "lat": 22.471984,
+  "lng": 88.381501,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "keshtopur-prafulla-kanan-paschim-adhibasi-brinda",
+  "name": "Keshtopur Prafulla Kanan Paschim Adhibasi Brinda",
+  "zone": "east",
+  "lat": 22.6076,
+  "lng": 88.421627,
+  "verified": false,
+  "area": "AA102, Prafulla Kanan West, Kestopur, Kolkata 700101"
+ },
+ {
+  "id": "kestopur-durga-puja",
+  "name": "Kestopur Durga Puja",
+  "zone": "east",
+  "lat": 22.604006,
+  "lng": 88.422618,
+  "verified": false,
+  "area": "AB-69, Prafulla Kanan, Narayantala, Kolkata 700101"
+ },
+ {
+  "id": "khardah-arunachal-sarbojanin-sree-sree-sarbojanin-durgotsab",
+  "name": "Khardah Arunachal Sarbojanin (sree Sree Sarbojanin Durgotsab)",
+  "zone": "others",
+  "lat": 22.723564,
+  "lng": 88.380665,
+  "verified": false,
+  "area": "48, N Basudev Rd, Natun Pally, Belghoria, Panihati 700056"
+ },
+ {
+  "id": "khelat-bhavan-pathuriaghata-rajbari",
+  "name": "Khelat Bhavan Pathuriaghata Rajbari",
+  "zone": "north",
+  "lat": 22.588769,
+  "lng": 88.356539,
+  "verified": false,
+  "area": "47 Pathuriaghata St, Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "khidderpore-abhiyan",
+  "name": "Khidderpore Abhiyan",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "KHIDDERPORE ABHIYAN, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "khidderpore-shibtala-amar-sangha",
+  "name": "Khidderpore Shibtala Amar Sangha",
+  "zone": "south",
+  "lat": 22.544666,
+  "lng": 88.325935,
+  "verified": false,
+  "area": "7/1, Munshigunj Rd, Watgunge, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "khiddrepur-sarbojanin",
+  "name": "Khiddrepur Sarbojanin",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Mansatala Row, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "khidirpur-25-palli-durga-puja",
+  "name": "Khidirpur 25 Palli Durga Puja",
+  "zone": "south",
+  "lat": 22.539196,
+  "lng": 88.326457,
+  "verified": false,
+  "area": "10 Gopal Ghosh Ln, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "khudiram-yubak-sangha",
+  "name": "Khudiram Yubak Sangha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "KHUDIRAM YUBAK SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kidderpore-25-palli-durga-puja",
+  "name": "Kidderpore 25 Palli Durga Puja",
+  "zone": "south",
+  "lat": 22.539692,
+  "lng": 88.324547,
+  "verified": false,
+  "area": "3A Gopal Ghosh Ln, 25 Palli, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "kidderpore-bharati-sanmilani",
+  "name": "Kidderpore Bharati Sanmilani",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "KIDDERPORE BHARATI SANMILANI, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kidderpore-bijoyee-sangha",
+  "name": "Kidderpore Bijoyee Sangha",
+  "zone": "south",
+  "lat": 22.54475,
+  "lng": 88.320115,
+  "verified": false,
+  "area": "22, Joy Krishna Paul Rd, Andaman Dock, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "kidderpore-gopal-doctor-roadjubak-sangha",
+  "name": "Kidderpore Gopal Doctor Roadjubak Sangha",
+  "zone": "south",
+  "lat": 22.541194,
+  "lng": 88.319591,
+  "verified": false,
+  "area": "Gopal Doctor Rd, Andaman Dock, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "kidderpore-juba-gosthi",
+  "name": "Kidderpore Juba Gosthi",
+  "zone": "south",
+  "lat": 22.544051,
+  "lng": 88.319928,
+  "verified": false,
+  "area": "30, Joy Krishna Paul Rd, Andaman Dock, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "kidderpore-pally-saradiya",
+  "name": "Kidderpore Pally Saradiya",
+  "zone": "south",
+  "lat": 22.543253,
+  "lng": 88.321504,
+  "verified": false,
+  "area": "16A, Hem Chandra St, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "kidderpore-venus-club",
+  "name": "Kidderpore Venus Club",
+  "zone": "south",
+  "lat": 22.538168,
+  "lng": 88.326923,
+  "verified": false,
+  "area": "441b, Manasatala Ln, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "kishore-sangha-club-durga-puja-tangra",
+  "name": "Kishore Sangha Club Durga Puja (tangra)",
+  "zone": "east",
+  "lat": 22.559564,
+  "lng": 88.390734,
+  "verified": false,
+  "area": "7/11, Rani Rashmoni Garden Ln, Tangra, Kolkata 700015"
+ },
+ {
+  "id": "kodalia-netaji-sangha",
+  "name": "Kodalia Netaji Sangha",
+  "zone": "south",
+  "lat": 22.410655,
+  "lng": 88.419997,
+  "verified": false,
+  "area": "Harinavi, Rajpur Sonarpur 700146"
+ },
+ {
+  "id": "kolkata-durga-puja-parikrama-boat-tour",
+  "name": "Kolkata Durga Puja Parikrama (boat Tour)",
+  "zone": "north",
+  "lat": 22.59619,
+  "lng": 88.364204,
+  "verified": false,
+  "area": "Sovabazar St, Raja Nabakrishna Street, Sovabazar, Kolkata 700005"
+ },
+ {
+  "id": "kolkata-poura-karmachari-sarbojanin-durgotsab-samity",
+  "name": "Kolkata Poura Karmachari Sarbojanin Durgotsab Samity",
+  "zone": "central",
+  "lat": 22.565296,
+  "lng": 88.354348,
+  "verified": false,
+  "area": "Kolkata Municipal Corporation, Hogg Street, Bowbazar, Kolkata 700072"
+ },
+ {
+  "id": "krishnabagan-junior-sangha",
+  "name": "Krishnabagan Junior Sangha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "KRISHNABAGAN JUNIOR SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "kumartuli-ghat",
+  "name": "Kumartuli Ghat",
+  "zone": "north",
+  "lat": 22.601627,
+  "lng": 88.360778,
+  "verified": false,
+  "area": "Raja Nabakrishna St, Shobhabazar, Kolkata 700005"
+ },
+ {
+  "id": "kumartuli-park-sarbojanin-durgotsab",
+  "name": "Kumartuli Park Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.598983,
+  "lng": 88.361466,
+  "verified": false,
+  "area": "8B Abhay Mitra St, Kumartuli, Kolkata 700005"
+ },
+ {
+  "id": "kumartuli-potters-lane-idol-making-hub",
+  "name": "Kumartuli Potters Lane (idol-Making Hub)",
+  "zone": "north",
+  "lat": 22.599433,
+  "lng": 88.363501,
+  "verified": false,
+  "area": "1 Banamali Sarkar St, Kumartuli, Kolkata 700005"
+ },
+ {
+  "id": "kumartuly-park-sarbojanin",
+  "name": "Kumartuly Park Sarbojanin",
+  "zone": "north",
+  "lat": 22.598983,
+  "lng": 88.361466,
+  "verified": false,
+  "area": "8B, Abhay Mitra St, Kumartuli, Kolkata 700005"
+ },
+ {
+  "id": "kumatully-sarvojanin-durgotsav",
+  "name": "Kumatully Sarvojanin Durgotsav",
+  "zone": "north",
+  "lat": 22.601166,
+  "lng": 88.362723,
+  "verified": false,
+  "area": "Sovabazar, Malipanchghara, Baghbazar, Kolkata 700005"
+ },
+ {
+  "id": "kumortuli-sarbojonin-durgotsab",
+  "name": "Kumortuli Sarbojonin Durgotsab",
+  "zone": "north",
+  "lat": 22.601166,
+  "lng": 88.362723,
+  "verified": false,
+  "area": "Sovabazar, Malipanchghara, Baghbazar, Kolkata 700005"
+ },
+ {
+  "id": "kundubagan-abasik-samiti-durga-mandir",
+  "name": "Kundubagan Abasik Samiti Durga Mandir",
+  "zone": "others",
+  "lat": 22.74666,
+  "lng": 88.333503,
+  "verified": false,
+  "area": "45/A/2, Mallicpara, Ghoramara, Serampore, Hooghly 712203"
+ },
+ {
+  "id": "labony-estate-durga-puja",
+  "name": "Labony Estate Durga Puja",
+  "zone": "east",
+  "lat": 22.583213,
+  "lng": 88.406747,
+  "verified": false,
+  "area": "EB Block, Sector 1, Bidhannagar, Kolkata 700064"
+ },
+ {
+  "id": "laha-bari",
+  "name": "Laha Bari",
+  "zone": "east",
+  "lat": 22.580914,
+  "lng": 88.366526,
+  "verified": false,
+  "area": "1 Bechu Chatterjee St, Machuabazar, Kolkata 700009"
+ },
+ {
+  "id": "laha-colony-bibek-sangha",
+  "name": "Laha Colony Bibek Sangha",
+  "zone": "north",
+  "lat": 22.619986,
+  "lng": 88.417925,
+  "verified": false,
+  "area": "11/12, Nagendra Nath Rd, Pratapaditya Nagar, Nagerbazar, Kolkata 700028"
+ },
+ {
+  "id": "lake-avenue-sebak-sangha",
+  "name": "Lake Avenue Sebak Sangha",
+  "zone": "south",
+  "lat": 22.510571,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "56, Dr TN Majumder St, Lake Range, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "lake-gardens-peoples-association",
+  "name": "Lake Gardens Peoples Association",
+  "zone": "south",
+  "lat": 22.50567,
+  "lng": 88.356131,
+  "verified": false,
+  "area": "Lake Gardens, Kolkata 700045"
+ },
+ {
+  "id": "lake-market-jubak-brinda",
+  "name": "Lake Market Jubak Brinda",
+  "zone": "south",
+  "lat": 22.517942,
+  "lng": 88.348045,
+  "verified": false,
+  "area": "16A, Prince Golam Mohammed Rd, Manoharpukur, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "lake-town-adhibashi-brinda",
+  "name": "Lake Town Adhibashi Brinda",
+  "zone": "east",
+  "lat": 22.604451,
+  "lng": 88.40397,
+  "verified": false,
+  "area": "Children's Park, Lake Town Rd, Block A, South Dumdum 700089"
+ },
+ {
+  "id": "lake-youth-corner-durga-puja",
+  "name": "Lake Youth Corner Durga Puja",
+  "zone": "south",
+  "lat": 22.510677,
+  "lng": 88.347249,
+  "verified": false,
+  "area": "13G Dr TN Majumder St, Lake Range, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "lake-yuba-sangha",
+  "name": "Lake Yuba Sangha",
+  "zone": "south",
+  "lat": 22.515565,
+  "lng": 88.351238,
+  "verified": false,
+  "area": "19, Lake Place Rd, Lake Market, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "lakeview-park-durgotsab-samity",
+  "name": "Lakeview Park Durgotsab Samity",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "LAKEVIEW PARK DURGOTSAB SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "lal-building-durga-puja",
+  "name": "Lal Building Durga Puja",
+  "zone": "east",
+  "lat": 22.571398,
+  "lng": 88.375458,
+  "verified": false,
+  "area": "Sealdah, Raja Bazar, Kolkata 700009"
+ },
+ {
+  "id": "lalabagan-sarbojanin-durgotsab-samity",
+  "name": "Lalabagan Sarbojanin Durgotsab Samity",
+  "zone": "north",
+  "lat": 22.587362,
+  "lng": 88.376875,
+  "verified": false,
+  "area": "88 Raja Dinendra St, Manicktala, Kolkata 700006"
+ },
+ {
+  "id": "lalabagan-yubakbrinda-nabankur-sangha",
+  "name": "Lalabagan Yubakbrinda Nabankur Sangha",
+  "zone": "north",
+  "lat": 22.588373,
+  "lng": 88.376757,
+  "verified": false,
+  "area": "Raja Dinendra St, Manicktala, Kolkata 700006"
+ },
+ {
+  "id": "loona-7-star",
+  "name": "Loona 7 Star",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "LOONA 7 STAR, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "maa-durga-pandal-balaka-abasan",
+  "name": "Maa Durga Pandal (balaka Abasan)",
+  "zone": "east",
+  "lat": 22.574003,
+  "lng": 88.453415,
+  "verified": false,
+  "area": "CG Block(Newtown), Action Area I, Newtown 700102"
+ },
+ {
+  "id": "maddox-square-durga-pujo",
+  "name": "Maddox Square Durga Pujo",
+  "zone": "south",
+  "lat": 22.526563,
+  "lng": 88.354648,
+  "verified": false,
+  "area": "Garcha, Ballygunge, Kolkata 700026"
+ },
+ {
+  "id": "madhab-das-lane-sarbojanin-durgotsab",
+  "name": "Madhab Das Lane Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.592956,
+  "lng": 88.375343,
+  "verified": false,
+  "area": "155/5, Madhab Das Ln, Manicktala, Khanna, Kolkata, West Bengal 700004"
+ },
+ {
+  "id": "madhusudan-das-lane-bye-lane-sarbojaneen-durgotsab",
+  "name": "Madhusudan Das Lane &amp; Bye Lane Sarbojaneen Durgotsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "madhya-bidhan-pally-sarbojonin-puja-mandap",
+  "name": "Madhya Bidhan Pally Sarbojonin Puja Mandap",
+  "zone": "south",
+  "lat": 22.467158,
+  "lng": 88.370326,
+  "verified": false,
+  "area": "243/2 Bidhanpally, Bansdroni, Kolkata 700084"
+ },
+ {
+  "id": "madhya-garfa-sarbojanin-durgotsab-puja-committee",
+  "name": "Madhya Garfa Sarbojanin Durgotsab Puja Committee",
+  "zone": "south",
+  "lat": 22.497753,
+  "lng": 88.377068,
+  "verified": false,
+  "area": "Garfa 4th Ln, Viveknagar, Garfa, Kolkata 700075"
+ },
+ {
+  "id": "madhya-kolkata-sarbojanin-durga-puja",
+  "name": "Madhya Kolkata Sarbojanin Durga Puja",
+  "zone": "east",
+  "lat": 22.569135,
+  "lng": 88.367435,
+  "verified": false,
+  "area": "3-4, Raj Kumar Chakraborty Ln, Baithakkhana, Kolkata 700014"
+ },
+ {
+  "id": "madurdaha-united-club",
+  "name": "Madurdaha United Club",
+  "zone": "south",
+  "lat": 22.504201,
+  "lng": 88.403634,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "maha-anander-polly-sarbojonin-durga-utsob-committee",
+  "name": "Maha-Anander Polly Sarbojonin Durga Utsob Committee",
+  "zone": "howrah",
+  "lat": 22.606413,
+  "lng": 88.31229,
+  "verified": false,
+  "area": "17 Kunjapara, Netajigarh, Dasnagar, Howrah 711105"
+ },
+ {
+  "id": "mahamayatalaeast-milani",
+  "name": "Mahamayatala(East) Milani",
+  "zone": "south",
+  "lat": 22.453614,
+  "lng": 88.38832,
+  "verified": false,
+  "area": "Mahamaya Tala, Garia, Rajpur Sonarpur 700084"
+ },
+ {
+  "id": "mahatirtham-durgotsabkalikapur",
+  "name": "Mahatirtham Durgotsab-Kalikapur",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "MAHATIRTHAM DURGOTSAB-KALIKAPUR, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "maitreyi-durga-puja-mandap",
+  "name": "Maitreyi Durga Puja Mandap",
+  "zone": "north",
+  "lat": 22.639714,
+  "lng": 88.419052,
+  "verified": false,
+  "area": "26, Maitreyi Road, Green Park, Rajbari, Dum Dum, Kolkata 700028"
+ },
+ {
+  "id": "majumder-para-durga-puja-pandal-andul",
+  "name": "Majumder Para Durga Puja Pandal, Andul",
+  "zone": "howrah",
+  "lat": 22.578445,
+  "lng": 88.204524,
+  "verified": false,
+  "area": "461 Majumder Para, Andul, Kalara, Howrah 711302"
+ },
+ {
+  "id": "majumder-para-unnayan-samity",
+  "name": "Majumder Para Unnayan Samity",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "MAJUMDER PARA UNNAYAN SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "makhla-durga-puja-pandal-uttarpara",
+  "name": "Makhla Durga Puja Pandal, Uttarpara",
+  "zone": "others",
+  "lat": 22.674885,
+  "lng": 88.337254,
+  "verified": false,
+  "area": "Makhla Rd, Olabibitala, Makhla, Uttarpara 712233"
+ },
+ {
+  "id": "mall-pally-sarbojanin-puja-committee",
+  "name": "Mall Pally Sarbojanin Puja Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "MALL PALLY SARBOJANIN PUJA COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "mallick-bari-bhowanipore",
+  "name": "Mallick Bari (bhowanipore)",
+  "zone": "south",
+  "lat": 22.533598,
+  "lng": 88.349092,
+  "verified": false,
+  "area": "25A/C Mohini Mohan Rd, Jadubabur Bazar, Bhowanipore, Kolkata 700020"
+ },
+ {
+  "id": "mallick-bari-pathuriaghatasingha-bahini",
+  "name": "Mallick Bari (pathuriaghata/Singha Bahini)",
+  "zone": "north",
+  "lat": 22.590074,
+  "lng": 88.356973,
+  "verified": false,
+  "area": "26/1, Prasanna Kumar Tagore St, Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "mallick-colony-sarbojonin-durga-utsav",
+  "name": "Mallick Colony Sarbojonin Durga Utsav",
+  "zone": "north",
+  "lat": 22.642231,
+  "lng": 88.376302,
+  "verified": false,
+  "area": "207/120A BT Rd, Mallick Colony, Baranagar 700036"
+ },
+ {
+  "id": "manasbag-sarbojanin-durgotsab",
+  "name": "Manasbag Sarbojanin Durgotsab",
+  "zone": "others",
+  "lat": 22.666389,
+  "lng": 88.378391,
+  "verified": false,
+  "area": "48, N Basudev Rd, Natun Pally, Belghoria, Panihati 700056"
+ },
+ {
+  "id": "mandirtala-durga-puja-pandal",
+  "name": "Mandirtala Durga Puja Pandal",
+  "zone": "howrah",
+  "lat": 22.569694,
+  "lng": 88.317056,
+  "verified": false,
+  "area": "7/1 Kashinath Chatterjee Ln, Shibpur, Howrah 711102"
+ },
+ {
+  "id": "manicktala-14er-pally-sadharan-durga-utsab",
+  "name": "Manicktala 14er Pally Sadharan Durga Utsab",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "MANICKTALA 14ER PALLY SADHARAN DURGA UTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "manicktala-chaltabagan-loha-patty",
+  "name": "Manicktala Chaltabagan Loha Patty",
+  "zone": "east",
+  "lat": 22.584891,
+  "lng": 88.372151,
+  "verified": false,
+  "area": "159D, Vivekananda Rd, Manicktala, Kolkata 700009"
+ },
+ {
+  "id": "maniktala-anchalik-samity",
+  "name": "Maniktala Anchalik Samity",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "MANIKTALA ANCHALIK SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "masterda-smriti-sangha",
+  "name": "Masterda Smriti Sangha",
+  "zone": "east",
+  "lat": 22.603814,
+  "lng": 88.422576,
+  "verified": false,
+  "area": "AB-61/1, Prafulla Kanan, Kestopur, Kolkata 700101"
+ },
+ {
+  "id": "mechua-bazar-sarbojanik-durgapuja-samity",
+  "name": "Mechua Bazar Sarbojanik Durgapuja Samity",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "MECHUA BAZAR SARBOJANIK DURGAPUJA SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "metropolitan-durga-bari-tangra",
+  "name": "Metropolitan Durga Bari, Tangra",
+  "zone": "south",
+  "lat": 22.554192,
+  "lng": 88.406358,
+  "verified": false,
+  "area": "Sector A, Metropolitan Co-op Housing, Tangra, Kolkata 700107"
+ },
+ {
+  "id": "metropolitan-sarbajanin-durgautshab",
+  "name": "Metropolitan Sarbajanin Durgautshab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Sector A, Metropolitan Co-Op Housing Society, Tangra, Kolkata 700107"
+ },
+ {
+  "id": "milan-chakra",
+  "name": "Milan Chakra",
+  "zone": "south",
+  "lat": 22.525011,
+  "lng": 88.359819,
+  "verified": false,
+  "area": "2a, Garcha 1st Ln, Dover Terrace, Ballygunge, Kolkata 700029"
+ },
+ {
+  "id": "milan-samity-durga-puja-serampore",
+  "name": "Milan Samity Durga Puja (serampore)",
+  "zone": "others",
+  "lat": 22.752609,
+  "lng": 88.342848,
+  "verified": false,
+  "area": "63, A/1, Serampore, Hooghly 712201"
+ },
+ {
+  "id": "milan-sangha-durga-puja-pandal-ramrajatala",
+  "name": "Milan Sangha Durga Puja Pandal, Ramrajatala",
+  "zone": "howrah",
+  "lat": 22.597446,
+  "lng": 88.2992,
+  "verified": false,
+  "area": "119A Arupara Rd, Ramrajatala, Howrah 711112"
+ },
+ {
+  "id": "milan-sangha-gobardanga",
+  "name": "Milan Sangha (gobardanga)",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "Station Rd E, Garhpara, Gobardanga 743273"
+ },
+ {
+  "id": "milanpally-durga-puja",
+  "name": "Milanpally Durga Puja",
+  "zone": "south",
+  "lat": 22.437374,
+  "lng": 88.434529,
+  "verified": false,
+  "area": "Milan Pally, Rajpur Sonarpur 700150"
+ },
+ {
+  "id": "mitali-kankurghachi",
+  "name": "Mitali Kankurghachi",
+  "zone": "east",
+  "lat": 22.580047,
+  "lng": 88.394132,
+  "verified": false,
+  "area": "1214j, Maniktala Main Rd, Kankurgachi, Kolkata 700054"
+ },
+ {
+  "id": "mitali-sangha-bijoygarh-10-no-durga-puja-pandal",
+  "name": "Mitali Sangha Bijoygarh 10 No. Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.486703,
+  "lng": 88.36548,
+  "verified": false,
+  "area": "10-75-B, Bijoygarh, Regent Estate, Jadavpur, Kolkata 700092"
+ },
+ {
+  "id": "mitali-sangha-durga-puja-pandal-kankurgachi",
+  "name": "Mitali Sangha Durga Puja Pandal (kankurgachi)",
+  "zone": "east",
+  "lat": 22.580047,
+  "lng": 88.394132,
+  "verified": false,
+  "area": "1214j, Maniktala Main Rd, Manicktala, Garpar, Kankurgachi, Kolkata 700054"
+ },
+ {
+  "id": "mohammad-ali-park",
+  "name": "Mohammad Ali Park",
+  "zone": "central",
+  "lat": 22.577189,
+  "lng": 88.360737,
+  "verified": false,
+  "area": "Chittaranjan Ave, College Square, Kolkata 700073"
+ },
+ {
+  "id": "mohammed-ali-park-muhammad-ali-park",
+  "name": "Mohammed Ali Park (muhammad Ali Park)",
+  "zone": "central",
+  "lat": 22.577189,
+  "lng": 88.360737,
+  "verified": false,
+  "area": "Chittaranjan Ave, College Square, Kolkata 700073"
+ },
+ {
+  "id": "mohan-bagan-barwari",
+  "name": "Mohan Bagan Barwari",
+  "zone": "north",
+  "lat": 22.597758,
+  "lng": 88.37326,
+  "verified": false,
+  "area": "MOHAN BAGAN BARWARI, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "moitri-sangha-durga-puja-pandel",
+  "name": "Moitri Sangha Durga Puja Pandel",
+  "zone": "south",
+  "lat": 22.518712,
+  "lng": 88.350091,
+  "verified": false,
+  "area": "13, Deshapriya Park Rd, Manoharpukur, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "monmohan-bose-street-sarbojanin",
+  "name": "Monmohan Bose Street Sarbojanin",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Khanna, Kolkata 700006"
+ },
+ {
+  "id": "monotosh-smrity-sangha",
+  "name": "Monotosh Smrity Sangha",
+  "zone": "south",
+  "lat": 22.518683,
+  "lng": 88.342955,
+  "verified": false,
+  "area": "16/3, Kali Ln, Anami Sangha, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "mudiali-club",
+  "name": "Mudiali Club",
+  "zone": "south",
+  "lat": 22.510194,
+  "lng": 88.346312,
+  "verified": false,
+  "area": "37 SR Das Rd, Mudiali, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "n-c-daw-bandukbari",
+  "name": "N C Daw (bandukbari)",
+  "zone": "north",
+  "lat": 22.586186,
+  "lng": 88.359479,
+  "verified": false,
+  "area": "22A, Vivekananda Rd, Jorasanko, Kolkata 700007"
+ },
+ {
+  "id": "naba-baghbazar-sarbajanin-durga-puja",
+  "name": "Naba Baghbazar Sarbajanin Durga Puja",
+  "zone": "north",
+  "lat": 22.603867,
+  "lng": 88.369931,
+  "verified": false,
+  "area": "Nandalal Bose Ln, Bag Bazar Colony, Baghbazar, Kolkata 700003"
+ },
+ {
+  "id": "naba-jagrata-sangha",
+  "name": "Naba Jagrata Sangha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "90A/1B, Suren Sarkar Rd, Phoolbagan, Beleghata, Kolkata 700010"
+ },
+ {
+  "id": "nabajagarani-sangha-durga-puja-mandap",
+  "name": "Nabajagarani Sangha Durga Puja Mandap",
+  "zone": "others",
+  "lat": 22.73274,
+  "lng": 88.484847,
+  "verified": false,
+  "area": "Rabindra Rd, Barasat, Kolkata 700125"
+ },
+ {
+  "id": "nabapalli-sangha-sarbojanin-durgotsab",
+  "name": "Nabapalli Sangha Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.507389,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "NABAPALLI SANGHA SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "nabapally-adhibasi-brinda",
+  "name": "Nabapally Adhibasi Brinda",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "NABAPALLY ADHIBASI BRINDA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "nabarag-kidderpore",
+  "name": "Nabarag- Kidderpore",
+  "zone": "south",
+  "lat": 22.541711,
+  "lng": 88.321255,
+  "verified": false,
+  "area": "30A, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "nabin-pally-sarbojanin-durgotsav-hatibagan-nabinpally",
+  "name": "Nabin Pally Sarbojanin Durgotsav ( Hatibagan Nabinpally)",
+  "zone": "north",
+  "lat": 22.595903,
+  "lng": 88.373418,
+  "verified": false,
+  "area": "9/1 Nalin Sarkar St, 16 Sikdar Bagan St, Hatibagan, Kolkata 700004"
+ },
+ {
+  "id": "nager-bazar-jessore-road-adhibasi-brinda",
+  "name": "Nager Bazar Jessore Road Adhibasi Brinda",
+  "zone": "north",
+  "lat": 22.623466,
+  "lng": 88.415724,
+  "verified": false,
+  "area": "BLD Bagan, Nagerbazar, North Dumdum, Kolkata 700028"
+ },
+ {
+  "id": "nagerbazar-sarbojanin",
+  "name": "Nagerbazar Sarbojanin",
+  "zone": "north",
+  "lat": 22.616684,
+  "lng": 88.410324,
+  "verified": false,
+  "area": "507/87 Devendra Nagar, Amarpalli, South Dumdum 700074"
+ },
+ {
+  "id": "naktala-udayan-sangha",
+  "name": "Naktala Udayan Sangha",
+  "zone": "south",
+  "lat": 22.474293,
+  "lng": 88.36659,
+  "verified": false,
+  "area": "Naktala, Garia, Kolkata 700047"
+ },
+ {
+  "id": "nalin-sarkar-street",
+  "name": "Nalin Sarkar Street",
+  "zone": "north",
+  "lat": 22.594544,
+  "lng": 88.374328,
+  "verified": false,
+  "area": "Nalin Sarkar St, Hatibagan, Kolkata 700004"
+ },
+ {
+  "id": "nandan-durga-puja-pandal",
+  "name": "Nandan Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.424372,
+  "lng": 88.419119,
+  "verified": false,
+  "area": "Nandan Colony, M N Roy Rd, Paschatya Para, Harinavi, Rajpur Sonarpur 700149"
+ },
+ {
+  "id": "nandaram-street-sarbojanin-durgotsab-samity",
+  "name": "Nandaram Street Sarbojanin Durgotsab Samity",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "43/C, Nandaram Sen St, Sovabazar, Kolkata 700005"
+ },
+ {
+  "id": "nandibagan-sarbojanin-durgotsab-committee",
+  "name": "Nandibagan Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.507442,
+  "lng": 88.384961,
+  "verified": false,
+  "area": "NANDIBAGAN SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "nandram-sen-street-sarbojanin-durgotsab-samity",
+  "name": "Nandram Sen Street Sarbojanin Durgotsab Samity",
+  "zone": "north",
+  "lat": 22.598374,
+  "lng": 88.361211,
+  "verified": false,
+  "area": "43/C, Nandaram Sen St, Sovabazar, Shobhabazar, Kolkata, West Bengal 700005"
+ },
+ {
+  "id": "narasingha-avenue-association",
+  "name": "Narasingha Avenue Association",
+  "zone": "north",
+  "lat": 22.625444,
+  "lng": 88.414819,
+  "verified": false,
+  "area": "190, Narasingha Ave, Nagerbazar, Dum Dum, Kolkata 700074"
+ },
+ {
+  "id": "naskarpur-sarbojanin-durgotsabbehala-samsad",
+  "name": "Naskarpur Sarbojanin Durgotsab(Behala Samsad)",
+  "zone": "south",
+  "lat": 22.507877,
+  "lng": 88.312115,
+  "verified": false,
+  "area": "8, Banerjee Para Rd, Naskarpur, Behala, Kolkata 700060"
+ },
+ {
+  "id": "nasta-goli-kankurgachi-durga-puja-pandal",
+  "name": "Nasta Goli Kankurgachi Durga Puja Pandal",
+  "zone": "east",
+  "lat": 22.580801,
+  "lng": 88.390274,
+  "verified": false,
+  "area": "P/45/A, Kankurgachi, Kolkata 700054"
+ },
+ {
+  "id": "natunpally-pradip-sangha",
+  "name": "Natunpally Pradip Sangha",
+  "zone": "east",
+  "lat": 22.603704,
+  "lng": 88.397446,
+  "verified": false,
+  "area": "26, Ghoshpara, Patipukur, South Dumdum 700048"
+ },
+ {
+  "id": "natunpara-durga-puja-pandal",
+  "name": "Natunpara Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.484588,
+  "lng": 88.306709,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "nawpara-dadabhai-sangha",
+  "name": "Nawpara Dadabhai Sangha",
+  "zone": "north",
+  "lat": 22.64167,
+  "lng": 88.388657,
+  "verified": false,
+  "area": "79 AK Mukherjee Rd, Noapara, Baranagar 700090"
+ },
+ {
+  "id": "nawpara-sammilita-sarbojanin-durgautsab",
+  "name": "Nawpara Sammilita Sarbojanin Durgautsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "NAWPARA SAMMILITA SARBOJANIN DURGAUTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "nazrul-park-unnayan-samiti",
+  "name": "Nazrul Park Unnayan Samiti",
+  "zone": "central",
+  "lat": 22.569322,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "Ashutoshpally, Baishnabghata Patuli Twp, Patuli, Kolkata 700084"
+ },
+ {
+  "id": "nehru-nagar-sarbojonin-durga-puja-samity",
+  "name": "Nehru Nagar Sarbojonin Durga Puja Samity",
+  "zone": "others",
+  "lat": 22.740771,
+  "lng": 88.355385,
+  "verified": false,
+  "area": "Nehru Nagar Colony, Mahesh Bose Para, Serampore 712201"
+ },
+ {
+  "id": "netaji-colony-lowland-sarbojanin-durgotsab-samity",
+  "name": "Netaji Colony Lowland Sarbojanin Durgotsab Samity",
+  "zone": "south",
+  "lat": 22.488323,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "106, Netaji Colony, Joyshree, Baranagar 700090"
+ },
+ {
+  "id": "netaji-jatiya-sebadal",
+  "name": "Netaji Jatiya Sebadal",
+  "zone": "south",
+  "lat": 22.484733,
+  "lng": 88.357131,
+  "verified": false,
+  "area": "130A, Netaji Subhas Chandra Bose Rd, Aswini Nagar, Regent Park, Kolkata 700040"
+ },
+ {
+  "id": "netaji-sarak-anchalic-adhibasibrinda",
+  "name": "Netaji Sarak Anchalic Adhibasibrinda",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "111, Raja Rammohan Roy Rd, Netaji Sarak, Sukanta Pally, Kolkata 700008"
+ },
+ {
+  "id": "netajigarh-nagarik-brinda",
+  "name": "Netajigarh Nagarik Brinda",
+  "zone": "howrah",
+  "lat": 22.606292,
+  "lng": 88.31664,
+  "verified": false,
+  "area": "Kadamtala, Bantra, Ichapur, Howrah 711101"
+ },
+ {
+  "id": "new-market-54-pally-sarbajanin-durgotsav-parichalan-samity",
+  "name": "New Market (54 Pally) Sarbajanin Durgotsav Parichalan Samity",
+  "zone": "central",
+  "lat": 22.561805,
+  "lng": 88.352377,
+  "verified": false,
+  "area": "25/8A, Kanai Dhar Ln, Newland, College Square, Kolkata, West Bengal 700012"
+ },
+ {
+  "id": "new-market-sarbojonin-sri-sri-durga-puja",
+  "name": "New Market Sarbojonin Sri Sri Durga Puja",
+  "zone": "central",
+  "lat": 22.560445,
+  "lng": 88.355087,
+  "verified": false,
+  "area": "38 Market Street, Free School St, Esplanade, Janbazar, Kolkata 700016"
+ },
+ {
+  "id": "new-santoshpur-adi-durgotsab",
+  "name": "New Santoshpur Adi Durgotsab",
+  "zone": "south",
+  "lat": 22.496048,
+  "lng": 88.38223,
+  "verified": false,
+  "area": "40, Lake East 6th Rd, Adipally, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "new-town-durga-puja-committee-bg-block",
+  "name": "New Town Durga Puja Committee, Bg Block",
+  "zone": "east",
+  "lat": 22.582274,
+  "lng": 88.458849,
+  "verified": false,
+  "area": "Street No 131, Action Area 1B, Newtown 700163"
+ },
+ {
+  "id": "newland-durga-puja-mandap-batanagar",
+  "name": "Newland Durga Puja Mandap, Batanagar",
+  "zone": "south",
+  "lat": 22.505244,
+  "lng": 88.229053,
+  "verified": false,
+  "area": "Das Para, Batanagar, Maheshtala 700140"
+ },
+ {
+  "id": "newtown-aai-ca-block-cultural-association",
+  "name": "Newtown Aa-I Ca Block Cultural Association",
+  "zone": "east",
+  "lat": 22.574686,
+  "lng": 88.369399,
+  "verified": false,
+  "area": "C/31, AL Block (Newtown), Action Area I, Bidhannagar 700107"
+ },
+ {
+  "id": "newtown-action-area-iii-durga-puja-pandal",
+  "name": "Newtown Action Area Iii Durga Puja Pandal",
+  "zone": "others",
+  "lat": 22.568598,
+  "lng": 88.512188,
+  "verified": false,
+  "area": "Action Area III, Newtown 700135"
+ },
+ {
+  "id": "newtown-sarbojanin-durgotsab-samiti",
+  "name": "Newtown Sarbojanin Durgotsab Samiti",
+  "zone": "east",
+  "lat": 22.574686,
+  "lng": 88.369399,
+  "verified": false,
+  "area": "Green Varge, Action Area 1B, Newtown 700163"
+ },
+ {
+  "id": "nilmoni-sen-bari",
+  "name": "Nilmoni Sen Bari",
+  "zone": "north",
+  "lat": 22.616659,
+  "lng": 88.383421,
+  "verified": false,
+  "area": "NILMONI SEN BARI, South Kolkata (per source; unconfirmed)"
+ },
+ {
+  "id": "nimta-sanghati-puja-mandap",
+  "name": "Nimta Sanghati Puja Mandap",
+  "zone": "others",
+  "lat": 22.667044,
+  "lng": 88.408917,
+  "verified": false,
+  "area": "Kabi Satyen Dutta Rd, Sarada Palli, Nimta, North Dumdum 700049"
+ },
+ {
+  "id": "nimtala-sarbojanin-durga-puja",
+  "name": "Nimtala Sarbojanin Durga Puja",
+  "zone": "north",
+  "lat": 22.591842,
+  "lng": 88.358695,
+  "verified": false,
+  "area": "16B, Nimtala Ln, Ahiritola, Beniatola, Kolkata 700006"
+ },
+ {
+  "id": "nimtola-sarbojanin-durgotsab",
+  "name": "Nimtola Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.591842,
+  "lng": 88.358695,
+  "verified": false,
+  "area": "16B, Nimtala Ln, Ahiritola, Kolkata 700006"
+ },
+ {
+  "id": "nirvik-sangha",
+  "name": "Nirvik Sangha",
+  "zone": "east",
+  "lat": 22.611849,
+  "lng": 88.431202,
+  "verified": false,
+  "area": "Jyangra, Baguiati, Kolkata 700159"
+ },
+ {
+  "id": "north-tridhara",
+  "name": "North Tridhara",
+  "zone": "north",
+  "lat": 22.595816,
+  "lng": 88.374557,
+  "verified": false,
+  "area": "158N Hatibagan, Shyambazar, Kolkata 700004"
+ },
+ {
+  "id": "olabibitola-sarbojanin-durgotsab-samity",
+  "name": "Olabibitola Sarbojanin Durgotsab Samity",
+  "zone": "howrah",
+  "lat": 22.575265,
+  "lng": 88.315029,
+  "verified": false,
+  "area": "4, Olabibitala Ln, Naora, Shibpur, Howrah 711104"
+ },
+ {
+  "id": "paddapukur-balak-sangha",
+  "name": "Paddapukur Balak Sangha",
+  "zone": "south",
+  "lat": 22.531009,
+  "lng": 88.353397,
+  "verified": false,
+  "area": "21, Prannath Pundit Street, Chakraberia, Bhowanipore, Kolkata 700020"
+ },
+ {
+  "id": "paddapukur-youth-association",
+  "name": "Paddapukur Youth Association",
+  "zone": "south",
+  "lat": 22.532632,
+  "lng": 88.349033,
+  "verified": false,
+  "area": "Paddapukur Rd, Paddapukur, Bhowanipore, Kolkata 700020"
+ },
+ {
+  "id": "pagla-fouz",
+  "name": "Pagla Fouz",
+  "zone": "howrah",
+  "lat": 22.585624,
+  "lng": 88.326673,
+  "verified": false,
+  "area": "110, Deshapran Shasmal Rd, Central, Howrah 711101"
+ },
+ {
+  "id": "paikpara-sarbojanin-durgatsav-samity",
+  "name": "Paikpara Sarbojanin Durgatsav Samity",
+  "zone": "north",
+  "lat": 22.613702,
+  "lng": 88.384429,
+  "verified": false,
+  "area": "Ganguly Para Lane, Gangulipara, Paikpara, Kolkata, West Bengal 700037"
+ },
+ {
+  "id": "pallir-yubak-brinda",
+  "name": "Pallir Yubak Brinda",
+  "zone": "east",
+  "lat": 22.576101,
+  "lng": 88.366993,
+  "verified": false,
+  "area": "Sitaram Ghosh St, College Street, Kolkata 700009"
+ },
+ {
+  "id": "pally-mangal-samity",
+  "name": "Pally Mangal Samity",
+  "zone": "south",
+  "lat": 22.504916,
+  "lng": 88.37446,
+  "verified": false,
+  "area": "70, Selimpur Rd, Dhakuria, Selimpur, Garfa, Kolkata 700031"
+ },
+ {
+  "id": "pally-unnayan-samity-paschim-putiary",
+  "name": "Pally Unnayan Samity Paschim Putiary",
+  "zone": "south",
+  "lat": 22.478206,
+  "lng": 88.342477,
+  "verified": false,
+  "area": "400, Banerjee Para Rd, Kudghat, Paschim Putiary, Kolkata 700041"
+ },
+ {
+  "id": "pallysree-durga-puja-ground",
+  "name": "Pallysree Durga Puja Ground",
+  "zone": "north",
+  "lat": 22.595773,
+  "lng": 88.384688,
+  "verified": false,
+  "area": "1/1P Jaharlal Dutta Ln, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "palpara-sarbojanin-durgoutsob-comm",
+  "name": "Palpara Sarbojanin Durgoutsob Comm",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "PALPARA SARBOJANIN DURGOUTSOB COMM, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "palta-yuba-sports-cultural-club-durga-puja",
+  "name": "Palta Yuba Sports &amp; Cultural Club Durga Puja",
+  "zone": "others",
+  "lat": 22.781213,
+  "lng": 88.36843,
+  "verified": false,
+  "area": "1 Ghosh Para Rd, Palta, North Barrackpur 743122"
+ },
+ {
+  "id": "panchanantala-sarbojanin-durgotsab-committee",
+  "name": "Panchanantala Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.503565,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "PANCHANANTALA SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "panchasayar",
+  "name": "Panchasayar",
+  "zone": "south",
+  "lat": 22.476789,
+  "lng": 88.39806,
+  "verified": false,
+  "area": "Panchasayar"
+ },
+ {
+  "id": "parasar-nabodaya-sangha",
+  "name": "Parasar Nabodaya Sangha",
+  "zone": "others",
+  "lat": 22.703879,
+  "lng": 88.377647,
+  "verified": false,
+  "area": "Deshbondhu Nagar, Sodepur, Khardaha 700115"
+ },
+ {
+  "id": "park-circus-beniapukur-united-puja-committee",
+  "name": "Park Circus Beniapukur United Puja Committee",
+  "zone": "east",
+  "lat": 22.543479,
+  "lng": 88.367654,
+  "verified": false,
+  "area": "Park St, Park Circus, Beniapukur, Kolkata 700017"
+ },
+ {
+  "id": "parkshree-sarbojanin-durgotsav",
+  "name": "Parkshree Sarbojanin Durgotsav",
+  "zone": "east",
+  "lat": 22.544569,
+  "lng": 88.36368,
+  "verified": false,
+  "area": "8A, Mrigendralal Mitter Rd, Park Circus, Kolkata 700017"
+ },
+ {
+  "id": "parnasree-club-durga-puja-ground",
+  "name": "Parnasree Club Durga Puja Ground",
+  "zone": "south",
+  "lat": 22.506951,
+  "lng": 88.306616,
+  "verified": false,
+  "area": "500, Dhopapara, Parnasree Palli, Behala, Kolkata 700060"
+ },
+ {
+  "id": "pataldanga-sri-sri-saradiya-mahapuja",
+  "name": "Pataldanga Sri Sri Saradiya Mahapuja",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "PATALDANGA SRI SRI SARADIYA MAHAPUJA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "pathakpara-balak-sangha",
+  "name": "Pathakpara Balak Sangha",
+  "zone": "south",
+  "lat": 22.508093,
+  "lng": 88.316775,
+  "verified": false,
+  "area": "67/F, Pathak Para Rd, Naskarpur, Behala, Kolkata 700060"
+ },
+ {
+  "id": "pathakpara-barowari-puja-samiti",
+  "name": "Pathakpara Barowari Puja Samiti",
+  "zone": "howrah",
+  "lat": 22.642766,
+  "lng": 88.342613,
+  "verified": false,
+  "area": "Mohanlal Bahalwalla Rd, Belur, Bally, Howrah 711201"
+ },
+ {
+  "id": "pathuriaghata-pancher-palli-sarbojanin-durgatsab",
+  "name": "Pathuriaghata Pancher Palli Sarbojanin Durgatsab",
+  "zone": "north",
+  "lat": 22.588607,
+  "lng": 88.357632,
+  "verified": false,
+  "area": "Malapara, Santoshpur, Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "pathuriaghata-pancher-pally-sarbojonin-durgotsab-committee",
+  "name": "Pathuriaghata Pancher Pally Sarbojonin Durgotsab Committee",
+  "zone": "north",
+  "lat": 22.588607,
+  "lng": 88.357632,
+  "verified": false,
+  "area": "Malapara, Santoshpur, Jorabagan, Kolkata, West Bengal 700006"
+ },
+ {
+  "id": "pathuriaghata-rajbari-khelat-ghose-residence",
+  "name": "Pathuriaghata Rajbari (khelat Ghose Residence)",
+  "zone": "north",
+  "lat": 22.588728,
+  "lng": 88.356549,
+  "verified": false,
+  "area": "69 Pathuriaghata St, Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "pathuriaghata-rajbari-khelat-ghoses-residence",
+  "name": "Pathuriaghata Rajbari (khelat Ghose&#x27;s Residence)",
+  "zone": "north",
+  "lat": 22.588728,
+  "lng": 88.356549,
+  "verified": false,
+  "area": "69, Pathuria Ghat St, Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "pathuriaghata-rajbari-khelat-ghoshs-residence",
+  "name": "Pathuriaghata Rajbari (khelat Ghosh&#x27;s Residence)",
+  "zone": "north",
+  "lat": 22.588728,
+  "lng": 88.356549,
+  "verified": false,
+  "area": "69, Pathuria Ghat St, Jorabagan, Kolkata 700006"
+ },
+ {
+  "id": "patipukur-adi-sarbojanin-durga-puja-committee",
+  "name": "Patipukur Adi Sarbojanin Durga Puja Committee",
+  "zone": "east",
+  "lat": 22.608718,
+  "lng": 88.396662,
+  "verified": false,
+  "area": "Swamiji Sarani Rd, Basak Bagan, South Dumdum 700048"
+ },
+ {
+  "id": "patuli-sarbojanin-durgotsab",
+  "name": "Patuli Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.470423,
+  "lng": 88.387274,
+  "verified": false,
+  "area": "Block E, Baishnabghata Patuli Twp, Patuli, Kolkata 700094"
+ },
+ {
+  "id": "prafulla-kanan-balak-brinda-east",
+  "name": "Prafulla Kanan Balak Brinda East",
+  "zone": "east",
+  "lat": 22.602002,
+  "lng": 88.42485,
+  "verified": false,
+  "area": "AC 62, Prafulla Kanan Rd, Rabindrapally, Kestopur, Kolkata 700101"
+ },
+ {
+  "id": "pragati-sangha-baruipur",
+  "name": "Pragati Sangha, Baruipur",
+  "zone": "south",
+  "lat": 22.367178,
+  "lng": 88.431922,
+  "verified": false,
+  "area": "Subuddhipur, Baruipur 700144"
+ },
+ {
+  "id": "pragati-sangha-habra",
+  "name": "Pragati Sangha (habra)",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "Borolia Rd, Sreenagar, Hijalpukuria, Habra 743271"
+ },
+ {
+  "id": "prantik-pally-sarbojanin-durgapuja",
+  "name": "Prantik Pally Sarbojanin Durgapuja",
+  "zone": "south",
+  "lat": 22.519823,
+  "lng": 88.387629,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "pratapaditya-road-tricone-park-barowari",
+  "name": "Pratapaditya Road Tricone Park Barowari",
+  "zone": "south",
+  "lat": 22.513455,
+  "lng": 88.344736,
+  "verified": false,
+  "area": "88 Ward, Pratapaditya Rd, Sahanagar, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "pratapgarh-sporting-club-bongaon",
+  "name": "Pratapgarh Sporting Club (bongaon)",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "SH 1, Bangaon 743235"
+ },
+ {
+  "id": "purba-barisha-sitalatala-kishore-sangha",
+  "name": "Purba Barisha Sitalatala Kishore Sangha",
+  "zone": "south",
+  "lat": 22.456229,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "PURBA BARISHA SITALATALA KISHORE SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "purba-kalikata-sarbojanin-durgotsab",
+  "name": "Purba Kalikata Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.476812,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "PURBA KALIKATA SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "purba-kolkata-sarbojonin",
+  "name": "Purba Kolkata Sarbojonin",
+  "zone": "east",
+  "lat": 22.573787,
+  "lng": 88.386354,
+  "verified": false,
+  "area": "Kankurgachi SO"
+ },
+ {
+  "id": "purba-putiary-pragati-sangha",
+  "name": "Purba Putiary Pragati Sangha",
+  "zone": "south",
+  "lat": 22.474214,
+  "lng": 88.346056,
+  "verified": false,
+  "area": "Ward No 114, Gangapuri Rd, Purba Putiary, Kolkata 700093"
+ },
+ {
+  "id": "purbachal-sarbojanin-durgotsab-east",
+  "name": "Purbachal Sarbojanin Durgotsab (east)",
+  "zone": "south",
+  "lat": 22.507906,
+  "lng": 88.387667,
+  "verified": false,
+  "area": "PURBACHAL SARBOJANIN DURGOTSAB (EAST), Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "purbachal-shakti-sangha",
+  "name": "Purbachal Shakti Sangha",
+  "zone": "south",
+  "lat": 22.504968,
+  "lng": 88.388381,
+  "verified": false,
+  "area": "36, Purbachal Main Rd, South Purbachal, Haltu, Kolkata 700078"
+ },
+ {
+  "id": "purbanchal-prabhati-sangha",
+  "name": "Purbanchal Prabhati Sangha",
+  "zone": "east",
+  "lat": 22.548005,
+  "lng": 88.385796,
+  "verified": false,
+  "area": "12/C, Gobinda Khatick Rd, Tangra, Kolkata 700046"
+ },
+ {
+  "id": "purvachal-durga-puja-pandal",
+  "name": "Purvachal Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.489636,
+  "lng": 88.366702,
+  "verified": false,
+  "area": "2/89, Raipur Rd E, Bijoygarh, Jadavpur, Kolkata 700032"
+ },
+ {
+  "id": "putiary-sarbojonin-durgotsab-committee",
+  "name": "Putiary Sarbojonin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "PUTIARY SARBOJONIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "rabindra-kanan-sarbojanin-durgotsab",
+  "name": "Rabindra Kanan Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.590711,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "RABINDRA KANAN SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "railpukur-united-club-baguihati",
+  "name": "Railpukur United Club Baguihati",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Rail Pukur Rd, Shastri Bagan, Desh Bandhu Nagar, Baguiati, Kolkata 700059"
+ },
+ {
+  "id": "raipur-club-durga-puja-pandal",
+  "name": "Raipur Club Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.474515,
+  "lng": 88.37805,
+  "verified": false,
+  "area": "62, New Raipur Rd, Raipur, Garia, Kolkata 700084"
+ },
+ {
+  "id": "raja-raj-ballav-street-sadanga-durgoutsav-samiti",
+  "name": "Raja Raj Ballav Street Sadanga Durgoutsav Samiti",
+  "zone": "north",
+  "lat": 22.600376,
+  "lng": 88.367149,
+  "verified": false,
+  "area": "LIG Housing, Dutta Bagan, Paikpara, Kolkata 700037"
+ },
+ {
+  "id": "raja-subodh-mallick-square-sarbojanin",
+  "name": "Raja Subodh Mallick Square Sarbojanin",
+  "zone": "central",
+  "lat": 22.563584,
+  "lng": 88.359508,
+  "verified": false,
+  "area": "Raja Subodh Mullick Square Rd, Bowbazar, Kolkata 700013"
+ },
+ {
+  "id": "rajdanga-amra-kajan-kalyan-samiti",
+  "name": "Rajdanga Amra Kajan Kalyan Samiti",
+  "zone": "south",
+  "lat": 22.516786,
+  "lng": 88.391198,
+  "verified": false,
+  "area": "67 Rajdanga Chakraborty Para, East Kolkata Twp, Kolkata 700107"
+ },
+ {
+  "id": "rajdanga-naba-uday-sangha",
+  "name": "Rajdanga Naba Uday Sangha",
+  "zone": "south",
+  "lat": 22.516627,
+  "lng": 88.390229,
+  "verified": false,
+  "area": "Rajdanga Chakraborty Para, East Kolkata Twp, Kolkata 700107"
+ },
+ {
+  "id": "ramakrishna-atheletic-club",
+  "name": "Ramakrishna Atheletic Club",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "RAMAKRISHNA ATHELETIC CLUB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "ramchandrapur-tarun-sangha",
+  "name": "Ramchandrapur Tarun Sangha",
+  "zone": "south",
+  "lat": 22.436359,
+  "lng": 88.388446,
+  "verified": false,
+  "area": "Ramchandrapur, Narendrapur, Rajpur Sonarpur 700103"
+ },
+ {
+  "id": "ramgarh-jayasrinagar-association",
+  "name": "Ramgarh Jayasrinagar Association",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "RAMGARH JAYASRINAGAR ASSOCIATION, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "ramkrishapur-sarbojanin-durgotsab",
+  "name": "Ramkrishapur Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "RAMKRISHAPUR SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "ramkrishna-park-durga-puja-mandap",
+  "name": "Ramkrishna Park Durga Puja Mandap",
+  "zone": "others",
+  "lat": 22.696171,
+  "lng": 88.39989,
+  "verified": false,
+  "area": "B-10, Ramkrishna Park Rd, Ashok Sen Nagar, Sodepur, Panihati 700110"
+ },
+ {
+  "id": "ramkrishnapally-durga-puja-math",
+  "name": "Ramkrishnapally Durga Puja Math",
+  "zone": "others",
+  "lat": 22.694963,
+  "lng": 88.480656,
+  "verified": false,
+  "area": "Abdalpur, Madhyamgram, Kolkata 700155"
+ },
+ {
+  "id": "ramlalbazar-youth-association",
+  "name": "Ramlalbazar Youth Association",
+  "zone": "south",
+  "lat": 22.505016,
+  "lng": 88.385756,
+  "verified": false,
+  "area": "Block-II, 2/C, Purbachal Main Rd, Ramlal Bazar, Haltu, Kolkata 700078"
+ },
+ {
+  "id": "rammohan-sammilani",
+  "name": "Rammohan Sammilani",
+  "zone": "east",
+  "lat": 22.581541,
+  "lng": 88.375115,
+  "verified": false,
+  "area": "4, Rammohan Roy Rd, Yogi Para, Garpar, Machuabazar, Kolkata, West Bengal 700009"
+ },
+ {
+  "id": "rammohan-smriti-sangha",
+  "name": "Rammohan Smriti Sangha",
+  "zone": "east",
+  "lat": 22.584111,
+  "lng": 88.372244,
+  "verified": false,
+  "area": "24A, Amherst Row, Manicktala, Simla, Machuabazar, Kolkata, West Bengal 700009"
+ },
+ {
+  "id": "rampur-aker-pally-club",
+  "name": "Rampur Aker Pally Club",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "Ramnagar, Shibrampur Mauza, Maheshtala 700141"
+ },
+ {
+  "id": "ramrajatala-pallymangal-samity",
+  "name": "Ramrajatala Pallymangal Samity",
+  "zone": "howrah",
+  "lat": 22.585792,
+  "lng": 88.299136,
+  "verified": false,
+  "area": "Ambika Kundu Ln, Santragachi, Ramrajatala, Howrah 711104"
+ },
+ {
+  "id": "rangkol-mandal-para-yubak-brinda-durga-puja-pandal",
+  "name": "Rangkol Mandal Para Yubak Brinda Durga Puja Pandal",
+  "zone": "north",
+  "lat": 22.63489,
+  "lng": 88.390455,
+  "verified": false,
+  "area": "95, Mandal Para Ln, Bidhan Park, MandalPara, Sinthee, Baranagar 700090"
+ },
+ {
+  "id": "rani-rashmoni-bhawan",
+  "name": "Rani Rashmoni Bhawan",
+  "zone": "central",
+  "lat": 22.562518,
+  "lng": 88.355265,
+  "verified": false,
+  "area": "18 Rani Rashmoni Rd, Dharmatala, Kolkata 700013"
+ },
+ {
+  "id": "rani-rashmoni-kachari-bari",
+  "name": "Rani Rashmoni Kachari Bari",
+  "zone": "central",
+  "lat": 22.562518,
+  "lng": 88.355265,
+  "verified": false,
+  "area": "18, Rani Rashmoni Rd, Esplanade, Taltala, Kolkata 700013"
+ },
+ {
+  "id": "rani-rashmoni-palace",
+  "name": "Rani Rashmoni Palace",
+  "zone": "central",
+  "lat": 22.561862,
+  "lng": 88.356154,
+  "verified": false,
+  "area": "20/A SN Banerjee Rd, Taltala, Kolkata 700013"
+ },
+ {
+  "id": "rani-rashmoni-thakur-bari",
+  "name": "Rani Rashmoni Thakur Bari",
+  "zone": "central",
+  "lat": 22.562872,
+  "lng": 88.355749,
+  "verified": false,
+  "area": "13, Free School St, New Market Area, Taltala, Kolkata 700013"
+ },
+ {
+  "id": "regent-place-juba-sangha-club",
+  "name": "Regent Place Juba Sangha Club",
+  "zone": "south",
+  "lat": 22.485431,
+  "lng": 88.365362,
+  "verified": false,
+  "area": "67/D, Ranikuthi, Sree Colony, Tilak Nagar, Regent Park, Kolkata 700040"
+ },
+ {
+  "id": "rms-maidan-durga-puja",
+  "name": "R.m.s. Maidan Durga Puja",
+  "zone": "others",
+  "lat": 22.753305,
+  "lng": 88.339755,
+  "verified": false,
+  "area": "Serampore, Hooghly 712201"
+ },
+ {
+  "id": "roy-bahadur-road-netaji-sporting-club",
+  "name": "Roy Bahadur Road Netaji Sporting Club",
+  "zone": "east",
+  "lat": 22.608327,
+  "lng": 88.400397,
+  "verified": false,
+  "area": "Block A, Lake Town, South Dumdum 700089"
+ },
+ {
+  "id": "rupak-sangha-durga-puja-pandal",
+  "name": "Rupak Sangha Durga Puja Pandal",
+  "zone": "howrah",
+  "lat": 22.588704,
+  "lng": 88.313744,
+  "verified": false,
+  "area": "Kadamtala, Bantra, Ichapur, Howrah 711101"
+ },
+ {
+  "id": "sabarna-roy-chowdhury-atchala-bari-boro-bari",
+  "name": "Sabarna Roy Chowdhury Atchala Bari (boro Bari)",
+  "zone": "south",
+  "lat": 22.480083,
+  "lng": 88.306599,
+  "verified": false,
+  "area": "26, Sabarna Para Rd, Barisha, Kolkata 700008"
+ },
+ {
+  "id": "sabarna-roy-chowdhury-sanjer-attchala-bari",
+  "name": "Sabarna Roy Chowdhury Sanjer Attchala Bari",
+  "zone": "south",
+  "lat": 22.480083,
+  "lng": 88.306599,
+  "verified": false,
+  "area": "26, Sabarna Para Rd, Subodh Pally, Barisha, Kolkata 700008"
+ },
+ {
+  "id": "saborna-roychoudhury-borobari-durga-puja-area",
+  "name": "Saborna Roychoudhury Borobari Durga Puja Area",
+  "zone": "south",
+  "lat": 22.479964,
+  "lng": 88.311034,
+  "verified": false,
+  "area": "Barisha Baro Bari Rd, Purba Barisha, Kolkata 700008"
+ },
+ {
+  "id": "sadananda-smrity-sangha",
+  "name": "Sadananda Smrity Sangha",
+  "zone": "howrah",
+  "lat": 22.604348,
+  "lng": 88.294924,
+  "verified": false,
+  "area": "4, Muktaram Dey High School, Vivekananda Pally, Balitikuri, Howrah 711113"
+ },
+ {
+  "id": "saha-bari-maniktala",
+  "name": "Saha Bari (maniktala)",
+  "zone": "north",
+  "lat": 22.585636,
+  "lng": 88.371042,
+  "verified": false,
+  "area": "Sisir Bhaduri Sarani, Vivekananda Rd, Manicktala, Kolkata 700006"
+ },
+ {
+  "id": "sahid-colony-sarbojanin-durga-pujo",
+  "name": "Sahid Colony Sarbojanin Durga Pujo",
+  "zone": "others",
+  "lat": 22.695031,
+  "lng": 88.376451,
+  "verified": false,
+  "area": "Sahid Colony, Panihati, Khardaha 700114"
+ },
+ {
+  "id": "sahidnagar-sarbojanin-durgotsab",
+  "name": "Sahidnagar Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SAHIDNAGAR SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "salkia-alapani",
+  "name": "Salkia Alapani",
+  "zone": "howrah",
+  "lat": 22.598051,
+  "lng": 88.346328,
+  "verified": false,
+  "area": "Kadamtala, Bantra, Ichapur, Howrah 711101"
+ },
+ {
+  "id": "salkia-bharat-sangha",
+  "name": "Salkia Bharat Sangha",
+  "zone": "howrah",
+  "lat": 22.60569,
+  "lng": 88.345932,
+  "verified": false,
+  "area": "13, Gangadhar Bhattacharjee Ln, Babudanga, Bandhaghat, Ghusuri, Howrah 711106"
+ },
+ {
+  "id": "salkia-chatra-bayam-samity-shishu-udyan",
+  "name": "Salkia Chatra Bayam Samity (shishu Udyan)",
+  "zone": "howrah",
+  "lat": 22.594345,
+  "lng": 88.345369,
+  "verified": false,
+  "area": "134 Salkia School Rd, Salkia, Howrah 711106"
+ },
+ {
+  "id": "salkia-durgotsav-baroary",
+  "name": "Salkia Durgotsav Baroary",
+  "zone": "howrah",
+  "lat": 22.603458,
+  "lng": 88.33982,
+  "verified": false,
+  "area": "48 Kamini School Ln, Salkia, Howrah 711106"
+ },
+ {
+  "id": "salkia-sadharan-durga-puja-jatadhari-park",
+  "name": "Salkia Sadharan Durga Puja (jatadhari Park)",
+  "zone": "howrah",
+  "lat": 22.604001,
+  "lng": 88.34466,
+  "verified": false,
+  "area": "Babudanga, Bandhaghat, Salkia, Howrah 711106"
+ },
+ {
+  "id": "salkia-sangha-shree-maidan",
+  "name": "Salkia Sangha Shree Maidan",
+  "zone": "howrah",
+  "lat": 22.599022,
+  "lng": 88.3474,
+  "verified": false,
+  "area": "94 Salkia School Rd, Bandhaghat, Salkia, Howrah 711106"
+ },
+ {
+  "id": "salkia-sanskriti-sangha",
+  "name": "Salkia Sanskriti Sangha",
+  "zone": "howrah",
+  "lat": 22.591315,
+  "lng": 88.313483,
+  "verified": false,
+  "area": "SALKIA SANSKRITI SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "salkia-santi-sangha",
+  "name": "Salkia Santi Sangha",
+  "zone": "howrah",
+  "lat": 22.603345,
+  "lng": 88.342375,
+  "verified": false,
+  "area": "368/1, GT Rd, Babudanga, Salkia North, Salkia, Howrah 711106"
+ },
+ {
+  "id": "salt-lake-bj-block",
+  "name": "Salt Lake Bj Block",
+  "zone": "east",
+  "lat": 22.590689,
+  "lng": 88.426568,
+  "verified": false,
+  "area": "BJ Block, Sector 2, Bidhannagar, Kolkata 700091"
+ },
+ {
+  "id": "salt-lake-ck-block",
+  "name": "Salt Lake Ck Block",
+  "zone": "south",
+  "lat": 22.567641,
+  "lng": 88.418094,
+  "verified": false,
+  "area": "SALT LAKE CK BLOCK, Salt Lake (Sector 2)"
+ },
+ {
+  "id": "salt-lake-fd-block",
+  "name": "Salt Lake Fd Block",
+  "zone": "east",
+  "lat": 22.583454,
+  "lng": 88.41227,
+  "verified": false,
+  "area": "FD Block, Sector 3, Bidhannagar, Kolkata 700106"
+ },
+ {
+  "id": "samaj-sebi-sangha",
+  "name": "Samaj Sebi Sangha",
+  "zone": "south",
+  "lat": 22.515727,
+  "lng": 88.356298,
+  "verified": false,
+  "area": "24A Lake View Rd, Lake Terrace, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "sammilani",
+  "name": "Tridhara Sammilani",
+  "zone": "south",
+  "lat": 22.519529,
+  "lng": 88.35544,
+  "verified": false,
+  "area": "107 Manoharpukur, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "sammilita-malapara-sarbojanin-durgotsab",
+  "name": "Sammilita Malapara Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.587783,
+  "lng": 88.355085,
+  "verified": false,
+  "area": "5, Jadulal Mullick Rd, Malapara, Jorabagan, Kolkata, West Bengal 700006"
+ },
+ {
+  "id": "samparka-mahila-durga-puja-committee",
+  "name": "Samparka Mahila Durga Puja Committee",
+  "zone": "north",
+  "lat": 22.628368,
+  "lng": 88.382267,
+  "verified": false,
+  "area": "Block 4, S Sinthee Rd, Sinthee, Kolkata 700050"
+ },
+ {
+  "id": "sanghamitra",
+  "name": "Sanghamitra",
+  "zone": "south",
+  "lat": 22.531748,
+  "lng": 88.341999,
+  "verified": false,
+  "area": "40/5, Suhasini Ganguly Sarani, Patuapara, Bhowanipore, Kolkata 700025"
+ },
+ {
+  "id": "sanghasree",
+  "name": "Sanghasree",
+  "zone": "south",
+  "lat": 22.521254,
+  "lng": 88.345865,
+  "verified": false,
+  "area": "114, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "sankrail-sporting-union-durga-mandap",
+  "name": "Sankrail Sporting Union Durga Mandap",
+  "zone": "howrah",
+  "lat": 22.562292,
+  "lng": 88.227049,
+  "verified": false,
+  "area": "Ramchandrapur, Sankrail, Howrah 711313"
+ },
+ {
+  "id": "sannyashi-bisasta-kali-bari",
+  "name": "Sannyashi Bisasta Kali Bari",
+  "zone": "south",
+  "lat": 22.5272,
+  "lng": 88.3518,
+  "verified": false,
+  "area": "Kalighat SO"
+ },
+ {
+  "id": "santi-pally-puja-samity",
+  "name": "Santi Pally Puja Samity",
+  "zone": "south",
+  "lat": 22.503797,
+  "lng": 88.347302,
+  "verified": false,
+  "area": "39A, Badam Talla, Tollygunge, Kolkata 700033"
+ },
+ {
+  "id": "santosh-mitra-square-lebutala",
+  "name": "Santosh Mitra Square (lebutala)",
+  "zone": "east",
+  "lat": 22.56602,
+  "lng": 88.365653,
+  "verified": false,
+  "area": "Natabar Dutta Row, Lebutala, Bowbazar, Kolkata 700014"
+ },
+ {
+  "id": "santoshpur-adi-sarbojanin-durgotsab",
+  "name": "Santoshpur Adi Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.496048,
+  "lng": 88.38223,
+  "verified": false,
+  "area": "40, Lake East 6th Rd, Adipally, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "santoshpur-avenue-south-durga-puja-pandal",
+  "name": "Santoshpur Avenue South Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.491506,
+  "lng": 88.379749,
+  "verified": false,
+  "area": "23, Ave S Rd, Bidhan Colony, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "santoshpur-lake-pally",
+  "name": "Santoshpur Lake Pally",
+  "zone": "south",
+  "lat": 22.491471,
+  "lng": 88.382771,
+  "verified": false,
+  "area": "4 Lake W Rd, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "santoshpur-rishi-aurobindo-durga-puja-pandal",
+  "name": "Santoshpur Rishi Aurobindo Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.493989,
+  "lng": 88.378273,
+  "verified": false,
+  "area": "25 Santoshpur Ave, 36 Aurobindo Rd, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "santoshpur-sagnik",
+  "name": "Santoshpur Sagnik",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SANTOSHPUR SAGNIK, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "santoshpur-sagnik-durgotsav",
+  "name": "Santoshpur Sagnik Durgotsav",
+  "zone": "south",
+  "lat": 22.492024,
+  "lng": 88.38159,
+  "verified": false,
+  "area": "Santoshpur SO"
+ },
+ {
+  "id": "santoshpur-trikon-park-durgotsab",
+  "name": "Santoshpur Trikon Park Durgotsab",
+  "zone": "south",
+  "lat": 22.493172,
+  "lng": 88.378514,
+  "verified": false,
+  "area": "31 Santoshpur Ave, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "santragachi-kalpataru",
+  "name": "Santragachi Kalpataru",
+  "zone": "howrah",
+  "lat": 22.583836,
+  "lng": 88.297416,
+  "verified": false,
+  "area": "48/1/A, Brajendra Lahiri Rd, Baruipara, Ichapur, Howrah 711104"
+ },
+ {
+  "id": "santragachi-south-howrah-vivekananda-foudation",
+  "name": "Santragachi South Howrah Vivekananda Foudation",
+  "zone": "howrah",
+  "lat": 22.591315,
+  "lng": 88.313483,
+  "verified": false,
+  "area": "SANTRAGACHI SOUTH HOWRAH VIVEKANANDA FOUDATION, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "saptarathi-sangha",
+  "name": "Saptarathi Sangha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SAPTARATHI SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "saradia-durga-puja-pandal-jadavpur",
+  "name": "Saradia Durga Puja Pandal (jadavpur)",
+  "zone": "south",
+  "lat": 22.492744,
+  "lng": 88.369541,
+  "verified": false,
+  "area": "Jadavpur, Kolkata 700032"
+ },
+ {
+  "id": "saraswat-sammilani",
+  "name": "Saraswat Sammilani",
+  "zone": "south",
+  "lat": 22.48582,
+  "lng": 88.389733,
+  "verified": false,
+  "area": "Beni Banerjee Ave, Dhakuria, Tanu Pukur, Kolkata 700031"
+ },
+ {
+  "id": "sarat-bose-road-durga-puja-pandal",
+  "name": "Sarat Bose Road Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.52069,
+  "lng": 88.351677,
+  "verified": false,
+  "area": "153, Sarat Bose Rd, Lansdowne Ln, Manoharpukur, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "sarbodaya-sammilani",
+  "name": "Sarbodaya Sammilani",
+  "zone": "south",
+  "lat": 22.48582,
+  "lng": 88.389733,
+  "verified": false,
+  "area": "5, DumDum Rd, Satpukur, Kolkata 700030"
+ },
+ {
+  "id": "sarbojanin-durgotsav-committee-vanishkali-pallybasi-brinda",
+  "name": "Sarbojanin Durgotsav Committee Vanishkali Pallybasi Brinda",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "sarbojanin-durgoutsav-committee",
+  "name": "Sarbojanin Durgoutsav Committee",
+  "zone": "south",
+  "lat": 22.488768,
+  "lng": 88.39629,
+  "verified": false,
+  "area": "Gouranga Rd, Ajoy Nagar, Mukundapur, Kolkata 700099"
+ },
+ {
+  "id": "sarbojanin-sree-sree-durgotsav-baguiati-sports-council",
+  "name": "Sarbojanin Sree Sree Durgotsav Baguiati Sports Council",
+  "zone": "east",
+  "lat": 22.613274,
+  "lng": 88.424666,
+  "verified": false,
+  "area": "AA 16, Desh Bandhu Nagar, Baguiati, Kolkata 700059"
+ },
+ {
+  "id": "sarir-sangathan-samity",
+  "name": "Sarir Sangathan Samity",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SARIR SANGATHAN SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "sarkar-bagan-sammilita-sangha-durga-puja",
+  "name": "Sarkar Bagan Sammilita Sangha Durga Puja",
+  "zone": "north",
+  "lat": 22.606259,
+  "lng": 88.377296,
+  "verified": false,
+  "area": "3/2, Nilmoni Mitra Row, Tala, Kolkata 700002"
+ },
+ {
+  "id": "sarkarbagan-adhibasibrinda-durgotsab",
+  "name": "Sarkarbagan Adhibasibrinda Durgotsab",
+  "zone": "north",
+  "lat": 22.604334,
+  "lng": 88.377351,
+  "verified": false,
+  "area": "Nilmoni Mitra Row, Tala, Kolkata 700002"
+ },
+ {
+  "id": "satattar-palli-sarbojanin-durgotsab-committee",
+  "name": "Satattar Palli Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SATATTAR PALLI SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "saterpalli-sarbojanin-durgotsav-committee",
+  "name": "Saterpalli Sarbojanin Durgotsav Committee",
+  "zone": "north",
+  "lat": 22.605114,
+  "lng": 88.372287,
+  "verified": false,
+  "area": "1/3, Maratha Ditch Ln, Baghbazar, Kolkata, West Bengal 700003"
+ },
+ {
+  "id": "sb-park-sarbojanin",
+  "name": "Sb Park Sarbojanin",
+  "zone": "south",
+  "lat": 22.467777,
+  "lng": 88.309071,
+  "verified": false,
+  "area": "133, Diamond Harbour Rd, State Bank Park, Thakurpukur, Kolkata 700063"
+ },
+ {
+  "id": "sealdah-bazar-jagaddhatri-puja",
+  "name": "Sealdah Bazar Jagaddhatri Puja",
+  "zone": "east",
+  "lat": 22.566816,
+  "lng": 88.369069,
+  "verified": false,
+  "area": "Bepin Behari Ganguly St, Vidyapati Setu, Sealdah, Baithakkhana, Kolkata 700014"
+ },
+ {
+  "id": "sealdah-railway-athletic-club",
+  "name": "Sealdah Railway Athletic Club",
+  "zone": "east",
+  "lat": 22.570577,
+  "lng": 88.37194,
+  "verified": false,
+  "area": "78/E, Kaiser St, Sealdah, Raja Bazar, Kolkata 700014"
+ },
+ {
+  "id": "sebak-sangha",
+  "name": "Sebak Sangha",
+  "zone": "south",
+  "lat": 22.510571,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "1-5, Lake Temple Rd, Lake Range, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "selimpur-pally-sarbojanin-durgotsab",
+  "name": "Selimpur Pally Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.504678,
+  "lng": 88.368366,
+  "verified": false,
+  "area": "110 Selimpur Rd, Dhakuria, Kolkata 700031"
+ },
+ {
+  "id": "sevaosanskriti-sangha",
+  "name": "Seva-O-Sanskriti Sangha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SEVA-O-SANSKRITI SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "seventy-six-pally-sarbojanin-durgotsab",
+  "name": "Seventy Six Pally Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SEVENTY SIX PALLY SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "shakti-sangha-clubs-durga-puja-ground",
+  "name": "Shakti Sangha Club&#x27;s Durga Puja Ground",
+  "zone": "south",
+  "lat": 22.504751,
+  "lng": 88.387969,
+  "verified": false,
+  "area": "21, Purbachal Main Rd, Shanti Pally, South Purbachal, Haltu, Kolkata 700078"
+ },
+ {
+  "id": "shaktigarh-durga-mandop-birati",
+  "name": "Shaktigarh Durga Mandop, Birati",
+  "zone": "others",
+  "lat": 22.657716,
+  "lng": 88.426018,
+  "verified": false,
+  "area": "Saktigarh Main Rd, Khalisha Kota, Birati, Kolkata 700051"
+ },
+ {
+  "id": "shakuntala-park-netaji-sangha",
+  "name": "Shakuntala Park Netaji Sangha",
+  "zone": "south",
+  "lat": 22.4869,
+  "lng": 88.289905,
+  "verified": false,
+  "area": "8, Shyam Sunder Pally Main Rd, Meera Nagar, Behala, Kolkata 700061"
+ },
+ {
+  "id": "shastribagan-durgotsob-committee",
+  "name": "Shastribagan Durgotsob Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "DC 2/13, Shastri Bagan, Joramandir, Baguiati, Kolkata 700059"
+ },
+ {
+  "id": "shibaji-sangha-durga-puja-pandal",
+  "name": "Shibaji Sangha Durga Puja Pandal",
+  "zone": "howrah",
+  "lat": 22.588649,
+  "lng": 88.306963,
+  "verified": false,
+  "area": "Ichapur, Howrah 711104"
+ },
+ {
+  "id": "shibmandir",
+  "name": "Shibmandir",
+  "zone": "south",
+  "lat": 22.510997,
+  "lng": 88.34985,
+  "verified": false,
+  "area": "25 Lake Temple Rd, Lake Range, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "shibpur-rabindra-samity",
+  "name": "Shibpur Rabindra Samity",
+  "zone": "howrah",
+  "lat": 22.591315,
+  "lng": 88.313483,
+  "verified": false,
+  "area": "SHIBPUR RABINDRA SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "shibpur-sastitala-baroary-samity",
+  "name": "Shibpur Sastitala Baroary Samity",
+  "zone": "howrah",
+  "lat": 22.570312,
+  "lng": 88.316084,
+  "verified": false,
+  "area": "21, Kashinath Chatterjee Ln, Shibtala, Naora, Shibpur, Howrah 711102"
+ },
+ {
+  "id": "shibrampur-aswathala-sarbojanin-durgotsav-committee",
+  "name": "Shibrampur Aswathala Sarbojanin Durgotsav Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SHIBRAMPUR ASWATHALA SARBOJANIN DURGOTSAV COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "shibtala-durga-mandap-madhyamgram",
+  "name": "Shibtala Durga Mandap (madhyamgram)",
+  "zone": "others",
+  "lat": 22.686927,
+  "lng": 88.472456,
+  "verified": false,
+  "area": "Madhyamgram, Kolkata 700129"
+ },
+ {
+  "id": "shimla-sporting-club-durga-puja",
+  "name": "Shimla Sporting Club Durga Puja",
+  "zone": "north",
+  "lat": 22.584792,
+  "lng": 88.366718,
+  "verified": false,
+  "area": "LIG Housing, Dutta Bagan, Paikpara, Kolkata 700037"
+ },
+ {
+  "id": "shobhabazar-burtolla-sarbojanin-durgotsav-samity",
+  "name": "Shobhabazar Burtolla Sarbojanin Durgotsav Samity",
+  "zone": "north",
+  "lat": 22.595795,
+  "lng": 88.364404,
+  "verified": false,
+  "area": "67B/1, Raja Nabakrishna St, Sovabazar, Shobhabazar, Kolkata, West Bengal 700005"
+ },
+ {
+  "id": "shobhabazar-rajbari-thakur-dalan",
+  "name": "Shobhabazar Rajbari Thakur Dalan",
+  "zone": "north",
+  "lat": 22.596035,
+  "lng": 88.367207,
+  "verified": false,
+  "area": "Raja Nabakrishna St, Sovabazar, Kolkata 700005"
+ },
+ {
+  "id": "shreebhumi-sporting-club-durga-puja",
+  "name": "Shreebhumi Sporting Club Durga Puja",
+  "zone": "east",
+  "lat": 22.599104,
+  "lng": 88.402867,
+  "verified": false,
+  "area": "8th Ln, Sreebhumi, Lake Town, South Dumdum 700048"
+ },
+ {
+  "id": "shreenagar-durgamondop",
+  "name": "Shreenagar Durgamondop",
+  "zone": "others",
+  "lat": 22.688418,
+  "lng": 88.470563,
+  "verified": false,
+  "area": "2, 3rd Number St, Shri Nagar, Netaji Nagar, Madhyamgram, Kolkata 700129"
+ },
+ {
+  "id": "shyama-palli-shyama-sangha",
+  "name": "Shyama Palli Shyama Sangha",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SHYAMA PALLI SHYAMA SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "shyambazar-nabin-sangha",
+  "name": "Shyambazar Nabin Sangha",
+  "zone": "north",
+  "lat": 22.598694,
+  "lng": 88.375501,
+  "verified": false,
+  "area": "SHYAMBAZAR NABIN SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "shyambazar-palli-sangha",
+  "name": "Shyambazar Palli Sangha",
+  "zone": "north",
+  "lat": 22.600056,
+  "lng": 88.369386,
+  "verified": false,
+  "area": "48, Shyam Bazar St, Hati Bagan, Shyam Bazar, Kolkata, West Bengal 700004"
+ },
+ {
+  "id": "shyampukur-adi-sarbojanin-durgotsab-comm",
+  "name": "Shyampukur Adi Sarbojanin Durgotsab Comm",
+  "zone": "north",
+  "lat": 22.598151,
+  "lng": 88.370838,
+  "verified": false,
+  "area": "22 Ramdhan Mitra Ln, Shyambazar, Kolkata 700004"
+ },
+ {
+  "id": "shyampukur-sanghatirtha-durga-puja-samity-sanghatirtha",
+  "name": "Shyampukur Sanghatirtha Durga Puja Samity (sanghatirtha)",
+  "zone": "north",
+  "lat": 22.595593,
+  "lng": 88.369378,
+  "verified": false,
+  "area": "Purnendu Shishu Udyan, Shyampukur St, Sovabazar, Kolkata 700005"
+ },
+ {
+  "id": "shyamsquare-sarbojanin-duegapuja-o-pradarshani",
+  "name": "Shyamsquare Sarbojanin Duegapuja O Pradarshani",
+  "zone": "north",
+  "lat": 22.600945,
+  "lng": 88.368673,
+  "verified": false,
+  "area": "Bidhan Sarani Rd, Bidhan Sarani, Shyam Bazar, Kolkata, West Bengal 700003"
+ },
+ {
+  "id": "sikdar-bagan-sadharan-durgotsab",
+  "name": "Sikdar Bagan Sadharan Durgotsab",
+  "zone": "north",
+  "lat": 22.596625,
+  "lng": 88.372139,
+  "verified": false,
+  "area": "27 Sikdar Bagan St, Hatibagan, Kolkata 700004"
+ },
+ {
+  "id": "simla-byayam-samity",
+  "name": "Simla Byayam Samity",
+  "zone": "north",
+  "lat": 22.585137,
+  "lng": 88.364546,
+  "verified": false,
+  "area": "9B, Singhee Lane, Abhedananda Rd, Simla, Machuabazar, Kolkata 700006"
+ },
+ {
+  "id": "simla-sporting-club",
+  "name": "Simla Sporting Club",
+  "zone": "north",
+  "lat": 22.584792,
+  "lng": 88.366718,
+  "verified": false,
+  "area": "Near 10, Narayan Roy Sarani, Simla, Kolkata 700006"
+ },
+ {
+  "id": "simulia-sarvajanin-durgotsav-samity-vivekananda-road",
+  "name": "Simulia Sarvajanin Durgotsav Samity (vivekananda Road)",
+  "zone": "north",
+  "lat": 22.585613,
+  "lng": 88.371115,
+  "verified": false,
+  "area": "141, Vivekananda Rd, Manicktala, Kolkata 700006"
+ },
+ {
+  "id": "singhi-park-sarbojanin-durgapuja-committee",
+  "name": "Singhi Park Sarbojanin Durgapuja Committee",
+  "zone": "south",
+  "lat": 22.520949,
+  "lng": 88.362728,
+  "verified": false,
+  "area": "18/33 Dover Ln, Ballygunge, Kolkata 700029"
+ },
+ {
+  "id": "sinthee-agragami-sangha",
+  "name": "Sinthee Agragami Sangha",
+  "zone": "north",
+  "lat": 22.629604,
+  "lng": 88.385739,
+  "verified": false,
+  "area": "W-block, Binayak Enclave, Sadhan Pally, Sinthee, Kolkata 700050"
+ },
+ {
+  "id": "sinthee-roy-para-sarbojanin-club-durga-puja-pandal",
+  "name": "Sinthee Roy Para Sarbojanin Club Durga Puja Pandal",
+  "zone": "north",
+  "lat": 22.62708,
+  "lng": 88.389759,
+  "verified": false,
+  "area": "15B Roy Para, Sinthee, Kolkata 700050"
+ },
+ {
+  "id": "sister-nivedita-multipurpose-society-durga-puja-mandap",
+  "name": "Sister Nivedita Multipurpose Society Durga Puja Mandap",
+  "zone": "south",
+  "lat": 22.466933,
+  "lng": 88.312098,
+  "verified": false,
+  "area": "12 Sister Nivedita Rd, Nabapally, Thakurpukur, Kolkata 700063"
+ },
+ {
+  "id": "sitala-maitri-sangha",
+  "name": "Sitala Maitri Sangha",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "Purba Sitala, Ghasiara, Rajpur Sonarpur 700150"
+ },
+ {
+  "id": "sobhabazar-burtolla-sarbojanin-durgotsab",
+  "name": "Sobhabazar Burtolla Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.595602,
+  "lng": 88.364333,
+  "verified": false,
+  "area": "35A, Abinash Kabiraj St, Sovabazar, Kolkata 700005"
+ },
+ {
+  "id": "sobhabazar-sarbojanin-durgotsab",
+  "name": "Sobhabazar Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SOBHABAZAR SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "sodepur-club",
+  "name": "Sodepur Club",
+  "zone": "others",
+  "lat": 22.697074,
+  "lng": 88.397975,
+  "verified": false,
+  "area": "Purbayan, Ashok Sen Nagar, Sodepur, Panihati 700110"
+ },
+ {
+  "id": "sonali-park-sports-and-cultural-society",
+  "name": "Sonali Park  Sports And Cultural Society",
+  "zone": "south",
+  "lat": 22.464971,
+  "lng": 88.370575,
+  "verified": false,
+  "area": "Gitanjali Metro Station Bunty Bridge"
+ },
+ {
+  "id": "sonar-durga-bari-behala",
+  "name": "Sonar Durga Bari (behala)",
+  "zone": "south",
+  "lat": 22.499821,
+  "lng": 88.314549,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "sonar-durga-bari-mukherjee-bari-behala",
+  "name": "Sonar Durga Bari (mukherjee Bari), Behala",
+  "zone": "south",
+  "lat": 22.499821,
+  "lng": 88.314549,
+  "verified": false,
+  "area": "9 Kedar Chatterjee Ln, Bakshi Bagan, Behala, Kolkata 700034"
+ },
+ {
+  "id": "sonarpur-recreation-club",
+  "name": "Sonarpur Recreation Club",
+  "zone": "south",
+  "lat": 22.443111,
+  "lng": 88.424854,
+  "verified": false,
+  "area": "Sonarpur Station Rd, Kamrabad, Sonarpur, Rajpur Sonarpur 700150"
+ },
+ {
+  "id": "sontoshpur-avenue-south-club",
+  "name": "Sontoshpur Avenue South Club",
+  "zone": "south",
+  "lat": 22.492188,
+  "lng": 88.379826,
+  "verified": false,
+  "area": "4, Avenue S, Bidhan Colony, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "sontoshpur-sarbojanin-durgotsab",
+  "name": "Sontoshpur Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.494183,
+  "lng": 88.377989,
+  "verified": false,
+  "area": "Aurobindo Rd, Bagan Bari, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "sontoshpur-tricon-park",
+  "name": "Sontoshpur Tricon Park",
+  "zone": "south",
+  "lat": 22.493156,
+  "lng": 88.378475,
+  "verified": false,
+  "area": "2/1, South Rd, South Park, Santoshpur, Kolkata 700075"
+ },
+ {
+  "id": "south-purbachal-ideal-sporting-club",
+  "name": "South Purbachal Ideal Sporting Club",
+  "zone": "south",
+  "lat": 22.503732,
+  "lng": 88.391335,
+  "verified": false,
+  "area": "56, S Purbachal Rd, Shanti Pally, South Purbachal, Haltu, Kolkata 700078"
+ },
+ {
+  "id": "southern-satadal",
+  "name": "Southern Satadal",
+  "zone": "south",
+  "lat": 22.513137,
+  "lng": 88.348716,
+  "verified": false,
+  "area": "Southern Ave, Lake Market, Kalighat, Kolkata 700029"
+ },
+ {
+  "id": "sovabazar-rajbari-boro-rajbari",
+  "name": "Sovabazar Rajbari (boro Rajbari)",
+  "zone": "north",
+  "lat": 22.596264,
+  "lng": 88.36738,
+  "verified": false,
+  "area": "Raja Nabakrishna St, Sovabazar, Kolkata 700005"
+ },
+ {
+  "id": "sree-durga-club",
+  "name": "Sree Durga Club",
+  "zone": "south",
+  "lat": 22.521924,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "15, Omda Raja Ln, Seal Lane, Tangra, Kolkata 700015"
+ },
+ {
+  "id": "sree-sangha-puja-committee",
+  "name": "Sree Sangha Puja Committee",
+  "zone": "south",
+  "lat": 22.498415,
+  "lng": 88.320412,
+  "verified": false,
+  "area": "James Long Sarani, Bhairabitala, Indrajit Pally, Behala, Kolkata 700034"
+ },
+ {
+  "id": "sreebhumi-durga-puja-pandal-7th-lane",
+  "name": "Sreebhumi Durga Puja Pandal 7th Lane",
+  "zone": "east",
+  "lat": 22.599718,
+  "lng": 88.40227,
+  "verified": false,
+  "area": "181/27, Canal St, Sreebhumi, Lake Town, South Dumdum 700048"
+ },
+ {
+  "id": "sreebhumi-sporting-club",
+  "name": "Sreebhumi Sporting Club",
+  "zone": "east",
+  "lat": 22.598899,
+  "lng": 88.402933,
+  "verified": false,
+  "area": "Canal St, Sreebhumi, Lake Town, South Dumdum 700048"
+ },
+ {
+  "id": "sri-sangha-durga-puja-area",
+  "name": "Sri Sangha Durga Puja Area",
+  "zone": "south",
+  "lat": 22.498415,
+  "lng": 88.320412,
+  "verified": false,
+  "area": "James Long Sarani, Bhairabitala, Behala, Kolkata 700034"
+ },
+ {
+  "id": "state-bank-park-sarbojanin-durgotsab",
+  "name": "State Bank Park Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.467777,
+  "lng": 88.309071,
+  "verified": false,
+  "area": "133, Diamond Harbour Rd, East Barisha Govt Colony, Thakurpukur, Kolkata 700063"
+ },
+ {
+  "id": "subal-smriti-sangha-bantra-sarbojonin-durgotsab",
+  "name": "Subal Smriti Sangha- Bantra Sarbojonin Durgotsab",
+  "zone": "howrah",
+  "lat": 22.593134,
+  "lng": 88.322305,
+  "verified": false,
+  "area": "Aswini Kumar Mondal Rd, Kadam Tala, Howrah 711101"
+ },
+ {
+  "id": "subhashpally-sarbojonin-durga-puja-pandal",
+  "name": "Subhashpally Sarbojonin Durga Puja Pandal",
+  "zone": "south",
+  "lat": 22.459764,
+  "lng": 88.375651,
+  "verified": false,
+  "area": "Subhas Pally, Kamdahari, Kolkata 700084"
+ },
+ {
+  "id": "sunil-nagar-sarbojanin",
+  "name": "Sunil Nagar Sarbojanin",
+  "zone": "east",
+  "lat": 22.528513,
+  "lng": 88.384796,
+  "verified": false,
+  "area": "SUNIL NAGAR SARBOJANIN, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "sura-sarbojanin-durgotsab-committee",
+  "name": "Sura Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SURA SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "surirbagan-sarbojanin-durgotsab-committee",
+  "name": "Surirbagan Sarbojanin Durgotsab Committee",
+  "zone": "north",
+  "lat": 22.594997,
+  "lng": 88.387602,
+  "verified": false,
+  "area": "8/2 Gurudas Dutta Garden Ln, Surir Bagan, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "suruchi-sangha-new-alipore",
+  "name": "Suruchi Sangha (new Alipore)",
+  "zone": "south",
+  "lat": 22.508986,
+  "lng": 88.333952,
+  "verified": false,
+  "area": "500-505 Station Rd, Block M, New Alipore, Kolkata 700053"
+ },
+ {
+  "id": "swadhinata-udjapan-samity-kakurgachi-c-i-t-rd",
+  "name": "Swadhinata Udjapan Samity (kakurgachi C I T Rd)",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "SWADHINATA UDJAPAN SAMITY (KAKURGACHI C I T RD), Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "swapnar-bagan-yubak-brinda-durga-puja",
+  "name": "Swapnar Bagan Yubak Brinda Durga Puja",
+  "zone": "east",
+  "lat": 22.579445,
+  "lng": 88.395958,
+  "verified": false,
+  "area": "175/D, Kadapara, Phoolbagan, Kankurgachi, Kolkata 700054"
+ },
+ {
+  "id": "swatantra-jubak-sangha",
+  "name": "Swatantra Jubak Sangha",
+  "zone": "south",
+  "lat": 22.547033,
+  "lng": 88.32416,
+  "verified": false,
+  "area": "Diamond Harbour Rd, Watgunge, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "tagore-park-sporting-club",
+  "name": "Tagore Park Sporting Club",
+  "zone": "east",
+  "lat": 22.521895,
+  "lng": 88.395717,
+  "verified": false,
+  "area": "559, Tagore Park Rd, Tagore Park, Kasba, Kolkata 700039"
+ },
+ {
+  "id": "tal-betal-durga-puja",
+  "name": "Tal Betal Durga Puja",
+  "zone": "north",
+  "lat": 22.603896,
+  "lng": 88.371098,
+  "verified": false,
+  "area": "Pasupati Bose Ln, Bag Bazar Colony, Baghbazar, Kolkata 700003"
+ },
+ {
+  "id": "tala-barowari-durgotsab",
+  "name": "Tala Barowari Durgotsab",
+  "zone": "north",
+  "lat": 22.607145,
+  "lng": 88.376067,
+  "verified": false,
+  "area": "Bonomali Chatterjee St, Bidhan Sarani, Kolkata 700002"
+ },
+ {
+  "id": "tala-friends-association",
+  "name": "Tala Friends Association",
+  "zone": "north",
+  "lat": 22.606422,
+  "lng": 88.374289,
+  "verified": false,
+  "area": "3/1/1, B.T. Road, Tala, Chitpur, Kolkata 700002"
+ },
+ {
+  "id": "tala-palli-sadharan-durgotsab-samity",
+  "name": "Tala Palli Sadharan Durgotsab Samity",
+  "zone": "north",
+  "lat": 22.606905,
+  "lng": 88.37465,
+  "verified": false,
+  "area": "5, Kali Kumar Banerjee Ln, Ghosh Bagan, Chitpur, Kolkata 700002"
+ },
+ {
+  "id": "tala-pally-sadharan-durgotsab-samity",
+  "name": "Tala Pally Sadharan Durgotsab Samity",
+  "zone": "south",
+  "lat": 22.47479,
+  "lng": 88.364302,
+  "verified": false,
+  "area": "1, Khanpur Rd, Naktala, Bansdroni, Kolkata 700047"
+ },
+ {
+  "id": "tala-prattoy",
+  "name": "Tala Prattoy",
+  "zone": "north",
+  "lat": 22.608791,
+  "lng": 88.382502,
+  "verified": false,
+  "area": "Tala Park Rd, Tala, Kolkata 700037"
+ },
+ {
+  "id": "taltala-doctor-lanestha-sarbojanin-durgotsab",
+  "name": "Taltala Doctor Lanestha Sarbojanin Durgotsab",
+  "zone": "east",
+  "lat": 22.559208,
+  "lng": 88.363212,
+  "verified": false,
+  "area": "52, Doctor Ln, Maula Ali, Taltala, Kolkata 700014"
+ },
+ {
+  "id": "taltala-sarbojanin-durga-puja",
+  "name": "Taltala Sarbojanin Durga Puja",
+  "zone": "south",
+  "lat": 22.503002,
+  "lng": 88.364684,
+  "verified": false,
+  "area": "Jodhpur Park, Kolkata 700045"
+ },
+ {
+  "id": "taltala-sarbojanin-saradiya-puja-committee",
+  "name": "Taltala Sarbojanin Saradiya Puja Committee",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "3, Durga Charan Doctor Rd, Taltala, Kolkata 700013"
+ },
+ {
+  "id": "taltata-yuba-association-durga-puja-samity",
+  "name": "Taltata Yuba Association Durga Puja Samity",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "TALTATA YUBA ASSOCIATION DURGA PUJA SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "tamer-lane-sarbojanin-durgotsab",
+  "name": "Tamer Lane Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "TAMER LANE SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "tangra-gholpara-sarbojanin",
+  "name": "Tangra Gholpara Sarbojanin",
+  "zone": "east",
+  "lat": 22.553121,
+  "lng": 88.390752,
+  "verified": false,
+  "area": "4a/1b, Prabhu Ram Sarkar Ln, Tangra, Kolkata 700046"
+ },
+ {
+  "id": "tarapukur-paschimpally-puja-mandop-committee",
+  "name": "Tarapukur Paschimpally Puja Mandop Committee",
+  "zone": "others",
+  "lat": 22.687607,
+  "lng": 88.385535,
+  "verified": false,
+  "area": "Biplabi Surya Sen St, Tarapukur West, Agarpara, Panihati 700109"
+ },
+ {
+  "id": "tarun-brindo-sarbojonin-durga-puja-mondop",
+  "name": "Tarun Brindo Sarbojonin Durga Puja Mondop",
+  "zone": "south",
+  "lat": 22.51729,
+  "lng": 88.360095,
+  "verified": false,
+  "area": "P 244, Purna Das Rd, Golpark, Hindustan Park, Gariahat, Kolkata 700029"
+ },
+ {
+  "id": "tarun-dall-puja-committee",
+  "name": "Tarun Dall Puja Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "Jagadish Para, Silpara, Purba Barisha, Kolkata 700063"
+ },
+ {
+  "id": "tarun-matri-sevak-samity",
+  "name": "Tarun Matri Sevak Samity",
+  "zone": "south",
+  "lat": 22.502066,
+  "lng": 88.321961,
+  "verified": false,
+  "area": "1/1a, Brojen Mukherjee Rd, Chamrapatti, Behala, Kolkata 700034"
+ },
+ {
+  "id": "tekiapara-sarbojanin-durgotsab-committee",
+  "name": "Tekiapara Sarbojanin Durgotsab Committee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "TEKIAPARA SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "telengabagan-sarbojanin-durgotsab",
+  "name": "Telengabagan Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.594947,
+  "lng": 88.385303,
+  "verified": false,
+  "area": "65 Adhar Chandra Das Ln, Telenga Bagan, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "tentulberia-shibtalapark-sarbojanin-durgotsab",
+  "name": "Tentulberia Shibtalapark Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.609856,
+  "lng": 88.39086,
+  "verified": false,
+  "area": "TENTULBERIA SHIBTALAPARK SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "thakurpukur-club-pally-mangal-colony",
+  "name": "Thakurpukur Club Pally Mangal Colony",
+  "zone": "south",
+  "lat": 22.46678,
+  "lng": 88.307569,
+  "verified": false,
+  "area": "889 Padma Pukur, Paschim Barisha, Kolkata 700063"
+ },
+ {
+  "id": "thanthania-dutta-bari",
+  "name": "Thanthania Dutta Bari",
+  "zone": "east",
+  "lat": 22.580575,
+  "lng": 88.365885,
+  "verified": false,
+  "area": "3 Bidhan Sarani, College Street, Kolkata 700009"
+ },
+ {
+  "id": "the-bengal-boys-training-association",
+  "name": "The Bengal Boys Training Association",
+  "zone": "south",
+  "lat": 22.517644,
+  "lng": 88.341342,
+  "verified": false,
+  "area": "Kalighat Rd, Anami Sangha, Kalighat, Kolkata 700026"
+ },
+ {
+  "id": "the-newalipore-association",
+  "name": "The Newalipore Association",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "THE NEWALIPORE ASSOCIATION, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "tilak-nagar-sarbajanin-durgatsab-committee",
+  "name": "Tilak Nagar Sarbajanin Durgatsab Committee",
+  "zone": "south",
+  "lat": 22.483757,
+  "lng": 88.352942,
+  "verified": false,
+  "area": "Bakul Bagan, Bhowanipore, Kolkata 700026"
+ },
+ {
+  "id": "titagarh-tarun-sangh-durga-puja-committee",
+  "name": "Titagarh Tarun Sangh Durga Puja Committee",
+  "zone": "others",
+  "lat": 22.741265,
+  "lng": 88.370621,
+  "verified": false,
+  "area": "49 MG Rd, Titagarh, Barrackpore 700119"
+ },
+ {
+  "id": "tollygunge-adi-durga-mancha",
+  "name": "Tollygunge Adi Durga Mancha",
+  "zone": "south",
+  "lat": 22.502244,
+  "lng": 88.343886,
+  "verified": false,
+  "area": "51/1, 9 Gobinda Banerjee Ln, Tollygunge, Kolkata 700033"
+ },
+ {
+  "id": "tollygunge-nagarik-sangsad-durga-puja-area",
+  "name": "Tollygunge Nagarik Sangsad Durga Puja Area",
+  "zone": "south",
+  "lat": 22.505526,
+  "lng": 88.346436,
+  "verified": false,
+  "area": "4, Chinmoy Chatterjee Sarani, Lake Gardens, Kolkata 700033"
+ },
+ {
+  "id": "tollygunge-road-27-pally-bijoyee-sangha",
+  "name": "Tollygunge Road 27 Pally Bijoyee Sangha",
+  "zone": "south",
+  "lat": 22.506763,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "TOLLYGUNGE ROAD 27 PALLY BIJOYEE SANGHA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "tridhara",
+  "name": "Tridhara",
+  "zone": "south",
+  "lat": 22.519576,
+  "lng": 88.335,
+  "verified": false,
+  "area": "TRIDHARA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "trinayanee",
+  "name": "Trinayanee",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "TRINAYANEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "udayan-kidderpore",
+  "name": "Udayan Kidderpore",
+  "zone": "south",
+  "lat": 22.544161,
+  "lng": 88.32142,
+  "verified": false,
+  "area": "Hem Chandra St, Andaman Dock, Kidderpore, Kolkata 700023"
+ },
+ {
+  "id": "udayan-sangha",
+  "name": "Udayan Sangha",
+  "zone": "east",
+  "lat": 22.557586,
+  "lng": 88.367001,
+  "verified": false,
+  "area": "16, Haralal Das St, Entally, Kolkata 700014"
+ },
+ {
+  "id": "uddipani-park-circus-sarbojanin-durgotsab",
+  "name": "Uddipani ( Park Circus Sarbojanin Durgotsab)",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "UDDIPANI ( PARK CIRCUS SARBOJANIN DURGOTSAB), Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "ultadanga-bidhan-sangha",
+  "name": "Ultadanga Bidhan Sangha",
+  "zone": "north",
+  "lat": 22.593652,
+  "lng": 88.384865,
+  "verified": false,
+  "area": "NACIN, Telenga Bagan, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "ultadanga-jagaranisangha",
+  "name": "Ultadanga Jagaranisangha",
+  "zone": "north",
+  "lat": 22.593293,
+  "lng": 88.384909,
+  "verified": false,
+  "area": "16/1, Biplabi Barin Ghosh Sarani, Murari Pukur, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "ultadanga-pallyshree",
+  "name": "Ultadanga Pallyshree",
+  "zone": "north",
+  "lat": 22.59583,
+  "lng": 88.384413,
+  "verified": false,
+  "area": "17/18 Jaharlal Dutta Ln, Muchibazar, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "ultadanga-sangrami-sarbojanin-durgotsab",
+  "name": "Ultadanga Sangrami Sarbojanin Durgotsab",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "ULTADANGA SANGRAMI SARBOJANIN DURGOTSAB, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "united-club",
+  "name": "United Club",
+  "zone": "north",
+  "lat": 22.465594,
+  "lng": 88.359239,
+  "verified": false,
+  "area": "Ultadanga Main Road SO"
+ },
+ {
+  "id": "unnayani-sangha",
+  "name": "Unnayani Sangha",
+  "zone": "south",
+  "lat": 22.482846,
+  "lng": 88.34359,
+  "verified": false,
+  "area": "Banerjee Para Rd, Colony No.1, Paschim Putiary, Kolkata 700041"
+ },
+ {
+  "id": "uttar-bantra-sarbojanin-durgotsab-committee",
+  "name": "Uttar Bantra Sarbojanin Durgotsab Committee",
+  "zone": "howrah",
+  "lat": 22.591315,
+  "lng": 88.313483,
+  "verified": false,
+  "area": "UTTAR BANTRA SARBOJANIN DURGOTSAB COMMITTEE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "uttar-halderpara-club",
+  "name": "Uttar Halderpara Club",
+  "zone": "south",
+  "lat": 22.505351,
+  "lng": 88.319019,
+  "verified": false,
+  "area": "Halder Para Rd, Behala Thana, Naskarpur, Behala, Kolkata 700060"
+ },
+ {
+  "id": "uttar-kolkata-sanhati-sporting-club",
+  "name": "Uttar Kolkata Sanhati Sporting Club",
+  "zone": "north",
+  "lat": 22.586842,
+  "lng": 88.373478,
+  "verified": false,
+  "area": "123/2, Acharya Prafulla Chandra Rd, Kolkata 700006"
+ },
+ {
+  "id": "uttar-kolkata-sarbojanin-durga-puja-birendra-mancha",
+  "name": "Uttar Kolkata Sarbojanin Durga Puja - Birendra Mancha",
+  "zone": "north",
+  "lat": 22.599329,
+  "lng": 88.369441,
+  "verified": false,
+  "area": "5/1, Balaram Ghosh St, Shyampukur, Hati Bagan, Shyam Bazar, Kolkata 700004"
+ },
+ {
+  "id": "uttarayan-club",
+  "name": "Uttarayan Club",
+  "zone": "howrah",
+  "lat": 22.656439,
+  "lng": 88.332935,
+  "verified": false,
+  "area": "Mukherjee Para, Durgapur, Bally, Howrah 711205"
+ },
+ {
+  "id": "vidyasagar-central-sarbojanin-durgatsav-committee",
+  "name": "Vidyasagar Central Sarbojanin Durgatsav Committee",
+  "zone": "south",
+  "lat": 22.481198,
+  "lng": 88.374981,
+  "verified": false,
+  "area": "1/31, Vidyasagar Colony, Ganguly Bagan, Kolkata 700047"
+ },
+ {
+  "id": "vivekananda-park-athletic-club",
+  "name": "Vivekananda Park Athletic Club",
+  "zone": "south",
+  "lat": 22.48128,
+  "lng": 88.336905,
+  "verified": false,
+  "area": "66/A, Vivekananda Park, Paschim Putiary, Kolkata 700082"
+ },
+ {
+  "id": "vivekananda-sarbojanin-durgotsab",
+  "name": "Vivekananda Sarbojanin Durgotsab",
+  "zone": "north",
+  "lat": 22.585272,
+  "lng": 88.375234,
+  "verified": false,
+  "area": "141, Vivekananda Rd, Manicktala, Azad Hind Bag, Kolkata, West Bengal 700006"
+ },
+ {
+  "id": "vivekananda-sporting-club-haridevpur",
+  "name": "Vivekananda Sporting Club Haridevpur",
+  "zone": "south",
+  "lat": 22.475527,
+  "lng": 88.339331,
+  "verified": false,
+  "area": "Mahatma Gandhi Rd, Haridevpur, Paschim Putiary, Kolkata 700041"
+ },
+ {
+  "id": "vivekananda-sporting-clubgreen-parkbblock",
+  "name": "Vivekananda Sporting Club,green Park,b-Block",
+  "zone": "south",
+  "lat": 22.476316,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "K.B. Sarani, Arjunpur, Dum Dum, Kolkata 700080"
+ },
+ {
+  "id": "ward-no1-sadharan-durgotsab-o-pradarshani",
+  "name": "Ward No1 Sadharan Durgotsab O Pradarshani",
+  "zone": "central",
+  "lat": 22.571888,
+  "lng": 88.353517,
+  "verified": false,
+  "area": "WARD NO1 SADHARAN DURGOTSAB O PRADARSHANI, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "wellington-nagarik-kalyan-samity",
+  "name": "Wellington Nagarik Kalyan Samity",
+  "zone": "central",
+  "lat": 22.564522,
+  "lng": 88.358383,
+  "verified": false,
+  "area": "25/8A, Kanai Dhar Ln, Newland, College Square, Kolkata, West Bengal 700012"
+ },
+ {
+  "id": "yogipara-puja-kalyan-samity",
+  "name": "Yogipara Puja Kalyan Samity",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "YOGIPARA PUJA KALYAN SAMITY, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "young-blood-sarbojanin-durgotsab-committee",
+  "name": "Young Blood Sarbojanin Durgotsab Committee",
+  "zone": "north",
+  "lat": 22.585027,
+  "lng": 88.354481,
+  "verified": false,
+  "area": "13 Sovaram Basak St, Bara Bazar, Jorasanko, Kolkata 700007"
+ },
+ {
+  "id": "young-corner-park-circus",
+  "name": "Young Corner Park Circus",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "YOUNG CORNER PARK CIRCUS, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "youth-recreation-centre",
+  "name": "Youth Recreation Centre",
+  "zone": "south",
+  "lat": 22.52444,
+  "lng": 88.347595,
+  "verified": false,
+  "area": "YOUTH RECREATION CENTRE, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "yuba-brinda",
+  "name": "Yuba Brinda",
+  "zone": "south",
+  "lat": 22.485726,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "YUBA BRINDA, Kolkata (FFD Member 2025)"
+ },
+ {
+  "id": "yuba-brinda-durga-puja-mandop",
+  "name": "Yuba Brinda Durga Puja Mandop",
+  "zone": "north",
+  "lat": 22.595916,
+  "lng": 88.382315,
+  "verified": false,
+  "area": "Daspara, Ultadanga, Kolkata 700067"
+ },
+ {
+  "id": "yuba-dal",
+  "name": "Yuba Dal",
+  "zone": "south",
+  "lat": 22.501857,
+  "lng": 88.3635,
+  "verified": false,
+  "area": "YUBA DAL, Kolkata (FFD Member 2025)"
+ }
+]

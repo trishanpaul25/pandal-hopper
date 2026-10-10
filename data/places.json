@@ -1,0 +1,13 @@
+[
+ {"id":"paramount","name":"Paramount Sharbat","type":"food","lat":22.5750,"lng":88.3640,"note":"College Street sharbat","verified":false},
+ {"id":"coffeehouse","name":"Indian Coffee House","type":"food","lat":22.5738,"lng":88.3643,"note":"Adda and coffee","verified":false},
+ {"id":"kusum","name":"Kusum Rolls","type":"food","lat":22.5535,"lng":88.3610,"note":"Kati rolls","verified":false},
+ {"id":"nizams","name":"Nizam's","type":"food","lat":22.5605,"lng":88.3515,"note":"New Market rolls","verified":false},
+ {"id":"arsalan","name":"Arsalan","type":"food","lat":22.5400,"lng":88.3680,"note":"Biryani","verified":false},
+ {"id":"balaram","name":"Balaram Mullick Sweets","type":"food","lat":22.5340,"lng":88.3470,"note":"Bengali sweets","verified":false},
+ {"id":"bhojohori","name":"Bhojohori Manna","type":"food","lat":22.5195,"lng":88.3655,"note":"Bengali thali","verified":false},
+ {"id":"howrah","name":"Howrah Bridge","type":"sight","lat":22.5851,"lng":88.3468,"note":"Iconic bridge","verified":false},
+ {"id":"indianmuseum","name":"Indian Museum","type":"sight","lat":22.5580,"lng":88.3510,"note":"Oldest museum","verified":false},
+ {"id":"victoria","name":"Victoria Memorial","type":"sight","lat":22.5448,"lng":88.3426,"note":"Gardens and museum","verified":false},
+ {"id":"princep","name":"Princep Ghat","type":"sight","lat":22.5600,"lng":88.3340,"note":"Riverside promenade","verified":false}
+]
