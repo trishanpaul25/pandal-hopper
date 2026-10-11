@@ -4,6 +4,7 @@ import { useAuth } from "@/lib/auth";
 import { useLang } from "@/lib/lang";
 import { useSaved, useSeen } from "@/lib/store";
 import { tx } from "@/lib/i18n";
+import { stopAllSharing } from "@/lib/liveShare";
 
 export default function Login() {
   const { user, loading, configured, error, signIn, signOut } = useAuth();
@@ -33,7 +34,7 @@ export default function Login() {
           </p>
           <div className="row">
             <Link className="btn primary" href="/hop">{tx(lang, "start")}</Link>
-            <button className="btn outline" onClick={signOut}>{bn ? "সাইন আউট" : "Sign out"}</button>
+            <button className="btn outline" onClick={async () => { await stopAllSharing(); signOut(); }}>{bn ? "সাইন আউট" : "Sign out"}</button>
           </div>
         </div>
       ) : (

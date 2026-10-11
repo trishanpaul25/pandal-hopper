@@ -8,14 +8,15 @@ import { Logo } from "./Art";
 import AuthButton from "./AuthButton";
 import Onboarding from "./Onboarding";
 import InstallButton from "./InstallButton";
+import ShareBar from "./ShareBar";
 
 const DESK: { href: string; k: K }[] = [
   { href: "/", k: "home" }, { href: "/hop", k: "hop" }, { href: "/pandals", k: "pandals" }, { href: "/days", k: "days" },
-  { href: "/food", k: "food" }, { href: "/guide", k: "guide" }, { href: "/saved", k: "saved" },
+  { href: "/groups", k: "groups" }, { href: "/food", k: "food" }, { href: "/guide", k: "guide" }, { href: "/saved", k: "saved" },
 ];
 const MOB: { href: string; k: K; icon: string }[] = [
   { href: "/", k: "home", icon: "🏮" }, { href: "/hop", k: "hop", icon: "📍" }, { href: "/pandals", k: "pandals", icon: "🛕" },
-  { href: "/days", k: "days", icon: "📅" }, { href: "/guide", k: "guide", icon: "🆘" },
+  { href: "/days", k: "days", icon: "📅" }, { href: "/groups", k: "groups", icon: "👥" }, { href: "/guide", k: "guide", icon: "🆘" },
 ];
 
 const creditLink = { color: "var(--alta)", fontWeight: 600 } as const;
@@ -46,6 +47,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           <Link href="/saved" className="iconbtn solid" aria-label={tx(lang, "saved")}>★</Link>
         </div>
       </header>
+      <ShareBar />
       {children}
       <footer className="foot">
         <p><b>Emergency:</b> 112 (all services) · Police 100 · Ambulance 102 · Women helpline 1091</p>

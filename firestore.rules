@@ -1,9 +1,57 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
+
     // Each user can read and write only their own profile document.
     match /users/{uid} {
       allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Groups. The 6-letter code is the document id, so knowing the code is what lets you find (get) a group.
+    // You cannot list groups you are not in, and only members can read the live locations below.
+    match /groups/{code} {
+      allow get: if request.auth != null;
+      allow list: if request.auth != null && request.auth.uid in resource.data.memberIds;
+
+      // Create: you are the only member and the owner.
+      allow create: if request.auth != null
+        && request.resource.data.keys().hasOnly(['name', 'ownerId', 'memberIds', 'createdAt'])
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.memberIds == [request.auth.uid]
+        && request.resource.data.name is string && request.resource.data.name.size() <= 40;
+
+      // Update: only the member list, and only to add yourself (max 20 people) or remove yourself.
+      allow update: if request.auth != null
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['memberIds'])
+        && (
+          ( !(request.auth.uid in resource.data.memberIds)
+            && request.resource.data.memberIds.hasAll(resource.data.memberIds)
+            && request.resource.data.memberIds.size() == resource.data.memberIds.size() + 1
+            && request.auth.uid in request.resource.data.memberIds
+            && request.resource.data.memberIds.size() <= 20 )
+          ||
+          ( request.auth.uid in resource.data.memberIds
+            && resource.data.memberIds.hasAll(request.resource.data.memberIds)
+            && request.resource.data.memberIds.size() == resource.data.memberIds.size() - 1
+            && !(request.auth.uid in request.resource.data.memberIds) )
+        );
+
+      // Delete: the last member leaving removes the group.
+      allow delete: if request.auth != null
+        && request.auth.uid in resource.data.memberIds
+        && resource.data.memberIds.size() == 1;
+
+      // Members and their live location.
+      match /members/{uid} {
+        allow read: if request.auth != null
+          && request.auth.uid in get(/databases/$(database)/documents/groups/$(code)).data.memberIds;
+        // You can only write your own entry, and only while you are in the group (getAfter lets join/create batches work).
+        allow create, update: if request.auth != null && request.auth.uid == uid
+          && request.auth.uid in getAfter(/databases/$(database)/documents/groups/$(code)).data.memberIds
+          && request.resource.data.keys().hasOnly(['nick', 'photo', 'sharing', 'lat', 'lng', 'heading', 'acc', 'at', 'joinedAt'])
+          && request.resource.data.nick is string && request.resource.data.nick.size() <= 24;
+        allow delete: if request.auth != null && request.auth.uid == uid;
+      }
     }
   }
 }

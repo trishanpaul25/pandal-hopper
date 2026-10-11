@@ -13,7 +13,10 @@ type Props = {
   trail?: string[];                             // unseen trail stops in visiting order (purple, numbered)
   dim?: boolean;                                // while navigating, fade everything else
   fitKey?: string | null;                       // zoom to the route once when this changes
+  friends?: Friend[];                           // group members sharing their live location (avatar pins)
+  focus?: { pts: Point[]; k: number } | null;   // fly to these points whenever k changes
 };
+export type Friend = { id: string; nick: string; photo: string; lat: number; lng: number; stale: boolean; me?: boolean };
 
 // Free OSM raster tiles are fine for a prototype. For launch, self-host
 // Protomaps (PMTiles) so tiles are cached offline and you don't depend on OSM's usage policy.
@@ -25,7 +28,7 @@ const STYLE: maplibregl.StyleSpecification = {
 };
 const ARROW = `<svg width="34" height="34" viewBox="0 0 36 36" aria-hidden><path d="M18 2 L31 33 L18 25.5 L5 33 Z" fill="#0077b6" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
 
-export default function Map({ pandals, places, seen, you, heading, line, lineColor, solid, showPlaces, onPick, target, trail = [], dim, fitKey }: Props) {
+export default function Map({ pandals, places, seen, you, heading, line, lineColor, solid, showPlaces, onPick, target, trail = [], dim, fitKey, friends = [], focus }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
   const ready = useRef(false);
@@ -34,6 +37,7 @@ export default function Map({ pandals, places, seen, you, heading, line, lineCol
   const els = useRef<Record<string, HTMLButtonElement>>({});
   const placeMarkers = useRef<maplibregl.Marker[]>([]);
   const youMarker = useRef<maplibregl.Marker | null>(null);
+  const friendPins = useRef<Record<string, { mk: maplibregl.Marker; el: HTMLDivElement; sig: string }>>({});
 
   // Create the map once.
   useEffect(() => {
@@ -48,7 +52,7 @@ export default function Map({ pandals, places, seen, you, heading, line, lineCol
       ready.current = true; m.fire("pandal-ready");
     });
     map.current = m;
-    return () => { m.remove(); map.current = null; ready.current = false; els.current = {}; youMarker.current = null; placeMarkers.current = []; };
+    return () => { m.remove(); map.current = null; ready.current = false; els.current = {}; youMarker.current = null; placeMarkers.current = []; friendPins.current = {}; };
   }, []);
 
   // One marker per pandal, created once (not on every GPS update).
@@ -106,6 +110,44 @@ export default function Map({ pandals, places, seen, you, heading, line, lineCol
     }
     youMarker.current.setLngLat([you.lng, you.lat]).setRotation(heading || 0);
   }, [you?.lat, you?.lng, heading]); // eslint-disable-line
+
+  // Friends: a round photo (or first letter) with their name underneath. Built with DOM calls, never innerHTML, because names come from other users.
+  useEffect(() => {
+    const m = map.current; if (!m) return;
+    const pins = friendPins.current, keep = new Set(friends.map((f) => f.id));
+    Object.keys(pins).forEach((id) => { if (!keep.has(id)) { pins[id].mk.remove(); delete pins[id]; } });
+    friends.forEach((f) => {
+      const sig = [f.nick, f.photo, f.stale, f.me].join("|");
+      let pin = pins[f.id];
+      if (!pin) {
+        const el = document.createElement("div");
+        pin = { el, sig: "", mk: new maplibregl.Marker({ element: el }).setLngLat([f.lng, f.lat]).addTo(m) };
+        pins[f.id] = pin;
+      }
+      if (pin.sig !== sig) {
+        pin.sig = sig; pin.el.replaceChildren();
+        pin.el.className = "fpin" + (f.stale ? " stale" : "") + (f.me ? " me" : "");
+        pin.el.style.zIndex = f.me ? "9" : "8";
+        const face = document.createElement("div"); face.className = "fpin-face";
+        if (f.photo.startsWith("https://")) {
+          const img = document.createElement("img"); img.src = f.photo; img.alt = ""; img.referrerPolicy = "no-referrer"; img.width = 40; img.height = 40;
+          img.onerror = () => { img.remove(); face.textContent = (f.nick[0] || "?").toUpperCase(); };
+          face.appendChild(img);
+        } else face.textContent = (f.nick[0] || "?").toUpperCase();
+        const tag = document.createElement("span"); tag.className = "fpin-tag"; tag.textContent = f.nick;
+        pin.el.append(face, tag);
+      }
+      pin.mk.setLngLat([f.lng, f.lat]);
+    });
+  }, [friends]);
+
+  // Fly to someone (one point) or to everyone (several points) when asked.
+  useEffect(() => {
+    const m = map.current; if (!m || !focus || !focus.pts.length) return;
+    if (focus.pts.length === 1) { m.flyTo({ center: [focus.pts[0].lng, focus.pts[0].lat], zoom: Math.max(m.getZoom(), 16), duration: 700 }); return; }
+    const b = new maplibregl.LngLatBounds(); focus.pts.forEach((p) => b.extend([p.lng, p.lat]));
+    m.fitBounds(b, { padding: 70, maxZoom: 17, duration: 700 });
+  }, [focus?.k]); // eslint-disable-line
 
   // Route line.
   useEffect(() => {

@@ -37,6 +37,7 @@ export const D = {
   sortedFrom: { en: "Sorted by distance from", bn: "দূরত্ব অনুযায়ী সাজানো, শুরু:" }, pickToSort: { en: "Pick a pandal or use your location to sort by distance. Showing A–Z.", bn: "দূরত্ব অনুযায়ী সাজাতে প্যান্ডেল বাছুন বা লোকেশন দিন। এখন A–Z দেখাচ্ছে।" },
   install: { en: "Install app", bn: "অ্যাপ ইনস্টল" }, installed: { en: "Installed", bn: "ইনস্টল হয়েছে" },
   iosHow: { en: "To install: tap the Share button in Safari, then “Add to Home Screen”.", bn: "ইনস্টল করতে Safari-তে Share বোতাম চাপুন, তারপর “Add to Home Screen”।" },
+  groups: { en: "Groups", bn: "দল" },
   sos: { en: "Emergency SOS", bn: "জরুরি সহায়তা" }, share: { en: "Share trail", bn: "ট্রেইল শেয়ার" },
 } as const;
 export type K = keyof typeof D;
