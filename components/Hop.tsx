@@ -227,7 +227,6 @@ export default function Hop() {
     <div className="page">
       <span className="eyebrow">{lang === "bn" ? "সহজ পরিক্রমা" : "Live route companion"}</span>
       <h1 className="h1" style={{ fontSize: "clamp(26px,5vw,38px)", marginBottom: 14 }}>{lang === "bn" ? "আপনার হপ রুট" : "Your hop route"}</h1>
-      {PANDALS.some((p) => !p.verified) && <p className="muted small">Some locations are unverified sample data.</p>}
 
       <div className="mapbox" ref={mapBox}>
         <Map pandals={PANDALS} places={mapPlaces} seen={seen} you={youPt} heading={heading} line={line} lineColor={lineColor} solid={solid}

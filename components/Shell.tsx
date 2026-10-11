@@ -16,6 +16,8 @@ const MOB: { href: string; k: K; icon: string }[] = [
   { href: "/days", k: "days", icon: "📅" }, { href: "/guide", k: "guide", icon: "🆘" },
 ];
 
+const creditLink = { color: "var(--alta)", fontWeight: 600 } as const;
+
 export default function Shell({ children }: { children: React.ReactNode }) {
   const path = usePathname() || "/";
   const { lang, setLang } = useLang();
@@ -44,7 +46,12 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       {children}
       <footer className="foot">
         <p><b>Emergency:</b> 112 (all services) · Police 100 · Ambulance 102 · Women helpline 1091</p>
-        <p>Independent guide. Locations are unverified until marked verified. Check each club's own announcements for timings.</p>
+        <p>Independent guide. Check each club's own announcements for timings.</p>
+        <p className="credit">
+          Built by <b>Trishan Paul</b> ·{" "}
+          <a href="https://www.linkedin.com/in/trishan-paul-0497b428b/" target="_blank" rel="noopener noreferrer" style={creditLink}>LinkedIn</a> ·{" "}
+          <a href="mailto:trishanpaul25@gmail.com" style={creditLink}>trishanpaul25@gmail.com</a>
+        </p>
       </footer>
       <nav className="bnav" aria-label="Main">
         {MOB.map((n) => (

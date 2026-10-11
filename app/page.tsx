@@ -63,7 +63,7 @@ export default function Home() {
             </Link>
           ))}
         </div>
-        <p className="muted small" style={{ marginTop: 10 }}>{PANDALS.length} pandals and {PLACES.length} food and sight stops in this demo. The full list goes in once the data is verified.</p>
+        <p className="muted small" style={{ marginTop: 10 }}>{PANDALS.length} pandals and {PLACES.length} food and sight stops.</p>
       </section>
 
       <section className="sec">
