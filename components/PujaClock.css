@@ -1,0 +1,176 @@
+/* Live puja clock. Uses the site's colour tokens, so it works in light and dark mode. */
+.pclock {
+    position: relative;
+    overflow: hidden;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 22px 16px 20px;
+    box-shadow: var(--glow);
+    text-align: center
+}
+
+.pclock::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 8px;
+    background: repeating-linear-gradient(90deg, var(--alta) 0 26px, var(--gold) 26px 31px, var(--alta) 31px 57px)
+}
+
+.pclock::after {
+    content: "";
+    position: absolute;
+    inset: auto -40px -70px -40px;
+    height: 140px;
+    background: radial-gradient(ellipse at center, color-mix(in srgb, var(--gold) 28%, transparent), transparent 70%);
+    pointer-events: none
+}
+
+.pclock-title {
+    font: 600 clamp(20px, 4vw, 28px) var(--serif);
+    color: var(--alta-deep);
+    margin: 10px 0 2px
+}
+
+.pclock-sub {
+    margin: 0 0 16px;
+    color: var(--muted);
+    font-size: 14px
+}
+
+.pclock-units {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: clamp(6px, 2vw, 14px)
+}
+
+.pclock-unit {
+    min-width: clamp(64px, 19vw, 120px);
+    padding: 12px 6px 10px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--gold);
+    border-radius: 16px
+}
+
+.pclock-num {
+    display: block;
+    font: 700 clamp(34px, 9vw, 68px)/1 var(--serif);
+    color: var(--alta-deep);
+    font-variant-numeric: tabular-nums
+}
+
+.pclock-num.tick {
+    animation: pclockTick .5s ease-out
+}
+
+.pclock-lab {
+    display: block;
+    margin-top: 6px;
+    font: 600 11px var(--sans);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--muted)
+}
+
+.pclock-dot {
+    align-self: center;
+    color: var(--gold);
+    font: 700 clamp(20px, 5vw, 34px) var(--serif);
+    padding-bottom: 18px
+}
+
+@keyframes pclockTick {
+    0% {
+        transform: translateY(-6px) scale(1.06);
+        color: var(--gold)
+    }
+
+    100% {
+        transform: none
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .pclock-num.tick {
+        animation: none
+    }
+}
+
+/* day-of view: only today's information */
+.pday-steps {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 10px 0 14px
+}
+
+.pday-steps i {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--blush);
+    border: 1px solid var(--line)
+}
+
+.pday-steps i.done {
+    background: color-mix(in srgb, var(--gold) 55%, var(--blush))
+}
+
+.pday-steps i.now {
+    background: var(--alta);
+    border-color: var(--alta);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--alta) 22%, transparent)
+}
+
+.pday-date {
+    font: 700 clamp(30px, 7vw, 52px)/1.05 var(--serif);
+    color: var(--alta-deep);
+    margin: 0
+}
+
+.pday-name {
+    font: 600 clamp(22px, 5vw, 34px) var(--serif);
+    margin: 6px 0 0
+}
+
+.pday-bn {
+    display: block;
+    color: var(--muted);
+    font-size: 16px;
+    margin-bottom: 10px
+}
+
+.pday-what {
+    max-width: 52ch;
+    margin: 0 auto 12px;
+    font-size: 16px
+}
+
+.pday-tip {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    max-width: 52ch;
+    background: var(--blush);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 14px;
+    font-size: 14px
+}
+
+.pday-link {
+    position: relative;
+    z-index: 1;
+    display: block;
+    margin-top: 14px;
+    color: var(--alta);
+    font-weight: 600;
+    font-size: 14px
+}

@@ -1,11 +1,11 @@
 "use client";
 import { useMemo, useState } from "react";
-import { PANDALS } from "@/lib/data";
+import { NAVIGABLE } from "@/lib/data";
 import { useLang } from "@/lib/lang";
 import { tx } from "@/lib/i18n";
 
 // Lower-cased search text, built once.
-const INDEX = PANDALS.map((p) => ({ p, s: `${p.name} ${p.name_bn ?? ""} ${p.area ?? ""}`.toLowerCase() }));
+const INDEX = NAVIGABLE.map((p) => ({ p, s: `${p.name} ${p.name_bn ?? ""} ${p.area ?? ""}`.toLowerCase() }));
 
 /** Type-to-search pandal chooser. Works on phones, unlike a 700-item dropdown. */
 export default function PandalPicker({ onPick }: { onPick: (id: string) => void }) {

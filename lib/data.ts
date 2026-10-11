@@ -8,11 +8,24 @@ export const PLACES = placesData as Place[];
 export const ROUTES = routesData as Route[];
 export const byId = Object.fromEntries(PANDALS.map((p) => [p.id, p]));
 
-export const ZONES: Record<string, { en: string; bn: string; blurb: string }> = {
+/** Pandals with a real pin. Anything with a placeholder location is kept out of routing, nearest and trails. */
+export const NAVIGABLE = PANDALS.filter((p) => p.precision !== "approx");
+
+const KNOWN: Record<string, { en: string; bn: string; blurb: string }> = {
   north: { en: "North Kolkata", bn: "উত্তর কলকাতা", blurb: "Old clubs, big budgets, narrow lanes." },
   south: { en: "South Kolkata", bn: "দক্ষিণ কলকাতা", blurb: "Theme pandals and late-night crowds." },
+  central: { en: "Central Kolkata", bn: "মধ্য কলকাতা", blurb: "College Street, Park Street and the city centre." },
+  east: { en: "East Kolkata", bn: "পূর্ব কলকাতা", blurb: "Sealdah side, Salt Lake and the east." },
   west: { en: "South-west", bn: "দক্ষিণ-পশ্চিম", blurb: "Behala and Naktala. Plan a cab." },
+  howrah: { en: "Howrah", bn: "হাওড়া", blurb: "Across the Hooghly." },
+  bonedi: { en: "Bonedi Bari", bn: "বনেদি বাড়ি", blurb: "Old family pujas in heritage homes." },
+  others: { en: "Other areas", bn: "অন্যান্য এলাকা", blurb: "Suburbs and nearby towns." },
+  other: { en: "Other areas", bn: "অন্যান্য এলাকা", blurb: "Suburbs and nearby towns." },
 };
+const title = (z: string) => z.charAt(0).toUpperCase() + z.slice(1);
+/** Only the areas that appear in pandals.json, so every zone in your data gets its own filter chip. */
+export const ZONES: Record<string, { en: string; bn: string; blurb: string }> = Object.fromEntries(
+  [...new Set(PANDALS.map((p) => p.zone))].sort().map((z) => [z, KNOWN[z] ?? { en: title(z), bn: title(z), blurb: "" }]));
 
 // 2026 dates. Sources differ by a day on Shashthi/Saptami because panjikas differ.
 export const DAYS = [

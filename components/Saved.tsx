@@ -14,7 +14,7 @@ export default function Saved() {
   const [sp, setSp] = useSavedPlaces();
   const [ordered, setOrdered] = useState(false);
   const [note, setNote] = useState("");
-  const base = saved.map((i) => byId[i]).filter(Boolean);
+  const base = saved.map((i) => byId[i]).filter((p) => p && p.precision !== "approx");
   const trail = useMemo(() => (ordered && base.length > 1 ? [base[0], ...plan(base[0], base.slice(1))] : base), [ordered, saved]); // eslint-disable-line
   const len = trail.length > 1 ? pathLen(trail[0], trail.slice(1)) : 0;
   const places = sp.map((i) => PLACES.find((p) => p.id === i)).filter(Boolean) as typeof PLACES;

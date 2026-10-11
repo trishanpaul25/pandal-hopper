@@ -1,4 +1,4 @@
-id,name,name_bn,zone,lat,lng,area,theme,source,verified
+"id","name","name_bn","zone","lat","lng","area","theme","source","verified"
 "14-pally-udayan-sangha","14 Pally Udayan Sangha","","south","22.486402","88.369607","14 PALLY UDAYAN SANGHA, Kolkata (FFD Member 2025)","","https://durgapujakolkata.in/paras/14-pally-udayan-sangha","false"
 "17-pally-sadharan-durgotsab-samity","17 Pally Sadharan Durgotsab Samity","","south","22.52444","88.347595","17 PALLY SADHARAN DURGOTSAB SAMITY, Kolkata (FFD Member 2025)","","https://durgapujakolkata.in/paras/17-pally-sadharan-durgotsab-samity","false"
 "22-no-pally-basi-bindo-durga-puja-pandal","22 No. Pally Basi Bindo Durga Puja Pandal","","north","22.609856","88.39086","LIG Housing, Dutta Bagan, Paikpara, Kolkata 700037","","https://durgapujakolkata.in/paras/22-no-pally-basi-bindo-durga-puja-pandal","false"
@@ -238,7 +238,6 @@ id,name,name_bn,zone,lat,lng,area,theme,source,verified
 "debdaru-fatak-sarbojanin-durgotsab","Debdaru Fatak Sarbojanin Durgotsab","","south","22.502587","88.317546","4, Panchanan Tala, Behala, Kolkata 700034","","https://durgapujakolkata.in/paras/debdaru-fatak-sarbojanin-durgotsab","false"
 "deshapriya-park-sarbojanin-durgotsab","Deshapriya Park Sarbojanin Durgotsab","","south","22.518582","88.353461","Motilal Nehru Rd, Manoharpukur, Kalighat, Kolkata 700029","","https://durgapujakolkata.in/paras/deshapriya-park-sarbojanin-durgotsab","false"
 "deshapriyanagar-sadharan-durgotsab-sinthi-more","Deshapriyanagar Sadharan Durgotsab Sinthi More","","north","22.63118","88.380019","LIG Housing, Dutta Bagan, Paikpara, Kolkata 700037","","https://durgapujakolkata.in/paras/deshapriyanagar-sadharan-durgotsab-sinthi-more","false"
-"deshapriyanagar-sadharon-durgotsab","Deshapriyanagar Sadharon Durgotsab","","north","22.63118","88.380019","1, KC Ghosh Rd, Deshapriya Nagar Colony, Sinthee, Kolkata 700050","","https://durgapujakolkata.in/paras/deshapriyanagar-sadharon-durgotsab","false"
 "dewanpara-sarbojanin-durgapuja-samity","Dewanpara Sarbojanin Durgapuja Samity","","others","22.663622","88.382016","2 Nawab Abdul Latif St, Belghoria, Kolkata 700056","","https://durgapujakolkata.in/paras/dewanpara-sarbojanin-durgapuja-samity","false"
 "dhakuria-pragati-sangha","Dhakuria Pragati Sangha","","south","22.508609","88.371801","30C, Dhakuria, Tanu Pukur, Kolkata 700031","","https://durgapujakolkata.in/paras/dhakuria-pragati-sangha","false"
 "dhakuria-sarbojanin-durgotsab","Dhakuria Sarbojanin Durgotsab","","south","22.511244","88.374089","33 Sarat Ghosh Garden Rd, Dhakuria, Kolkata 700031","","https://durgapujakolkata.in/paras/dhakuria-sarbojanin-durgotsab","false"
@@ -775,3 +774,7 @@ id,name,name_bn,zone,lat,lng,area,theme,source,verified
 "yuba-brinda","Yuba Brinda","","south","22.485726","88.3635","YUBA BRINDA, Kolkata (FFD Member 2025)","","https://durgapujakolkata.in/paras/yuba-brinda","false"
 "yuba-brinda-durga-puja-mandop","Yuba Brinda Durga Puja Mandop","","north","22.595916","88.382315","Daspara, Ultadanga, Kolkata 700067","","https://durgapujakolkata.in/paras/yuba-brinda-durga-puja-mandop","false"
 "yuba-dal","Yuba Dal","","south","22.501857","88.3635","YUBA DAL, Kolkata (FFD Member 2025)","","https://durgapujakolkata.in/paras/yuba-dal","false"
+"birati-tarun-sangha","Birati Tarun Sangha","","others","22.66265968792727","88.43313552220737","Siddheswari Bazar, 171, MB Rd, Siddheswari Bazar, Mahajati Nagar, Birati, North Dumdum, West Bengal 700051","","added by hand","true"
+"mahajati-nagar-sarbojanin-durgotsab","Mahajati Nagar Sarbojanin Durgotsab","","others","22.660691958179257","88.43729696946599","MB Rd, Mahajati Nagar, Birati, North Dumdum, West Bengal 700051","","added by hand","true"
+"sarat-colony-jubo-gosthi","Sarat Colony Jubo Gosthi","","others","22.656734425918152","88.43997465345335","167, NH 12, Khalisha Kota, Birati, North Dumdum, West Bengal 700081","","added by hand","true"
+"baranagar-shibmandir-math-durgoutsab-committee","Baranagar Shibmandir Math Durgoutsab Committee","","north","22.635963695807185","88.37130703687743","Maharaja Nand Kumar Rd, Barada Basak Street, Baranagar, West Bengal 700036","added by hand","true"

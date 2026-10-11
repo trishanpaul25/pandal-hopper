@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
 import Countdown from "@/components/Countdown";
+import PujaClock from "@/components/PujaClock";
 import Bi from "@/components/Bi";
 import { Arch } from "@/components/Art";
-import { DAYS, PANDALS, PLACES, ZONES } from "@/lib/data";
+import { PANDALS, PLACES, ZONES } from "@/lib/data";
 import { useLang } from "@/lib/lang";
 import { useTheme } from "@/lib/theme";
 
@@ -42,16 +43,7 @@ export default function Home() {
 
       <section className="sec">
         <span className="eyebrow">{lang === "bn" ? "পুজোর পঞ্জিকা" : "Puja almanac"}</span>
-        <h2 className="h2">{lang === "bn" ? "ছয় দিনের উৎসব" : "The six days"}</h2>
-        <div className="days" style={{ marginTop: 14 }}>
-          {DAYS.map((d) => (
-            <div className="day" key={d.date}>
-              <div className="dt">{d.d}</div><div className="wd">{d.wd}</div>
-              <h3>{lang === "bn" ? d.bn : d.en}</h3><span className="cap">{lang === "bn" ? d.en : d.bn}</span>
-            </div>
-          ))}
-        </div>
-        <p className="muted small" style={{ marginTop: 10 }}>Panjikas differ by a day for Shashthi and Saptami. <Link href="/days" style={{ color: "var(--alta)", fontWeight: 600 }}>What to expect each day</Link></p>
+        <PujaClock />
       </section>
 
       <section className="sec">
@@ -61,7 +53,7 @@ export default function Home() {
           {Object.entries(ZONES).map(([k, z]) => (
             <Link key={k} href={`/pandals?zone=${k}`} style={{ textDecoration: "none" }}>
               <div className="card" style={{ padding: 0, overflow: "hidden" }}>
-                <div style={{ height: 130 }}><Arch tone={k} /></div>
+                <div className="pthumb" style={{ height: 130, overflow: "hidden" }}><Arch tone={k} /></div>
                 <div style={{ padding: 16 }}>
                   <h3 style={{ fontSize: 21 }}>{z[lang]}</h3><span className="cap">{z[lang === "en" ? "bn" : "en"]}</span>
                   <p className="muted" style={{ margin: "6px 0" }}>{z.blurb}</p>

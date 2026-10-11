@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { PANDALS, PLACES, byId } from "@/lib/data";
+import { NAVIGABLE, PLACES, byId } from "@/lib/data";
 import { fmtDist, km, walkMins } from "@/lib/geo";
 import { tx } from "@/lib/i18n";
 import { useLang } from "@/lib/lang";
@@ -21,7 +21,7 @@ export default function Food() {
       <div className="row" style={{ marginTop: 14 }}>
         <select className="search" style={{ flex: 1, minWidth: 220 }} value={at} onChange={(e) => setAt(e.target.value)} aria-label={tx(lang, "where")}>
           <option value="">{tx(lang, "where")}</option>
-          {PANDALS.map((p) => <option key={p.id} value={p.id}>{(lang === "bn" && p.name_bn) || p.name}</option>)}
+          {[...NAVIGABLE].sort((a, b) => a.name.localeCompare(b.name)).map((p) => <option key={p.id} value={p.id}>{(lang === "bn" && p.name_bn) || p.name}</option>)}
         </select>
       </div>
       <div className="chips">

@@ -15,6 +15,8 @@ type Props = {
 
 export default function PandalCard({ p, seen, saved, onSeen, onSave, dist, rank, hopLink, onGo, going, children }: Props) {
   const { lang } = useLang();
+  const approx = p.precision === "approx";
+  if (approx) { hopLink = false; onGo = undefined; onSave = undefined; }
   const primary = (lang === "bn" && p.name_bn) || p.name;
   const caption = lang === "bn" ? (p.name_bn ? p.name : "") : (p.name_bn ?? "");
   return (
@@ -31,6 +33,7 @@ export default function PandalCard({ p, seen, saved, onSeen, onSave, dist, rank,
         <h3>{primary}</h3>
         {caption && <p className="bncap">{caption}</p>}
         {p.theme && <p className="muted small">{p.theme}</p>}
+        {approx && <p className="muted small" style={{ margin: "4px 0 0" }}>📍 {lang === "bn" ? "সঠিক অবস্থান এখনও নিশ্চিত নয়, তাই রুট দেখানো হচ্ছে না।" : "Exact spot not confirmed yet, so no route is shown."}</p>}
         <div className="pactions">
           {hopLink && <Link className="btn outline" href={`/hop?from=${p.id}`}>{tx(lang, "hopFrom")}</Link>}
           {onGo && <button className={`btn ${going ? "gold" : "primary"}`} onClick={onGo}>{going ? "➤ " + tx(lang, "stop") : "➤ " + tx(lang, "go")}</button>}

@@ -2,7 +2,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { PANDALS, PLACES, ROUTES, byId } from "@/lib/data";
+import { NAVIGABLE as PANDALS, PLACES, ROUTES, byId } from "@/lib/data";
 import type { Pandal, Point } from "@/lib/types";
 import { bearing, bestOrder, fmtDist, km, meters, pathLen, plan, walkMins, walkRoute, walkRouteVia, type ViaRoute, type WalkRoute } from "@/lib/geo";
 import { tx } from "@/lib/i18n";
@@ -14,6 +14,8 @@ import PandalPicker from "./PandalPicker";
 
 const Map = dynamic(() => import("./Map"), { ssr: false });
 type Cur = Point & { id?: string; label: string };
+
+const startKey0 = (o: Point | null) => (o ? `${o.lat.toFixed(2)},${o.lng.toFixed(2)}` : "");
 
 export default function Hop() {
   const { lang } = useLang();
@@ -49,9 +51,19 @@ export default function Hop() {
   const food = cur ? PLACES.filter((f) => f.type === "food").map((f) => ({ f, d: km(cur, f) })).sort((a, b) => a.d - b.d).slice(0, 3) : [];
   const visited = seen.map((i) => byId[i]).filter(Boolean) as Pandal[];
   const origin: Point | null = me ?? cur;
+  const seenN = PANDALS.filter((p) => seen.includes(p.id)).length;
+  // Round down to the nearest hundred so it stays true as the list grows: 592 shows "500+", 640 shows "600+".
+  const countLabel = PANDALS.length >= 100 ? `${Math.floor(PANDALS.length / 100) * 100}+` : String(PANDALS.length);          // seen pandals that have a real pin
+  const [moreRoutes, setMoreRoutes] = useState(false);
+  const routeList = useMemo(() => {                                          // closest routes first
+    const l = [...ROUTES];
+    if (origin) l.sort((a, b) => (a.start ? km(origin, a.start) : 99) - (b.start ? km(origin, b.start) : 99));
+    return l;
+  }, [startKey0(origin)]); // eslint-disable-line
+  const routesShown = moreRoutes ? routeList.slice(0, 12) : routeList.slice(0, 3);
 
   // ---- Trail: unseen stops, in the best order, with a walking route through them ----
-  const trailAll = saved.map((i) => byId[i]).filter(Boolean) as Pandal[];
+  const trailAll = saved.map((i) => byId[i]).filter((p) => p && p.precision !== "approx") as Pandal[];
   const trailStops = trailAll.filter((p) => !seen.includes(p.id));
   const trailSeen = trailAll.filter((p) => seen.includes(p.id));
   const trailKey = trailStops.map((p) => p.id).join(",");
@@ -232,10 +244,10 @@ export default function Hop() {
         </div>
         {cur && <p className="muted small" style={{ margin: "8px 0 0" }}>📍 <b>{cur.id ? cur.label : tx(lang, "gps")}</b></p>}
         {msg && <p className="msg">{msg}</p>}
-        <div className="segbar" role="progressbar" aria-valuenow={seen.length} aria-valuemax={PANDALS.length} aria-label="Pandals seen">
-          {PANDALS.map((p) => <i key={p.id} className={seen.includes(p.id) ? "on" : ""} />)}
+        <div role="progressbar" aria-valuenow={seenN} aria-valuemax={PANDALS.length} aria-label="Pandals seen" style={{ height: 10, borderRadius: 99, background: "var(--blush)", overflow: "hidden", margin: "12px 0 6px" }}>
+          <span style={{ display: "block", height: "100%", width: `${(seenN / Math.max(1, PANDALS.length)) * 100}%`, background: "var(--shiuli)" }} />
         </div>
-        <p className="muted small" style={{ margin: 0 }}>{seen.length} / {PANDALS.length} {lang === "bn" ? "টি দেখা হয়েছে" : "pandals seen"} · {PANDALS.length - seen.length} {lang === "bn" ? "বাকি" : "remaining"}</p>
+        <p className="muted small" style={{ margin: 0 }}>{seenN} {lang === "bn" ? "টি দেখা হয়েছে" : "visited"} · {countLabel} {lang === "bn" ? "টি প্যান্ডেল মানচিত্রে" : "pandals on the map"}</p>
       </div>
 
       <section className="sec" id="trail">
@@ -345,7 +357,7 @@ export default function Hop() {
       <section className="sec">
         <h2 className="h2"><Bi k="routes" caption={false} /></h2>
         <div className="grid3" style={{ marginTop: 14 }}>
-          {ROUTES.map((r) => (
+          {routesShown.map((r) => (
             <div className="card paar" key={r.id}>
               <h3 style={{ fontSize: 21 }}>{r.name}</h3><p className="muted" style={{ margin: "4px 0 8px" }}>{r.blurb}</p>
               <p className="small"><b>{r.ids.length}</b> stops · about <b>{fmtDist(r.km)}</b> · {r.ids.filter((i) => seen.includes(i)).length} ✓</p>
@@ -360,6 +372,7 @@ export default function Hop() {
             </div>
           ))}
         </div>
+        {routeList.length > 3 && <button className="btn outline" style={{ marginTop: 12 }} onClick={() => setMoreRoutes(!moreRoutes)}>{moreRoutes ? "Show fewer routes" : `Show more routes (${Math.min(12, routeList.length) - 3} more)`}</button>}
       </section>
     </div>
   );
