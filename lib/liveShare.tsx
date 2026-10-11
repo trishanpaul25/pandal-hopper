@@ -29,8 +29,10 @@ export async function stopAllSharing() {
 type Ctx = {
   codes: string[]; isOn: (code: string) => boolean; start: (code: string) => void; stop: (code: string) => void;
   me: Me | null; geoErr: string; keepAwake: boolean; setKeepAwake: (v: boolean) => void;
+  /** Ask for my own position on this phone only (e.g. for directions to a friend). Nothing is uploaded unless sharing is on. */
+  setLocalTrack: (v: boolean) => void;
 };
-const C = createContext<Ctx>({ codes: [], isOn: () => false, start: () => {}, stop: () => {}, me: null, geoErr: "", keepAwake: false, setKeepAwake: () => {} });
+const C = createContext<Ctx>({ codes: [], isOn: () => false, start: () => {}, stop: () => {}, me: null, geoErr: "", keepAwake: false, setKeepAwake: () => {}, setLocalTrack: () => {} });
 
 export function LiveShareProvider({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
@@ -39,6 +41,7 @@ export function LiveShareProvider({ children }: { children: React.ReactNode }) {
   const [now, setNow] = useState(() => Date.now());
   const [me, setMe] = useState<Me | null>(null);
   const [geoErr, setGeoErr] = useState("");
+  const [localTrack, setLocalTrack] = useState(false);
   const [keepAwake, setKeepAwake] = useStored<boolean>("ph-keep-awake", false);
   const codesRef = useRef<string[]>([]);
 
@@ -66,7 +69,7 @@ export function LiveShareProvider({ children }: { children: React.ReactNode }) {
 
   // One GPS watch for all groups that are being shared with. Sends are throttled to save battery and data.
   useEffect(() => {
-    if (!uid || !key) { setMe(null); return; }
+    if (!uid || (!key && !localTrack)) { setMe(null); return; }
     if (!navigator.geolocation) { setGeoErr("This phone can't share location."); return; }
     let lastPt: Point | null = null, lastAt = 0;
     const id = navigator.geolocation.watchPosition((pos) => {
@@ -79,11 +82,11 @@ export function LiveShareProvider({ children }: { children: React.ReactNode }) {
       lastPt = pt; lastAt = t0;
       codesRef.current.forEach((c) => pushLocation(c, uid, { ...pt, heading: h, acc: pos.coords.accuracy }));
     }, (e) => {
-      if (e.code === 1) { setGeoErr("Location is blocked for this site. Allow it in your browser settings, then turn sharing on again."); codesRef.current.forEach(stop); }
+      if (e.code === 1) { setGeoErr("Location is blocked for this site. Allow it in your browser settings, then turn sharing on again."); codesRef.current.forEach(stop); setLocalTrack(false); }
       else setGeoErr("Can't get your location right now. Still trying…");
     }, { enableHighAccuracy: true, maximumAge: 5000, timeout: 20000 });
     return () => navigator.geolocation.clearWatch(id);
-  }, [key, uid]); // eslint-disable-line
+  }, [key, uid, localTrack]); // eslint-disable-line
 
   // Optionally keep the screen awake (phones stop sending location when the screen locks).
   const sharingAny = !!key;
@@ -100,6 +103,6 @@ export function LiveShareProvider({ children }: { children: React.ReactNode }) {
     return () => { dead = true; document.removeEventListener("visibilitychange", vis); lock?.release().catch(() => {}); };
   }, [sharingAny, keepAwake]);
 
-  return <C.Provider value={{ codes, isOn: (c) => codes.includes(c), start, stop, me, geoErr, keepAwake, setKeepAwake }}>{children}</C.Provider>;
+  return <C.Provider value={{ codes, isOn: (c) => codes.includes(c), start, stop, me, geoErr, keepAwake, setKeepAwake, setLocalTrack }}>{children}</C.Provider>;
 }
 export const useLiveShare = () => useContext(C);

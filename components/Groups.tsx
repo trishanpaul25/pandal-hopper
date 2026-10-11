@@ -3,8 +3,8 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { NAVIGABLE as PANDALS } from "@/lib/data";
-import type { Place, Point } from "@/lib/types";
-import { fmtDist, meters } from "@/lib/geo";
+import type { Pandal, Place, Point } from "@/lib/types";
+import { fmtDist, meters, walkRoute, type WalkRoute } from "@/lib/geo";
 import { useAuth } from "@/lib/auth";
 import { useLang } from "@/lib/lang";
 import { useSeen } from "@/lib/store";
@@ -19,7 +19,7 @@ import type { Friend } from "./Map";
 const Map = dynamic(() => import("./Map"), { ssr: false });
 
 // Constants so the map does not redraw on every render.
-const NO_LINE: Point[] = [], NO_PLACES: Place[] = [], NOOP = () => {};
+const NO_LINE: Point[] = [], NO_PLACES: Place[] = [], NO_PANDALS: Pandal[] = [], NOOP = () => {};
 const STALE_MS = 3 * 60_000;         // older than this: shown greyed out with "last seen"
 const GONE_MS = 60 * 60_000;         // older than this: not shown on the map at all
 const FAR_M = 300;                   // "far from you" tag
@@ -54,8 +54,11 @@ export default function Groups() {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState("");
   const [copied, setCopied] = useState(false);
+  const [showPandals, setShowPandals] = useState(false);       // the group map starts clean: only people
+  const [followId, setFollowId] = useState("");                // friend I am getting directions to
+  const [route, setRoute] = useState<WalkRoute | null>(null);
 
-  const { isOn, start, stop, me, geoErr, keepAwake, setKeepAwake } = useLiveShare(); // sharing keeps running on other pages too
+  const { isOn, start, stop, me, geoErr, keepAwake, setKeepAwake, setLocalTrack } = useLiveShare(); // sharing keeps running on other pages too
   const [now, setNow] = useState(() => Date.now());
   const [focus, setFocus] = useState<{ pts: Point[]; k: number } | null>(null);
   const focusK = useRef(0);
@@ -91,7 +94,7 @@ export default function Groups() {
 
   // Members of the open group, live.
   useEffect(() => {
-    setMembers([]); fittedFor.current = "";
+    setMembers([]); fittedFor.current = ""; setFollowId("");
     if (!uid || !active) return;
     return watchMembers(active, setMembers, () => {});
   }, [uid, active]);
@@ -109,6 +112,35 @@ export default function Groups() {
     const pts: Point[] = [...friends, ...(me ? [me] : [])];
     if (pts.length) { fittedFor.current = active; fly(pts); }
   }, [friends, me, active]); // eslint-disable-line
+
+  // Directions to a friend, drawn on this map. Both of us move, so the path is re-made every few seconds
+  // (only when one of us moved 30 m or more) and its two ends are always pinned to our latest positions.
+  const target = followId ? friends.find((f) => f.id === followId) ?? null : null;
+  const followNick = members.find((m) => m.uid === followId)?.nick ?? "";
+  const posRef = useRef<{ a: Point | null; b: Point | null }>({ a: null, b: null });
+  posRef.current = { a: me ? { lat: me.lat, lng: me.lng } : null, b: target ? { lat: target.lat, lng: target.lng } : null };
+  useEffect(() => { setLocalTrack(!!followId); return () => setLocalTrack(false); }, [followId]); // eslint-disable-line
+  useEffect(() => {
+    if (!followId) { setRoute(null); return; }
+    let alive = true, busy = false, last: { a: Point; b: Point } | null = null;
+    const tick = async () => {
+      const { a, b } = posRef.current;
+      if (!a || !b || busy) return;
+      if (last && meters(last.a, a) < 30 && meters(last.b, b) < 30) return;
+      busy = true; last = { a, b };
+      const r = await walkRoute(a, b);
+      busy = false; if (alive) setRoute(r);
+    };
+    tick(); const id = setInterval(tick, 5000);
+    return () => { alive = false; clearInterval(id); };
+  }, [followId]);
+  useEffect(() => { if (!target) setRoute(null); }, [!!target]); // eslint-disable-line
+  const line: Point[] = useMemo(() => {
+    if (!me || !target) return NO_LINE;
+    const b = { lat: target.lat, lng: target.lng };
+    return [{ lat: me.lat, lng: me.lng }, ...(route && !route.approx ? route.coords : []), b];
+  }, [me, target, route]);
+  const toFriend = me && target ? meters(me, target) : null;
 
   const ago = (ms: number) => {
     const s = Math.max(0, Math.round((now - ms) / 1000));
@@ -173,13 +205,30 @@ export default function Groups() {
       {head(g.name, t("Group · see everyone", "দল · সবাইকে দেখুন"))}
 
       <div className="mapbox">
-        <Map pandals={PANDALS} places={NO_PLACES} seen={seen} you={me} heading={me?.heading ?? 0} line={NO_LINE} lineColor="#c1121f" solid
-          showPlaces={false} onPick={NOOP} friends={friends} focus={focus} />
+        <Map pandals={showPandals ? PANDALS : NO_PANDALS} places={NO_PLACES} seen={seen} you={me} heading={me?.heading ?? 0}
+          line={line} lineColor="#0077b6" solid showPlaces={false} onPick={NOOP} friends={friends} focus={focus} fitKey={followId || null} />
       </div>
       <div className="row" style={{ marginTop: 10 }}>
         <button className="btn outline sm" onClick={() => fly([...friends, ...(me ? [me] : [])])} disabled={!friends.length && !me}>👥 {t("Show everyone", "সবাইকে দেখান")}</button>
         {me && <button className="btn outline sm" onClick={() => fly([me])}>📍 {t("Me", "আমি")}</button>}
+        <label className="row" style={{ gap: 6, cursor: "pointer" }}>
+          <input type="checkbox" checked={showPandals} onChange={(e) => setShowPandals(e.target.checked)} />
+          <span className="small">{t("Show pandals", "প্যান্ডেল দেখান")}</span>
+        </label>
       </div>
+
+      {followId && (
+        <div className="card paar" style={{ marginTop: 12, display: "grid", gap: 8 }}>
+          <b>🧭 {t(`Walking to ${followNick || "friend"}`, `${followNick || "বন্ধু"}-এর কাছে যাচ্ছেন`)}</b>
+          {!target ? <span className="msg" style={{ margin: 0 }}>{t(`${followNick || "They"} isn't sharing right now. The path will come back when they do.`, `${followNick || "তিনি"} এখন শেয়ার করছেন না। শেয়ার করলে পথ আবার দেখা যাবে।`)}</span>
+            : !me ? <span className="muted">{t("Finding your location…", "আপনার লোকেশন খোঁজা হচ্ছে…")}</span>
+            : toFriend !== null && toFriend < 25 ? <span>✅ {t("You've reached them!", "আপনি পৌঁছে গেছেন!")}</span>
+            : <span><b>{fmtDist((toFriend ?? 0) / 1000)}</b> {t("away", "দূরে")}{route ? <> · ~{route.mins} {t("min walk", "মিনিটের হাঁটা")}{route.approx ? t(" (straight line)", " (সোজা দূরত্ব)") : ""}</> : null}</span>}
+          <span className="muted small">{t("The blue path updates as you or they move. Your location is used on this phone only, unless you turned sharing on.", "আপনি বা তিনি নড়লে নীল পথ নিজে থেকেই বদলায়। আপনার লোকেশন শুধু এই ফোনে ব্যবহার হয়, শেয়ারিং চালু না থাকলে কাউকে পাঠানো হয় না।")}</span>
+          {geoErr && <span className="msg" style={{ margin: 0 }}>{geoErr}</span>}
+          <div><button className="btn outline sm" onClick={() => setFollowId("")}>{t("Stop directions", "দিকনির্দেশ বন্ধ")}</button></div>
+        </div>
+      )}
 
       <div className="card paar" style={{ marginTop: 14, display: "grid", gap: 12 }}>
         <button className="switch" role="switch" aria-checked={sharing} onClick={() => (sharing ? stop(g.code) : start(g.code))}>
@@ -219,8 +268,9 @@ export default function Groups() {
               </div>
               {live && !isMe && <>
                 <button className="iconbtn" onClick={() => fly([{ lat: m.lat as number, lng: m.lng as number }])} aria-label={t("Show on map", "মানচিত্রে দেখান")}>📍</button>
-                <a className="iconbtn" target="_blank" rel="noopener noreferrer" aria-label={t("Walk to them", "হেঁটে যান")}
-                  href={`https://www.google.com/maps/dir/?api=1&destination=${m.lat},${m.lng}&travelmode=walking`}>🧭</a>
+                <button className={"iconbtn" + (followId === m.uid ? " solid" : "")} aria-pressed={followId === m.uid}
+                  aria-label={t("Directions to them", "তার কাছে যাওয়ার পথ")}
+                  onClick={() => { setFollowId(followId === m.uid ? "" : m.uid); if (followId !== m.uid) setShowPandals(false); }}>🧭</button>
               </>}
             </div>
           );
