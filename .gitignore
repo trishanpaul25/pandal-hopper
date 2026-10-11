@@ -4,3 +4,4 @@ out
 next-env.d.ts
 data/.scrape-cache/
 .env.local
+data/.food-cache.json

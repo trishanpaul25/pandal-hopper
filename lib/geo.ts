@@ -69,21 +69,28 @@ export function pathLen<T extends Point>(start: Point, arr: T[]): number {
 
 /** Nearest neighbour first, then 2-opt to remove crossings. Start point is fixed. */
 export function plan<T extends Point>(start: Point, pts: T[]): T[] {
-  const left = [...pts]; let path: T[] = []; let cur: Point = start;
-  while (left.length) {
-    let bi = 0, bd = Infinity;
-    left.forEach((q, i) => { const d = km(cur, q); if (d < bd) { bd = d; bi = i; } });
-    const [next] = left.splice(bi, 1); path.push(next); cur = next;
+  const n = pts.length; if (n <= 1) return [...pts];
+  // Distance table: node 0 is the start, nodes 1..n are the stops.
+  const N = n + 1, nodes: Point[] = [start, ...pts], D = new Float64Array(N * N);
+  for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) { const d = km(nodes[i], nodes[j]); D[i * N + j] = d; D[j * N + i] = d; }
+  // Nearest-neighbour first guess.
+  const used = new Uint8Array(N); const t = [0]; used[0] = 1;
+  for (let k = 0; k < n; k++) {
+    const c = t[t.length - 1]; let bi = -1, bd = Infinity;
+    for (let j = 1; j < N; j++) if (!used[j] && D[c * N + j] < bd) { bd = D[c * N + j]; bi = j; }
+    t.push(bi); used[bi] = 1;
   }
-  let improved = true;
-  while (improved) {
-    improved = false;
-    for (let i = 0; i < path.length - 1; i++) for (let j = i + 1; j < path.length; j++) {
-      const cand = path.slice(0, i).concat(path.slice(i, j + 1).reverse(), path.slice(j + 1));
-      if (pathLen(start, cand) < pathLen(start, path) - 1e-9) { path = cand; improved = true; }
+  // 2-opt: reverse a stretch whenever it makes the walk shorter. Each check is O(1), so even 700+ stops finish instantly.
+  for (let pass = 0; pass < 80; pass++) {
+    let improved = false;
+    for (let i = 1; i < N - 1; i++) for (let j = i + 1; j < N; j++) {
+      const a = t[i - 1], b = t[i], c = t[j], d = j < N - 1 ? t[j + 1] : -1;
+      const delta = D[a * N + c] + (d >= 0 ? D[b * N + d] : 0) - D[a * N + b] - (d >= 0 ? D[c * N + d] : 0);
+      if (delta < -1e-9) { for (let x = i, y = j; x < y; x++, y--) { const tmp = t[x]; t[x] = t[y]; t[y] = tmp; } improved = true; }
     }
+    if (!improved) break;
   }
-  return path;
+  return t.slice(1).map((i) => pts[i - 1]);
 }
 
 /** Best visiting order for a set of stops. With a start point it is fixed; without one, the best first stop is chosen too. */

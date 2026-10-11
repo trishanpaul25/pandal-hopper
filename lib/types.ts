@@ -5,7 +5,8 @@ export type Pandal = {
   precision?: "exact" | "approx";
 };
 export type Place = {
-  id: string; name: string; type: "food" | "sight";
+  id: string; name: string; name_bn?: string; type: "food" | "sight";
+  kind?: "restaurant" | "cafe" | "fastfood" | "sweets" | "sight";
   lat: number; lng: number; note: string; verified: boolean;
 };
 export type Route = { id: string; name: string; blurb: string; ids: string[]; km: number; zone?: string; start?: Point };

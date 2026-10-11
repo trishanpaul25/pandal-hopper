@@ -1028,3 +1028,108 @@ ul.plain li {
     display: none
   }
 }
+
+/* Trail / visited rows: name on the left, buttons on the right; on phones the buttons drop to their own full-width line so every row lines up. */
+.titem {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line)
+}
+
+.titem:last-child {
+  border: 0
+}
+
+.titem h3 {
+  font: 600 17px var(--sans);
+  overflow-wrap: anywhere
+}
+
+.titem p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px
+}
+
+.tleft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 220px;
+  min-width: 0
+}
+
+.tact {
+  display: flex;
+  gap: 8px;
+  flex: 0 0 auto
+}
+
+@media(max-width:600px) {
+  .tact {
+    flex: 1 1 100%
+  }
+
+  .tact .btn {
+    flex: 1;
+    min-width: 0
+  }
+
+  .tact .btn:first-child {
+    flex: 2
+  }
+}
+
+.toast {
+  position: fixed;
+  right: 12px;
+  bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  z-index: 60;
+  max-width: min(340px, calc(100vw - 24px));
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #2a0a0e;
+  color: #fff;
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 6px 24px #0007;
+  font: 600 14px var(--sans);
+  animation: toastin .25s ease-out
+}
+
+.toast button {
+  background: none;
+  border: 0;
+  color: #f2a900;
+  font: 700 14px var(--sans);
+  cursor: pointer;
+  padding: 6px 4px;
+  min-height: 36px
+}
+
+@media(min-width:900px) {
+  .toast {
+    bottom: 24px
+  }
+}
+
+@keyframes toastin {
+  from {
+    transform: translateX(30px);
+    opacity: 0
+  }
+
+  to {
+    transform: none;
+    opacity: 1
+  }
+}
+
+.tnum.plain {
+  background: #6b6258
+}

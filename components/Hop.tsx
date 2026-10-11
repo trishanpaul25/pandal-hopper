@@ -11,6 +11,7 @@ import { toggleIn, useSaved, useSeen } from "@/lib/store";
 import Bi from "./Bi";
 import PandalCard from "./PandalCard";
 import PandalPicker from "./PandalPicker";
+import { exportPdf, planText } from "@/lib/exportPlan";
 
 const Map = dynamic(() => import("./Map"), { ssr: false });
 type Cur = Point & { id?: string; label: string };
@@ -33,6 +34,11 @@ export default function Hop() {
   const [trailRt, setTrailRt] = useState<(ViaRoute & { key: string }) | null>(null);
   const [stamp, setStamp] = useState("");                                 // changes on each Go, so the map zooms once
   const [notice, setNotice] = useState("");
+  const [nearLimit, setNearLimit] = useState(6);
+  const [planLimit, setPlanLimit] = useState(40);
+  const [toast, setToast] = useState<{ text: string; undo?: () => void } | null>(null);
+  const savedRef = useRef(saved); savedRef.current = saved;
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastFetch = useRef<{ tid: string; o: Point } | null>(null);
   const lastTrail = useRef<{ key: string; o: Point | null } | null>(null);
   const reqId = useRef(0), trailReq = useRef(0);
@@ -46,9 +52,42 @@ export default function Hop() {
   }, [lang]);
   useEffect(() => { const f = new URLSearchParams(window.location.search).get("from"); if (f && byId[f]) here(f); }, []); // eslint-disable-line
 
+  const showToast = (text: string, undo?: () => void) => {
+    setToast({ text, undo });
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToast(null), 4000);
+  };
+  useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
+  // Add to trail: show a pop-up, and the card disappears so the next pandal moves up.
+  const addTrail = (p: Pandal) => {
+    if (saved.includes(p.id)) return;
+    setSaved([...saved, p.id]);
+    showToast(`★ ${name(p)} ${lang === "bn" ? "ট্রেইলে যোগ হয়েছে" : "added to your trail"}`, () => setSaved(savedRef.current.filter((x) => x !== p.id)));
+  };
+  const removeTrail = (p: Pandal) => {
+    setSaved(saved.filter((x) => x !== p.id));
+    showToast(`✕ ${name(p)} ${lang === "bn" ? "ট্রেইল থেকে সরানো হয়েছে" : "removed from your trail"}`, () => setSaved([...savedRef.current.filter((x) => x !== p.id), p.id]));
+  };
+  const toggleTrail = (p: Pandal) => (saved.includes(p.id) ? removeTrail(p) : addTrail(p));
+  const doExport = (title: string, stops: Pandal[]) => {
+    if (!exportPdf({ title, stops, start: origin, bn: lang === "bn" })) showToast(lang === "bn" ? "পপ-আপ অনুমতি দিন, তারপর আবার চেষ্টা করুন" : "Allow pop-ups to export, then try again");
+  };
+  const shareTrail = async (stops: Pandal[]) => {
+    const title = lang === "bn" ? "আমার পুজো ট্রেইল" : "My Pandal Trail";
+    const text = planText(title, stops, lang === "bn");
+    try {
+      if (navigator.share) await navigator.share({ title, text });
+      else { await navigator.clipboard.writeText(text); showToast(lang === "bn" ? "কপি হয়েছে, এবার পেস্ট করে পাঠান" : "Copied. Paste it into a chat to share."); }
+    } catch { /* cancelled */ }
+  };
+
   const unseen = PANDALS.filter((p) => !seen.includes(p.id) && p.id !== cur?.id);
-  const nearest = useMemo(() => (cur ? unseen.map((p) => ({ p, d: km(cur, p) })).sort((a, b) => a.d - b.d) : []), [cur, seen]); // eslint-disable-line
-  const food = cur ? PLACES.filter((f) => f.type === "food").map((f) => ({ f, d: km(cur, f) })).sort((a, b) => a.d - b.d).slice(0, 3) : [];
+  const nearest = useMemo(() => (cur ? unseen.filter((p) => !saved.includes(p.id)).map((p) => ({ p, d: km(cur, p) })).sort((a, b) => a.d - b.d) : []), [cur, seen, saved]); // eslint-disable-line
+  // Thousands of food places exist now, so rank once per ~10 m of movement and only draw the close ones on the map.
+  const curKey = cur ? `${cur.lat.toFixed(4)},${cur.lng.toFixed(4)}` : "";
+  const ranked = useMemo(() => (cur ? PLACES.map((f) => ({ f, d: km(cur, f) })).sort((a, b) => a.d - b.d) : []), [curKey]); // eslint-disable-line
+  const food = ranked.filter((x) => x.f.type === "food").slice(0, 5);
+  const mapPlaces = useMemo(() => ranked.filter((x) => x.d <= 1.2).slice(0, 80).map((x) => x.f), [ranked]);
   const visited = seen.map((i) => byId[i]).filter(Boolean) as Pandal[];
   const origin: Point | null = me ?? cur;
   const seenN = PANDALS.filter((p) => seen.includes(p.id)).length;
@@ -191,7 +230,7 @@ export default function Hop() {
       {PANDALS.some((p) => !p.verified) && <p className="muted small">Some locations are unverified sample data.</p>}
 
       <div className="mapbox" ref={mapBox}>
-        <Map pandals={PANDALS} places={PLACES} seen={seen} you={youPt} heading={heading} line={line} lineColor={lineColor} solid={solid}
+        <Map pandals={PANDALS} places={mapPlaces} seen={seen} you={youPt} heading={heading} line={line} lineColor={lineColor} solid={solid}
           showPlaces={!!cur} onPick={here} target={aim?.id ?? null} trail={target ? [] : trailOrder.map((p) => p.id)} dim={navigating} fitKey={fitKey} />
       </div>
       <div className="legend" aria-label="Map colours">
@@ -270,13 +309,13 @@ export default function Hop() {
               const leg = legFor(i);
               const from = i === 0 ? (rtHasOrigin ? (lang === "bn" ? "আপনার থেকে" : "from you") : (lang === "bn" ? "শুরু" : "start here")) : (lang === "bn" ? `স্টপ ${i} থেকে` : `from stop ${i}`);
               return (
-                <div className="item" key={p.id}>
-                  <div className="row" style={{ gap: 12, flexWrap: "nowrap", minWidth: 0 }}>
+                <div className="titem" key={p.id}>
+                  <div className="tleft">
                     <span className="tnum">{i + 1}</span>
                     <div><h3>{name(p)}</h3><p>{leg !== null ? `${fmtDist(leg)} · ~${Math.max(1, Math.round(leg * 12))} min ${from}` : from}</p></div>
                   </div>
-                  <div className="row">
-                    <button className={`btn sm ${target?.id === p.id ? "gold" : "outline"}`} onClick={() => go(p)}>➤ {target?.id === p.id ? tx(lang, "stop") : tx(lang, "go")}</button>
+                  <div className="tact">
+                    <button className={`btn sm ${target?.id === p.id ? "gold" : "primary"}`} onClick={() => go(p)}>➤ {target?.id === p.id ? tx(lang, "stop") : tx(lang, "go")}</button>
                     <button className="btn sm outline" aria-label={tx(lang, "markSeen")} onClick={() => arrive(p)}>✓</button>
                     <button className="btn sm" aria-label="Remove from my trail" onClick={() => setSaved(saved.filter((x) => x !== p.id))}>✕</button>
                   </div>
@@ -284,12 +323,12 @@ export default function Hop() {
               );
             })}
             {trailSeen.map((p) => (
-              <div className="item" key={p.id} style={{ opacity: 0.8 }}>
-                <div className="row" style={{ gap: 12, flexWrap: "nowrap", minWidth: 0 }}>
+              <div className="titem" key={p.id} style={{ opacity: 0.8 }}>
+                <div className="tleft">
                   <span className="tnum done">✓</span>
                   <div><h3>{name(p)}</h3><p>{tx(lang, "seen")}</p></div>
                 </div>
-                <div className="row">
+                <div className="tact">
                   <button className="btn sm outline" onClick={() => unmarkSeen(p.id)}>✕ {tx(lang, "unmark")}</button>
                   <button className="btn sm" aria-label="Remove from my trail" onClick={() => setSaved(saved.filter((x) => x !== p.id))}>★</button>
                 </div>
@@ -304,16 +343,17 @@ export default function Hop() {
           : !nearest.length ? <div className="empty"><Bi k="doneAll" caption={false} /></div> : <>
           <h2 className="h2">{tx(lang, "nearest")} {cur.id ? cur.label : tx(lang, "gps")}</h2>
           <div className="pgrid" style={{ marginTop: 14 }}>
-            {nearest.slice(0, 3).map((x, i) => (
+            {nearest.slice(0, nearLimit).map((x, i) => (
               <PandalCard key={x.p.id} p={x.p} rank={i + 1} dist={`${fmtDist(x.d)} · ~${walkMins(x.d)} min`}
-                seen={false} saved={saved.includes(x.p.id)} onSave={() => setSaved(toggleIn(saved, x.p.id))}
+                seen={false} saved={false} onSave={() => addTrail(x.p)}
                 onGo={() => go(x.p)} going={target?.id === x.p.id} onSeen={() => arrive(x.p)}>
-                <button className="btn outline" style={{ marginTop: 8 }} onClick={() => setSaved(toggleIn(saved, x.p.id))}>
-                  {saved.includes(x.p.id) ? "★ " + tx(lang, "inTrail") : "☆ " + tx(lang, "addRoute")}
-                </button>
+                <button className="btn outline" style={{ marginTop: 8 }} onClick={() => addTrail(x.p)}>☆ {tx(lang, "addRoute")}</button>
               </PandalCard>
             ))}
           </div>
+          {nearest.length > nearLimit && <div style={{ textAlign: "center", marginTop: 14 }}>
+            <button className="btn outline big" onClick={() => setNearLimit(nearLimit + 6)}>{tx(lang, "more")} ({nearest.length - nearLimit})</button>
+          </div>}
           <div className="cta" style={{ marginTop: 18 }}>
             <div>
               <h2>{lang === "bn" ? "বাকি সব প্যান্ডেল, একটি সাজানো ক্রমে" : "All remaining pandals, in one smart order"}</h2>
@@ -324,11 +364,51 @@ export default function Hop() {
               {planned && <button className="btn big" onClick={() => setPlanned(null)}><Bi k="clear" caption={false} /></button>}
             </div>
           </div>
-          {planned && <div className="card paar" style={{ marginTop: 14 }}>
-            <h3 style={{ fontSize: 22 }}>{tx(lang, "order")}</h3>
-            <p className="muted small">{planned.length} stops · {fmtDist(pathLen(cur, planned))}</p>
-            {planned.map((p, i) => <div className="stop" key={p.id}><span>{i + 1}. {name(p)}</span></div>)}
-          </div>}
+          {planned && (() => {
+            const trailList = [...trailOrder, ...trailSeen];
+            const trailTitle = lang === "bn" ? "আমার পুজো ট্রেইল" : "My Pandal Trail";
+            return <>
+              <div className="card paar" style={{ marginTop: 14, borderLeftColor: "#6d28d9" }}>
+                <div className="row" style={{ justifyContent: "space-between" }}>
+                  <h3 style={{ fontSize: 22 }}>★ {tx(lang, "curTrail")} ({trailList.length})</h3>
+                  {trailList.length > 0 && <div className="row">
+                    <button className="btn sm primary" onClick={() => doExport(trailTitle, trailList)}>📄 {tx(lang, "exportPdf")}</button>
+                    <button className="btn sm outline" onClick={() => shareTrail(trailList)}>↗ {tx(lang, "shareShort")}</button>
+                  </div>}
+                </div>
+                {trailList.length === 0 ? <p className="muted small" style={{ margin: "8px 0 0" }}>{tx(lang, "curTrailEmpty")}</p> : trailList.map((p, i) => (
+                  <div className="titem" key={p.id}>
+                    <div className="tleft">
+                      <span className={`tnum ${seen.includes(p.id) ? "done" : ""}`}>{seen.includes(p.id) ? "✓" : i + 1}</span>
+                      <div><h3>{name(p)}</h3>{p.area && <p>{p.area}</p>}</div>
+                    </div>
+                    <div className="tact"><button className="btn sm outline" onClick={() => removeTrail(p)}>✕ {tx(lang, "removeTrail")}</button></div>
+                  </div>
+                ))}
+              </div>
+              <div className="card paar" style={{ marginTop: 14 }}>
+                <div className="row" style={{ justifyContent: "space-between" }}>
+                  <h3 style={{ fontSize: 22 }}>{tx(lang, "order")}</h3>
+                  <button className="btn sm outline" onClick={() => doExport(lang === "bn" ? "আমার পুজো পরিক্রমা" : "My Pandal Hopping Plan", planned)}>📄 {tx(lang, "exportPdf")}</button>
+                </div>
+                <p className="muted small">{planned.length} stops · {fmtDist(pathLen(cur, planned))}</p>
+                {planned.slice(0, planLimit).map((p, i) => (
+                  <div className="titem" key={p.id}>
+                    <div className="tleft">
+                      <span className="tnum plain">{i + 1}</span>
+                      <div><h3>{name(p)}</h3>{p.area && <p>{p.area}</p>}</div>
+                    </div>
+                    <div className="tact">
+                      <button className={`btn sm ${saved.includes(p.id) ? "gold" : "outline"}`} onClick={() => toggleTrail(p)}>{saved.includes(p.id) ? "★ " + tx(lang, "inTrail") : "☆ " + tx(lang, "addRoute")}</button>
+                    </div>
+                  </div>
+                ))}
+                {planned.length > planLimit && <div style={{ textAlign: "center", marginTop: 12 }}>
+                  <button className="btn outline" onClick={() => setPlanLimit(planLimit + 40)}>{tx(lang, "more")} ({planned.length - planLimit})</button>
+                </div>}
+              </div>
+            </>;
+          })()}
         </>}
       </section>
 
@@ -345,9 +425,9 @@ export default function Hop() {
         {visited.length === 0 ? <div className="empty" style={{ marginTop: 12 }}>{tx(lang, "visitedEmpty")}</div> : (
           <div className="card" style={{ marginTop: 12 }}>
             {visited.map((p) => (
-              <div className="item" key={p.id}>
-                <div><h3>{name(p)}</h3>{p.area && <p>{p.area}</p>}</div>
-                <button className="btn sm outline" onClick={() => unmarkSeen(p.id)}>✕ {tx(lang, "unmark")}</button>
+              <div className="titem" key={p.id}>
+                <div className="tleft"><div><h3>{name(p)}</h3>{p.area && <p>{p.area}</p>}</div></div>
+                <div className="tact"><button className="btn sm outline" onClick={() => unmarkSeen(p.id)}>✕ {tx(lang, "unmark")}</button></div>
               </div>
             ))}
           </div>
@@ -374,6 +454,10 @@ export default function Hop() {
         </div>
         {routeList.length > 3 && <button className="btn outline" style={{ marginTop: 12 }} onClick={() => setMoreRoutes(!moreRoutes)}>{moreRoutes ? "Show fewer routes" : `Show more routes (${Math.min(12, routeList.length) - 3} more)`}</button>}
       </section>
+      {toast && <div className="toast" role="status" aria-live="polite">
+        <span>{toast.text}</span>
+        {toast.undo && <button onClick={() => { toast.undo?.(); setToast(null); }}>{lang === "bn" ? "ফেরান" : "Undo"}</button>}
+      </div>}
     </div>
   );
 }

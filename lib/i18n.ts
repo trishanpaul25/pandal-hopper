@@ -30,6 +30,11 @@ export const D = {
   nextStop: { en: "Next stop", bn: "পরের স্টপ" }, trailStop: { en: "Trail stop", bn: "ট্রেইল স্টপ" }, goingTo: { en: "Going to", bn: "যাচ্ছি" },
   pickStart: { en: "Type a pandal name to start from", bn: "যে প্যান্ডেল থেকে শুরু, তার নাম লিখুন" }, more: { en: "Show more", bn: "আরও দেখান" },
   bestOrder: { en: "Best order to visit", bn: "ঘোরার সেরা ক্রম" }, trailDone: { en: "Trail complete! 🎉", bn: "ট্রেইল শেষ! 🎉" }, noMatch: { en: "No match", bn: "মেলেনি" },
+  curTrail: { en: "Current trail", bn: "বর্তমান ট্রেইল" }, removeTrail: { en: "Remove", bn: "সরান" },
+  curTrailEmpty: { en: "Your trail is empty. Tap ☆ Add to my trail on any stop below and it will appear here.", bn: "ট্রেইল খালি। নিচের যেকোনো স্টপে ☆ ট্রেইলে যোগ চাপুন, এখানে দেখা যাবে।" },
+  exportPdf: { en: "Export as PDF", bn: "PDF করুন" }, shareShort: { en: "Share", bn: "শেয়ার" },
+  searchFood: { en: "Search food and sights", bn: "খাবার ও দর্শনীয় খুঁজুন" }, directions: { en: "Map", bn: "ম্যাপ" },
+  sortedFrom: { en: "Sorted by distance from", bn: "দূরত্ব অনুযায়ী সাজানো, শুরু:" }, pickToSort: { en: "Pick a pandal or use your location to sort by distance. Showing A–Z.", bn: "দূরত্ব অনুযায়ী সাজাতে প্যান্ডেল বাছুন বা লোকেশন দিন। এখন A–Z দেখাচ্ছে।" },
   sos: { en: "Emergency SOS", bn: "জরুরি সহায়তা" }, share: { en: "Share trail", bn: "ট্রেইল শেয়ার" },
 } as const;
 export type K = keyof typeof D;

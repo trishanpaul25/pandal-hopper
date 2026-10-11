@@ -7,7 +7,8 @@
     "routes": "node scripts/build-routes.mjs",
     "import": "node scripts/import-csv.mjs && node scripts/build-routes.mjs",
     "build": "node scripts/build-routes.mjs && next build",
-    "start": "npx serve out"
+    "start": "npx serve out",
+    "food": "node scripts/fetch-food.mjs"
   },
   "dependencies": {
     "firebase": "^10.14.1",
