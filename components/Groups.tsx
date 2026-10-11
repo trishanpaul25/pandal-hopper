@@ -20,7 +20,7 @@ const Map = dynamic(() => import("./Map"), { ssr: false });
 
 // Constants so the map does not redraw on every render.
 const NO_LINE: Point[] = [], NO_PLACES: Place[] = [], NO_PANDALS: Pandal[] = [], NOOP = () => {};
-const STALE_MS = 3 * 60_000;         // older than this: shown greyed out with "last seen"
+const STALE_MS = 4 * 60_000;         // older than this: shown greyed out with "last seen"
 const GONE_MS = 60 * 60_000;         // older than this: not shown on the map at all
 const FAR_M = 300;                   // "far from you" tag
 
@@ -93,11 +93,19 @@ export default function Groups() {
   useEffect(() => { if (active && groups && !groups.some((x) => x.code === active)) setActive(""); }, [groups, active]); // eslint-disable-line
 
   // Members of the open group, live.
+  useEffect(() => { setMembers([]); fittedFor.current = ""; setFollowId(""); }, [uid, active]);
+  // Stop listening when this page has been hidden for 30 s (every update delivered to a listener is a billed read); resume when it is shown again.
+  const [awake, setAwake] = useState(true);
   useEffect(() => {
-    setMembers([]); fittedFor.current = ""; setFollowId("");
-    if (!uid || !active) return;
+    let t: ReturnType<typeof setTimeout> | null = null;
+    const onVis = () => { if (t) clearTimeout(t); t = null; if (document.visibilityState === "hidden") t = setTimeout(() => setAwake(false), 30_000); else setAwake(true); };
+    document.addEventListener("visibilitychange", onVis);
+    return () => { document.removeEventListener("visibilitychange", onVis); if (t) clearTimeout(t); };
+  }, []);
+  useEffect(() => {
+    if (!uid || !active || !awake) return;
     return watchMembers(active, setMembers, () => {});
-  }, [uid, active]);
+  }, [uid, active, awake]);
 
   // Friends on the map: everyone else who is sharing and was heard from in the last hour.
   const friends: Friend[] = useMemo(() => members

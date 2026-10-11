@@ -9,7 +9,7 @@ import { db } from "./firebase";
  *  groups/{CODE}                  name, ownerId, memberIds[]      <- the 6-letter code IS the document id
  *  groups/{CODE}/members/{uid}    nick, photo, sharing, lat, lng, heading, acc, at
  *  Only members can read the members (see firestore.rules). */
-export const MAX_MEMBERS = 20;
+export const MAX_MEMBERS = 12; // reads grow with the square of group size, so keep groups friend/family sized
 export type Group = { code: string; name: string; ownerId: string; memberIds: string[] };
 export type Member = {
   uid: string; nick: string; photo: string; sharing: boolean;

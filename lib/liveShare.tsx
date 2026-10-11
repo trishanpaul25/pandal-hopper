@@ -10,6 +10,7 @@ import type { Point } from "./types";
  *  uses Hop, Pandals or any other page. One GPS watch serves every group that has sharing switched on.
  *  Each group's switch is remembered on this phone as an expiry time, so it turns itself off after SHARE_HOURS. */
 export const SHARE_HOURS = 8;
+const SEND_MIN_MS = 20_000, SEND_MIN_M = 40, HEARTBEAT_MS = 90_000; // fewer sends = fewer Firestore writes and fewer reads for friends
 const PREFIX = "ph-share-";
 type Me = Point & { heading: number | null };
 
@@ -77,8 +78,8 @@ export function LiveShareProvider({ children }: { children: React.ReactNode }) {
       const h = typeof pos.coords.heading === "number" && Number.isFinite(pos.coords.heading) ? pos.coords.heading : null;
       setMe((o) => ({ ...pt, heading: h ?? o?.heading ?? null })); setGeoErr("");
       const t0 = Date.now();
-      if (t0 - lastAt < 12_000) return;                                      // at most one send per 12 s
-      if (lastPt && meters(lastPt, pt) < 25 && t0 - lastAt < 45_000) return; // standing still: heartbeat every 45 s
+      if (t0 - lastAt < SEND_MIN_MS) return;                                           // at most one send per 20 s
+      if (lastPt && meters(lastPt, pt) < SEND_MIN_M && t0 - lastAt < HEARTBEAT_MS) return; // moved less than 40 m: only a heartbeat every 90 s
       lastPt = pt; lastAt = t0;
       codesRef.current.forEach((c) => pushLocation(c, uid, { ...pt, heading: h, acc: pos.coords.accuracy }));
     }, (e) => {
