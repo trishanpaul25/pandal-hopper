@@ -73,6 +73,24 @@ export function plan<T extends Point>(start: Point, pts: T[]): T[] {
   // Distance table: node 0 is the start, nodes 1..n are the stops.
   const N = n + 1, nodes: Point[] = [start, ...pts], D = new Float64Array(N * N);
   for (let i = 0; i < N; i++) for (let j = i + 1; j < N; j++) { const d = km(nodes[i], nodes[j]); D[i * N + j] = d; D[j * N + i] = d; }
+  // Short trails (12 stops or fewer): find the truly shortest order (Held-Karp). It is instant at this size.
+  if (n <= 12) {
+    const M = 1 << n, dp = new Float64Array(M * n).fill(Infinity), par = new Int16Array(M * n).fill(-1);
+    for (let j = 0; j < n; j++) dp[(1 << j) * n + j] = D[j + 1];                 // start -> stop j
+    for (let mask = 1; mask < M; mask++) for (let last = 0; last < n; last++) {
+      const cur = dp[mask * n + last]; if (cur === Infinity) continue;
+      for (let nx = 0; nx < n; nx++) {
+        if (mask & (1 << nx)) continue;
+        const nm = mask | (1 << nx), v = cur + D[(last + 1) * N + (nx + 1)];
+        if (v < dp[nm * n + nx]) { dp[nm * n + nx] = v; par[nm * n + nx] = last; }
+      }
+    }
+    const full = M - 1; let bj = 0;
+    for (let j = 1; j < n; j++) if (dp[full * n + j] < dp[full * n + bj]) bj = j;
+    const seq: number[] = []; let mask = full, j = bj;
+    while (j !== -1) { seq.push(j); const pj = par[mask * n + j]; mask &= ~(1 << j); j = pj; }
+    return seq.reverse().map((i) => pts[i]);
+  }
   // Nearest-neighbour first guess.
   const used = new Uint8Array(N); const t = [0]; used[0] = 1;
   for (let k = 0; k < n; k++) {

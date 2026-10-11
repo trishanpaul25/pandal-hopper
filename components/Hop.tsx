@@ -139,9 +139,15 @@ export default function Hop() {
   const arrive = (p: Pandal, auto = false) => {
     markSeen(p.id);
     if (target?.id === p.id) stopGo();
-    const left = trailOn ? trailOrder.filter((x) => x.id !== p.id).length : 1;
+    const rest = trailOn ? trailOrder.filter((x) => x.id !== p.id) : [];
+    const left = trailOn ? rest.length : 1;
+    // Visited a different stop than the planned next one? Then the old order is no longer the shortest walk,
+    // so plan the remaining stops again, starting from this pandal.
+    const outOfOrder = trailOn && rest.length > 1 && trailOrder[0]?.id !== p.id;
+    if (outOfOrder) setLocked(plan(p, rest).map((x) => x.id));
+    const replanned = outOfOrder ? (lang === "bn" ? " · বাকি স্টপ নতুন করে সাজানো হয়েছে" : " · remaining stops re-planned") : "";
     if (trailOn && left === 0) { stopTrail(); setNotice(`${name(p)} ✓ · ${tx(lang, "trailDone")}`); }
-    else setNotice(`${auto ? "📍 " : "✓ "}${name(p)} ${lang === "bn" ? "দেখা হয়েছে" : "marked as seen"}`);
+    else setNotice(`${auto ? "📍 " : "✓ "}${name(p)} ${lang === "bn" ? "দেখা হয়েছে" : "marked as seen"}${replanned}`);
     here(p.id);
     if (auto) try { navigator.vibrate?.(200); } catch {}
   };
@@ -269,6 +275,7 @@ export default function Hop() {
           <p className="muted small" style={{ margin: "4px 0 0" }}>{lang === "bn" ? "প্রতিটি স্টপের ৫০ মিটারের মধ্যে পৌঁছলে নিজে থেকেই দেখা চিহ্নিত হবে।" : "Each stop is marked seen automatically when you're within 50 m."}</p>
           <div className="row" style={{ marginTop: 10 }}>
             <button className="btn primary" onClick={() => arrive(nextStop)}>✓ {tx(lang, "imHere")}</button>
+            {origin && trailOrder.length > 1 && <button className="btn outline" onClick={() => { setLocked(plan(origin, trailOrder).map((x) => x.id)); setNotice(lang === "bn" ? "বাকি স্টপ আপনার বর্তমান অবস্থান থেকে নতুন করে সাজানো হয়েছে" : "Remaining stops re-planned from where you are"); }}>↻ {lang === "bn" ? "এখান থেকে নতুন করে সাজান" : "Re-plan from here"}</button>}
             <button className="btn outline" onClick={stopTrail}>{tx(lang, "stopTrail")}</button>
           </div>
         </div>;
