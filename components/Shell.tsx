@@ -6,6 +6,7 @@ import { useTheme } from "@/lib/theme";
 import { D, tx, K } from "@/lib/i18n";
 import { Logo } from "./Art";
 import AuthButton from "./AuthButton";
+import Onboarding from "./Onboarding";
 
 const DESK: { href: string; k: K }[] = [
   { href: "/", k: "home" }, { href: "/hop", k: "hop" }, { href: "/pandals", k: "pandals" }, { href: "/days", k: "days" },
@@ -47,6 +48,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       <footer className="foot">
         <p><b>Emergency:</b> 112 (all services) · Police 100 · Ambulance 102 · Women helpline 1091</p>
         <p>Independent guide. Check each club's own announcements for timings.</p>
+        <p><button className="tour-link" onClick={() => window.dispatchEvent(new Event("ph-open-tour"))}>{lang === "bn" ? "কীভাবে ব্যবহার করবেন" : "How to use this site"}</button></p>
         <p className="credit">
           Built by <b>Trishan Paul</b> ·{" "}
           <a href="https://www.linkedin.com/in/trishan-paul-0497b428b/" target="_blank" rel="noopener noreferrer" style={creditLink}>LinkedIn</a> ·{" "}
@@ -60,6 +62,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
           </Link>
         ))}
       </nav>
+      <Onboarding />
     </>
   );
 }

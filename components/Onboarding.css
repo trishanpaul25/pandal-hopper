@@ -1,0 +1,161 @@
+/* First-visit tour. Uses the site's colour tokens, so it works in light and dark mode. */
+.tour-back {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background: rgba(20, 5, 8, .62);
+    backdrop-filter: blur(3px);
+    animation: tourFade .2s ease-out
+}
+
+.tour {
+    position: relative;
+    width: min(100%, 460px);
+    max-height: calc(100dvh - 32px);
+    overflow: auto;
+    background: var(--card);
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 26px 22px 20px;
+    text-align: center;
+    box-shadow: 0 24px 60px -12px rgba(0, 0, 0, .55)
+}
+
+.tour::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 8px;
+    background: repeating-linear-gradient(90deg, var(--alta) 0 26px, var(--gold) 26px 31px, var(--alta) 31px 57px)
+}
+
+.tour-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 0 0 6px
+}
+
+.tour-count {
+    font: 600 12px var(--sans);
+    color: var(--muted);
+    min-width: 44px;
+    text-align: left
+}
+
+.tour-x {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--blush);
+    color: var(--ink);
+    font-size: 16px;
+    cursor: pointer
+}
+
+.tour-icon {
+    width: 84px;
+    height: 84px;
+    margin: 8px auto 10px;
+    border-radius: 50%;
+    background: var(--blush);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    border: 2px solid var(--gold)
+}
+
+.tour h2 {
+    font: 700 clamp(22px, 5vw, 28px)/1.2 var(--serif);
+    color: var(--alta-deep);
+    margin: 0 0 8px
+}
+
+.tour-body {
+    margin: 0 auto 12px;
+    max-width: 38ch;
+    font-size: 16px;
+    line-height: 1.55
+}
+
+.tour-tip {
+    margin: 0 auto;
+    max-width: 40ch;
+    background: var(--blush);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 14px;
+    font-size: 14px
+}
+
+.tour-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 16px 0 14px
+}
+
+.tour-dots i {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--blush);
+    border: 1px solid var(--line)
+}
+
+.tour-dots i.done {
+    background: color-mix(in srgb, var(--gold) 55%, var(--blush))
+}
+
+.tour-dots i.now {
+    background: var(--alta);
+    border-color: var(--alta);
+    width: 22px;
+    border-radius: 99px
+}
+
+.tour-actions {
+    display: flex;
+    gap: 10px
+}
+
+.tour-actions .btn {
+    flex: 1
+}
+
+.tour-link {
+    background: none;
+    border: 0;
+    padding: 0;
+    min-height: 32px;
+    color: var(--alta);
+    font: 600 13px var(--sans);
+    text-decoration: underline;
+    cursor: pointer
+}
+
+@keyframes tourFade {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .tour-back {
+        animation: none
+    }
+}
