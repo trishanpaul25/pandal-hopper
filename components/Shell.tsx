@@ -7,6 +7,7 @@ import { D, tx, K } from "@/lib/i18n";
 import { Logo } from "./Art";
 import AuthButton from "./AuthButton";
 import Onboarding from "./Onboarding";
+import InstallButton from "./InstallButton";
 
 const DESK: { href: string; k: K }[] = [
   { href: "/", k: "home" }, { href: "/hop", k: "hop" }, { href: "/pandals", k: "pandals" }, { href: "/days", k: "days" },
@@ -41,6 +42,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
             {theme === "dark" ? "☀️" : "🌙"}<span className="hide-s">{theme === "dark" ? tx(lang, "day") : tx(lang, "night")}</span>
           </button>
           <AuthButton />
+          <InstallButton />
           <Link href="/saved" className="iconbtn solid" aria-label={tx(lang, "saved")}>★</Link>
         </div>
       </header>

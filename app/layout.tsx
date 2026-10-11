@@ -9,6 +9,11 @@ export const metadata: Metadata = {
   title: "Pandal Hopper – Kolkata Durga Puja 2026",
   description: "Plan your pandal hopping: nearest-next pandal, routes, food and sights, puja days and a visitor guide.",
   manifest: "/manifest.webmanifest",
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }, { url: "/favicon-32.png", sizes: "32x32", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  appleWebApp: { capable: true, title: "Pandal Hopper", statusBarStyle: "default" },
 };
 export const viewport: Viewport = { themeColor: "#c1121f", width: "device-width", initialScale: 1, viewportFit: "cover" };
 
