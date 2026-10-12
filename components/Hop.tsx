@@ -4,11 +4,15 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { NAVIGABLE as PANDALS, PLACES, ROUTES, byId } from "@/lib/data";
 import type { Pandal, Point } from "@/lib/types";
-import { bearing, bestOrder, fmtDist, km, meters, pathLen, plan, walkMins, walkRoute, walkRouteVia, type ViaRoute, type WalkRoute } from "@/lib/geo";
+import { bearing, bestOrder, fmtDist, km, meters, pathLen, plan, type Mode, type ViaRoute, type WalkRoute } from "@/lib/geo";
 import { tx } from "@/lib/i18n";
+import { listMins, routeFor, routeViaFor } from "@/lib/transit";
 import { useLang } from "@/lib/lang";
+import { modeInfo, useMode } from "@/lib/mode";
 import { toggleIn, useSaved, useSeen } from "@/lib/store";
 import Bi from "./Bi";
+import ModeBar from "./ModeBar";
+import TransitHint from "./TransitHint";
 import PandalCard from "./PandalCard";
 import PandalPicker from "./PandalPicker";
 import { exportPdf, planText } from "@/lib/exportPlan";
@@ -20,6 +24,7 @@ const startKey0 = (o: Point | null) => (o ? `${o.lat.toFixed(2)},${o.lng.toFixed
 
 export default function Hop() {
   const { lang } = useLang();
+  const { mode } = useMode();
   const [seen, setSeen] = useSeen();
   const [saved, setSaved] = useSaved();
   const [cur, setCur] = useState<Cur | null>(null);
@@ -29,9 +34,9 @@ export default function Hop() {
   const [me, setMe] = useState<(Point & { acc: number; heading: number | null }) | null>(null); // live GPS position
   const [tracking, setTracking] = useState(false);
   const [target, setTarget] = useState<Pandal | null>(null);              // single pandal I'm walking to
-  const [nav, setNav] = useState<(WalkRoute & { tid: string }) | null>(null);
+  const [nav, setNav] = useState<(WalkRoute & { tid: string; mode: Mode }) | null>(null);
   const [locked, setLocked] = useState<string[] | null>(null);            // Trail Go: the visiting order, fixed at the start
-  const [trailRt, setTrailRt] = useState<(ViaRoute & { key: string }) | null>(null);
+  const [trailRt, setTrailRt] = useState<(ViaRoute & { key: string; mode: Mode }) | null>(null);
   const [stamp, setStamp] = useState("");                                 // changes on each Go, so the map zooms once
   const [notice, setNotice] = useState("");
   const [nearLimit, setNearLimit] = useState(6);
@@ -39,8 +44,8 @@ export default function Hop() {
   const [toast, setToast] = useState<{ text: string; undo?: () => void } | null>(null);
   const savedRef = useRef(saved); savedRef.current = saved;
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const lastFetch = useRef<{ tid: string; o: Point } | null>(null);
-  const lastTrail = useRef<{ key: string; o: Point | null } | null>(null);
+  const lastFetch = useRef<{ tid: string; o: Point; mode: Mode } | null>(null);
+  const lastTrail = useRef<{ key: string; o: Point | null; mode: Mode } | null>(null);
   const reqId = useRef(0), trailReq = useRef(0);
   const prevMe = useRef<Point | null>(null), lastHead = useRef<number | null>(null);
   const mapBox = useRef<HTMLDivElement>(null);
@@ -113,7 +118,7 @@ export default function Hop() {
     ? [...locked.filter((id) => trailStops.some((p) => p.id === id)).map((id) => byId[id]), ...trailStops.filter((p) => !locked.includes(p.id))]
     : previewOrder;
   const rtKey = trailOrder.map((p) => p.id).join(",") + (origin ? "@o" : "");
-  const rtOk = !!trailRt && trailRt.key === rtKey;
+  const rtOk = !!trailRt && trailRt.key === rtKey && trailRt.mode === mode;
   const rtHasOrigin = rtKey.endsWith("@o");
   const legFor = (i: number): number | null => { if (!rtOk) return null; const j = rtHasOrigin ? i : i - 1; return j >= 0 ? trailRt!.legs[j] ?? null : null; };
 
@@ -177,22 +182,22 @@ export default function Hop() {
   useEffect(() => {
     if (!target || !origin) return;
     const last = lastFetch.current;
-    if (last && last.tid === target.id && meters(last.o, origin) < 40) return;
-    lastFetch.current = { tid: target.id, o: { lat: origin.lat, lng: origin.lng } };
+    if (last && last.tid === target.id && last.mode === mode && meters(last.o, origin) < 40) return;
+    lastFetch.current = { tid: target.id, o: { lat: origin.lat, lng: origin.lng }, mode };
     const id = ++reqId.current;
-    walkRoute(origin, target).then((r) => { if (id === reqId.current) setNav({ ...r, tid: target.id }); });
-  }, [target, origin?.lat, origin?.lng]); // eslint-disable-line
+    routeFor(mode, origin, target).then((r) => { if (id === reqId.current) setNav({ ...r, tid: target.id, mode }); });
+  }, [target, mode, origin?.lat, origin?.lng]); // eslint-disable-line
 
   // Walking route through all trail stops.
   useEffect(() => {
     const pts: Point[] = origin ? [origin, ...trailOrder] : trailOrder;
     if (pts.length < 2) { setTrailRt(null); lastTrail.current = null; return; }
     const last = lastTrail.current;
-    if (last && last.key === rtKey && (!origin || !last.o || meters(last.o, origin) < 40)) return;
-    lastTrail.current = { key: rtKey, o: origin ? { lat: origin.lat, lng: origin.lng } : null };
+    if (last && last.key === rtKey && last.mode === mode && (!origin || !last.o || meters(last.o, origin) < 40)) return;
+    lastTrail.current = { key: rtKey, o: origin ? { lat: origin.lat, lng: origin.lng } : null, mode };
     const id = ++trailReq.current;
-    walkRouteVia(pts).then((r) => { if (id === trailReq.current) setTrailRt({ ...r, key: rtKey }); });
-  }, [rtKey, origin?.lat, origin?.lng]); // eslint-disable-line
+    routeViaFor(mode, pts).then((r) => { if (id === trailReq.current) setTrailRt({ ...r, key: rtKey, mode }); });
+  }, [rtKey, mode, origin?.lat, origin?.lng]); // eslint-disable-line
 
   // Auto mark seen when I reach the target, or any stop on my trail.
   useEffect(() => {
@@ -245,6 +250,7 @@ export default function Hop() {
         <span><i style={{ background: "#f2a900" }} />{tx(lang, "goingTo")}</span>
       </div>
 
+      <ModeBar />
       {notice && <div className="card paar" style={{ marginTop: 12, borderLeftColor: "var(--shiuli)" }}><b>{notice}</b></div>}
       {target && (() => {
         const straight = origin ? meters(origin, target) : null;
@@ -253,9 +259,19 @@ export default function Hop() {
           <h3 style={{ fontSize: 22 }}>{name(target)}</h3>
           <p className="muted small" style={{ margin: "2px 0 0" }}>
             {!origin ? tx(lang, "locating")
-              : nav?.tid === target.id ? `${fmtDist(nav.km)} · ~${nav.mins} min${nav.approx ? (lang === "bn" ? " (সরলরেখা, অফলাইন)" : " (straight line, offline)") : ""}${straight !== null ? ` · ${straight < 1000 ? Math.round(straight) + " m" : (straight / 1000).toFixed(1) + " km"} ${tx(lang, "away")}` : ""}`
+              : nav?.tid === target.id && nav.mode === mode ? `${fmtDist(nav.km)} · ~${nav.mins} min${nav.approx ? (lang === "bn" ? " (সরলরেখা, অফলাইন)" : " (straight line, offline)") : ""}${straight !== null ? ` · ${straight < 1000 ? Math.round(straight) + " m" : (straight / 1000).toFixed(1) + " km"} ${tx(lang, "away")}` : ""}`
               : "…"}
           </p>
+          {mode === "metro" && nav?.tid === target.id && nav.mode === mode && (
+            <p className="muted small" style={{ margin: "4px 0 0" }}>
+              {nav.trip
+                ? (lang === "bn"
+                  ? `🚶 ${nav.trip.walk1} মিনিট → 🚇 ${nav.trip.from} থেকে ${nav.trip.to}${nav.trip.stops ? ` (${nav.trip.stops}টি স্টেশন)` : ""} ~${nav.trip.ride} মিনিট → 🚶 ${nav.trip.walk2} মিনিট${nav.trip.change ? " · ট্রেন বদলাতে হতে পারে" : ""}`
+                  : `🚶 ${nav.trip.walk1} min → 🚇 ${nav.trip.from} to ${nav.trip.to}${nav.trip.stops ? ` (${nav.trip.stops} stops)` : ""} ~${nav.trip.ride} min → 🚶 ${nav.trip.walk2} min${nav.trip.change ? " · you may need to change trains" : ""}`)
+                : (lang === "bn" ? "🚶 এখান থেকে হেঁটে যাওয়াই দ্রুত।" : "🚶 Walking is quicker for this one.")}
+            </p>
+          )}
+          <TransitHint p={target} />
           <p className="muted small" style={{ margin: "4px 0 0" }}>{lang === "bn" ? "৫০ মিটারের মধ্যে পৌঁছলে নিজে থেকেই দেখা চিহ্নিত হবে।" : "It will be marked as seen automatically when you're within 50 m."}</p>
           <div className="row" style={{ marginTop: 10 }}>
             <button className="btn primary" onClick={() => arrive(target)}>✓ {tx(lang, "imHere")}</button>
@@ -350,7 +366,7 @@ export default function Hop() {
           <h2 className="h2">{tx(lang, "nearest")} {cur.id ? cur.label : tx(lang, "gps")}</h2>
           <div className="pgrid" style={{ marginTop: 14 }}>
             {nearest.slice(0, nearLimit).map((x, i) => (
-              <PandalCard key={x.p.id} p={x.p} rank={i + 1} dist={`${fmtDist(x.d)} · ~${walkMins(x.d)} min`}
+              <PandalCard key={x.p.id} p={x.p} rank={i + 1} dist={`${fmtDist(x.d)} · ~${listMins(mode, x.d, cur, x.p)} min`}
                 seen={false} saved={false} onSave={() => addTrail(x.p)}
                 onGo={() => go(x.p)} going={target?.id === x.p.id} onSeen={() => arrive(x.p)}>
                 <button className="btn outline" style={{ marginTop: 8 }} onClick={() => addTrail(x.p)}>☆ {tx(lang, "addRoute")}</button>
@@ -421,7 +437,7 @@ export default function Hop() {
       {cur && <section className="sec">
         <h2 className="h2"><Bi k="eatNear" caption={false} /></h2>
         <div className="card" style={{ marginTop: 12 }}>
-          {food.map((x) => <div className="item" key={x.f.id}><div><h3>{x.f.name}</h3><p>{x.f.note}</p></div><b className="muted small">{fmtDist(x.d)} · {walkMins(x.d)} min</b></div>)}
+          {food.map((x) => <div className="item" key={x.f.id}><div><h3>{x.f.name}</h3><p>{x.f.note}</p></div><b className="muted small">{fmtDist(x.d)} · {listMins(mode, x.d, cur, x.f)} min</b></div>)}
           <Link className="btn outline" href="/food" style={{ marginTop: 10 }}>{tx(lang, "food")} →</Link>
         </div>
       </section>}

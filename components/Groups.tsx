@@ -4,9 +4,12 @@ import Link from "next/link";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { NAVIGABLE as PANDALS } from "@/lib/data";
 import type { Pandal, Place, Point } from "@/lib/types";
-import { fmtDist, meters, walkRoute, type WalkRoute } from "@/lib/geo";
+import { fmtDist, meters, type WalkRoute } from "@/lib/geo";
+import { routeFor } from "@/lib/transit";
 import { useAuth } from "@/lib/auth";
 import { useLang } from "@/lib/lang";
+import { modeInfo, useMode } from "@/lib/mode";
+import ModeBar from "./ModeBar";
 import { useSeen } from "@/lib/store";
 import { useStored } from "@/lib/useStored";
 import {
@@ -39,6 +42,7 @@ function Avatar({ m }: { m: { nick: string; photo: string } }) {
 export default function Groups() {
   const { user, loading, configured, signIn } = useAuth();
   const { lang } = useLang();
+  const { mode } = useMode();
   const bn = lang === "bn";
   const t = (en: string, b: string) => (bn ? b : en);
   const [seen] = useSeen();
@@ -136,12 +140,12 @@ export default function Groups() {
       if (!a || !b || busy) return;
       if (last && meters(last.a, a) < 30 && meters(last.b, b) < 30) return;
       busy = true; last = { a, b };
-      const r = await walkRoute(a, b);
+      const r = await routeFor(mode, a, b);
       busy = false; if (alive) setRoute(r);
     };
     tick(); const id = setInterval(tick, 5000);
     return () => { alive = false; clearInterval(id); };
-  }, [followId]);
+  }, [followId, mode]);
   useEffect(() => { if (!target) setRoute(null); }, [!!target]); // eslint-disable-line
   const line: Point[] = useMemo(() => {
     if (!me || !target) return NO_LINE;
@@ -227,12 +231,13 @@ export default function Groups() {
 
       {followId && (
         <div className="card paar" style={{ marginTop: 12, display: "grid", gap: 8 }}>
-          <b>🧭 {t(`Walking to ${followNick || "friend"}`, `${followNick || "বন্ধু"}-এর কাছে যাচ্ছেন`)}</b>
+          <b>🧭 {t(`Heading to ${followNick || "friend"}`, `${followNick || "বন্ধু"}-এর কাছে যাচ্ছেন`)}</b>
           {!target ? <span className="msg" style={{ margin: 0 }}>{t(`${followNick || "They"} isn't sharing right now. The path will come back when they do.`, `${followNick || "তিনি"} এখন শেয়ার করছেন না। শেয়ার করলে পথ আবার দেখা যাবে।`)}</span>
             : !me ? <span className="muted">{t("Finding your location…", "আপনার লোকেশন খোঁজা হচ্ছে…")}</span>
             : toFriend !== null && toFriend < 25 ? <span>✅ {t("You've reached them!", "আপনি পৌঁছে গেছেন!")}</span>
-            : <span><b>{fmtDist((toFriend ?? 0) / 1000)}</b> {t("away", "দূরে")}{route ? <> · ~{route.mins} {t("min walk", "মিনিটের হাঁটা")}{route.approx ? t(" (straight line)", " (সোজা দূরত্ব)") : ""}</> : null}</span>}
+            : <span><b>{fmtDist((toFriend ?? 0) / 1000)}</b> {t("away", "দূরে")}{route ? <> · ~{route.mins} {lang === "bn" ? `মিনিট ${modeInfo(mode).per.bn}` : `min ${modeInfo(mode).per.en}`}{route.approx ? t(" (straight line)", " (সোজা দূরত্ব)") : ""}</> : null}</span>}
           <span className="muted small">{t("The blue path updates as you or they move. Your location is used on this phone only, unless you turned sharing on.", "আপনি বা তিনি নড়লে নীল পথ নিজে থেকেই বদলায়। আপনার লোকেশন শুধু এই ফোনে ব্যবহার হয়, শেয়ারিং চালু না থাকলে কাউকে পাঠানো হয় না।")}</span>
+          <ModeBar />
           {geoErr && <span className="msg" style={{ margin: 0 }}>{geoErr}</span>}
           <div><button className="btn outline sm" onClick={() => setFollowId("")}>{t("Stop directions", "দিকনির্দেশ বন্ধ")}</button></div>
         </div>

@@ -2,11 +2,14 @@
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import { PLACES, byId } from "@/lib/data";
 import { mapsLink } from "@/lib/exportPlan";
-import { fmtDist, km, walkMins } from "@/lib/geo";
+import { fmtDist, km } from "@/lib/geo";
+import { listMins } from "@/lib/transit";
 import { tx } from "@/lib/i18n";
 import { useLang } from "@/lib/lang";
+import { useMode } from "@/lib/mode";
 import { toggleIn, useSavedPlaces } from "@/lib/store";
 import type { Place, Point } from "@/lib/types";
+import ModeBar from "./ModeBar";
 import PandalPicker from "./PandalPicker";
 
 const KIND = {
@@ -24,6 +27,7 @@ const PAGE = 30;
 
 export default function Food() {
   const { lang } = useLang();
+  const { mode } = useMode();
   const [sp, setSp] = useSavedPlaces();
   const [kind, setKind] = useState<KindKey>("all");
   const [q, setQ] = useState(""); const dq = useDeferredValue(q);
@@ -60,6 +64,7 @@ export default function Food() {
         <PandalPicker onPick={pickPandal} />
         <button className="btn outline" onClick={locate}>📍 {tx(lang, "gps")}</button>
       </div>
+      <ModeBar />
       {msg && <p className="msg">{msg}</p>}
       {base && <p className="muted small" style={{ margin: "8px 0 0" }}>📍 {tx(lang, "sortedFrom")} <b>{base.label}</b> · <button className="btn sm" onClick={() => setBase(null)}>✕</button></p>}
 
@@ -77,7 +82,7 @@ export default function Food() {
             <h3 style={{ fontSize: 21 }}>{(lang === "bn" && f.name_bn) || f.name}</h3>
             <p className="muted" style={{ margin: "2px 0 10px" }}>{f.note}</p>
             <div className="row" style={{ justifyContent: "space-between" }}>
-              <b className="small">{base ? `${fmtDist(d)} · ${walkMins(d)} min` : ""}</b>
+              <b className="small">{base ? `${fmtDist(d)} · ${listMins(mode, d, base, f)} min` : ""}</b>
               <div className="row">
                 <a className="btn sm outline" href={mapsLink(f)} target="_blank" rel="noopener noreferrer">↗ {tx(lang, "directions")}</a>
                 <button className={`btn sm ${sp.includes(f.id) ? "gold" : "outline"}`} aria-pressed={sp.includes(f.id)} onClick={() => setSp(toggleIn(sp, f.id))}>{sp.includes(f.id) ? "★ Saved" : "☆ Save"}</button>

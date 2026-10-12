@@ -1,0 +1,32 @@
+"use client";
+import { useLang } from "@/lib/lang";
+import { AVAILABLE_MODES, useMode } from "@/lib/mode";
+
+/** Walk / Bike / Car picker. Times everywhere on the site follow this choice. */
+export default function ModeBar({ note = true }: { note?: boolean }) {
+  const { lang } = useLang();
+  const { mode, setMode } = useMode();
+  return (
+    <div style={{ marginTop: 12 }}>
+      <div className="chips" role="group" aria-label={lang === "bn" ? "যাতায়াতের মাধ্যম" : "How are you travelling?"} style={{ marginTop: 0 }}>
+        {AVAILABLE_MODES.map((m) => (
+          <button key={m.id} className="chip" aria-pressed={mode === m.id} onClick={() => setMode(m.id)}>{m.icon} {lang === "bn" ? m.bn : m.en}</button>
+        ))}
+      </div>
+      {note && mode === "metro" && (
+        <p className="muted small" style={{ margin: "6px 0 0" }}>
+          {lang === "bn"
+            ? "মেট্রোর সময় = স্টেশনে হাঁটা + যাত্রা + স্টেশন থেকে হাঁটা। যাত্রার সময় আন্দাজমাত্র। পুজোর সময়সূচি ও বন্ধ স্টেশনের জন্য মেট্রো রেলের বিজ্ঞপ্তি দেখে নিন।"
+            : "Metro time = walk to the station + ride + walk from the station. Ride times are estimates. Check Kolkata Metro's notices for Puja timings and any closed stations."}
+        </p>
+      )}
+      {note && (mode === "bike" || mode === "car") && (
+        <p className="muted small" style={{ margin: "6px 0 0" }}>
+          {lang === "bn"
+            ? "সময় আন্দাজমাত্র। পুজোর রাতে ভিড় ও রাস্তা বন্ধ থাকলে অনেক বেশি লাগতে পারে। প্যান্ডেলের কাছাকাছি গাড়ি ঢোকা বন্ধ থাকে, তাই একটু আগে নেমে হাঁটুন।"
+            : "Times are estimates. Crowds and closed roads on puja nights can make them much longer. Many roads near pandals are closed to vehicles, so plan to park or get off a little early and walk the last part."}
+        </p>
+      )}
+    </div>
+  );
+}

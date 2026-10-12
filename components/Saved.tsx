@@ -2,13 +2,17 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { PANDALS, PLACES, byId } from "@/lib/data";
-import { fmtDist, pathLen, plan, walkMins } from "@/lib/geo";
+import { fmtDist, pathLen, plan, travelMins } from "@/lib/geo";
+import { trailMins } from "@/lib/transit";
 import { tx } from "@/lib/i18n";
 import { useLang } from "@/lib/lang";
+import { modeInfo, useMode } from "@/lib/mode";
+import ModeBar from "@/components/ModeBar";
 import { toggleIn, useSaved, useSavedPlaces, useSeen } from "@/lib/store";
 
 export default function Saved() {
   const { lang } = useLang();
+  const { mode } = useMode();
   const [seen, setSeen] = useSeen();
   const [saved, setSaved] = useSaved();
   const [sp, setSp] = useSavedPlaces();
@@ -37,8 +41,10 @@ export default function Saved() {
         <div className="stat"><b>{trail.length}</b><span>{lang === "bn" ? "সংরক্ষিত প্যান্ডেল" : "Saved pandals"}</span></div>
         <div className="stat"><b>{trail.filter((p) => seen.includes(p.id)).length}</b><span>{lang === "bn" ? "দেখা হয়েছে" : "Seen already"}</span></div>
         <div className="stat"><b>{places.length}</b><span>{lang === "bn" ? "খাবার ও দর্শনীয়" : "Saved eats & sights"}</span></div>
-        <div className="stat"><b>{len ? fmtDist(len) : "—"}</b><span>{len ? `~${walkMins(len)} min ${lang === "bn" ? "হাঁটা" : "walking"}` : (lang === "bn" ? "ট্রেইলের দৈর্ঘ্য" : "Trail length")}</span></div>
+        <div className="stat"><b>{len ? fmtDist(len) : "—"}</b><span>{len ? `~${mode === "metro" ? trailMins(mode, trail) : travelMins(len, mode)} min ${lang === "bn" ? modeInfo(mode).per.bn : modeInfo(mode).per.en}` : (lang === "bn" ? "ট্রেইলের দৈর্ঘ্য" : "Trail length")}</span></div>
       </div>
+
+      <ModeBar />
 
       {trail.length === 0 ? (
         <div className="empty" style={{ marginTop: 20 }}>

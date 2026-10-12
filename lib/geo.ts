@@ -13,19 +13,39 @@ export function meters(a: Point, b: Point): number {
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * R) * Math.cos(b.lat * R) * Math.sin(dLng / 2) ** 2;
   return 2 * 6371000 * Math.asin(Math.sqrt(h));
 }
-export type WalkRoute = { coords: Point[]; km: number; mins: number; approx: boolean };
-/** Real walking route from OSM's public foot router. Falls back to a straight line if offline or blocked. */
-export async function walkRoute(a: Point, b: Point): Promise<WalkRoute> {
+export type RoadMode = "walk" | "bike" | "car";
+export type Mode = RoadMode | "metro";
+/** speed = km/h used when the router is offline (straight line x1.3 already added).
+ *  crowd = how much slower than free-flow a puja night is (the router knows nothing about traffic). Easy to tune. */
+export const MODE_META: Record<Mode, { speed: number; crowd: number }> = {
+  walk: { speed: 5, crowd: 1 },
+  bike: { speed: 20, crowd: 1.3 },   // two-wheeler: uses the road network, slips through traffic
+  car: { speed: 15, crowd: 1.8 },
+  metro: { speed: 20, crowd: 1 },    // only a fallback; real metro times come from lib/transit.ts
+};
+/** Minutes for a distance in km, using the offline speed for the mode. */
+export const travelMins = (d: number, mode: Mode = "walk") => Math.max(1, Math.round((d / MODE_META[mode].speed) * 60));
+const routeUrl = (mode: RoadMode, pts: Point[]) =>
+  `https://routing.openstreetmap.de/${mode === "walk" ? "routed-foot/route/v1/foot" : "routed-car/route/v1/driving"}/${pts.map((q) => `${q.lng},${q.lat}`).join(";")}?overview=full&geometries=geojson`;
+/** Walking uses distance / 83 m per min (as before). Bike and car use the router's drive time x the puja-night crowd factor. */
+const routeMins = (mode: RoadMode, distM: number, durS: number) =>
+  mode === "walk" ? Math.max(1, Math.round(distM / 83)) : Math.max(1, Math.round((durS / 60) * MODE_META[mode].crowd));
+
+/** A metro trip split into parts (minutes): walk to the station, ride, walk from the station. */
+export type Trip = { from: string; to: string; stops: number | null; change: boolean; walk1: number; ride: number; walk2: number };
+export type WalkRoute = { coords: Point[]; km: number; mins: number; approx: boolean; trip?: Trip };
+/** Real route from OSM's public router (foot for walking, road network for bike/car). Falls back to a straight line if offline or blocked. */
+export async function route(mode: RoadMode, a: Point, b: Point): Promise<WalkRoute> {
   const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 7000);
   try {
-    const url = `https://routing.openstreetmap.de/routed-foot/route/v1/foot/${a.lng},${a.lat};${b.lng},${b.lat}?overview=full&geometries=geojson`;
-    const j = await (await fetch(url, { signal: ctrl.signal })).json();
+    const j = await (await fetch(routeUrl(mode, [a, b]), { signal: ctrl.signal })).json();
     const r = j.routes?.[0]; if (!r) throw new Error("no route");
-    return { coords: r.geometry.coordinates.map(([lng, lat]: number[]) => ({ lat, lng })), km: r.distance / 1000, mins: Math.max(1, Math.round(r.distance / 83)), approx: false };
+    return { coords: r.geometry.coordinates.map(([lng, lat]: number[]) => ({ lat, lng })), km: r.distance / 1000, mins: routeMins(mode, r.distance, r.duration), approx: false };
   } catch {
-    const d = km(a, b); return { coords: [a, b], km: d, mins: walkMins(d), approx: true };
+    const d = km(a, b); return { coords: [a, b], km: d, mins: travelMins(d, mode), approx: true };
   } finally { clearTimeout(t); }
 }
+export const walkRoute = (a: Point, b: Point) => route("walk", a, b);
 /** Compass bearing in degrees (0 = north) from a to b. */
 export function bearing(a: Point, b: Point): number {
   const y = Math.sin((b.lng - a.lng) * R) * Math.cos(b.lat * R);
@@ -33,31 +53,32 @@ export function bearing(a: Point, b: Point): number {
   return (Math.atan2(y, x) / R + 360) % 360;
 }
 export type ViaRoute = { coords: Point[]; legs: number[]; km: number; mins: number; approx: boolean };
-/** One walking route through several points in order. legs[i] is the km from point i to point i+1. Falls back to straight lines. */
-export async function walkRouteVia(pts: Point[]): Promise<ViaRoute> {
+/** One route through several points in order. legs[i] is the km from point i to point i+1. Falls back to straight lines. */
+export async function routeVia(mode: RoadMode, pts: Point[]): Promise<ViaRoute> {
   const straight = (): ViaRoute => {
     const legs = pts.slice(1).map((q, i) => km(pts[i], q)); const total = legs.reduce((a, b) => a + b, 0);
-    return { coords: pts, legs, km: total, mins: walkMins(total), approx: true };
+    return { coords: pts, legs, km: total, mins: travelMins(total, mode), approx: true };
   };
   if (pts.length < 2) return { coords: pts, legs: [], km: 0, mins: 0, approx: false };
   try {
-    const coords: Point[] = []; const legs: number[] = [];
+    const coords: Point[] = []; const legs: number[] = []; let dur = 0;
     for (let i = 0; i < pts.length - 1; i += 24) {           // the public router takes ~25 points per request
       const chunk = pts.slice(i, i + 25); if (chunk.length < 2) break;
       const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 8000);
       try {
-        const url = `https://routing.openstreetmap.de/routed-foot/route/v1/foot/${chunk.map((q) => `${q.lng},${q.lat}`).join(";")}?overview=full&geometries=geojson`;
-        const j = await (await fetch(url, { signal: ctrl.signal })).json();
+        const j = await (await fetch(routeUrl(mode, chunk), { signal: ctrl.signal })).json();
         const r = j.routes?.[0]; if (!r) throw new Error("no route");
         const c: Point[] = r.geometry.coordinates.map(([lng, lat]: number[]) => ({ lat, lng }));
         coords.push(...(coords.length ? c.slice(1) : c));
         r.legs.forEach((l: { distance: number }) => legs.push(l.distance / 1000));
+        dur += r.duration;
       } finally { clearTimeout(t); }
     }
     const total = legs.reduce((a, b) => a + b, 0);
-    return { coords, legs, km: total, mins: Math.max(1, Math.round((total * 1000) / 83)), approx: false };
+    return { coords, legs, km: total, mins: routeMins(mode, total * 1000, dur), approx: false };
   } catch { return straight(); }
 }
+export const walkRouteVia = (pts: Point[]) => routeVia("walk", pts);
 export const walkMins = (d: number) => Math.max(1, Math.round(d * 12)); // ~5 km/h
 export const fmtDist = (d: number) => (d < 1 ? `${Math.round(d * 1000)} m` : `${d.toFixed(1)} km`);
 
