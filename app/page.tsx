@@ -4,9 +4,12 @@ import Countdown from "@/components/Countdown";
 import PujaClock from "@/components/PujaClock";
 import Bi from "@/components/Bi";
 import { Arch } from "@/components/Art";
+import dynamic from "next/dynamic";
 import { PANDALS, PLACES, ZONES } from "@/lib/data";
 import { useLang } from "@/lib/lang";
 import { useTheme } from "@/lib/theme";
+
+const AllPandalsMap = dynamic(() => import("@/components/AllPandalsMap"), { ssr: false, loading: () => <div className="allmap" /> });
 
 export default function Home() {
   const { lang } = useLang();
@@ -64,6 +67,12 @@ export default function Home() {
           ))}
         </div>
         <p className="muted small" style={{ marginTop: 10 }}>{PANDALS.length} pandals and {PLACES.length} food and sight stops.</p>
+      </section>
+
+      <section className="sec" id="map">
+        <span className="eyebrow">{lang === "bn" ? "সব প্যান্ডেল একসাথে" : "Every pandal, one map"}</span>
+        <h2 className="h2">{lang === "bn" ? "সব প্যান্ডেলের মানচিত্র" : "All pandals map"}</h2>
+        <AllPandalsMap />
       </section>
 
       <section className="sec">

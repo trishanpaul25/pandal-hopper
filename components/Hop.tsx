@@ -20,6 +20,7 @@ import { exportPdf, planText } from "@/lib/exportPlan";
 const Map = dynamic(() => import("./Map"), { ssr: false });
 type Cur = Point & { id?: string; label: string };
 
+const PLAN_ON_MAP = 12, NEAR_KM = 1.5, NEAR_MAX = 25;
 const startKey0 = (o: Point | null) => (o ? `${o.lat.toFixed(2)},${o.lng.toFixed(2)}` : "");
 
 export default function Hop() {
@@ -39,6 +40,11 @@ export default function Hop() {
   const [trailRt, setTrailRt] = useState<(ViaRoute & { key: string; mode: Mode }) | null>(null);
   const [stamp, setStamp] = useState("");                                 // changes on each Go, so the map zooms once
   const [notice, setNotice] = useState("");
+  const [showNearby, setShowNearby] = useState(true);                       // map layer: unseen pandals close to the start
+  const [showAllPins, setShowAllPins] = useState(true);                    // map layer: every other pandal, small and clustered
+  const [showSeenPins, setShowSeenPins] = useState(false);                  // map layer: pandals already visited
+  const [showFood, setShowFood] = useState(false);                          // map layer: food and sights
+  const [focus, setFocus] = useState<{ pts: Point[]; k: number } | null>(null);
   const [nearLimit, setNearLimit] = useState(6);
   const [planLimit, setPlanLimit] = useState(40);
   const [toast, setToast] = useState<{ text: string; undo?: () => void } | null>(null);
@@ -126,19 +132,19 @@ export default function Hop() {
   const showMap = () => requestAnimationFrame(() => mapBox.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
   const markSeen = (id: string) => { if (!seen.includes(id)) setSeen([...seen, id]); };
   const unmarkSeen = (id: string) => setSeen(seen.filter((x) => x !== id));
-  const stopGo = () => { setTarget(null); setNav(null); lastFetch.current = null; };
-  const stopTrail = () => setLocked(null);
+  const stopGo = () => { setTarget(null); setNav(null); lastFetch.current = null; setShowNearby(true); setShowAllPins(true); };
+  const stopTrail = () => { setLocked(null); setShowNearby(true); setShowAllPins(true); };
 
   // GO (single pandal): show the walking route and follow my position. Does NOT mark it seen.
   const go = (p: Pandal) => {
     if (target?.id === p.id) { stopGo(); return; }
-    stopTrail(); lastFetch.current = null; setNav(null); setNotice(""); setTarget(p); setTracking(true); setStamp(goStamp()); showMap();
+    stopTrail(); lastFetch.current = null; setNav(null); setNotice(""); setTarget(p); setShowNearby(false); setShowAllPins(false); setTracking(true); setStamp(goStamp()); showMap();
   };
   // TRAIL GO: walk the whole trail in the best order.
   const trailGo = () => {
     if (trailOn) { stopTrail(); return; }
     if (!previewOrder.length) return;
-    stopGo(); setNotice(""); setLocked(previewOrder.map((p) => p.id)); setTracking(true); setStamp(goStamp()); showMap();
+    stopGo(); setNotice(""); setLocked(previewOrder.map((p) => p.id)); setShowNearby(false); setShowAllPins(false); setTracking(true); setStamp(goStamp()); showMap();
   };
   // Reached a pandal (automatically, or by tapping "I'm here").
   const arrive = (p: Pandal, auto = false) => {
@@ -224,7 +230,7 @@ export default function Hop() {
   let line: Point[] = [], lineColor = "#c1121f", solid = false;
   if (goReady) { line = nav!.coords; lineColor = "#0077b6"; solid = true; }
   else if (trailOn && rtOk) { line = trailRt!.coords; lineColor = "#6d28d9"; solid = true; }
-  else if (planned && cur) { line = [cur, ...planned]; }
+  else if (planned && cur) { line = [cur, ...planned.slice(0, PLAN_ON_MAP)]; }
   else if (preset.length) { line = preset; }
   else if (rtOk) { line = trailRt!.coords; lineColor = "#6d28d9"; }
   // Metro pins and the ride line follow whichever route is drawn.
@@ -237,15 +243,58 @@ export default function Hop() {
   const fitKey = goReady ? stamp : trailOn && rtOk ? stamp : null;
   const navigating = !!target || trailOn;
 
+  // ---- Which pandal pins the map draws. Never all of them: only what helps the route you're on. ----
+  const nearbyPins = useMemo(() => {
+    if (!showNearby || !cur) return [] as Pandal[];
+    const close = nearest.filter((x) => x.d <= NEAR_KM).slice(0, NEAR_MAX);
+    return (close.length >= 6 ? close : nearest.slice(0, 6)).map((x) => x.p);
+  }, [showNearby, nearest, cur]); // eslint-disable-line
+  const seenPins = useMemo(() => {
+    if (!showSeenPins || !cur) return [] as Pandal[];
+    return PANDALS.filter((p) => seen.includes(p.id) && km(cur, p) <= NEAR_KM);
+  }, [showSeenPins, seen, curKey]); // eslint-disable-line
+  const pinIds = new Set<string>();
+  trailOrder.forEach((p) => pinIds.add(p.id));
+  if (target) pinIds.add(target.id);
+  if (cur?.id) pinIds.add(cur.id);
+  preset.forEach((p) => p && pinIds.add(p.id));
+  if (planned) planned.slice(0, PLAN_ON_MAP).forEach((p) => pinIds.add(p.id));
+  nearbyPins.forEach((p) => pinIds.add(p.id));
+  seenPins.forEach((p) => pinIds.add(p.id));
+  const pinKey = [...pinIds].join(",");
+  // "All pandals" on (the default when idle): every pin, exactly like before. Off (while navigating): only the route.
+  const mapPandals = useMemo(() => showAllPins ? PANDALS : pinKey ? pinKey.split(",").map((i) => byId[i]).filter(Boolean) : [], [showAllPins, pinKey]);
+
+  // Zoom to the start and its nearest pandals when the start changes (navigating has its own zoom).
+  const fitTrail = useRef(false);
+  useEffect(() => {                              // no start picked yet: show my trail, not an empty city view
+    if (fitTrail.current || cur || navigating || !trailStops.length) return;
+    fitTrail.current = true; setFocus({ pts: trailStops, k: Date.now() });
+  }, [trailKey]); // eslint-disable-line
+  const focusKey = cur ? (cur.id ?? "gps") : "";
+  useEffect(() => {
+    if (!cur || navigating) return;
+    setFocus({ pts: [cur, ...nearest.slice(0, 4).map((x) => x.p)], k: Date.now() });
+  }, [focusKey]); // eslint-disable-line
+
   return (
     <div className="page">
       <span className="eyebrow">{lang === "bn" ? "সহজ পরিক্রমা" : "Live route companion"}</span>
       <h1 className="h1" style={{ fontSize: "clamp(26px,5vw,38px)", marginBottom: 14 }}>{lang === "bn" ? "আপনার হপ রুট" : "Your hop route"}</h1>
 
       <div className="mapbox" ref={mapBox}>
-        <Map pandals={PANDALS} places={mapPlaces} seen={seen} you={youPt} heading={heading} line={line} lineColor={lineColor} solid={solid}
-          showPlaces={!!cur} onPick={here} target={aim?.id ?? null} trail={target ? [] : trailOrder.map((p) => p.id)} dim={navigating} fitKey={fitKey}
+        <Map pandals={mapPandals} places={mapPlaces} seen={seen} you={youPt} heading={heading} line={line} lineColor={lineColor} solid={solid}
+          showPlaces={!!cur && showFood} onPick={here} target={aim?.id ?? null} trail={target ? [] : trailOrder.map((p) => p.id)} dim={navigating && showAllPins} fitKey={fitKey} focus={focus}
           marks={mapMarks} rides={mapRides} enterText={lang === "bn" ? "মেট্রোতে উঠুন" : "Enter metro"} exitText={lang === "bn" ? "মেট্রো থেকে নামুন" : "Exit metro"} />
+        {!cur && <div className="maphint">
+          {lang === "bn" ? "আপনি কোথায় আছেন বাছুন, তাহলে কাছের প্যান্ডেল বড় করে দেখাব।" : "Pick where you are to highlight the pandals closest to you."}
+        </div>}
+      </div>
+      <div className="layers" role="group" aria-label={lang === "bn" ? "মানচিত্রে কী দেখাবেন" : "What to show on the map"}>
+        <button className="chip" aria-pressed={showNearby} onClick={() => setShowNearby(!showNearby)}>● {lang === "bn" ? "কাছের প্যান্ডেল" : "Nearby pandals"}</button>
+        <button className="chip" aria-pressed={showAllPins} onClick={() => setShowAllPins(!showAllPins)}>🗺 {lang === "bn" ? "সব প্যান্ডেল" : "All pandals"}</button>
+        <button className="chip" aria-pressed={showSeenPins} onClick={() => setShowSeenPins(!showSeenPins)}>✓ {tx(lang, "seen")}</button>
+        <button className="chip" aria-pressed={showFood} onClick={() => setShowFood(!showFood)}>🍴 {lang === "bn" ? "খাবার" : "Food"}</button>
       </div>
       <div className="legend" aria-label="Map colours">
         <span><i style={{ background: "#c1121f" }} />{tx(lang, "notSeen")}</span>
@@ -258,7 +307,7 @@ export default function Hop() {
         </>}
       </div>
 
-      <ModeBar />
+      <ModeBar note={!navigating} />
       {notice && <div className="card paar" style={{ marginTop: 12, borderLeftColor: "var(--shiuli)" }}><b>{notice}</b></div>}
       {target && (() => {
         const straight = origin ? meters(origin, target) : null;

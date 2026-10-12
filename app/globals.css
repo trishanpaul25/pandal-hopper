@@ -1345,3 +1345,97 @@ ul.plain li {
   box-shadow: 0 0 0 3px #9a8f87, 0 2px 8px #000a;
   filter: grayscale(.8)
 }
+
+/* home: all-pandals map */
+.allmap {
+  position: relative;
+  height: clamp(340px, 58vh, 560px);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--glow);
+  background: var(--blush)
+}
+
+.allmap-loc {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  z-index: 2;
+  background: var(--canvas)
+}
+
+.allmap-card {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  z-index: 3;
+  max-width: 460px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--glow)
+}
+
+.allmap-x {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--blush);
+  color: var(--ink);
+  cursor: pointer
+}
+
+/* hop: layer toggles and empty-map hint */
+.mapbox {
+  position: relative
+}
+
+.maphint {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: min(92%, 420px);
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: var(--card);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  box-shadow: var(--glow);
+  text-align: center;
+  font: 600 13px var(--sans)
+}
+
+.maphint a {
+  color: var(--alta);
+  text-decoration: underline
+}
+
+.layers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 10px 0 0
+}
+
+.layers .chip {
+  min-height: 34px;
+  padding: 0 12px;
+  font-size: 12px
+}
+
+.layers a.chip {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none
+}
