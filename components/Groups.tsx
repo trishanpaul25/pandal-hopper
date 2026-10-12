@@ -218,7 +218,9 @@ export default function Groups() {
 
       <div className="mapbox">
         <Map pandals={showPandals ? PANDALS : NO_PANDALS} places={NO_PLACES} seen={seen} you={me} heading={me?.heading ?? 0}
-          line={line} lineColor="#0077b6" solid showPlaces={false} onPick={NOOP} friends={friends} focus={focus} fitKey={followId || null} />
+          line={line} lineColor="#0077b6" solid showPlaces={false} onPick={NOOP} friends={friends} focus={focus} fitKey={followId || null}
+          marks={followId && route && !route.approx ? route.marks : undefined} rides={followId && route && !route.approx ? route.rides : undefined}
+          enterText={t("Enter metro", "মেট্রোতে উঠুন")} exitText={t("Exit metro", "মেট্রো থেকে নামুন")} />
       </div>
       <div className="row" style={{ marginTop: 10 }}>
         <button className="btn outline sm" onClick={() => fly([...friends, ...(me ? [me] : [])])} disabled={!friends.length && !me}>👥 {t("Show everyone", "সবাইকে দেখান")}</button>

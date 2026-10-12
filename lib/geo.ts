@@ -33,7 +33,9 @@ const routeMins = (mode: RoadMode, distM: number, durS: number) =>
 
 /** A metro trip split into parts (minutes): walk to the station, ride, walk from the station. */
 export type Trip = { from: string; to: string; stops: number | null; change: boolean; walk1: number; ride: number; walk2: number };
-export type WalkRoute = { coords: Point[]; km: number; mins: number; approx: boolean; trip?: Trip };
+/** A metro station to show on the map: where to get in (enter) or get out (exit). */
+export type StationMark = Point & { label: string; kind: "enter" | "exit" };
+export type WalkRoute = { coords: Point[]; km: number; mins: number; approx: boolean; trip?: Trip; marks?: StationMark[]; rides?: Point[][] };
 /** Real route from OSM's public router (foot for walking, road network for bike/car). Falls back to a straight line if offline or blocked. */
 export async function route(mode: RoadMode, a: Point, b: Point): Promise<WalkRoute> {
   const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 7000);
@@ -52,7 +54,7 @@ export function bearing(a: Point, b: Point): number {
   const x = Math.cos(a.lat * R) * Math.sin(b.lat * R) - Math.sin(a.lat * R) * Math.cos(b.lat * R) * Math.cos((b.lng - a.lng) * R);
   return (Math.atan2(y, x) / R + 360) % 360;
 }
-export type ViaRoute = { coords: Point[]; legs: number[]; km: number; mins: number; approx: boolean };
+export type ViaRoute = { coords: Point[]; legs: number[]; km: number; mins: number; approx: boolean; marks?: StationMark[]; rides?: Point[][] };
 /** One route through several points in order. legs[i] is the km from point i to point i+1. Falls back to straight lines. */
 export async function routeVia(mode: RoadMode, pts: Point[]): Promise<ViaRoute> {
   const straight = (): ViaRoute => {

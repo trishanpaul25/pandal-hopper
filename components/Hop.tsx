@@ -227,6 +227,9 @@ export default function Hop() {
   else if (planned && cur) { line = [cur, ...planned]; }
   else if (preset.length) { line = preset; }
   else if (rtOk) { line = trailRt!.coords; lineColor = "#6d28d9"; }
+  // Metro pins and the ride line follow whichever route is drawn.
+  const shown = goReady ? (nav!.mode === mode ? nav : null) : (trailOn && rtOk) || (!(planned && cur) && !preset.length && rtOk) ? trailRt : null;
+  const mapMarks = shown?.marks, mapRides = shown?.rides;
   const nextStop = trailOn ? trailOrder[0] : undefined;
   const aim = target ?? nextStop ?? null;
   const youPt = me ?? cur;
@@ -241,13 +244,18 @@ export default function Hop() {
 
       <div className="mapbox" ref={mapBox}>
         <Map pandals={PANDALS} places={mapPlaces} seen={seen} you={youPt} heading={heading} line={line} lineColor={lineColor} solid={solid}
-          showPlaces={!!cur} onPick={here} target={aim?.id ?? null} trail={target ? [] : trailOrder.map((p) => p.id)} dim={navigating} fitKey={fitKey} />
+          showPlaces={!!cur} onPick={here} target={aim?.id ?? null} trail={target ? [] : trailOrder.map((p) => p.id)} dim={navigating} fitKey={fitKey}
+          marks={mapMarks} rides={mapRides} enterText={lang === "bn" ? "মেট্রোতে উঠুন" : "Enter metro"} exitText={lang === "bn" ? "মেট্রো থেকে নামুন" : "Exit metro"} />
       </div>
       <div className="legend" aria-label="Map colours">
         <span><i style={{ background: "#c1121f" }} />{tx(lang, "notSeen")}</span>
         <span><i style={{ background: "#2f9e5b" }} />{tx(lang, "seen")}</span>
         <span><i style={{ background: "#6d28d9" }} />{tx(lang, "trailStop")}</span>
         <span><i style={{ background: "#f2a900" }} />{tx(lang, "goingTo")}</span>
+        {!!mapMarks?.length && <>
+          <span><i style={{ background: "#1b8a4b" }} />{lang === "bn" ? "মেট্রোতে উঠুন" : "Enter metro"}</span>
+          <span><i style={{ background: "#b4232f" }} />{lang === "bn" ? "মেট্রো থেকে নামুন" : "Exit metro"}</span>
+        </>}
       </div>
 
       <ModeBar />

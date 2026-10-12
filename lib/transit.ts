@@ -1,5 +1,5 @@
 import transitData from "@/data/transit.json";
-import { km, route, routeVia, travelMins, type Mode, type Trip, type ViaRoute, type WalkRoute } from "./geo";
+import { km, route, routeVia, travelMins, type Mode, type StationMark, type Trip, type ViaRoute, type WalkRoute } from "./geo";
 import type { Point } from "./types";
 
 /** Stations come from data/transit.json (run `npm run transit` once). lines = which metro line, and the station's position on it. */
@@ -70,6 +70,10 @@ export function trailMins(mode: Mode, pts: Point[]): number {
   return s;
 }
 
+const pt = (s: Point): Point => ({ lat: s.lat, lng: s.lng });
+/** The two pins for the map: get in at the first station, get out at the second. */
+const marksFor = (t: MetroTrip): StationMark[] => [{ ...pt(t.s1), label: t.from, kind: "enter" }, { ...pt(t.s2), label: t.to, kind: "exit" }];
+
 /** One metro trip with real walking routes at both ends. Falls back to plain walking when that is quicker. */
 export async function metroRoute(a: Point, b: Point): Promise<WalkRoute> {
   const t = metroTrip(a, b);
@@ -82,6 +86,7 @@ export async function metroRoute(a: Point, b: Point): Promise<WalkRoute> {
     coords: [...w1.coords, ...w2.coords],            // the straight gap between the two stations is the metro ride
     km: w1.km + (km(t.s1, t.s2) / 1.3) * 1.25 + w2.km, mins, approx: w1.approx || w2.approx,
     trip: { from: t.from, to: t.to, stops: t.stops, change: t.change, walk1: w1.mins, ride: t.ride, walk2: w2.mins },
+    marks: marksFor(t), rides: [[pt(t.s1), pt(t.s2)]],
   };
 }
 /** Same as route() but also understands "metro". */
@@ -90,13 +95,16 @@ export const routeFor = (mode: Mode, a: Point, b: Point): Promise<WalkRoute> => 
 /** A trail through several stops. Metro trails are estimated without network calls (that would be 2 requests per hop). */
 export async function metroVia(pts: Point[]): Promise<ViaRoute> {
   const legs: number[] = [], coords: Point[] = pts.length ? [pts[0]] : [];
+  const marks: StationMark[] = [], rides: Point[][] = [];
   let mins = 0;
   for (let i = 1; i < pts.length; i++) {
     const a = pts[i - 1], b = pts[i], d = km(a, b); legs.push(d);
     const t = metroTrip(a, b);
-    if (t && t.useful) { coords.push(t.s1, t.s2, b); mins += t.mins; } else { coords.push(b); mins += travelMins(d, "walk"); }
+    if (t && t.useful) { coords.push(t.s1, t.s2, b); mins += t.mins; const [inn, out] = marksFor(t), last = marks[marks.length - 1];
+      if (!(last && last.kind === "exit" && last.label === inn.label)) marks.push(inn);   // same station again: keep one pin, not two on top of each other
+      marks.push(out); rides.push([pt(t.s1), pt(t.s2)]); } else { coords.push(b); mins += travelMins(d, "walk"); }
   }
-  return { coords, legs, km: legs.reduce((x, y) => x + y, 0), mins, approx: true };
+  return { coords, legs, km: legs.reduce((x, y) => x + y, 0), mins, approx: true, marks, rides };
 }
 /** Same as routeVia() but also understands "metro". */
 export const routeViaFor = (mode: Mode, pts: Point[]): Promise<ViaRoute> => (mode === "metro" ? metroVia(pts) : routeVia(mode, pts));
