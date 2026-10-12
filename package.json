@@ -12,6 +12,7 @@
     "transit": "node scripts/fetch-transit.mjs"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
     "firebase": "^10.14.1",
     "maplibre-gl": "^4.7.1",
     "next": "14.2.15",

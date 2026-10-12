@@ -48,12 +48,12 @@ service cloud.firestore {
         // Creating your entry needs a membership check (getAfter lets join/create batches work). This happens once per join.
         allow create: if request.auth != null && request.auth.uid == uid
           && request.auth.uid in getAfter(/databases/$(database)/documents/groups/$(code)).data.memberIds
-          && request.resource.data.keys().hasOnly(['nick', 'photo', 'sharing', 'lat', 'lng', 'heading', 'acc', 'at', 'joinedAt'])
+          && request.resource.data.keys().hasOnly(['nick', 'photo', 'sharing', 'until', 'lat', 'lng', 'heading', 'acc', 'at', 'joinedAt'])
           && request.resource.data.nick is string && request.resource.data.nick.size() <= 24;
         // Updating (every location send) needs NO lookup, so it costs no extra read. It is safe because an entry only
         // exists if it was created while you were a member, and leaving the group deletes it.
         allow update: if request.auth != null && request.auth.uid == uid
-          && request.resource.data.keys().hasOnly(['nick', 'photo', 'sharing', 'lat', 'lng', 'heading', 'acc', 'at', 'joinedAt'])
+          && request.resource.data.keys().hasOnly(['nick', 'photo', 'sharing', 'until', 'lat', 'lng', 'heading', 'acc', 'at', 'joinedAt'])
           && request.resource.data.nick is string && request.resource.data.nick.size() <= 24;
         allow delete: if request.auth != null && request.auth.uid == uid;
       }

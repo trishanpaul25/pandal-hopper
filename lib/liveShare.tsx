@@ -2,7 +2,8 @@
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from "react";
 import { useAuth } from "./auth";
 import { meters } from "./geo";
-import { pushLocation, stopSharing } from "./groups";
+import { saveLastPos, startSharing, stopSharing } from "./groups";
+import { openRelay, relayConfigured, sendPos } from "./relay";
 import { useStored } from "./useStored";
 import type { Point } from "./types";
 
@@ -10,7 +11,8 @@ import type { Point } from "./types";
  *  uses Hop, Pandals or any other page. One GPS watch serves every group that has sharing switched on.
  *  Each group's switch is remembered on this phone as an expiry time, so it turns itself off after SHARE_HOURS. */
 export const SHARE_HOURS = 8;
-const SEND_MIN_MS = 20_000, SEND_MIN_M = 40, HEARTBEAT_MS = 90_000; // fewer sends = fewer Firestore writes and fewer reads for friends
+const SEND_MIN_MS = 20_000, SEND_MIN_M = 40, HEARTBEAT_MS = 90_000; // fewer sends = fewer relay messages (positions no longer touch Firestore)
+const CHECKPOINT_MS = 5 * 60_000, HIDE_SAVE_MIN_MS = 30_000;          // last-known-position saves to Firestore: rare on purpose
 const PREFIX = "ph-share-";
 type Me = Point & { heading: number | null };
 
@@ -45,6 +47,8 @@ export function LiveShareProvider({ children }: { children: React.ReactNode }) {
   const [localTrack, setLocalTrack] = useState(false);
   const [keepAwake, setKeepAwake] = useStored<boolean>("ph-keep-awake", false);
   const codesRef = useRef<string[]>([]);
+  const lastSent = useRef<Me & { acc: number } | null>(null); // my latest position, to answer a friend's "hello" straight away
+  const lastSaveAt = useRef(0);
 
   const reload = useCallback(() => setUntil(readAll()), []);
   useEffect(() => { reload(); window.addEventListener("ph-share", reload); return () => window.removeEventListener("ph-share", reload); }, [reload]);
@@ -61,16 +65,43 @@ export function LiveShareProvider({ children }: { children: React.ReactNode }) {
     reload();
   }, [uid, reload]);
   const start = useCallback((code: string) => {
-    try { localStorage.setItem(PREFIX + code, String(Date.now() + SHARE_HOURS * 3600_000)); } catch {}
+    if (!relayConfigured) { setGeoErr("Live location isn't set up yet (missing Supabase keys in .env.local)."); return; }
+    const until = Date.now() + SHARE_HOURS * 3600_000;
+    try { localStorage.setItem(PREFIX + code, String(until)); } catch {}
+    if (uid) startSharing(code, uid, until); // one small write; the positions themselves go through the relay
     setGeoErr(""); reload();
-  }, [reload]);
+  }, [reload, uid]);
 
   // Expired switches turn themselves off.
   useEffect(() => { Object.keys(until).forEach((c) => { if (until[c] <= now) stop(c); }); }, [now]); // eslint-disable-line
 
+  // Keep each shared group's relay channel open (to send, and to answer "hello" from a friend who just opened the map).
+  useEffect(() => {
+    if (!uid || !key) return;
+    const rel = key.split(",").map((c) => openRelay(c, uid, { onHello: () => { const p = lastSent.current; if (p) sendPos(c, uid, p); } }));
+    return () => rel.forEach((r) => r());
+  }, [key, uid]);
+
+  // Save my last known position to Firestore now and then (not live): so late joiners and friends whose phone went to sleep still see "last seen".
+  const checkpoint = useCallback((minGap: number) => {
+    const p = lastSent.current, t = Date.now();
+    if (!uid || !p || !codesRef.current.length || t - lastSaveAt.current < minGap) return;
+    lastSaveAt.current = t;
+    codesRef.current.forEach((c) => saveLastPos(c, uid, p));
+  }, [uid]);
+  // One last save when the app goes to the background or closes (best effort: phones don't always allow it).
+  useEffect(() => {
+    if (!key) return;
+    const hide = () => checkpoint(HIDE_SAVE_MIN_MS);
+    const vis = () => { if (document.visibilityState === "hidden") hide(); };
+    document.addEventListener("visibilitychange", vis); window.addEventListener("pagehide", hide);
+    return () => { document.removeEventListener("visibilitychange", vis); window.removeEventListener("pagehide", hide); };
+  }, [key, checkpoint]);
+
   // One GPS watch for all groups that are being shared with. Sends are throttled to save battery and data.
   useEffect(() => {
-    if (!uid || (!key && !localTrack)) { setMe(null); return; }
+    if (!uid || (!key && !localTrack)) { setMe(null); lastSent.current = null; return; }
+    lastSaveAt.current = 0; // a newly switched-on group gets its first saved position right away
     if (!navigator.geolocation) { setGeoErr("This phone can't share location."); return; }
     let lastPt: Point | null = null, lastAt = 0;
     const id = navigator.geolocation.watchPosition((pos) => {
@@ -81,13 +112,16 @@ export function LiveShareProvider({ children }: { children: React.ReactNode }) {
       if (t0 - lastAt < SEND_MIN_MS) return;                                           // at most one send per 20 s
       if (lastPt && meters(lastPt, pt) < SEND_MIN_M && t0 - lastAt < HEARTBEAT_MS) return; // moved less than 40 m: only a heartbeat every 90 s
       lastPt = pt; lastAt = t0;
-      codesRef.current.forEach((c) => pushLocation(c, uid, { ...pt, heading: h, acc: pos.coords.accuracy }));
+      const out = { ...pt, heading: h, acc: pos.coords.accuracy };
+      lastSent.current = out;
+      codesRef.current.forEach((c) => sendPos(c, uid, out));
+      checkpoint(CHECKPOINT_MS);
     }, (e) => {
       if (e.code === 1) { setGeoErr("Location is blocked for this site. Allow it in your browser settings, then turn sharing on again."); codesRef.current.forEach(stop); setLocalTrack(false); }
       else setGeoErr("Can't get your location right now. Still trying…");
     }, { enableHighAccuracy: true, maximumAge: 5000, timeout: 20000 });
     return () => navigator.geolocation.clearWatch(id);
-  }, [key, uid, localTrack]); // eslint-disable-line
+  }, [key, uid, localTrack, checkpoint]); // eslint-disable-line
 
   // Optionally keep the screen awake (phones stop sending location when the screen locks).
   const sharingAny = !!key;

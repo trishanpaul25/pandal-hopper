@@ -17,6 +17,7 @@ import {
   type Group, type Member,
 } from "@/lib/groups";
 import { SHARE_HOURS, useLiveShare } from "@/lib/liveShare";
+import { openRelay, type SeenPos } from "@/lib/relay";
 import type { Friend } from "./Map";
 
 const Map = dynamic(() => import("./Map"), { ssr: false });
@@ -52,7 +53,8 @@ export default function Groups() {
   const [active, setActive] = useStored<string>("ph-group-active", "");
 
   const [groups, setGroups] = useState<Group[] | null>(null);
-  const [members, setMembers] = useState<Member[]>([]);
+  const [rawMembers, setMembers] = useState<Member[]>([]);   // from Firestore: who is in the group, names, who has sharing on
+  const [livePos, setLivePos] = useState<Record<string, SeenPos>>({}); // from the relay: where they are right now
   const [newName, setNewName] = useState("");
   const [joinCode, setJoinCode] = useState("");
   const [busy, setBusy] = useState(false);
@@ -110,6 +112,20 @@ export default function Groups() {
     if (!uid || !active || !awake) return;
     return watchMembers(active, setMembers, () => {});
   }, [uid, active, awake]);
+  // Live positions from the relay (no Firestore reads). Asking "hello" on connect makes sharers reply at once.
+  useEffect(() => {
+    setLivePos({});
+    if (!uid || !active || !awake) return;
+    return openRelay(active, uid, { listen: true, onPos: (u, p) => setLivePos((o) => ({ ...o, [u]: p })) });
+  }, [uid, active, awake]);
+  // A person shows on the map only if they are a member, have sharing on, and the relay has heard from them.
+  // A sharing switch that has passed its expiry time (phone closed without pressing stop) no longer counts.
+  // If the relay has not been heard, the position saved in Firestore (a few minutes old at most) is shown as "last seen".
+  const members = useMemo(() => rawMembers.map((m0) => {
+    const m = m0.sharing && m0.until && m0.until < now ? { ...m0, sharing: false } : m0;
+    const p = livePos[m.uid];
+    return m.uid === uid || !m.sharing || !p ? m : { ...m, ...p };
+  }), [rawMembers, livePos, uid, now]);
 
   // Friends on the map: everyone else who is sharing and was heard from in the last hour.
   const friends: Friend[] = useMemo(() => members
@@ -276,7 +292,7 @@ export default function Groups() {
                 <b>{m.nick}{isMe ? t(" (you)", " (আপনি)") : ""}</b>
                 <span className="muted small">
                   {isMe ? (sharing ? t("Sharing", "শেয়ার হচ্ছে") : t("Not sharing", "শেয়ার বন্ধ"))
-                    : !live ? t("Not sharing", "শেয়ার বন্ধ")
+                    : !live ? (m.sharing ? t("Sharing, waiting for signal", "শেয়ার চালু, সিগন্যালের অপেক্ষায়") : t("Not sharing", "শেয়ার বন্ধ"))
                     : [d !== null ? `${fmtDist(d / 1000)} ${t("away", "দূরে")}` : "", stale ? t(`last seen ${ago(m.at)}`, `শেষ দেখা ${ago(m.at)}`) : t("live", "লাইভ")].filter(Boolean).join(" · ")}
                 </span>
                 {live && !isMe && d !== null && d > FAR_M && !stale && <span className="chip" style={{ marginLeft: 8, minHeight: 0, padding: "2px 10px", fontSize: 12 }}>{t("far from you", "আপনার থেকে দূরে")}</span>}
