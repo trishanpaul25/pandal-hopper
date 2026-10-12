@@ -21,7 +21,7 @@ export const MODE_META: Record<Mode, { speed: number; crowd: number }> = {
   walk: { speed: 5, crowd: 1 },
   bike: { speed: 20, crowd: 1.3 },   // two-wheeler: uses the road network, slips through traffic
   car: { speed: 15, crowd: 1.8 },
-  metro: { speed: 20, crowd: 1 },    // only a fallback; real metro times come from lib/transit.ts
+  metro: { speed: 20, crowd: 1 },    // "Metro / Train": only a fallback; real times come from lib/transit.ts
 };
 /** Minutes for a distance in km, using the offline speed for the mode. */
 export const travelMins = (d: number, mode: Mode = "walk") => Math.max(1, Math.round((d / MODE_META[mode].speed) * 60));
@@ -31,11 +31,18 @@ const routeUrl = (mode: RoadMode, pts: Point[]) =>
 const routeMins = (mode: RoadMode, distM: number, durS: number) =>
   mode === "walk" ? Math.max(1, Math.round(distM / 83)) : Math.max(1, Math.round((durS / 60) * MODE_META[mode].crowd));
 
-/** A metro trip split into parts (minutes): walk to the station, ride, walk from the station. */
-export type Trip = { from: string; to: string; stops: number | null; change: boolean; walk1: number; ride: number; walk2: number };
-/** A metro station to show on the map: where to get in (enter) or get out (exit). */
-export type StationMark = Point & { label: string; kind: "enter" | "exit" };
-export type WalkRoute = { coords: Point[]; km: number; mins: number; approx: boolean; trip?: Trip; marks?: StationMark[]; rides?: Point[][] };
+/** What kind of vehicle a ride leg uses. */
+export type RideKind = "metro" | "train";
+/** One step of a public transport trip between stations: a ride (metro or train) or a short walk to change stations. */
+export type TripLeg =
+  | { kind: "ride"; mode: RideKind; from: string; to: string; stops: number; mins: number }
+  | { kind: "walk"; from: string; to: string; mins: number };
+/** A public transport trip split into parts (minutes): walk to the first station, the legs (rides and changes), walk from the last station.
+ *  from / to / stops / change / ride are the whole-trip summary; legs has the detail, in order. */
+export type Trip = { from: string; to: string; stops: number | null; change: boolean; walk1: number; ride: number; walk2: number; legs?: TripLeg[] };
+/** A station to show on the map: where to get on (enter), get off (exit) or change. mode picks the icon (metro or train). */
+export type StationMark = Point & { label: string; kind: "enter" | "exit" | "change"; mode?: RideKind };
+export type WalkRoute = { coords: Point[]; km: number; mins: number; approx: boolean; trip?: Trip; marks?: StationMark[]; rides?: Point[][]; rideKinds?: RideKind[] };
 /** Real route from OSM's public router (foot for walking, road network for bike/car). Falls back to a straight line if offline or blocked. */
 export async function route(mode: RoadMode, a: Point, b: Point): Promise<WalkRoute> {
   const ctrl = new AbortController(); const t = setTimeout(() => ctrl.abort(), 7000);
@@ -54,7 +61,7 @@ export function bearing(a: Point, b: Point): number {
   const x = Math.cos(a.lat * R) * Math.sin(b.lat * R) - Math.sin(a.lat * R) * Math.cos(b.lat * R) * Math.cos((b.lng - a.lng) * R);
   return (Math.atan2(y, x) / R + 360) % 360;
 }
-export type ViaRoute = { coords: Point[]; legs: number[]; km: number; mins: number; approx: boolean; marks?: StationMark[]; rides?: Point[][] };
+export type ViaRoute = { coords: Point[]; legs: number[]; km: number; mins: number; approx: boolean; marks?: StationMark[]; rides?: Point[][]; rideKinds?: RideKind[] };
 /** One route through several points in order. legs[i] is the km from point i to point i+1. Falls back to straight lines. */
 export async function routeVia(mode: RoadMode, pts: Point[]): Promise<ViaRoute> {
   const straight = (): ViaRoute => {

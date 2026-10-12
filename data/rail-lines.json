@@ -1,0 +1,144 @@
+{
+    "_note": "Hand-written suburban rail lines (station order). OpenStreetMap gives rail stations but not which stations share a line, so this file supplies it. Edit freely: stations is an ordered list of ids from data/transit.json (names is only for reading). Check against the current Indian Railways map before launch.",
+    "lines": [
+        {
+            "name": "Sealdah - Shyamnagar (Main line)",
+            "stations": [
+                "rail-n252584722",
+                "rail-n2323761292",
+                "rail-w218996115",
+                "rail-n1765884993",
+                "rail-n1935597017",
+                "rail-n1691412915",
+                "rail-n1691423701",
+                "rail-n310988176",
+                "rail-n7630431371",
+                "rail-n1616546521",
+                "rail-n1483066764",
+                "rail-n310988205"
+            ],
+            "names": [
+                "Sealdah",
+                "Bidhannagar Road",
+                "Dum Dum Junction",
+                "Belgharia",
+                "Agarpara",
+                "Sodpur",
+                "Khardaha",
+                "Titagarh",
+                "Barrackpore",
+                "Palta",
+                "Ichhapur",
+                "Shyamnagar"
+            ]
+        },
+        {
+            "name": "Sealdah - Barasat (via Dum Dum, Birati)",
+            "stations": [
+                "rail-n252584722",
+                "rail-n2323761292",
+                "rail-w218996115",
+                "rail-n1074606326",
+                "rail-n2378503814",
+                "rail-n2378510543",
+                "rail-n2378518670",
+                "rail-n2378546217",
+                "rail-n1765884856"
+            ],
+            "names": [
+                "Sealdah",
+                "Bidhannagar Road",
+                "Dum Dum Junction",
+                "Dum Dum Cantonment",
+                "Durganagar",
+                "Birati",
+                "New Barrackpore",
+                "Madhyamgram",
+                "Barasat Junction"
+            ]
+        },
+        {
+            "name": "Sealdah - Sonarpur - Baruipur (South)",
+            "stations": [
+                "rail-n252584722",
+                "rail-n1274128857",
+                "rail-n651805730",
+                "rail-n1341614569",
+                "rail-n5768054688",
+                "rail-n651800191",
+                "rail-n2339753229",
+                "rail-n5873264670",
+                "rail-n10146620696",
+                "rail-n2339803458",
+                "rail-n2337700691"
+            ],
+            "names": [
+                "Sealdah",
+                "Park Circus",
+                "Ballygunge Junction",
+                "Dhakuria",
+                "Jadavpur",
+                "Baghajatin",
+                "Garia",
+                "Narendrapur",
+                "Sonarpur Junction",
+                "Subhas Gram",
+                "Baruipur Junction"
+            ]
+        },
+        {
+            "name": "Sealdah - Budge Budge (via Tollygunge)",
+            "stations": [
+                "rail-n252584722",
+                "rail-n1274128857",
+                "rail-n651805730",
+                "rail-n6955697648",
+                "rail-n6955697644",
+                "rail-n6955697629",
+                "rail-n6186215510",
+                "rail-n2430771841",
+                "rail-n2430763548",
+                "rail-n2430738645",
+                "rail-n2430734474"
+            ],
+            "names": [
+                "Sealdah",
+                "Park Circus",
+                "Ballygunge Junction",
+                "Lake Gardens",
+                "Tollygunge",
+                "New Alipore",
+                "Majherhat",
+                "Brace Bridge",
+                "Santoshpur",
+                "Akra",
+                "Komagata Maru Budge Budge"
+            ]
+        },
+        {
+            "name": "Howrah - Serampore (Main line)",
+            "stations": [
+                "rail-n3321321335",
+                "rail-n664468000",
+                "rail-n664468001",
+                "rail-n664467737",
+                "rail-n310993110",
+                "rail-n664468968",
+                "rail-n664469183",
+                "rail-n664469184",
+                "rail-n664459003"
+            ],
+            "names": [
+                "Howrah Junction",
+                "Liluah",
+                "Belur",
+                "Bally",
+                "Uttarpara",
+                "Hind Motor",
+                "Konnagar",
+                "Rishra",
+                "Serampore"
+            ]
+        }
+    ]
+}

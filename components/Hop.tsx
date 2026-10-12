@@ -6,7 +6,7 @@ import { NAVIGABLE as PANDALS, PLACES, ROUTES, byId } from "@/lib/data";
 import type { Pandal, Point } from "@/lib/types";
 import { bearing, bestOrder, fmtDist, km, meters, pathLen, plan, type Mode, type ViaRoute, type WalkRoute } from "@/lib/geo";
 import { tx } from "@/lib/i18n";
-import { listMins, routeFor, routeViaFor } from "@/lib/transit";
+import { listMins, routeFor, routeViaFor, tripSteps } from "@/lib/transit";
 import { useLang } from "@/lib/lang";
 import { modeInfo, useMode } from "@/lib/mode";
 import { toggleIn, useSaved, useSeen } from "@/lib/store";
@@ -235,7 +235,7 @@ export default function Hop() {
   else if (rtOk) { line = trailRt!.coords; lineColor = "#6d28d9"; }
   // Metro pins and the ride line follow whichever route is drawn.
   const shown = goReady ? (nav!.mode === mode ? nav : null) : (trailOn && rtOk) || (!(planned && cur) && !preset.length && rtOk) ? trailRt : null;
-  const mapMarks = shown?.marks, mapRides = shown?.rides;
+  const mapMarks = shown?.marks, mapRides = shown?.rides, mapRideKinds = shown?.rideKinds;
   const nextStop = trailOn ? trailOrder[0] : undefined;
   const aim = target ?? nextStop ?? null;
   const youPt = me ?? cur;
@@ -285,7 +285,7 @@ export default function Hop() {
       <div className="mapbox" ref={mapBox}>
         <Map pandals={mapPandals} places={mapPlaces} seen={seen} you={youPt} heading={heading} line={line} lineColor={lineColor} solid={solid}
           showPlaces={!!cur && showFood} onPick={here} target={aim?.id ?? null} trail={target ? [] : trailOrder.map((p) => p.id)} dim={navigating && showAllPins} fitKey={fitKey} focus={focus}
-          marks={mapMarks} rides={mapRides} enterText={lang === "bn" ? "মেট্রোতে উঠুন" : "Enter metro"} exitText={lang === "bn" ? "মেট্রো থেকে নামুন" : "Exit metro"} />
+          marks={mapMarks} rides={mapRides} rideKinds={mapRideKinds} enterText={lang === "bn" ? "উঠুন" : "Board"} exitText={lang === "bn" ? "নামুন" : "Get off"} changeText={lang === "bn" ? "বদলান" : "Change"} />
         {!cur && <div className="maphint">
           {lang === "bn" ? "আপনি কোথায় আছেন বাছুন, তাহলে কাছের প্যান্ডেল বড় করে দেখাব।" : "Pick where you are to highlight the pandals closest to you."}
         </div>}
@@ -302,8 +302,11 @@ export default function Hop() {
         <span><i style={{ background: "#6d28d9" }} />{tx(lang, "trailStop")}</span>
         <span><i style={{ background: "#f2a900" }} />{tx(lang, "goingTo")}</span>
         {!!mapMarks?.length && <>
-          <span><i style={{ background: "#1b8a4b" }} />{lang === "bn" ? "মেট্রোতে উঠুন" : "Enter metro"}</span>
-          <span><i style={{ background: "#b4232f" }} />{lang === "bn" ? "মেট্রো থেকে নামুন" : "Exit metro"}</span>
+          <span><i style={{ background: "#1b8a4b" }} />{lang === "bn" ? "উঠুন" : "Board"}</span>
+          {mapMarks.some((x) => x.kind === "change") && <span><i style={{ background: "#e07a00" }} />{lang === "bn" ? "বদলান" : "Change"}</span>}
+          <span><i style={{ background: "#b4232f" }} />{lang === "bn" ? "নামুন" : "Get off"}</span>
+          {mapRideKinds?.includes("metro") && <span><i style={{ background: "#e07a00" }} />{lang === "bn" ? "মেট্রো" : "Metro"}</span>}
+          {mapRideKinds?.includes("train") && <span><i style={{ background: "#0e7c86" }} />{lang === "bn" ? "ট্রেন" : "Train"}</span>}
         </>}
       </div>
 
@@ -320,13 +323,13 @@ export default function Hop() {
               : "…"}
           </p>
           {mode === "metro" && nav?.tid === target.id && nav.mode === mode && (
-            <p className="muted small" style={{ margin: "4px 0 0" }}>
-              {nav.trip
-                ? (lang === "bn"
-                  ? `🚶 ${nav.trip.walk1} মিনিট → 🚇 ${nav.trip.from} থেকে ${nav.trip.to}${nav.trip.stops ? ` (${nav.trip.stops}টি স্টেশন)` : ""} ~${nav.trip.ride} মিনিট → 🚶 ${nav.trip.walk2} মিনিট${nav.trip.change ? " · ট্রেন বদলাতে হতে পারে" : ""}`
-                  : `🚶 ${nav.trip.walk1} min → 🚇 ${nav.trip.from} to ${nav.trip.to}${nav.trip.stops ? ` (${nav.trip.stops} stops)` : ""} ~${nav.trip.ride} min → 🚶 ${nav.trip.walk2} min${nav.trip.change ? " · you may need to change trains" : ""}`)
-                : (lang === "bn" ? "🚶 এখান থেকে হেঁটে যাওয়াই দ্রুত।" : "🚶 Walking is quicker for this one.")}
-            </p>
+            nav.trip
+              ? <ol style={{ listStyle: "none", margin: "8px 0 0", padding: 0, display: "grid", gap: 4 }}>
+                  {tripSteps(nav.trip, lang, name(target)).map((st, i) => (
+                    <li key={i} className="muted small" style={{ display: "flex", gap: 8, alignItems: "baseline" }}><span aria-hidden>{st.icon}</span><span>{st.text}</span></li>
+                  ))}
+                </ol>
+              : <p className="muted small" style={{ margin: "4px 0 0" }}>{lang === "bn" ? "🚶 এখান থেকে হেঁটে যাওয়াই দ্রুত।" : "🚶 Walking is quicker for this one."}</p>
           )}
           <TransitHint p={target} />
           <p className="muted small" style={{ margin: "4px 0 0" }}>{lang === "bn" ? "৫০ মিটারের মধ্যে পৌঁছলে নিজে থেকেই দেখা চিহ্নিত হবে।" : "It will be marked as seen automatically when you're within 50 m."}</p>

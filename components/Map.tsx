@@ -2,7 +2,7 @@
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import { useEffect, useRef } from "react";
-import type { StationMark } from "@/lib/geo";
+import type { RideKind, StationMark } from "@/lib/geo";
 import type { Pandal, Place, Point } from "@/lib/types";
 
 type Props = {
@@ -16,11 +16,12 @@ type Props = {
   fitKey?: string | null;                       // zoom to the route once when this changes
   friends?: Friend[];                           // group members sharing their live location (avatar pins)
   focus?: { pts: Point[]; k: number } | null;   // fly to these points whenever k changes
-  marks?: StationMark[];                        // metro stations to get in / out (green / red pins)
-  rides?: Point[][];                            // the metro ride itself, drawn as an orange dashed line
-  enterText?: string; exitText?: string;        // pin labels, so the page can translate them
+  marks?: StationMark[];                        // stations to get on (green), change (orange) and get off (red), with a metro or train icon
+  rides?: Point[][];                            // each ride, drawn as a dashed line through its stations
+  rideKinds?: RideKind[];                       // metro or train for each ride (orange or teal dashes)
+  enterText?: string; exitText?: string; changeText?: string;   // pin labels, so the page can translate them
 };
-const NO_MARKS: StationMark[] = [], NO_RIDES: Point[][] = [];
+const NO_MARKS: StationMark[] = [], NO_RIDES: Point[][] = [], NO_KINDS: RideKind[] = [];
 export type Friend = { id: string; nick: string; photo: string; lat: number; lng: number; stale: boolean; me?: boolean };
 
 // Free OSM raster tiles are fine for a prototype. For launch, self-host
@@ -33,7 +34,7 @@ const STYLE: maplibregl.StyleSpecification = {
 };
 const ARROW = `<svg width="34" height="34" viewBox="0 0 36 36" aria-hidden><path d="M18 2 L31 33 L18 25.5 L5 33 Z" fill="#0077b6" stroke="#fff" stroke-width="2.5" stroke-linejoin="round"/></svg>`;
 
-export default function Map({ pandals, places, seen, you, heading, line, lineColor, solid, showPlaces, onPick, target, trail = [], dim, fitKey, friends = [], focus, marks = NO_MARKS, rides = NO_RIDES, enterText = "Enter metro", exitText = "Exit metro" }: Props) {
+export default function Map({ pandals, places, seen, you, heading, line, lineColor, solid, showPlaces, onPick, target, trail = [], dim, fitKey, friends = [], focus, marks = NO_MARKS, rides = NO_RIDES, rideKinds = NO_KINDS, enterText = "Board", exitText = "Get off", changeText = "Change" }: Props) {
   const box = useRef<HTMLDivElement>(null);
   const map = useRef<maplibregl.Map | null>(null);
   const ready = useRef(false);
@@ -55,9 +56,9 @@ export default function Map({ pandals, places, seen, you, heading, line, lineCol
       m.addSource("line", { type: "geojson", data: empty });
       m.addLayer({ id: "line-casing", type: "line", source: "line", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#fff", "line-width": 9, "line-opacity": 0.85 } });
       m.addLayer({ id: "line", type: "line", source: "line", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#c1121f", "line-width": 5 } });
-      m.addSource("ride", { type: "geojson", data: { type: "Feature", properties: {}, geometry: { type: "MultiLineString", coordinates: [] } } });
+      m.addSource("ride", { type: "geojson", data: { type: "FeatureCollection", features: [] } });
       m.addLayer({ id: "ride-casing", type: "line", source: "ride", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#fff", "line-width": 9, "line-opacity": 0.9 } });
-      m.addLayer({ id: "ride", type: "line", source: "ride", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": "#e07a00", "line-width": 5, "line-dasharray": [2, 1.5] } });
+      m.addLayer({ id: "ride", type: "line", source: "ride", layout: { "line-cap": "round", "line-join": "round" }, paint: { "line-color": ["match", ["get", "kind"], "train", "#0e7c86", "#e07a00"], "line-width": 5, "line-dasharray": [2, 1.5] } });
       ready.current = true; m.fire("pandal-ready");
     });
     map.current = m;
@@ -158,27 +159,32 @@ export default function Map({ pandals, places, seen, you, heading, line, lineCol
     m.fitBounds(b, { padding: 70, maxZoom: 17, duration: 700 });
   }, [focus?.k]); // eslint-disable-line
 
-  // Metro: a green pin where to get in, a red pin where to get out, and the ride as an orange dashed line.
+  // Public transport: a pin where to get on (green), where to change (orange) and where to get off (red), each with a metro or train icon.
+  // The rides are dashed lines through the stations: orange for metro, teal for train.
   useEffect(() => {
     const m = map.current; if (!m) return;
     stationMarkers.current.forEach((x) => x.remove()); stationMarkers.current = [];
     marks.forEach((s) => {
-      const enter = s.kind === "enter";
+      const color = s.kind === "enter" ? "#1b8a4b" : s.kind === "exit" ? "#b4232f" : "#e07a00";
+      const word = s.kind === "enter" ? enterText : s.kind === "exit" ? exitText : changeText;
       const el = document.createElement("div"); el.title = s.label; el.style.cssText = "position:relative;pointer-events:none;z-index:7";
-      const dot = document.createElement("div"); dot.textContent = "🚇";
-      dot.style.cssText = `width:30px;height:30px;border-radius:50%;background:${enter ? "#1b8a4b" : "#b4232f"};border:3px solid #fff;box-shadow:0 2px 6px #0007;display:flex;align-items:center;justify-content:center;font-size:15px`;
-      const tag = document.createElement("span"); tag.textContent = `${enter ? enterText : exitText}: ${s.label}`;
+      const dot = document.createElement("div"); dot.textContent = s.mode === "train" ? "🚆" : "🚇";
+      dot.style.cssText = `width:30px;height:30px;border-radius:50%;background:${color};border:3px solid #fff;box-shadow:0 2px 6px #0007;display:flex;align-items:center;justify-content:center;font-size:15px`;
+      const tag = document.createElement("span"); tag.textContent = `${word}: ${s.label}`;
       tag.style.cssText = "position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:3px;padding:2px 8px;border-radius:999px;background:#fff;color:#1a1a1a;font:700 11px system-ui,sans-serif;white-space:nowrap;box-shadow:0 1px 4px #0006";
       el.append(dot, tag);
       stationMarkers.current.push(new maplibregl.Marker({ element: el }).setLngLat([s.lng, s.lat]).addTo(m));
     });
     return () => { stationMarkers.current.forEach((x) => x.remove()); stationMarkers.current = []; };
-  }, [marks, enterText, exitText]);
+  }, [marks, enterText, exitText, changeText]);
   useEffect(() => {
     const m = map.current; if (!m) return;
-    const apply = () => (m.getSource("ride") as maplibregl.GeoJSONSource | undefined)?.setData({ type: "Feature", properties: {}, geometry: { type: "MultiLineString", coordinates: rides.map((r) => r.map((p) => [p.lng, p.lat])) } });
+    const apply = () => (m.getSource("ride") as maplibregl.GeoJSONSource | undefined)?.setData({
+      type: "FeatureCollection",
+      features: rides.map((r, i) => ({ type: "Feature" as const, properties: { kind: rideKinds[i] ?? "metro" }, geometry: { type: "LineString" as const, coordinates: r.map((p) => [p.lng, p.lat]) } })),
+    });
     if (ready.current) apply(); else m.once("pandal-ready" as never, apply);
-  }, [rides]);
+  }, [rides, rideKinds]);
 
   // Route line.
   useEffect(() => {
