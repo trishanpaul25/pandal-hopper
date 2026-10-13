@@ -1,2 +1,2 @@
-id,name,name_bn,zone,lat,lng,area,theme,source,verified
-example-club,Example Club Sarbojanin,,north,22.5000,88.3500,Example Area,Theme of 2026,committee Facebook page,false
+id,name,name_bn,zone,lat,lng,area,theme,source,verified,precision
+example-club,Example Club Sarbojanin,,north,22.5000,88.3500,Example Area,Theme of 2026,committee Facebook page,false,

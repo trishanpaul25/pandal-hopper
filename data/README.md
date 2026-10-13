@@ -8,6 +8,7 @@ Two files drive the whole app: `pandals.json` and `places.json`. `routes.json` i
 - zone: any label. Routes are built per zone group (see scripts/build-routes.mjs).
 - lat / lng: decimal degrees. Drop the pin on the actual pandal gate, not the road.
 - verified: set true only after the checklist below.
+- precision (optional): leave blank for a real pin. Set to `approx` when the coordinate is only a neighbourhood estimate; those pandals are shown on the map but kept out of routes and navigation until someone drops a real pin.
 
 ## Verification checklist (do this per pandal)
 1. Find the club's official name and its 2026 location (club Facebook or Instagram page, or Kolkata Police / KMC puja list).

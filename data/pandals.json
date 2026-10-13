@@ -1590,10 +1590,10 @@
   "id": "bengal-united-club",
   "name": "Bengal United Club",
   "zone": "south",
-  "lat": 22.52444,
-  "lng": 88.347595,
+  "lat": 22.512428,
+  "lng": 88.348518,
   "verified": false,
-  "precision": "approx"
+  "precision": "exact"
  },
  {
   "id": "beniatola-sarbojanin",
@@ -1619,10 +1619,10 @@
   "id": "bharatmata-puja-sangha",
   "name": "Bharatmata Puja Sangha",
   "zone": "south",
-  "lat": 22.52444,
-  "lng": 88.347595,
+  "lat": 22.488014,
+  "lng": 88.36248,
   "verified": false,
-  "precision": "approx"
+  "precision": "exact"
  },
  {
   "id": "bharder-thakur-bari",
@@ -2013,10 +2013,10 @@
   "id": "chandranath-chatterjee-street-sarbojanin",
   "name": "Chandranath Chatterjee Street Sarbojanin",
   "zone": "south",
-  "lat": 22.52444,
-  "lng": 88.347595,
+  "lat": 22.52669,
+  "lng": 88.345848,
   "verified": false,
-  "precision": "approx",
+  "precision": "exact",
   "area": "Chandra Nath Chatterjee St, Bhowanipore, Kolkata 700025"
  },
  {
@@ -2758,10 +2758,10 @@
   "id": "ekush-pally-sarbojanin-durgotsab-samiti",
   "name": "Ekush Pally Sarbojanin Durgotsab Samiti",
   "zone": "south",
-  "lat": 22.52444,
-  "lng": 88.347595,
+  "lat": 22.529325,
+  "lng": 88.369217,
   "verified": false,
-  "precision": "approx"
+  "precision": "exact"
  },
  {
   "id": "entally-kanthal-bagan-sarbojanin-saradiya-utsav-comm",
@@ -3500,10 +3500,10 @@
   "id": "jatra-suru-sangha",
   "name": "Jatra Suru Sangha",
   "zone": "south",
-  "lat": 22.4707,
-  "lng": 88.37784,
+  "lat": 22.470646,
+  "lng": 88.37793,
   "verified": false,
-  "precision": "approx",
+  "precision": "exact",
   "area": "101-100, Raja Subodh Chandra Mallick Rd, Laxmi Narayan Colony, Garia 700084"
  },
  {
@@ -3658,10 +3658,10 @@
   "id": "judgebagan-sarbojanin-durgotsav",
   "name": "Judgebagan Sarbojanin Durgotsav",
   "zone": "south",
-  "lat": 22.52444,
-  "lng": 88.347595,
+  "lat": 22.477327,
+  "lng": 88.338959,
   "verified": false,
-  "precision": "approx"
+  "precision": "exact"
  },
  {
   "id": "kabirajbagan-sarbajanin-durgotsav-committee",
@@ -6466,10 +6466,10 @@
   "id": "sebak-sangha",
   "name": "Sebak Sangha",
   "zone": "south",
-  "lat": 22.510571,
-  "lng": 88.3635,
+  "lat": 22.511377,
+  "lng": 88.347542,
   "verified": false,
-  "precision": "approx",
+  "precision": "exact",
   "area": "1-5, Lake Temple Rd, Lake Range, Kalighat, Kolkata 700029"
  },
  {
@@ -6652,10 +6652,10 @@
   "id": "shyama-palli-shyama-sangha",
   "name": "Shyama Palli Shyama Sangha",
   "zone": "south",
-  "lat": 22.52444,
-  "lng": 88.347595,
+  "lat": 22.49152,
+  "lng": 88.37159,
   "verified": false,
-  "precision": "approx"
+  "precision": "exact"
  },
  {
   "id": "shyambazar-nabin-sangha",
@@ -7685,5 +7685,485 @@
   "precision": "exact",
   "area": "Maharaja Nand Kumar Rd, Barada Basak Street, Baranagar, West Bengal 700036",
   "theme": "added by hand"
+ },
+ {
+  "id": "19-pally",
+  "name": "19 Pally",
+  "zone": "south",
+  "lat": 22.512735,
+  "lng": 88.3675,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Gariahat, Kolkata"
+ },
+ {
+  "id": "77-palli",
+  "name": "77 Palli",
+  "zone": "south",
+  "lat": 22.504271,
+  "lng": 88.367607,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Selimpur, Kolkata"
+ },
+ {
+  "id": "abasarika-club",
+  "name": "Abasarika Club",
+  "zone": "south",
+  "lat": 22.508394,
+  "lng": 88.369278,
+  "verified": false,
+  "precision": "exact",
+  "area": "Jodhpur Park, Kolkata"
+ },
+ {
+  "id": "acharya-prafulla-sangha-behala",
+  "name": "Acharya Prafulla Sangha - Behala",
+  "zone": "south",
+  "lat": 22.49065,
+  "lng": 88.313461,
+  "verified": false,
+  "precision": "exact",
+  "area": "Behala, Kolkata"
+ },
+ {
+  "id": "adi-ballygunge-sarbojanin",
+  "name": "Adi Ballygunge Sarbojanin",
+  "zone": "south",
+  "lat": 22.529564,
+  "lng": 88.37265,
+  "verified": false,
+  "precision": "exact",
+  "area": "Adi Ballygunge, Kolkata"
+ },
+ {
+  "id": "agradut-udaya-sangha",
+  "name": "Agradut Udaya Sangha",
+  "zone": "south",
+  "lat": 22.53382,
+  "lng": 88.34194,
+  "verified": false,
+  "precision": "approx",
+  "area": "D.N. Ghosh Road, near Hindustan Club, Bhowanipore, Kolkata"
+ },
+ {
+  "id": "aikya-sammilani",
+  "name": "Aikya Sammilani",
+  "zone": "south",
+  "lat": 22.504429,
+  "lng": 88.318611,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Behala, Kolkata"
+ },
+ {
+  "id": "azadgarh-sarbojanin",
+  "name": "Azadgarh Sarbojanin",
+  "zone": "south",
+  "lat": 22.484604,
+  "lng": 88.356171,
+  "verified": false,
+  "precision": "exact",
+  "area": "Azadgarh, Tollygunge, Kolkata"
+ },
+ {
+  "id": "bandhab-sammilani",
+  "name": "Bandhab Sammilani",
+  "zone": "south",
+  "lat": 22.507818,
+  "lng": 88.367661,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Gariahat, Kolkata"
+ },
+ {
+  "id": "barisha-janakalyan-sangha",
+  "name": "Barisha Janakalyan Sangha",
+  "zone": "south",
+  "lat": 22.485041,
+  "lng": 88.312744,
+  "verified": false,
+  "precision": "exact",
+  "area": "Barisha, Kolkata"
+ },
+ {
+  "id": "barisha-netaji-sangha",
+  "name": "Barisha Netaji Sangha",
+  "zone": "south",
+  "lat": 22.48385,
+  "lng": 88.314629,
+  "verified": false,
+  "precision": "exact",
+  "area": "Barisha, Kolkata"
+ },
+ {
+  "id": "barisha-tapoban",
+  "name": "Barisha Tapoban",
+  "zone": "south",
+  "lat": 22.475655,
+  "lng": 88.310432,
+  "verified": false,
+  "precision": "exact",
+  "area": "Barisha, Kolkata"
+ },
+ {
+  "id": "behala-arcadia-sarbojanin",
+  "name": "Behala Arcadia Sarbojanin",
+  "zone": "south",
+  "lat": 22.497,
+  "lng": 88.315,
+  "verified": false,
+  "precision": "approx",
+  "area": "Behala, Kolkata"
+ },
+ {
+  "id": "behala-sree-sangha",
+  "name": "Behala Sree Sangha",
+  "zone": "south",
+  "lat": 22.497669,
+  "lng": 88.320183,
+  "verified": false,
+  "precision": "exact",
+  "area": "Behala, Kolkata"
+ },
+ {
+  "id": "bhowanipore-76-pally",
+  "name": "Bhowanipore 76 Pally",
+  "zone": "south",
+  "lat": 22.53374,
+  "lng": 88.34305,
+  "verified": false,
+  "precision": "approx",
+  "area": "Near Netaji Bhavan metro, Bhowanipore, Kolkata"
+ },
+ {
+  "id": "dakshin-phalguni-club",
+  "name": "Dakshin Phalguni Club",
+  "zone": "south",
+  "lat": 22.470131,
+  "lng": 88.379921,
+  "verified": false,
+  "precision": "exact",
+  "area": "Garia, Kolkata"
+ },
+ {
+  "id": "durgabari-behala",
+  "name": "Durgabari (Behala)",
+  "zone": "south",
+  "lat": 22.499889,
+  "lng": 88.315765,
+  "verified": false,
+  "precision": "exact",
+  "area": "Behala, Kolkata"
+ },
+ {
+  "id": "falguni-sangha",
+  "name": "Falguni Sangha",
+  "zone": "south",
+  "lat": 22.521793,
+  "lng": 88.365829,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Gariahat, Kolkata"
+ },
+ {
+  "id": "ganbani-sangha",
+  "name": "Ganbani Sangha",
+  "zone": "south",
+  "lat": 22.488768,
+  "lng": 88.327805,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Haridevpur, Kolkata"
+ },
+ {
+  "id": "garia-pancha-durga",
+  "name": "Garia Pancha Durga",
+  "zone": "south",
+  "lat": 22.461643,
+  "lng": 88.378166,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Garia, Kolkata"
+ },
+ {
+  "id": "garia-sabuj-dal",
+  "name": "Garia Sabuj Dal",
+  "zone": "south",
+  "lat": 22.469654,
+  "lng": 88.381599,
+  "verified": false,
+  "precision": "exact",
+  "area": "Garia, Kolkata"
+ },
+ {
+  "id": "garia-sreerampur-kalyan-samity",
+  "name": "Garia Sreerampur Kalyan Samity",
+  "zone": "south",
+  "lat": 22.466888,
+  "lng": 88.38044,
+  "verified": false,
+  "precision": "exact",
+  "area": "Garia, Kolkata"
+ },
+ {
+  "id": "goal-math",
+  "name": "Goal Math",
+  "zone": "south",
+  "lat": 22.526709,
+  "lng": 88.349045,
+  "verified": false,
+  "precision": "exact",
+  "area": "Harish Park, Bhowanipore, Kolkata"
+ },
+ {
+  "id": "golf-green-phase-1",
+  "name": "Golf Green Phase 1",
+  "zone": "south",
+  "lat": 22.491,
+  "lng": 88.362,
+  "verified": false,
+  "precision": "approx",
+  "area": "near Surya Nagar, Tollygunge, Kolkata"
+ },
+ {
+  "id": "greenwood-nook",
+  "name": "Greenwood Nook",
+  "zone": "south",
+  "lat": 22.50556,
+  "lng": 88.399902,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Santoshpur, Kolkata"
+ },
+ {
+  "id": "harish-park-puja",
+  "name": "Harish Park Puja",
+  "zone": "south",
+  "lat": 22.530655,
+  "lng": 88.343681,
+  "verified": false,
+  "precision": "exact",
+  "area": "Harish Park, Bhowanipore, Kolkata"
+ },
+ {
+  "id": "jogajatri-club",
+  "name": "Jogajatri Club",
+  "zone": "south",
+  "lat": 22.501614,
+  "lng": 88.331284,
+  "verified": false,
+  "precision": "exact",
+  "area": "near New Alipore, Kolkata"
+ },
+ {
+  "id": "kabitirtha",
+  "name": "Kabitirtha",
+  "zone": "south",
+  "lat": 22.541048,
+  "lng": 88.323288,
+  "verified": false,
+  "precision": "exact",
+  "area": "Khidirpur, Kolkata"
+ },
+ {
+  "id": "kalighat-natun-sangha",
+  "name": "Kalighat Natun Sangha",
+  "zone": "south",
+  "lat": 22.5203,
+  "lng": 88.344,
+  "verified": false,
+  "precision": "approx",
+  "area": "Kali Temple Road, Kalighat, Kolkata"
+ },
+ {
+  "id": "lake-pally-sarbojanin",
+  "name": "Lake Pally Sarbojanin",
+  "zone": "south",
+  "lat": 22.507259,
+  "lng": 88.346237,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Mudiali, Kolkata"
+ },
+ {
+  "id": "manoharpukur-youngs",
+  "name": "Manoharpukur Youngs",
+  "zone": "south",
+  "lat": 22.518682,
+  "lng": 88.356216,
+  "verified": false,
+  "precision": "exact",
+  "area": "Manoharpukur Road, Kolkata"
+ },
+ {
+  "id": "naskarpara-pally-unnayan-samity-haridevpur",
+  "name": "Naskarpara Pally Unnayan Samity - Haridevpur",
+  "zone": "south",
+  "lat": 22.480223,
+  "lng": 88.339539,
+  "verified": false,
+  "precision": "exact",
+  "area": "Haridevpur, Kolkata"
+ },
+ {
+  "id": "netaji-nagar-sarbojanin",
+  "name": "Netaji Nagar Sarbojanin",
+  "zone": "south",
+  "lat": 22.480721,
+  "lng": 88.357719,
+  "verified": false,
+  "precision": "exact",
+  "area": "Netaji Nagar, Kolkata"
+ },
+ {
+  "id": "new-alipore-childrens-park",
+  "name": "New Alipore Children's Park",
+  "zone": "south",
+  "lat": 22.507145,
+  "lng": 88.337021,
+  "verified": false,
+  "precision": "exact",
+  "area": "New Alipore, Kolkata"
+ },
+ {
+  "id": "padmapukur-baroyari",
+  "name": "Padmapukur Baroyari",
+  "zone": "south",
+  "lat": 22.531862,
+  "lng": 88.354294,
+  "verified": false,
+  "precision": "exact",
+  "area": "Padmapukur, Bhowanipore, Kolkata"
+ },
+ {
+  "id": "poddar-nagar-park",
+  "name": "Poddar Nagar Park",
+  "zone": "south",
+  "lat": 22.500887,
+  "lng": 88.364433,
+  "verified": false,
+  "precision": "exact",
+  "area": "Poddar Nagar, Jadavpur, Kolkata"
+ },
+ {
+  "id": "prasanta-disha-sarbojanin",
+  "name": "Prasanta Disha Sarbojanin",
+  "zone": "south",
+  "lat": 22.499216,
+  "lng": 88.327644,
+  "verified": false,
+  "precision": "exact",
+  "area": "near New Alipore, Kolkata"
+ },
+ {
+  "id": "rajdanga-tribarna-sangha",
+  "name": "Rajdanga Tribarna Sangha",
+  "zone": "south",
+  "lat": 22.515083,
+  "lng": 88.389534,
+  "verified": false,
+  "precision": "exact",
+  "area": "Rajdanga, Kasba, Kolkata"
+ },
+ {
+  "id": "roynagar-unnayan-samity",
+  "name": "Roynagar Unnayan Samity",
+  "zone": "south",
+  "lat": 22.47,
+  "lng": 88.362,
+  "verified": false,
+  "precision": "approx",
+  "area": "Bansdroni / Roynagar, Kolkata"
+ },
+ {
+  "id": "sabeda-bagan",
+  "name": "Sabeda Bagan",
+  "zone": "south",
+  "lat": 22.488293,
+  "lng": 88.316666,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Behala, Kolkata"
+ },
+ {
+  "id": "santoshpur-agragami",
+  "name": "Santoshpur Agragami",
+  "zone": "south",
+  "lat": 22.494265,
+  "lng": 88.377991,
+  "verified": false,
+  "precision": "exact",
+  "area": "Santoshpur, Kolkata"
+ },
+ {
+  "id": "santoshpur-bibekananda-sangha",
+  "name": "Santoshpur Bibekananda Sangha",
+  "zone": "south",
+  "lat": 22.493908,
+  "lng": 88.383392,
+  "verified": false,
+  "precision": "exact",
+  "area": "Santoshpur, Kolkata"
+ },
+ {
+  "id": "santoshpur-sonar-tori",
+  "name": "Santoshpur Sonar Tori",
+  "zone": "south",
+  "lat": 22.49184,
+  "lng": 88.378548,
+  "verified": false,
+  "precision": "exact",
+  "area": "Santoshpur, Kolkata"
+ },
+ {
+  "id": "selimpur-naskarpara",
+  "name": "Selimpur Naskarpara",
+  "zone": "south",
+  "lat": 22.504808,
+  "lng": 88.37606,
+  "verified": false,
+  "precision": "exact",
+  "area": "Selimpur, Dhakuria, Kolkata"
+ },
+ {
+  "id": "sitalatala-kishore-sangha",
+  "name": "Sitalatala Kishore Sangha",
+  "zone": "south",
+  "lat": 22.481987,
+  "lng": 88.322479,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Haridevpur, Kolkata"
+ },
+ {
+  "id": "sodepur-pragati-sangha-haridevpur",
+  "name": "Sodepur Pragati Sangha (Haridevpur)",
+  "zone": "south",
+  "lat": 22.481165,
+  "lng": 88.331619,
+  "verified": false,
+  "precision": "exact",
+  "area": "Haridevpur, Kolkata"
+ },
+ {
+  "id": "surya-nagar-sarbojanin",
+  "name": "Surya Nagar Sarbojanin",
+  "zone": "south",
+  "lat": 22.47489,
+  "lng": 88.359344,
+  "verified": false,
+  "precision": "exact",
+  "area": "Surya Nagar, Tollygunge, Kolkata"
+ },
+ {
+  "id": "uttar-panchanan-gram-milan",
+  "name": "Uttar Panchanan Gram Milan",
+  "zone": "south",
+  "lat": 22.532141,
+  "lng": 88.396339,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Anandapur, Kolkata"
  }
 ]
