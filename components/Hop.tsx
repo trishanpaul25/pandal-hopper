@@ -6,7 +6,8 @@ import { NAVIGABLE as PANDALS, PLACES, ROUTES, byId } from "@/lib/data";
 import type { Pandal, Point } from "@/lib/types";
 import { bearing, bestOrder, fmtDist, km, meters, pathLen, plan, type Mode, type ViaRoute, type WalkRoute } from "@/lib/geo";
 import { tx } from "@/lib/i18n";
-import { listMins, routeFor, routeViaFor, tripSteps } from "@/lib/transit";
+import { listMins, routeFor, routeViaFor, serviceOpen, tripSteps } from "@/lib/transit";
+import { useWhen } from "@/lib/when";
 import { useLang } from "@/lib/lang";
 import { modeInfo, useMode } from "@/lib/mode";
 import { toggleIn, useSaved, useSeen } from "@/lib/store";
@@ -26,6 +27,8 @@ const startKey0 = (o: Point | null) => (o ? `${o.lat.toFixed(2)},${o.lng.toFixed
 export default function Hop() {
   const { lang } = useLang();
   const { mode } = useMode();
+  const { at } = useWhen();
+  const leave = at ?? undefined;   // undefined = now
   const [seen, setSeen] = useSeen();
   const [saved, setSaved] = useSaved();
   const [cur, setCur] = useState<Cur | null>(null);
@@ -50,8 +53,8 @@ export default function Hop() {
   const [toast, setToast] = useState<{ text: string; undo?: () => void } | null>(null);
   const savedRef = useRef(saved); savedRef.current = saved;
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const lastFetch = useRef<{ tid: string; o: Point; mode: Mode } | null>(null);
-  const lastTrail = useRef<{ key: string; o: Point | null; mode: Mode } | null>(null);
+  const lastFetch = useRef<{ tid: string; o: Point; mode: Mode; at: number | null } | null>(null);
+  const lastTrail = useRef<{ key: string; o: Point | null; mode: Mode; at: number | null } | null>(null);
   const reqId = useRef(0), trailReq = useRef(0);
   const prevMe = useRef<Point | null>(null), lastHead = useRef<number | null>(null);
   const mapBox = useRef<HTMLDivElement>(null);
@@ -188,22 +191,22 @@ export default function Hop() {
   useEffect(() => {
     if (!target || !origin) return;
     const last = lastFetch.current;
-    if (last && last.tid === target.id && last.mode === mode && meters(last.o, origin) < 40) return;
-    lastFetch.current = { tid: target.id, o: { lat: origin.lat, lng: origin.lng }, mode };
+    if (last && last.tid === target.id && last.mode === mode && last.at === at && meters(last.o, origin) < 40) return;
+    lastFetch.current = { tid: target.id, o: { lat: origin.lat, lng: origin.lng }, mode, at };
     const id = ++reqId.current;
-    routeFor(mode, origin, target).then((r) => { if (id === reqId.current) setNav({ ...r, tid: target.id, mode }); });
-  }, [target, mode, origin?.lat, origin?.lng]); // eslint-disable-line
+    routeFor(mode, origin, target, leave).then((r) => { if (id === reqId.current) setNav({ ...r, tid: target.id, mode }); });
+  }, [target, mode, at, origin?.lat, origin?.lng]); // eslint-disable-line
 
   // Walking route through all trail stops.
   useEffect(() => {
     const pts: Point[] = origin ? [origin, ...trailOrder] : trailOrder;
     if (pts.length < 2) { setTrailRt(null); lastTrail.current = null; return; }
     const last = lastTrail.current;
-    if (last && last.key === rtKey && last.mode === mode && (!origin || !last.o || meters(last.o, origin) < 40)) return;
-    lastTrail.current = { key: rtKey, o: origin ? { lat: origin.lat, lng: origin.lng } : null, mode };
+    if (last && last.key === rtKey && last.mode === mode && last.at === at && (!origin || !last.o || meters(last.o, origin) < 40)) return;
+    lastTrail.current = { key: rtKey, o: origin ? { lat: origin.lat, lng: origin.lng } : null, mode, at };
     const id = ++trailReq.current;
-    routeViaFor(mode, pts).then((r) => { if (id === trailReq.current) setTrailRt({ ...r, key: rtKey, mode }); });
-  }, [rtKey, mode, origin?.lat, origin?.lng]); // eslint-disable-line
+    routeViaFor(mode, pts, leave).then((r) => { if (id === trailReq.current) setTrailRt({ ...r, key: rtKey, mode }); });
+  }, [rtKey, mode, at, origin?.lat, origin?.lng]); // eslint-disable-line
 
   // Auto mark seen when I reach the target, or any stop on my trail.
   useEffect(() => {
@@ -329,7 +332,7 @@ export default function Hop() {
                     <li key={i} className="muted small" style={{ display: "flex", gap: 8, alignItems: "baseline" }}><span aria-hidden>{st.icon}</span><span>{st.text}</span></li>
                   ))}
                 </ol>
-              : <p className="muted small" style={{ margin: "4px 0 0" }}>{lang === "bn" ? "🚶 এখান থেকে হেঁটে যাওয়াই দ্রুত।" : "🚶 Walking is quicker for this one."}</p>
+              : <p className="muted small" style={{ margin: "4px 0 0" }}>{serviceOpen(leave) ? (lang === "bn" ? "🚶 এখান থেকে হেঁটে যাওয়াই দ্রুত।" : "🚶 Walking is quicker for this one.") : (lang === "bn" ? "🚶 এই সময়ে মেট্রো ও ট্রেন চলছে না, তাই হেঁটে যাওয়ার পথ দেখানো হচ্ছে।" : "🚶 No metro or trains run at this time, so the walking route is shown.")}</p>
           )}
           <TransitHint p={target} />
           <p className="muted small" style={{ margin: "4px 0 0" }}>{lang === "bn" ? "৫০ মিটারের মধ্যে পৌঁছলে নিজে থেকেই দেখা চিহ্নিত হবে।" : "It will be marked as seen automatically when you're within 50 m."}</p>
@@ -426,7 +429,7 @@ export default function Hop() {
           <h2 className="h2">{tx(lang, "nearest")} {cur.id ? cur.label : tx(lang, "gps")}</h2>
           <div className="pgrid" style={{ marginTop: 14 }}>
             {nearest.slice(0, nearLimit).map((x, i) => (
-              <PandalCard key={x.p.id} p={x.p} rank={i + 1} dist={`${fmtDist(x.d)} · ~${listMins(mode, x.d, cur, x.p)} min`}
+              <PandalCard key={x.p.id} p={x.p} rank={i + 1} dist={`${fmtDist(x.d)} · ~${listMins(mode, x.d, cur, x.p, leave)} min`}
                 seen={false} saved={false} onSave={() => addTrail(x.p)}
                 onGo={() => go(x.p)} going={target?.id === x.p.id} onSeen={() => arrive(x.p)}>
                 <button className="btn outline" style={{ marginTop: 8 }} onClick={() => addTrail(x.p)}>☆ {tx(lang, "addRoute")}</button>
@@ -497,7 +500,7 @@ export default function Hop() {
       {cur && <section className="sec">
         <h2 className="h2"><Bi k="eatNear" caption={false} /></h2>
         <div className="card" style={{ marginTop: 12 }}>
-          {food.map((x) => <div className="item" key={x.f.id}><div><h3>{x.f.name}</h3><p>{x.f.note}</p></div><b className="muted small">{fmtDist(x.d)} · {listMins(mode, x.d, cur, x.f)} min</b></div>)}
+          {food.map((x) => <div className="item" key={x.f.id}><div><h3>{x.f.name}</h3><p>{x.f.note}</p></div><b className="muted small">{fmtDist(x.d)} · {listMins(mode, x.d, cur, x.f, leave)} min</b></div>)}
           <Link className="btn outline" href="/food" style={{ marginTop: 10 }}>{tx(lang, "food")} →</Link>
         </div>
       </section>}

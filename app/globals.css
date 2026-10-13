@@ -258,6 +258,26 @@ h3 {
   opacity: .8
 }
 
+/* seven tabs: keep every label on one line, and shrink a little on narrow phones */
+.bnav a {
+  min-width: 0;
+  white-space: nowrap
+}
+
+@media(max-width:380px) {
+  .bnav a {
+    font-size: 10px
+  }
+
+  .bnav a b {
+    font-size: 17px
+  }
+
+  .bnav small {
+    font-size: 9px
+  }
+}
+
 /* layout */
 .page {
   max-width: 1280px;

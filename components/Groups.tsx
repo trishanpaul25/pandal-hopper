@@ -5,7 +5,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { NAVIGABLE as PANDALS } from "@/lib/data";
 import type { Pandal, Place, Point } from "@/lib/types";
 import { fmtDist, meters, type WalkRoute } from "@/lib/geo";
-import { routeFor } from "@/lib/transit";
+import { routeFor, serviceOpen, tripSteps } from "@/lib/transit";
+import { useWhen } from "@/lib/when";
 import { useAuth } from "@/lib/auth";
 import { useLang } from "@/lib/lang";
 import { modeInfo, useMode } from "@/lib/mode";
@@ -44,6 +45,7 @@ export default function Groups() {
   const { user, loading, configured, signIn } = useAuth();
   const { lang } = useLang();
   const { mode } = useMode();
+  const { at } = useWhen();
   const bn = lang === "bn";
   const t = (en: string, b: string) => (bn ? b : en);
   const [seen] = useSeen();
@@ -156,12 +158,12 @@ export default function Groups() {
       if (!a || !b || busy) return;
       if (last && meters(last.a, a) < 30 && meters(last.b, b) < 30) return;
       busy = true; last = { a, b };
-      const r = await routeFor(mode, a, b);
+      const r = await routeFor(mode, a, b, at ?? undefined);
       busy = false; if (alive) setRoute(r);
     };
     tick(); const id = setInterval(tick, 5000);
     return () => { alive = false; clearInterval(id); };
-  }, [followId, mode]);
+  }, [followId, mode, at]);
   useEffect(() => { if (!target) setRoute(null); }, [!!target]); // eslint-disable-line
   const line: Point[] = useMemo(() => {
     if (!me || !target) return NO_LINE;
@@ -235,7 +237,7 @@ export default function Groups() {
       <div className="mapbox">
         <Map pandals={showPandals ? PANDALS : NO_PANDALS} places={NO_PLACES} seen={seen} you={me} heading={me?.heading ?? 0}
           line={line} lineColor="#0077b6" solid showPlaces={false} onPick={NOOP} friends={friends} focus={focus} fitKey={followId || null}
-          marks={followId && route && !route.approx ? route.marks : undefined} rides={followId && route && !route.approx ? route.rides : undefined} rideKinds={followId && route && !route.approx ? route.rideKinds : undefined}
+          marks={followId && route ? route.marks : undefined} rides={followId && route ? route.rides : undefined} rideKinds={followId && route ? route.rideKinds : undefined}
           enterText={t("Board", "উঠুন")} exitText={t("Get off", "নামুন")} changeText={t("Change", "বদলান")} />
       </div>
       <div className="row" style={{ marginTop: 10 }}>
@@ -254,6 +256,15 @@ export default function Groups() {
             : !me ? <span className="muted">{t("Finding your location…", "আপনার লোকেশন খোঁজা হচ্ছে…")}</span>
             : toFriend !== null && toFriend < 25 ? <span>✅ {t("You've reached them!", "আপনি পৌঁছে গেছেন!")}</span>
             : <span><b>{fmtDist((toFriend ?? 0) / 1000)}</b> {t("away", "দূরে")}{route ? <> · ~{route.mins} {lang === "bn" ? `মিনিট ${modeInfo(mode).per.bn}` : `min ${modeInfo(mode).per.en}`}{route.approx ? t(" (straight line)", " (সোজা দূরত্ব)") : ""}</> : null}</span>}
+          {mode === "metro" && target && me && toFriend !== null && toFriend >= 25 && route && (
+            route.trip
+              ? <ol style={{ listStyle: "none", margin: 0, padding: 0, display: "grid", gap: 4 }}>
+                  {tripSteps(route.trip, lang, followNick || t("them", "তাঁর কাছে")).map((st, i) => (
+                    <li key={i} className="muted small" style={{ display: "flex", gap: 8, alignItems: "baseline" }}><span aria-hidden>{st.icon}</span><span>{st.text}</span></li>
+                  ))}
+                </ol>
+              : <span className="muted small">{serviceOpen(at ?? undefined) ? t("🚶 Walking is quicker for this one.", "🚶 এখান থেকে হেঁটে যাওয়াই দ্রুত।") : t("🚶 No metro or trains run at this time, so the walking route is shown.", "🚶 এই সময়ে মেট্রো ও ট্রেন চলছে না, তাই হেঁটে যাওয়ার পথ দেখানো হচ্ছে।")}</span>
+          )}
           <span className="muted small">{t("The blue path updates as you or they move. Your location is used on this phone only, unless you turned sharing on.", "আপনি বা তিনি নড়লে নীল পথ নিজে থেকেই বদলায়। আপনার লোকেশন শুধু এই ফোনে ব্যবহার হয়, শেয়ারিং চালু না থাকলে কাউকে পাঠানো হয় না।")}</span>
           <ModeBar />
           {geoErr && <span className="msg" style={{ margin: 0 }}>{geoErr}</span>}

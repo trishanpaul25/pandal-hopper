@@ -1,0 +1,82 @@
+{
+  "_note": [
+    "When metro and trains run, and how often. The router uses it so it never suggests a line that has stopped, and waits half the gap between trains.",
+    "A window is { from, to, headway }: from / to are 24-hour HH:MM in Kolkata time (HH can go past 24, so 28:00 means 4 am the next day), headway is minutes between trains.",
+    "to = the last train leaving the terminal, roughly. Boarding at a middle station is allowed until then.",
+    "Which entry wins for a line on a given day: days['YYYY-MM-DD'] first, then weekly['sun'|'mon'|...], then lines, then defaults (metro / train).",
+    "A day or weekly entry only needs the lines that change. Metro lines are named by colour (the Blue Line entry covers both directions). Train lines use the exact name in data/rail-lines.json.",
+    "HOW SURE EACH NUMBER IS: Blue/Green 06:00-22:30 normal days, Sunday start 09:00, Panchami/Shashthi (15 and 16 Oct 2026) 06:00-23:00 and night-long Saptami-Navami are from news reports of Kolkata Metro notices. Headways come from service counts in those reports (Blue about 8 min, Green and Yellow about 15). The exact 2026 night hours were not public when this was written, so 17-19 Oct copy the 2025 pattern (Blue from 13:00, Green from 13:30, both until about 04:00, Yellow last train 22:50). Dashami (20 Oct) also copies 2025. Train times: Eastern Railway said 38 overnight specials (11 pm to 5 am) run 16-21 Oct, so night headway is long. Orange and Purple line numbers and all normal train headways are estimates. Replace any of it with the official notice."
+  ],
+  "defaults": {
+    "metro": [{ "from": "07:00", "to": "21:30", "headway": 15 }],
+    "train": [{ "from": "04:30", "to": "24:00", "headway": 15 }]
+  },
+  "lines": {
+    "Blue Line": [{ "from": "06:00", "to": "22:30", "headway": 8 }],
+    "Green Line": [{ "from": "06:00", "to": "22:30", "headway": 10 }],
+    "Yellow Line": [{ "from": "07:18", "to": "21:58", "headway": 15 }],
+    "Orange Line": [{ "from": "07:00", "to": "21:30", "headway": 20 }],
+    "Purple Line": [{ "from": "07:00", "to": "21:30", "headway": 30 }]
+  },
+  "weekly": {
+    "sun": {
+      "Blue Line": [{ "from": "09:00", "to": "22:30", "headway": 10 }],
+      "Green Line": [{ "from": "09:00", "to": "22:30", "headway": 15 }]
+    }
+  },
+  "days": {
+    "2026-10-15": {
+      "Blue Line": [{ "from": "06:00", "to": "23:00", "headway": 8 }],
+      "Green Line": [{ "from": "06:00", "to": "23:00", "headway": 10 }]
+    },
+    "2026-10-16": {
+      "Blue Line": [{ "from": "06:00", "to": "23:00", "headway": 8 }],
+      "Green Line": [{ "from": "06:00", "to": "23:00", "headway": 10 }],
+      "Sealdah - Shyamnagar (Main line)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Barasat (via Dum Dum, Birati)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Sonarpur - Baruipur (South)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Budge Budge (via Tollygunge)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }]
+    },
+    "2026-10-17": {
+      "Blue Line": [{ "from": "06:00", "to": "28:00", "headway": 8 }],
+      "Green Line": [{ "from": "06:00", "to": "28:20", "headway": 10 }],
+      "Yellow Line": [{ "from": "07:18", "to": "22:50", "headway": 15 }],
+      "Sealdah - Shyamnagar (Main line)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Barasat (via Dum Dum, Birati)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Sonarpur - Baruipur (South)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Budge Budge (via Tollygunge)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }]
+    },
+    "2026-10-18": {
+      "Blue Line": [{ "from": "06:00", "to": "28:00", "headway": 8 }],
+      "Green Line": [{ "from": "09:00", "to": "28:20", "headway": 10 }],
+      "Yellow Line": [{ "from": "07:18", "to": "22:50", "headway": 15 }],
+      "Sealdah - Shyamnagar (Main line)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Barasat (via Dum Dum, Birati)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Sonarpur - Baruipur (South)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Budge Budge (via Tollygunge)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }]
+    },
+    "2026-10-19": {
+      "Blue Line": [{ "from": "06:00", "to": "28:00", "headway": 8 }],
+      "Green Line": [{ "from": "06:00", "to": "28:20", "headway": 10 }],
+      "Yellow Line": [{ "from": "07:18", "to": "22:50", "headway": 15 }],
+      "Sealdah - Shyamnagar (Main line)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Barasat (via Dum Dum, Birati)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Sonarpur - Baruipur (South)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Budge Budge (via Tollygunge)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }]
+    },
+    "2026-10-20": {
+      "Blue Line": [{ "from": "06:00", "to": "22:00", "headway": 8 }],
+      "Green Line": [{ "from": "06:00", "to": "22:30", "headway": 15 }],
+      "Sealdah - Shyamnagar (Main line)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Barasat (via Dum Dum, Birati)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Sonarpur - Baruipur (South)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Budge Budge (via Tollygunge)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }]
+    },
+    "2026-10-21": {
+      "Sealdah - Shyamnagar (Main line)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Barasat (via Dum Dum, Birati)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Sonarpur - Baruipur (South)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }],
+      "Sealdah - Budge Budge (via Tollygunge)": [{ "from": "04:30", "to": "23:00", "headway": 15 }, { "from": "23:00", "to": "29:00", "headway": 90 }]
+    }
+  }
+}

@@ -16,8 +16,12 @@ const DESK: { href: string; k: K }[] = [
 ];
 const MOB: { href: string; k: K; icon: string }[] = [
   { href: "/", k: "home", icon: "🏮" }, { href: "/hop", k: "hop", icon: "📍" }, { href: "/pandals", k: "pandals", icon: "🛕" },
-  { href: "/days", k: "days", icon: "📅" }, { href: "/groups", k: "groups", icon: "👥" }, { href: "/guide", k: "guide", icon: "🆘" },
+  { href: "/days", k: "days", icon: "📅" }, { href: "/groups", k: "groups", icon: "👥" }, { href: "/food", k: "food", icon: "🍛" },
+  { href: "/guide", k: "guide", icon: "🆘" },
 ];
+// Seven tabs share the width of a phone, so a few labels get a shorter form here.
+const SHORT: Partial<Record<K, { en: string; bn: string }>> = { food: { en: "Food", bn: "খাবার" } };
+const mobLabel = (k: K, l: "en" | "bn") => (SHORT[k] ?? D[k])[l];
 
 const creditLink = { color: "var(--alta)", fontWeight: 600 } as const;
 
@@ -62,7 +66,7 @@ export default function Shell({ children }: { children: React.ReactNode }) {
       <nav className="bnav" aria-label="Main">
         {MOB.map((n) => (
           <Link key={n.href} href={n.href} aria-current={on(n.href) ? "page" : undefined}>
-            <b aria-hidden>{n.icon}</b>{D[n.k][lang]}<small>{D[n.k][lang === "en" ? "bn" : "en"]}</small>
+            <b aria-hidden>{n.icon}</b>{mobLabel(n.k, lang)}<small>{mobLabel(n.k, lang === "en" ? "bn" : "en")}</small>
           </Link>
         ))}
       </nav>

@@ -7,6 +7,7 @@ import { listMins } from "@/lib/transit";
 import { tx } from "@/lib/i18n";
 import { useLang } from "@/lib/lang";
 import { useMode } from "@/lib/mode";
+import { useWhen } from "@/lib/when";
 import { toggleIn, useSavedPlaces } from "@/lib/store";
 import type { Place, Point } from "@/lib/types";
 import ModeBar from "./ModeBar";
@@ -28,6 +29,7 @@ const PAGE = 30;
 export default function Food() {
   const { lang } = useLang();
   const { mode } = useMode();
+  const { at } = useWhen();
   const [sp, setSp] = useSavedPlaces();
   const [kind, setKind] = useState<KindKey>("all");
   const [q, setQ] = useState(""); const dq = useDeferredValue(q);
@@ -82,7 +84,7 @@ export default function Food() {
             <h3 style={{ fontSize: 21 }}>{(lang === "bn" && f.name_bn) || f.name}</h3>
             <p className="muted" style={{ margin: "2px 0 10px" }}>{f.note}</p>
             <div className="row" style={{ justifyContent: "space-between" }}>
-              <b className="small">{base ? `${fmtDist(d)} · ${listMins(mode, d, base, f)} min` : ""}</b>
+              <b className="small">{base ? `${fmtDist(d)} · ${listMins(mode, d, base, f, at ?? undefined)} min` : ""}</b>
               <div className="row">
                 <a className="btn sm outline" href={mapsLink(f)} target="_blank" rel="noopener noreferrer">↗ {tx(lang, "directions")}</a>
                 <button className={`btn sm ${sp.includes(f.id) ? "gold" : "outline"}`} aria-pressed={sp.includes(f.id)} onClick={() => setSp(toggleIn(sp, f.id))}>{sp.includes(f.id) ? "★ Saved" : "☆ Save"}</button>

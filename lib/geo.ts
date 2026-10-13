@@ -35,7 +35,7 @@ const routeMins = (mode: RoadMode, distM: number, durS: number) =>
 export type RideKind = "metro" | "train";
 /** One step of a public transport trip between stations: a ride (metro or train) or a short walk to change stations. */
 export type TripLeg =
-  | { kind: "ride"; mode: RideKind; from: string; to: string; stops: number; mins: number }
+  | { kind: "ride"; mode: RideKind; from: string; to: string; stops: number; mins: number; every?: number }   // every = minutes between trains at that time
   | { kind: "walk"; from: string; to: string; mins: number };
 /** A public transport trip split into parts (minutes): walk to the first station, the legs (rides and changes), walk from the last station.
  *  from / to / stops / change / ride are the whole-trip summary; legs has the detail, in order. */
