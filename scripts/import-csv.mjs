@@ -1,6 +1,6 @@
 // Turns data/pandals.csv (your spreadsheet export) into data/pandals.json.
 //   node scripts/import-csv.mjs
-// Columns: id,name,name_bn,zone,lat,lng,area,theme,source,verified,precision (precision is optional; "approx" marks a neighbourhood estimate)
+// Columns: id,name,name_bn,zone,lat,lng,area,theme,source,verified[,precision]  (precision=approx keeps a row out of routes)
 // Checks for duplicate ids, missing coordinates, and points outside greater Kolkata.
 import { readFileSync, writeFileSync } from "node:fs";
 
@@ -60,8 +60,8 @@ rows.forEach((r, n) => {
   const name = decode(g("name"));
   const p = {
     id, name, zone: g("zone") || "other", lat, lng, verified: o ? o.verified : g("verified").toLowerCase() === "true",
-    precision: (g("precision").toLowerCase() === "approx" || (o ? ovUses[keyOf(o.lat, o.lng)] > 1 : uses[keyOf(parseFloat(g("lat")), parseFloat(g("lng")))] > 1)) ? "approx" : "exact"
-  };   // a point shared by several pandals (or marked precision=approx in the CSV) is a placeholder, not a real pin
+    precision: (g("precision").toLowerCase() === "approx" && !o) || (o ? ovUses[keyOf(o.lat, o.lng)] > 1 : uses[keyOf(parseFloat(g("lat")), parseFloat(g("lng")))] > 1) ? "approx" : "exact"
+  };   // a point shared by several pandals, or a CSV row marked precision=approx, is a placeholder, not a real pin
   const area = cleanArea(g("area"), name); if (area) p.area = area;
   for (const k of ["name_bn", "theme"]) if (g(k)) p[k] = decode(g(k));
   out.push(p);

@@ -2508,9 +2508,9 @@
  {
   "id": "dum-dum-tarun-dal",
   "name": "Dum Dum Tarun Dal",
-  "zone": "south",
-  "lat": 22.484525,
-  "lng": 88.380436,
+  "zone": "east",
+  "lat": 22.611238,
+  "lng": 88.418297,
   "verified": false,
   "precision": "exact",
   "area": "Shyam Nagar Rd, Satgachi, Baguiati, South Dumdum 700055"
@@ -8165,5 +8165,125 @@
   "verified": false,
   "precision": "exact",
   "area": "near Anandapur, Kolkata"
+ },
+ {
+  "id": "anupama-housing-complex",
+  "name": "Anupama Housing Complex",
+  "zone": "east",
+  "lat": 22.629421,
+  "lng": 88.431786,
+  "verified": false,
+  "precision": "exact",
+  "area": "VIP Road (Anupama), Kolkata"
+ },
+ {
+  "id": "bangur-avenue-protirodh-bahini",
+  "name": "Bangur Avenue Protirodh Bahini",
+  "zone": "east",
+  "lat": 22.606899,
+  "lng": 88.409248,
+  "verified": false,
+  "precision": "exact",
+  "area": "Bangur Avenue, Kolkata"
+ },
+ {
+  "id": "joramandir-sarbojanin",
+  "name": "Joramandir Sarbojanin",
+  "zone": "east",
+  "lat": 22.613289,
+  "lng": 88.429512,
+  "verified": false,
+  "precision": "exact",
+  "area": "near VIP Road (Anupama), Kolkata"
+ },
+ {
+  "id": "laketown-vivekananda-park",
+  "name": "Laketown Vivekananda Park",
+  "zone": "east",
+  "lat": 22.610039,
+  "lng": 88.402565,
+  "verified": false,
+  "precision": "exact",
+  "area": "Lake Town, Kolkata"
+ },
+ {
+  "id": "motijheel-sarbojanin",
+  "name": "Motijheel Sarbojanin",
+  "zone": "east",
+  "lat": 22.62336,
+  "lng": 88.410759,
+  "verified": false,
+  "precision": "exact",
+  "area": "Motijheel, Dum Dum, Kolkata"
+ },
+ {
+  "id": "pragati-pally-adhibasi-brinda",
+  "name": "Pragati Pally Adhibasi Brinda",
+  "zone": "east",
+  "lat": 22.609594,
+  "lng": 88.400665,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Lake Town, Kolkata"
+ },
+ {
+  "id": "belgachia-kendriya-sarbojanin",
+  "name": "Belgachia Kendriya Sarbojanin",
+  "zone": "north",
+  "lat": 22.604,
+  "lng": 88.383,
+  "verified": false,
+  "precision": "approx",
+  "area": "Krishna Mullick Lane, near Belgachia metro, Kolkata"
+ },
+ {
+  "id": "cit-sarbojanin",
+  "name": "CIT Sarbojanin",
+  "zone": "north",
+  "lat": 22.625994,
+  "lng": 88.377861,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Tala, Kolkata"
+ },
+ {
+  "id": "dakshineswar-dolpere-adi-sarbojanin",
+  "name": "Dakshineswar Dolpere Adi Sarbojanin",
+  "zone": "north",
+  "lat": 22.659449,
+  "lng": 88.364433,
+  "verified": false,
+  "precision": "exact",
+  "area": "Dakshineswar, Kolkata"
+ },
+ {
+  "id": "lake-view-park-sarbojanin",
+  "name": "Lake View Park Sarbojanin",
+  "zone": "north",
+  "lat": 22.64485,
+  "lng": 88.3849,
+  "verified": false,
+  "precision": "approx",
+  "area": "Lake View Park playground, Bonhooghly, Baranagar, Kolkata"
+ },
+ {
+  "id": "milangarh-sarbojanin",
+  "name": "Milangarh Sarbojanin",
+  "zone": "north",
+  "lat": 22.651651,
+  "lng": 88.374054,
+  "verified": false,
+  "precision": "exact",
+  "area": "near Dakshineswar, Kolkata"
+ },
+ {
+  "id": "tala-palli",
+  "name": "Tala Palli",
+  "zone": "north",
+  "lat": 22.609,
+  "lng": 88.378,
+  "verified": false,
+  "precision": "approx",
+  "area": "Tala, Kolkata"
  }
 ]

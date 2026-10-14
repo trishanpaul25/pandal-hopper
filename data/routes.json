@@ -459,16 +459,16 @@
    "santoshpur-avenue-south-durga-puja-pandal",
    "santoshpur-sagnik-durgotsav",
    "santoshpur-lake-pally",
-   "dum-dum-tarun-dal",
    "bagha-jatin-tarun-sangha",
    "baghajatin-vivekananda-milan-sangha",
    "vidyasagar-central-sarbojanin-durgatsav-committee",
    "central-park-youth-association",
    "jadavpur-athletic-club",
+   "shyama-palli-shyama-sangha",
    "62-pally",
-   "shyama-palli-shyama-sangha"
+   "purvachal-durga-puja-pandal"
   ],
-  "km": 4.4,
+  "km": 4.9,
   "start": {
    "lat": 22.492188,
    "lng": 88.379826
@@ -503,9 +503,8 @@
   "id": "south-21",
   "zone": "south",
   "name": "South Kolkata circuit 21",
-  "blurb": "Starts at Purvachal Durga Puja Pandal.",
+  "blurb": "Starts at Netaji Colony Lowland Sarbojanin Durgotsab Samity.",
   "ids": [
-   "purvachal-durga-puja-pandal",
    "netaji-colony-lowland-sarbojanin-durgotsab-samity",
    "mitali-sangha-bijoygarh-10-no-durga-puja-pandal",
    "regent-place-juba-sangha-club",
@@ -515,13 +514,14 @@
    "tala-pally-sadharan-durgotsab-samity",
    "naktala-udayan-sangha",
    "adi-naktala-sarbojanin-durgotsav-committee",
+   "adi-dakshin-kolkata-barowari-samity",
    "bansdroni-sree-sangha",
    "surya-nagar-sarbojanin"
   ],
-  "km": 4.6,
+  "km": 4.5,
   "start": {
-   "lat": 22.489636,
-   "lng": 88.366702
+   "lat": 22.488323,
+   "lng": 88.3635
   }
  },
  {
@@ -578,9 +578,9 @@
   "id": "south-24",
   "zone": "south",
   "name": "South Kolkata circuit 24",
-  "blurb": "Starts at Adi Dakshin Kolkata Barowari Samity.",
+  "blurb": "Starts at Bansdroni Park Association.",
   "ids": [
-   "adi-dakshin-kolkata-barowari-samity",
+   "bansdroni-park-association",
    "madhya-bidhan-pally-sarbojonin-puja-mandap",
    "sonali-park-sports-and-cultural-society",
    "subhashpally-sarbojonin-durga-puja-pandal",
@@ -591,21 +591,20 @@
    "boral-sukanta-sangha",
    "purba-barisha-sitalatala-kishore-sangha",
    "bansdroni-pally-unnayan-samity-puja-mondop",
-   "bansdroni-park-association"
+   "thakurpukur-club-pally-mangal-colony"
   ],
-  "km": 14,
+  "km": 20.9,
   "start": {
-   "lat": 22.469753,
-   "lng": 88.3635
+   "lat": 22.469538,
+   "lng": 88.355658
   }
  },
  {
   "id": "south-25",
   "zone": "south",
   "name": "South Kolkata circuit 25",
-  "blurb": "Starts at Thakurpukur Club Pally Mangal Colony.",
+  "blurb": "Starts at Greenpark Sarbojonin Durgotsob.",
   "ids": [
-   "thakurpukur-club-pally-mangal-colony",
    "greenpark-sarbojonin-durgotsob",
    "sonarpur-recreation-club",
    "milanpally-durga-puja",
@@ -618,10 +617,10 @@
    "baruipur-bhattacharya-para",
    "baruipur-sarbojonin-puja-o-utsav-sangha-durga-mandir"
   ],
-  "km": 34.2,
+  "km": 21.7,
   "start": {
-   "lat": 22.46678,
-   "lng": 88.307569
+   "lat": 22.444523,
+   "lng": 88.398218
   }
  },
  {
@@ -767,25 +766,25 @@
   "id": "east-1",
   "zone": "east",
   "name": "East Kolkata circuit 1",
-  "blurb": "Starts at Jhawtala Sarbojanin.",
+  "blurb": "Starts at Anupama Housing Complex.",
   "ids": [
+   "anupama-housing-complex",
    "jhawtala-sarbojanin",
    "aswininagar-bandhu-mahal-club",
    "nirvik-sangha",
    "bangaliyana-mela-durga-puja-ground",
+   "joramandir-sarbojanin",
    "sarbojanin-sree-sree-durgotsav-baguiati-sports-council",
    "baguiati-subhas-sangha",
    "baguiati-udayan-sangha",
    "keshtopur-prafulla-kanan-paschim-adhibasi-brinda",
-   "kestopur-durga-puja",
-   "masterda-smriti-sangha",
-   "prafulla-kanan-balak-brinda-east",
-   "kamal-park-sarbojanin-durga-puja-committee"
+   "dum-dum-tarun-dal",
+   "motijheel-sarbojanin"
   ],
-  "km": 5.6,
+  "km": 9.4,
   "start": {
-   "lat": 22.619504,
-   "lng": 88.44435
+   "lat": 22.629421,
+   "lng": 88.431786
   }
  },
  {
@@ -797,17 +796,17 @@
    "dum-dum-park-bharat-chakra",
    "dum-dum-park-sarbojanin-durga-puja-samity",
    "dum-dum-park-yubak-brinda",
-   "ag-block-durga-puja-committee",
+   "kestopur-durga-puja",
+   "kamal-park-sarbojanin-durga-puja-committee",
+   "masterda-smriti-sangha",
    "ae-part-2-durga-puja",
-   "a-e-part-1-block-committee",
-   "ad-block-sarbojonin",
-   "shreebhumi-sporting-club-durga-puja",
-   "sreebhumi-durga-puja-pandal-7th-lane",
-   "lake-town-adhibashi-brinda",
-   "roy-bahadur-road-netaji-sporting-club",
-   "dum-dum-park-tarun-sangha"
+   "bangur-avenue-protirodh-bahini",
+   "dum-dum-park-tarun-sangha",
+   "laketown-vivekananda-park",
+   "pragati-pally-adhibasi-brinda",
+   "lake-town-adhibashi-brinda"
   ],
-  "km": 8,
+  "km": 7.7,
   "start": {
    "lat": 22.610821,
    "lng": 88.4146
@@ -820,19 +819,19 @@
   "blurb": "Starts at Patipukur Adi Sarbojanin Durga Puja Committee.",
   "ids": [
    "patipukur-adi-sarbojanin-durga-puja-committee",
+   "roy-bahadur-road-netaji-sporting-club",
    "natunpally-pradip-sangha",
+   "sreebhumi-durga-puja-pandal-7th-lane",
+   "shreebhumi-sporting-club-durga-puja",
    "sreebhumi-sporting-club",
+   "a-e-part-1-block-committee",
+   "ad-block-sarbojonin",
    "a-b-block-abasik-sangha",
    "golaghata-sammelani",
    "dakshin-dari-youths",
-   "baghmari-club-durga-puja-pandal",
-   "kakurgachi-chalantika-club",
-   "kankurgachi-chalantika-durgotsav-ground",
-   "bagmari-nabarun-sangha",
-   "labony-estate-durga-puja",
-   "cf-block-residents-association-durga-puja-pandal"
+   "bagmari-nabarun-sangha"
   ],
-  "km": 12.2,
+  "km": 6.7,
   "start": {
    "lat": 22.608718,
    "lng": 88.396662
@@ -842,25 +841,25 @@
   "id": "east-4",
   "zone": "east",
   "name": "East Kolkata circuit 4",
-  "blurb": "Starts at Bh Block Durga Puja.",
+  "blurb": "Starts at Prafulla Kanan Balak Brinda East.",
   "ids": [
+   "prafulla-kanan-balak-brinda-east",
+   "ag-block-durga-puja-committee",
+   "cf-block-residents-association-durga-puja-pandal",
    "bh-block-durga-puja",
-   "salt-lake-fd-block",
-   "kankurgachi-milan-mela-samity",
-   "kankurgachi-mitali-sangha-durga-puja-pandal",
-   "swapnar-bagan-yubak-brinda-durga-puja",
-   "ib-block-welfare-association",
-   "durga-pujo-fe-block",
    "salt-lake-bj-block",
    "aj-block-puja-pandal",
    "ak-block-association-salt-lake",
-   "ac-block-puja-pandal",
-   "maa-durga-pandal-balaka-abasan"
+   "durga-pujo-fe-block",
+   "salt-lake-fd-block",
+   "labony-estate-durga-puja",
+   "ib-block-welfare-association",
+   "ac-block-puja-pandal"
   ],
-  "km": 16.3,
+  "km": 14.8,
   "start": {
-   "lat": 22.593888,
-   "lng": 88.424065
+   "lat": 22.602002,
+   "lng": 88.42485
   }
  },
  {
@@ -870,19 +869,19 @@
   "blurb": "Starts at Ba Block Durga Puja Ground.",
   "ids": [
    "ba-block-durga-puja-ground",
-   "new-town-durga-puja-committee-bg-block",
    "bc-block-durga-puja-ground",
    "bd-block-durga-puja",
-   "aa-1d-sarbojanin-durga-puja",
    "hb-block-residents-association",
+   "aa-1d-sarbojanin-durga-puja",
+   "new-town-durga-puja-committee-bg-block",
+   "maa-durga-pandal-balaka-abasan",
    "beleghata-lake-side-south-club",
-   "durgapuja-agrani-beleghata",
-   "beleghata-balakbrinda-club",
    "beleghata-sandhani",
-   "beliaghata-33-pally",
-   "nasta-goli-kankurgachi-durga-puja-pandal"
+   "kankurgachi-milan-mela-samity",
+   "swapnar-bagan-yubak-brinda-durga-puja",
+   "kankurgachi-mitali-sangha-durga-puja-pandal"
   ],
-  "km": 23.6,
+  "km": 23.8,
   "start": {
    "lat": 22.585114,
    "lng": 88.459626
@@ -902,10 +901,10 @@
    "thanthania-dutta-bari",
    "pallir-yubak-brinda",
    "sealdah-railway-athletic-club",
-   "kaiser-street-sarbojanin",
    "lal-building-durga-puja",
    "bagmari-bazar-sarbojonin-durga-utsav-committee",
-   "bagmari-anchalik-yubak-brinda"
+   "bagmari-anchalik-yubak-brinda",
+   "baghmari-club-durga-puja-pandal"
   ],
   "km": 6.4,
   "start": {
@@ -917,58 +916,103 @@
   "id": "east-7",
   "zone": "east",
   "name": "East Kolkata circuit 7",
-  "blurb": "Starts at Kankurgachi Jubak Brinda.",
+  "blurb": "Starts at Kankurgachi Chalantika Durgotsav Ground.",
   "ids": [
+   "kankurgachi-chalantika-durgotsav-ground",
+   "kakurgachi-chalantika-club",
+   "nasta-goli-kankurgachi-durga-puja-pandal",
    "kankurgachi-jubak-brinda",
    "purba-kolkata-sarbojonin",
+   "kaiser-street-sarbojanin",
    "beleghata-sarkar-bazar-vivekananda-sangha",
-   "avijit-club",
    "beleghata-gandhimath-friends-circle",
-   "kishore-sangha-club-durga-puja-tangra",
-   "durga-maath-open-play-ground-tangra-100-yrs",
-   "entally-sen-villa-durga-puja",
-   "entally-kanthal-bagan-sarbojanin-saradiya-utsav-comm",
-   "sealdah-bazar-jagaddhatri-puja",
-   "madhya-kolkata-sarbojanin-durga-puja",
-   "santosh-mitra-square-lebutala"
+   "avijit-club",
+   "beliaghata-33-pally",
+   "beleghata-balakbrinda-club",
+   "durgapuja-agrani-beleghata"
   ],
-  "km": 8.6,
+  "km": 7.9,
   "start": {
-   "lat": 22.579357,
-   "lng": 88.388107
+   "lat": 22.581681,
+   "lng": 88.392059
   }
  },
  {
   "id": "east-8",
   "zone": "east",
   "name": "East Kolkata circuit 8",
-  "blurb": "Starts at 50 No Ward Durgapuja Committee.",
+  "blurb": "Starts at Madhya Kolkata Sarbojanin Durga Puja.",
   "ids": [
+   "madhya-kolkata-sarbojanin-durga-puja",
+   "sealdah-bazar-jagaddhatri-puja",
+   "santosh-mitra-square-lebutala",
    "50-no-ward-durgapuja-committee",
    "taltala-doctor-lanestha-sarbojanin-durgotsab",
-   "entally-matribhumi-durga-puja-samity",
-   "udayan-sangha",
    "dakshin-entally-sarbajanin-durga-puja-committee",
+   "udayan-sangha",
+   "entally-matribhumi-durga-puja-samity",
+   "entally-kanthal-bagan-sarbojanin-saradiya-utsav-comm",
+   "entally-sen-villa-durga-puja",
+   "durga-maath-open-play-ground-tangra-100-yrs",
+   "kishore-sangha-club-durga-puja-tangra"
+  ],
+  "km": 6.9,
+  "start": {
+   "lat": 22.569135,
+   "lng": 88.367435
+  }
+ },
+ {
+  "id": "east-9",
+  "zone": "east",
+  "name": "East Kolkata circuit 9",
+  "blurb": "Starts at Tangra Gholpara Sarbojanin.",
+  "ids": [
+   "tangra-gholpara-sarbojanin",
+   "purbanchal-prabhati-sangha",
+   "park-circus-beniapukur-united-puja-committee",
    "parkshree-sarbojanin-durgotsav",
    "east-end-park-sarbojanin-durgotsab-committee",
-   "park-circus-beniapukur-united-puja-committee",
-   "purbanchal-prabhati-sangha",
-   "tangra-gholpara-sarbojanin",
-   "sunil-nagar-sarbojanin",
    "aikyatan",
    "bosepukur-parijat-club",
+   "sunil-nagar-sarbojanin",
    "tagore-park-sporting-club"
   ],
-  "km": 14.7,
+  "km": 10.8,
   "start": {
-   "lat": 22.5627,
-   "lng": 88.364
+   "lat": 22.553121,
+   "lng": 88.390752
   }
  },
  {
   "id": "north-1",
   "zone": "north",
   "name": "North Kolkata circuit 1",
+  "blurb": "Starts at Dakshineswar Dolpere Adi Sarbojanin.",
+  "ids": [
+   "dakshineswar-dolpere-adi-sarbojanin",
+   "milangarh-sarbojanin",
+   "mallick-colony-sarbojonin-durga-utsav",
+   "baranagar-shibmandir-math-durgoutsab-committee",
+   "baranagar-friends-association-durga-puja",
+   "iti-more-durga-puja-ground-kalyani-luminous-club",
+   "bondhudol-durga-puja",
+   "deshapriyanagar-sadharan-durgotsab-sinthi-more",
+   "bandhudal-sporting-club",
+   "baranagar-netaji-colony-sarbojanin-durga-puja-highland",
+   "durga-bhavan-baranagar-lowland-durga-puja",
+   "nawpara-dadabhai-sangha"
+  ],
+  "km": 8.4,
+  "start": {
+   "lat": 22.659449,
+   "lng": 88.364433
+  }
+ },
+ {
+  "id": "north-2",
+  "zone": "north",
+  "name": "North Kolkata circuit 2",
   "blurb": "Starts at Jubok Sangho Puja Mandap.",
   "ids": [
    "jubok-sangho-puja-mandap",
@@ -980,97 +1024,98 @@
    "nagerbazar-sarbojanin",
    "kadamtala-durga-mandap",
    "sinthee-roy-para-sarbojanin-club-durga-puja-pandal",
-   "rangkol-mandal-para-yubak-brinda-durga-puja-pandal",
-   "durga-bhavan-baranagar-lowland-durga-puja",
-   "nawpara-dadabhai-sangha"
+   "sinthee-agragami-sangha",
+   "chakraborty-barir-durga-pujo",
+   "rangkol-mandal-para-yubak-brinda-durga-puja-pandal"
   ],
-  "km": 12.1,
+  "km": 10.8,
   "start": {
    "lat": 22.649123,
    "lng": 88.415289
   }
  },
  {
-  "id": "north-2",
-  "zone": "north",
-  "name": "North Kolkata circuit 2",
-  "blurb": "Starts at Mallick Colony Sarbojonin Durga Utsav.",
-  "ids": [
-   "mallick-colony-sarbojonin-durga-utsav",
-   "baranagar-netaji-colony-sarbojanin-durga-puja-highland",
-   "baranagar-shibmandir-math-durgoutsab-committee",
-   "baranagar-friends-association-durga-puja",
-   "bandhudal-sporting-club",
-   "iti-more-durga-puja-ground-kalyani-luminous-club",
-   "bondhudol-durga-puja",
-   "deshapriyanagar-sadharan-durgotsab-sinthi-more",
-   "chakraborty-barir-durga-pujo",
-   "sinthee-agragami-sangha",
-   "samparka-mahila-durga-puja-committee",
-   "7-tanks-durga-puja-pandal"
-  ],
-  "km": 6.2,
-  "start": {
-   "lat": 22.642231,
-   "lng": 88.376302
-  }
- },
- {
   "id": "north-3",
   "zone": "north",
   "name": "North Kolkata circuit 3",
-  "blurb": "Starts at Chinar Park Adhibasibrinda.",
+  "blurb": "Starts at Samparka Mahila Durga Puja Committee.",
   "ids": [
-   "chinar-park-adhibasibrinda",
-   "dakshinpara-durgotsab-committee",
-   "jawpur-bayam-samiti",
-   "duttabagan-durgotsov-committee",
-   "campbagan-sadharan-durgotsab-committee",
+   "samparka-mahila-durga-puja-committee",
+   "cit-sarbojanin",
+   "7-tanks-durga-puja-pandal",
    "charer-palli-sarbojanin-durgotsab-committee",
    "nilmoni-sen-bari",
    "paikpara-sarbojanin-durgatsav-samity",
+   "campbagan-sadharan-durgotsab-committee",
+   "duttabagan-durgotsov-committee",
    "tala-prattoy",
-   "belgachia-sadharan-durgotsab",
-   "durga-sangha-sitala-temple",
-   "surirbagan-sarbojanin-durgotsab-committee"
+   "sarkar-bagan-sammilita-sangha-durga-puja",
+   "tala-barowari-durgotsab",
+   "cossipore-tarundal-durga-puja"
   ],
-  "km": 12.6,
+  "km": 8.4,
   "start": {
-   "lat": 22.623907,
-   "lng": 88.439779
+   "lat": 22.628368,
+   "lng": 88.382267
   }
  },
  {
   "id": "north-4",
   "zone": "north",
   "name": "North Kolkata circuit 4",
-  "blurb": "Starts at Cossipore Tarundal Durga Puja.",
+  "blurb": "Starts at Chinar Park Adhibasibrinda.",
   "ids": [
-   "cossipore-tarundal-durga-puja",
-   "tala-friends-association",
-   "tala-palli-sadharan-durgotsab-samity",
-   "tala-barowari-durgotsab",
-   "sarkar-bagan-sammilita-sangha-durga-puja",
-   "sarkarbagan-adhibasibrinda-durgotsab",
-   "saterpalli-sarbojanin-durgotsav-committee",
-   "tal-betal-durga-puja",
-   "basu-bati-bagbazar",
-   "naba-baghbazar-sarbajanin-durga-puja",
-   "bagbazar-street-jagaddhatri-puja",
-   "bagbazar-sarbojanin-durga-puja-mandap"
+   "chinar-park-adhibasibrinda",
+   "dakshinpara-durgotsab-committee",
+   "jawpur-bayam-samiti",
+   "belgachia-sadharan-durgotsab",
+   "durga-sangha-sitala-temple",
+   "surirbagan-sarbojanin-durgotsab-committee",
+   "pallysree-durga-puja-ground",
+   "ultadanga-pallyshree",
+   "karbagan-sarbojanin-durgotsab-committee",
+   "telengabagan-sarbojanin-durgotsab",
+   "ultadanga-bidhan-sangha",
+   "ultadanga-jagaranisangha"
   ],
-  "km": 3.3,
+  "km": 9.8,
   "start": {
-   "lat": 22.612604,
-   "lng": 88.372073
+   "lat": 22.623907,
+   "lng": 88.439779
   }
  },
  {
   "id": "north-5",
   "zone": "north",
   "name": "North Kolkata circuit 5",
-  "blurb": "Starts at Bagbazar Sarbojanin Durgotsav & Exhibition.",
+  "blurb": "Starts at Tala Palli Sadharan Durgotsab Samity.",
   "ids": [
+   "tala-palli-sadharan-durgotsab-samity",
+   "tala-friends-association",
+   "saterpalli-sarbojanin-durgotsav-committee",
+   "tal-betal-durga-puja",
+   "basu-bati-bagbazar",
+   "naba-baghbazar-sarbajanin-durga-puja",
+   "bagbazar-street-jagaddhatri-puja",
+   "baghbazar-haldar-bari-puja",
+   "bidhan-sarani-atlas-club",
+   "friends-union-puja-committee",
+   "sarkarbagan-adhibasibrinda-durgotsab",
+   "belgachiayuba-sammilani"
+  ],
+  "km": 3.4,
+  "start": {
+   "lat": 22.606905,
+   "lng": 88.37465
+  }
+ },
+ {
+  "id": "north-6",
+  "zone": "north",
+  "name": "North Kolkata circuit 6",
+  "blurb": "Starts at Bagbazar Sarbojanin Durga Puja Mandap.",
+  "ids": [
+   "bagbazar-sarbojanin-durga-puja-mandap",
    "bagbazar-sarbojanin-durgotsav-exhibition",
    "kumartuli-ghat",
    "kumartuli-park-sarbojanin-durgotsab",
@@ -1079,46 +1124,45 @@
    "jagat-mukherjee-park",
    "raja-raj-ballav-street-sadanga-durgoutsav-samiti",
    "bagbazar-pally-puja-o-prodorshoni",
-   "baghbazar-haldar-bari-puja",
    "shyamsquare-sarbojanin-duegapuja-o-pradarshani",
    "shyambazar-palli-sangha",
    "uttar-kolkata-sarbojanin-durga-puja-birendra-mancha"
   ],
-  "km": 3.4,
+  "km": 3,
   "start": {
-   "lat": 22.60449,
-   "lng": 88.365615
-  }
- },
- {
-  "id": "north-6",
-  "zone": "north",
-  "name": "North Kolkata circuit 6",
-  "blurb": "Starts at Belgachiayuba Sammilani.",
-  "ids": [
-   "belgachiayuba-sammilani",
-   "friends-union-puja-committee",
-   "bidhan-sarani-atlas-club",
-   "shyampukur-adi-sarbojanin-durgotsab-comm",
-   "mohan-bagan-barwari",
-   "nabin-pally-sarbojanin-durgotsav-hatibagan-nabinpally",
-   "north-tridhara",
-   "shyambazar-nabin-sangha",
-   "gauri-bari-sarbojanin-durga-puja-pandal",
-   "aurobindo-setu-sarbojanin-durgapuja",
-   "yuba-brinda-durga-puja-mandop",
-   "ultadanga-pallyshree"
-  ],
-  "km": 4.2,
-  "start": {
-   "lat": 22.603211,
-   "lng": 88.378987
+   "lat": 22.60478,
+   "lng": 88.366177
   }
  },
  {
   "id": "north-7",
   "zone": "north",
   "name": "North Kolkata circuit 7",
+  "blurb": "Starts at Shyambazar Nabin Sangha.",
+  "ids": [
+   "shyambazar-nabin-sangha",
+   "mohan-bagan-barwari",
+   "shyampukur-adi-sarbojanin-durgotsab-comm",
+   "shyampukur-sanghatirtha-durga-puja-samity-sanghatirtha",
+   "hatibagan-sarbojonin-durgotsab-committee",
+   "sikdar-bagan-sadharan-durgotsab",
+   "nabin-pally-sarbojanin-durgotsav-hatibagan-nabinpally",
+   "north-tridhara",
+   "nalin-sarkar-street",
+   "madhab-das-lane-sarbojanin-durgotsab",
+   "gauri-bari-sarbojanin-durga-puja-pandal",
+   "aurobindo-setu-sarbojanin-durgapuja"
+  ],
+  "km": 3.3,
+  "start": {
+   "lat": 22.598694,
+   "lng": 88.375501
+  }
+ },
+ {
+  "id": "north-8",
+  "zone": "north",
+  "name": "North Kolkata circuit 8",
   "blurb": "Starts at Nandram Sen Street Sarbojanin Durgotsab Samity.",
   "ids": [
    "nandram-sen-street-sarbojanin-durgotsab-samity",
@@ -1141,53 +1185,28 @@
   }
  },
  {
-  "id": "north-8",
-  "zone": "north",
-  "name": "North Kolkata circuit 8",
-  "blurb": "Starts at Sikdar Bagan Sadharan Durgotsab.",
-  "ids": [
-   "sikdar-bagan-sadharan-durgotsab",
-   "hatibagan-sarbojonin-durgotsab-committee",
-   "nalin-sarkar-street",
-   "madhab-das-lane-sarbojanin-durgotsab",
-   "halsibagan-sarbojanin-durgotsab",
-   "goabagan-sarbojanin-durgotsab",
-   "kashi-bose-lane-durga-puja-samity",
-   "hari-ghosh-street-sarbojanin-durgotsab-samity",
-   "beadon-row-suchetana-organization",
-   "hari-ghosh-street-swamiji-sangha",
-   "bharder-thakur-bari",
-   "shyampukur-sanghatirtha-durga-puja-samity-sanghatirtha"
-  ],
-  "km": 4.1,
-  "start": {
-   "lat": 22.596625,
-   "lng": 88.372139
-  }
- },
- {
   "id": "north-9",
   "zone": "north",
   "name": "North Kolkata circuit 9",
-  "blurb": "Starts at Pallysree Durga Puja Ground.",
+  "blurb": "Starts at Yuba Brinda Durga Puja Mandop.",
   "ids": [
-   "pallysree-durga-puja-ground",
-   "karbagan-sarbojanin-durgotsab-committee",
-   "telengabagan-sarbojanin-durgotsab",
-   "ultadanga-bidhan-sangha",
-   "ultadanga-jagaranisangha",
+   "yuba-brinda-durga-puja-mandop",
    "jagorani-sangha-durga-puja-pandal",
+   "halsibagan-sarbojanin-durgotsab",
    "lalabagan-yubakbrinda-nabankur-sangha",
    "lalabagan-sarbojanin-durgotsab-samity",
-   "uttar-kolkata-sanhati-sporting-club",
    "vivekananda-sarbojanin-durgotsab",
    "maniktala-anchalik-samity",
-   "hari-nath-de-road-barowari-durgotsab"
+   "uttar-kolkata-sanhati-sporting-club",
+   "goabagan-sarbojanin-durgotsab",
+   "kashi-bose-lane-durga-puja-samity",
+   "hari-ghosh-street-swamiji-sangha",
+   "bharder-thakur-bari"
   ],
-  "km": 3.3,
+  "km": 4.1,
   "start": {
-   "lat": 22.595773,
-   "lng": 88.384688
+   "lat": 22.595916,
+   "lng": 88.382315
   }
  },
  {
@@ -1219,24 +1238,27 @@
   "id": "north-11",
   "zone": "north",
   "name": "North Kolkata circuit 11",
-  "blurb": "Starts at Darjipara Mitra House.",
+  "blurb": "Starts at Beadon Row Suchetana Organization.",
   "ids": [
+   "beadon-row-suchetana-organization",
    "darjipara-mitra-house",
+   "hari-ghosh-street-sarbojanin-durgotsab-samity",
    "beadon-street-sarbojanin-durgotsav",
    "hedua-park-durga-puja",
-   "saha-bari-maniktala",
-   "simulia-sarvajanin-durgotsav-samity-vivekananda-road",
-   "kailash-bose-street-sarbojanin-durgotsava",
    "simla-byayam-samity",
    "chorebagan-sarbojanin-durgotsab-samity",
-   "chorbagan-chatterjee-bari",
    "chorbagan-mitra-bari",
+   "chorbagan-chatterjee-bari",
+   "kailash-bose-street-sarbojanin-durgotsava",
+   "saha-bari-maniktala",
+   "simulia-sarvajanin-durgotsav-samity-vivekananda-road",
+   "hari-nath-de-road-barowari-durgotsab",
    "united-club"
   ],
-  "km": 19.8,
+  "km": 21.5,
   "start": {
-   "lat": 22.591093,
-   "lng": 88.364903
+   "lat": 22.59128,
+   "lng": 88.365882
   }
  },
  {
