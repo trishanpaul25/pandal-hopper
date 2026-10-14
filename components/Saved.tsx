@@ -12,6 +12,7 @@ import ModeBar from "@/components/ModeBar";
 import { toggleIn, useSaved, useSavedPlaces, useSeen } from "@/lib/store";
 import { MAX_NAME, MAX_TRAILS, useTrails } from "@/lib/trails";
 import AddCircuit from "@/components/AddCircuit";
+import ShareTrail from "@/components/ShareTrail";
 
 export default function Saved() {
   const { lang } = useLang();
@@ -54,7 +55,9 @@ export default function Saved() {
     <div className="page">
       <span className="eyebrow">{lang === "bn" ? "আমার সংরক্ষিত তালিকা" : "My parikrama trail"}</span>
       <h1 className="h1">{T.active.name}</h1>
-      <p className="lead">{lang === "bn" ? "পছন্দের প্যান্ডেল ও খাবারের জায়গা এখানে জমা থাকে। শুধু আপনার ফোনে সংরক্ষিত।" : "Pandals and eateries you starred. Saved on this phone only."}</p>
+      <p className="lead">{T.active.group
+        ? (lang === "bn" ? `${T.active.group.groupName} দলের শেয়ার করা ট্রেইল। দলের সবাই এটি বদলাতে পারবেন।` : `A trail shared with ${T.active.group.groupName}. Everyone in the group can edit it.`)
+        : (lang === "bn" ? "পছন্দের প্যান্ডেল ও খাবারের জায়গা এখানে জমা থাকে। শুধু আপনার ফোনে সংরক্ষিত।" : "Pandals and eateries you starred. Saved on this phone only.")}</p>
       <div className="stats">
         <div className="stat"><b>{trail.length}</b><span>{lang === "bn" ? "সংরক্ষিত প্যান্ডেল" : "Saved pandals"}</span></div>
         <div className="stat"><b>{trail.filter((p) => seen.includes(p.id)).length}</b><span>{lang === "bn" ? "দেখা হয়েছে" : "Seen already"}</span></div>
@@ -65,7 +68,7 @@ export default function Saved() {
       <section className="sec" style={{ marginTop: 16 }}>
         <h2 className="h2">{bn ? "আমার ট্রেইলগুলো" : "My trails"}</h2>
         <div className="chips" role="tablist" aria-label={bn ? "ট্রেইল" : "Trails"}>
-          {T.trails.map((t) => <button key={t.id} role="tab" className="chip" aria-pressed={t.id === T.activeId} aria-selected={t.id === T.activeId} onClick={() => T.setActive(t.id)}>{t.name} · {t.ids.length}</button>)}
+          {T.trails.map((t) => <button key={t.id} role="tab" className="chip" aria-pressed={t.id === T.activeId} aria-selected={t.id === T.activeId} onClick={() => T.setActive(t.id)}>{t.group ? "👥 " : ""}{t.name} · {t.ids.length}</button>)}
         </div>
         <div className="row" style={{ gap: 8, flexWrap: "wrap" }}>
           <input className="search" style={{ flex: 1, minWidth: 180 }} type="text" maxLength={MAX_NAME} autoComplete="off" value={newName} onChange={(e) => setNewName(e.target.value)}
@@ -81,9 +84,10 @@ export default function Saved() {
             <button className="btn sm outline" onClick={() => setRenaming(null)}>{bn ? "বাতিল" : "Cancel"}</button>
           </> : <>
             <button className="btn sm outline" onClick={() => { setRenaming(T.activeId); setRenameVal(T.active.name); }}>✎ {bn ? "নাম বদলান" : "Rename"}</button>
-            {T.trails.length > 1 && <button className="btn sm outline" onClick={() => { if (window.confirm(bn ? `“${T.active.name}” মুছবেন?` : `Delete “${T.active.name}”? Its ${T.active.ids.length} stops will be removed from this trail.`)) T.remove(T.activeId); }}>🗑 {bn ? "মুছুন" : "Delete trail"}</button>}
+            {!T.active.group && T.localTrails.length > 1 && <button className="btn sm outline" onClick={() => { if (window.confirm(bn ? `“${T.active.name}” মুছবেন?` : `Delete “${T.active.name}”? Its ${T.active.ids.length} stops will be removed from this trail.`)) T.remove(T.activeId); }}>🗑 {bn ? "মুছুন" : "Delete trail"}</button>}
           </>}
         </div>
+        <ShareTrail />
       </section>
 
       <section className="sec">

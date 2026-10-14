@@ -1,5 +1,5 @@
 import {
-  arrayRemove, arrayUnion, collection, deleteField, doc, getDoc, onSnapshot, query, serverTimestamp, setDoc, where, writeBatch,
+  arrayRemove, arrayUnion, collection, deleteField, doc, getDoc, getDocs, onSnapshot, query, serverTimestamp, setDoc, where, writeBatch,
   type Timestamp,
 } from "firebase/firestore";
 import type { User } from "firebase/auth";
@@ -8,6 +8,7 @@ import { db } from "./firebase";
 /** Data layout (Firestore):
  *  groups/{CODE}                  name, ownerId, memberIds[]      <- the 6-letter code IS the document id
  *  groups/{CODE}/members/{uid}    nick, photo, sharing
+ *  groups/{CODE}/trails/{id}      trails the whole group can edit (see lib/groupTrails.ts)
  *  Only members can read the members (see firestore.rules).
  *  Live positions are NOT stored here: they travel through the relay (lib/relay.ts), so moving around costs no reads or writes.
  *  `sharing` and `until` are written when someone switches sharing on or off.
@@ -71,8 +72,10 @@ export async function leaveGroup(user: User, code: string) {
   const snap = await getDoc(gref);
   const b = writeBatch(db);
   b.delete(memberRef(code, user.uid));
-  if (snap.exists() && (snap.data().memberIds ?? []).length <= 1) b.delete(gref);
-  else b.update(gref, { memberIds: arrayRemove(user.uid) });
+  if (snap.exists() && (snap.data().memberIds ?? []).length <= 1) {
+    b.delete(gref);
+    (await getDocs(collection(db, "groups", code, "trails"))).forEach((t) => b.delete(t.ref)); // the group is gone, so are its shared trails
+  } else b.update(gref, { memberIds: arrayRemove(user.uid) });
   await b.commit();
 }
 

@@ -41,6 +41,30 @@ service cloud.firestore {
         && request.auth.uid in resource.data.memberIds
         && resource.data.memberIds.size() == 1;
 
+      // Trails shared with the group: every member can read them and add / remove stops or rename them.
+      // Only the person who shared a trail, or the group owner, can delete it.
+      match /trails/{tid} {
+        function isMember() {
+          return request.auth != null
+            && request.auth.uid in get(/databases/$(database)/documents/groups/$(code)).data.memberIds;
+        }
+        function validName(d) { return d.name is string && d.name.size() > 0 && d.name.size() <= 40; }
+        function validIds(d) { return d.ids is list && d.ids.size() <= 200; }
+        function validWho(d) { return d.updatedBy == request.auth.uid && d.updatedByName is string && d.updatedByName.size() <= 24; }
+
+        allow read: if isMember();
+        allow create: if isMember()
+          && request.resource.data.keys().hasOnly(['name', 'ids', 'sharedBy', 'updatedBy', 'updatedByName', 'createdAt', 'updatedAt'])
+          && request.resource.data.sharedBy == request.auth.uid
+          && validName(request.resource.data) && validIds(request.resource.data) && validWho(request.resource.data);
+        allow update: if isMember()
+          && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['name', 'ids', 'updatedBy', 'updatedByName', 'updatedAt'])
+          && validName(request.resource.data) && validIds(request.resource.data) && validWho(request.resource.data);
+        allow delete: if isMember()
+          && (resource.data.sharedBy == request.auth.uid
+              || get(/databases/$(database)/documents/groups/$(code)).data.ownerId == request.auth.uid);
+      }
+
       // Members and their live location.
       match /members/{uid} {
         allow read: if request.auth != null

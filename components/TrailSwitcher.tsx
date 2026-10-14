@@ -10,7 +10,7 @@ export default function TrailSwitcher() {
   return (
     <select className="search" style={{ minHeight: 38, width: "auto", maxWidth: 200, fontSize: 14, padding: "0 10px" }} value={t.activeId} onChange={(e) => t.setActive(e.target.value)}
       aria-label={lang === "bn" ? "ট্রেইল বেছে নিন" : "Choose trail"}>
-      {t.trails.map((x) => <option key={x.id} value={x.id}>{x.name} ({x.ids.length})</option>)}
+      {t.trails.map((x) => <option key={x.id} value={x.id}>{x.group ? "👥 " : ""}{x.name} ({x.ids.length})</option>)}
     </select>
   );
 }
