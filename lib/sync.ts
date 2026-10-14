@@ -1,14 +1,15 @@
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import type { User } from "firebase/auth";
 import { db } from "./firebase";
+import { mergeTrails, saveMerged } from "./trails";
 
-type Field = "seen" | "saved" | "savedPlaces";
-const KEYS: Record<Field, string> = { seen: "ph-seen", saved: "ph-saved", savedPlaces: "ph-saved-places" };
+type Field = "seen" | "savedPlaces" | "trails";
+const KEYS: Record<"seen" | "savedPlaces", string> = { seen: "ph-seen", savedPlaces: "ph-saved-places" };
 let uid: string | null = null;
 
 // Changes are collected for a few seconds and sent as ONE write, so tapping "seen" on five pandals in a row costs 1 write, not 5.
 const FLUSH_MS = 3000;
-const pending: Partial<Record<Field, string[]>> = {};
+const pending: Partial<Record<Field, unknown>> = {};
 let timer: ReturnType<typeof setTimeout> | null = null;
 const dropPending = () => { if (timer) clearTimeout(timer); timer = null; (Object.keys(pending) as Field[]).forEach((k) => delete pending[k]); };
 
@@ -29,7 +30,7 @@ if (typeof window !== "undefined") { // send right away if the person leaves or 
 }
 
 /** Save one list to the signed-in user's cloud profile (batched, see above). Silently does nothing when signed out or offline. */
-export function pushField(field: Field, value: string[]) {
+export function pushField(field: Field, value: unknown) {
   if (!db || !uid) return;
   pending[field] = value;
   if (timer) clearTimeout(timer);
@@ -54,12 +55,15 @@ export async function onSignIn(user: User) {
     const profile = { name: user.displayName ?? "", email: user.email ?? "", photo: user.photoURL ?? "" };
     (Object.keys(profile) as (keyof typeof profile)[]).forEach((k) => { if (remote[k] !== profile[k]) patch[k] = profile[k]; });
     if (!snap.exists()) patch.createdAt = serverTimestamp();
-    (Object.keys(KEYS) as Field[]).forEach((f) => {
+    (Object.keys(KEYS) as (keyof typeof KEYS)[]).forEach((f) => {
       const r = Array.isArray(remote[f]) ? (remote[f] as string[]) : [];
       const union = Array.from(new Set([...r, ...readLocal(KEYS[f])]));
       try { localStorage.setItem(KEYS[f], JSON.stringify(union)); } catch {}
       if (!snap.exists() || union.length !== r.length) patch[f] = union;
     });
+    const m = mergeTrails(remote.trails, Array.isArray(remote.saved) ? (remote.saved as string[]) : []);
+    saveMerged(m.state);
+    if (m.changed) patch.trails = m.state.list;
     if (Object.keys(patch).length) await setDoc(ref, { ...patch, updatedAt: serverTimestamp() }, { merge: true });
     try { sessionStorage.setItem(SYNCED + user.uid, "1"); } catch {}
     window.dispatchEvent(new Event("ph-sync")); // tell the pages to re-read

@@ -16,6 +16,9 @@ import ModeBar from "./ModeBar";
 import TransitHint from "./TransitHint";
 import PandalCard from "./PandalCard";
 import PandalPicker from "./PandalPicker";
+import AddCircuit from "./AddCircuit";
+import TrailSwitcher from "./TrailSwitcher";
+import { useTrails } from "@/lib/trails";
 import { exportPdf, planText } from "@/lib/exportPlan";
 
 const Map = dynamic(() => import("./Map"), { ssr: false });
@@ -31,6 +34,7 @@ export default function Hop() {
   const leave = at ?? undefined;   // undefined = now
   const [seen, setSeen] = useSeen();
   const [saved, setSaved] = useSaved();
+  const activeTrail = useTrails().active;
   const [cur, setCur] = useState<Cur | null>(null);
   const [planned, setPlanned] = useState<Pandal[] | null>(null);
   const [route, setRoute] = useState<string | null>(null);
@@ -87,7 +91,7 @@ export default function Hop() {
     if (!exportPdf({ title, stops, start: origin, bn: lang === "bn" })) showToast(lang === "bn" ? "পপ-আপ অনুমতি দিন, তারপর আবার চেষ্টা করুন" : "Allow pop-ups to export, then try again");
   };
   const shareTrail = async (stops: Pandal[]) => {
-    const title = lang === "bn" ? "আমার পুজো ট্রেইল" : "My Pandal Trail";
+    const title = activeTrail.name;
     const text = planText(title, stops, lang === "bn");
     try {
       if (navigator.share) await navigator.share({ title, text });
@@ -376,8 +380,8 @@ export default function Hop() {
 
       <section className="sec" id="trail">
         <div className="row" style={{ justifyContent: "space-between" }}>
-          <h2 className="h2">★ {tx(lang, "myTrail")} ({trailAll.length})</h2>
-          <Link className="btn sm outline" href="/saved">{tx(lang, "openTrail")} →</Link>
+          <h2 className="h2">★ {activeTrail.name} ({trailAll.length})</h2>
+          <div className="row" style={{ gap: 8 }}><TrailSwitcher /><Link className="btn sm outline" href="/saved">{tx(lang, "openTrail")} →</Link></div>
         </div>
         {trailAll.length === 0 ? <div className="empty" style={{ marginTop: 12 }}>{tx(lang, "trailEmpty")}</div> : <>
           {trailStops.length > 0 && <div className="card paar" style={{ marginTop: 12, borderLeftColor: "#6d28d9" }}>
@@ -451,7 +455,7 @@ export default function Hop() {
           </div>
           {planned && (() => {
             const trailList = [...trailOrder, ...trailSeen];
-            const trailTitle = lang === "bn" ? "আমার পুজো ট্রেইল" : "My Pandal Trail";
+            const trailTitle = activeTrail.name;
             return <>
               <div className="card paar" style={{ marginTop: 14, borderLeftColor: "#6d28d9" }}>
                 <div className="row" style={{ justifyContent: "space-between" }}>
@@ -527,6 +531,7 @@ export default function Hop() {
               <h3 style={{ fontSize: 21 }}>{r.name}</h3><p className="muted" style={{ margin: "4px 0 8px" }}>{r.blurb}</p>
               <p className="small"><b>{r.ids.length}</b> stops · about <b>{fmtDist(r.km)}</b> · {r.ids.filter((i) => seen.includes(i)).length} ✓</p>
               <button className={`btn sm ${route === r.id ? "primary" : "outline"}`} onClick={() => { setPlanned(null); setRoute(route === r.id ? null : r.id); }}>{route === r.id ? tx(lang, "showing") : tx(lang, "showMap")}</button>
+              <AddCircuit route={r} />
               <div style={{ marginTop: 8 }}>
                 {r.ids.map((id) => (
                   <label key={id} className={`stop ${seen.includes(id) ? "done" : ""}`}>
